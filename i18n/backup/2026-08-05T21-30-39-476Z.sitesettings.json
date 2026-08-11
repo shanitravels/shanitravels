@@ -1,0 +1,89 @@
+[
+  {
+    "_id": "6a670b479bd3e930b7292021",
+    "singleton": "main",
+    "__v": 0,
+    "about": {
+      "story": "Shani Travels is the ground-transport arm of the Shani Group of Companies, serving Pakistan since 1997. What began as a small chauffeur-driven car hire service in Islamabad has grown into a nationwide operation trusted by UN agencies, donors, NGOs, telecoms, airlines and government institutions.\n\nWe run project fleets through every province — from election observation missions and earthquake relief to multi-year development programmes and airline crew operations — backed by offices in 8 cities, vetted drivers and a maintenance regime that keeps every vehicle inspection-ready.",
+      "ceoMessage": "For nearly three decades our promise has stayed the same: a clean, insured vehicle, a professional driver and a team that answers the phone. Whether you need one car for an airport pickup or forty vehicles for a nationwide programme, we treat both with the same seriousness.",
+      "ceoName": "Muhammad Khurshid",
+      "hseSummary": "## Health, Safety & Environment\n\n- Every vehicle GPS-tracked and comprehensively insured\n- Documented pre-trip inspection for each journey\n- Background-checked, defensively-trained drivers with route inductions\n- Journey management and provincial backup vehicles for project fleets\n- Incident reporting with 24/7 operations support"
+    },
+    "announcementBar": {
+      "text": "The 2026 rate card is live — transparent per-day rates on every vehicle.",
+      "active": true
+    },
+    "commercialTerms": "## Commercial terms\n\n- All rates are in PKR and **exclude General Sales Tax (GST)**.\n- Daily rates cover a standard 10-hour working day within city limits; overtime is billed per additional hour.\n- Fuel is billed per kilometre where marked; long routes include driver daily allowance.\n- Intercity and northern-area trips may carry toll, parking and overnight charges at actuals.\n- Bookings are confirmed by our team over phone or WhatsApp — no advance online payment is required.\n- Corporate accounts are invoiced monthly with agreed credit terms.\n- Rates marked \"on request\" are quoted per requirement after a short call.\n- Self-drive rentals carry a security deposit and are subject to the self-drive agreement.",
+    "createdAt": "2026-07-27T07:39:51.599Z",
+    "credentials": [
+      {
+        "label": "Established",
+        "value": "1997 — Shani Group of Companies",
+        "image": null
+      },
+      {
+        "label": "Registrar of Firms",
+        "value": "Registered, Islamabad Capital Territory (2010)",
+        "image": null
+      },
+      {
+        "label": "NTN",
+        "value": "3661268-5",
+        "image": null
+      },
+      {
+        "label": "GST",
+        "value": "Registered for General Sales Tax",
+        "image": null
+      }
+    ],
+    "emails": [
+      "info@shanitravels.pk",
+      "bookings@shanitravels.pk"
+    ],
+    "headOfficeAddress": "82-E Fazal-e-Haq Road, Blue Area, Islamabad, Pakistan",
+    "helplineNumbers": [
+      "03008564588"
+    ],
+    "heroHeadline": "Chauffeur-driven transport you can rely on — since 1997",
+    "heroImages": [
+      {
+        "publicId": "",
+        "url": "https://images.unsplash.com/photo-1613859492095-85d9944f09f6?w=2000&q=80&auto=format",
+        "alt": "Land Cruiser Prado ready for a client",
+        "order": 0
+      },
+      {
+        "publicId": "",
+        "url": "https://images.unsplash.com/photo-1623869675781-80aa31012a5a?w=2000&q=80&auto=format",
+        "alt": "Corolla Altis sedan detailed for pickup",
+        "order": 1
+      },
+      {
+        "publicId": "",
+        "url": "https://images.unsplash.com/photo-1669886845445-c2350d2431f5?w=2000&q=80&auto=format",
+        "alt": "Coaster bus for group transport",
+        "order": 2
+      }
+    ],
+    "heroSubheadline": "Rent a car with driver for the day, or contract a dedicated project fleet anywhere in Pakistan. Insured, tracked and backed by offices in 8 cities.",
+    "selfDriveEnabled": true,
+    "seoDefaults": {
+      "title": "Shani Travels — Rent A Car & Corporate Transport, Islamabad",
+      "description": "Chauffeur-driven car rental in Islamabad and nationwide project transport for UN agencies, NGOs and corporates. Insured, GPS-tracked fleet. Since 1997.",
+      "ogImage": null
+    },
+    "socials": {
+      "facebook": "",
+      "instagram": "",
+      "linkedin": ""
+    },
+    "stats": {
+      "yearsOperating": 29,
+      "cities": 8,
+      "fleetSize": 120
+    },
+    "updatedAt": "2026-08-05T09:08:07.321Z",
+    "whatsappNumber": "03008564588"
+  }
+]

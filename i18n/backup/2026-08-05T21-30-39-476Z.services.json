@@ -1,0 +1,295 @@
+[
+  {
+    "_id": "6a670b45b148078fea73692d",
+    "slug": "corporate-car-rental",
+    "title": "Corporate Car Rental",
+    "group": "corporate",
+    "summary": "Daily, weekly, monthly and long-term rentals with dedicated fleets and consolidated invoicing.",
+    "body": "From a single executive sedan on a monthly contract to a dedicated multi-vehicle fleet assigned to your organization for years, corporate rental is the core of what we have done since 1997.\n\n- Daily, weekly, monthly and long-term contracts\n- Dedicated vehicles and drivers assigned to your account\n- Consolidated monthly invoicing with agreed credit terms\n- Replacement vehicles during maintenance — your operations never stop\n- A dedicated account manager who knows your movement patterns\n\nEvery vehicle is comprehensively insured, GPS-tracked, and maintained on a documented schedule. Ask us for a proposal — most corporate fleets are contracted within a week.",
+    "image": {
+      "publicId": "",
+      "url": "https://images.unsplash.com/photo-1626997077212-cfd5da89824e?w=1600&q=80&auto=format",
+      "alt": "Executive corporate sedan"
+    },
+    "relatedVehicleClasses": [
+      "sedan",
+      "suv",
+      "vip"
+    ],
+    "order": 0,
+    "active": true,
+    "__v": 0,
+    "createdAt": "2026-07-27T07:39:49.604Z",
+    "updatedAt": "2026-07-27T07:39:49.604Z"
+  },
+  {
+    "_id": "6a670b45b148078fea73692e",
+    "slug": "staff-transportation",
+    "title": "Staff Transportation",
+    "group": "corporate",
+    "summary": "Pick & drop and shift transport on fixed company contracts — vans, coasters and route planning included.",
+    "body": "Reliable staff transport is an operational commitment, not just a vehicle. We run daily pick & drop and shift-based routes for offices, factories, call centres and airlines.\n\n- Route design and optimisation for your staff addresses\n- Fixed monthly contracts with Hi-Ace vans and Coaster buses\n- Attendance and tracking reports for HR\n- Trained, vetted drivers on consistent routes\n- Night-shift and female-staff transport protocols\n\nShift changes at midnight or 6 a.m. are exactly where our 24/7 operations room earns its keep.",
+    "image": {
+      "publicId": "",
+      "url": "https://images.unsplash.com/photo-1678747172256-b37b7ac99cfc?w=1600&q=80&auto=format",
+      "alt": "Employee shuttle van"
+    },
+    "relatedVehicleClasses": [
+      "event"
+    ],
+    "order": 1,
+    "active": true,
+    "__v": 0,
+    "createdAt": "2026-07-27T07:39:49.604Z",
+    "updatedAt": "2026-07-27T08:21:23.886Z"
+  },
+  {
+    "_id": "6a670b45b148078fea73692f",
+    "slug": "airline-crew-transportation",
+    "title": "Airline Crew Transportation",
+    "group": "corporate",
+    "summary": "24/7 crew dispatch and flight-operation support — we are PIA's cockpit crew transport contractor.",
+    "body": "## Proven at the national flag carrier\n\nShani Travels is the contracted cockpit crew transport provider for **Pakistan International Airlines** through our Karachi office at Jinnah International Airport (JIAP). Every day, our vehicles and dispatch team move flight crews between the airport, hotels and residences against hard flight-operation deadlines.\n\nWhat that contract has taught us is what every airline needs:\n\n- **24/7 dispatch desk** synchronised with flight schedules, delays and roster changes\n- Punctuality measured against report times, not traffic excuses\n- Clean, comfortable vehicles that respect crew rest requirements\n- Vetted, badged drivers familiar with airport security procedures\n- Instant replacement vehicles — a crew never waits on a breakdown\n\nIf your airline, charter operation or ground handler needs crew movement it can stop thinking about, we are the contractor that already does this for the national carrier.",
+    "image": {
+      "publicId": "",
+      "url": "https://images.unsplash.com/photo-1436491865332-7a61a109cc05?w=1600&q=80&auto=format",
+      "alt": "Airport crew transport at terminal"
+    },
+    "relatedVehicleClasses": [
+      "sedan",
+      "event"
+    ],
+    "order": 2,
+    "active": true,
+    "__v": 0,
+    "createdAt": "2026-07-27T07:39:49.604Z",
+    "updatedAt": "2026-07-27T08:21:24.583Z"
+  },
+  {
+    "_id": "6a670b45b148078fea736930",
+    "slug": "government-transport",
+    "title": "Government & Development Sector Transport",
+    "group": "corporate",
+    "summary": "Registered, tax-compliant transport for ministries, departments and development programmes.",
+    "body": "Public-sector procurement demands documentation, and we have it: registered with the Registrar of Firms, NTN and GST compliant, with nearly three decades of references from government and development-sector programmes.\n\n- Fleet provision for departments, projects and visiting delegations\n- Election-mission and census-scale deployments — we have done both\n- Transparent per-vehicle billing that survives audit\n- Provincial coverage through our 8-city office network\n- Protocol vehicles for official movements\n\nFrom a single ministry sedan to a hundred-vehicle field deployment, the paperwork and the vehicles are equally in order.",
+    "image": {
+      "publicId": "",
+      "url": "https://images.unsplash.com/photo-1613859492095-85d9944f09f6?w=1600&q=80&auto=format",
+      "alt": "Government protocol vehicle"
+    },
+    "relatedVehicleClasses": [
+      "sedan",
+      "suv",
+      "vip"
+    ],
+    "order": 3,
+    "active": true,
+    "__v": 0,
+    "createdAt": "2026-07-27T07:39:49.604Z",
+    "updatedAt": "2026-07-27T07:39:49.604Z"
+  },
+  {
+    "_id": "6a670b45b148078fea736931",
+    "slug": "ngo-transport",
+    "title": "NGO & International Organization Transport",
+    "group": "corporate",
+    "summary": "Donor-project fleets with field-ready 4x4s, provincial reach and the compliance NGOs require.",
+    "body": "NGOs and international organizations have been our anchor clients since the early 2000s — from earthquake response to election observation to multi-year development programmes.\n\n- Field-ready double-cabin 4x4s and SUVs for provincial operations\n- Journey management with GPS tracking and a 24/7 operations room\n- Drivers vetted, trained and inducted on humanitarian codes of conduct\n- Provincial backup vehicles so field plans survive breakdowns\n- Documentation that satisfies donor compliance and audit requirements\n\nOrganizations including IOM, Concern Worldwide and USAID-funded programmes have put their teams in our vehicles across every province of Pakistan.",
+    "image": {
+      "publicId": "",
+      "url": "https://images.unsplash.com/photo-1714213624189-9a9fc8a0736a?w=1600&q=80&auto=format",
+      "alt": "Field-ready 4x4 for NGO operations"
+    },
+    "relatedVehicleClasses": [
+      "suv",
+      "sedan",
+      "event"
+    ],
+    "order": 4,
+    "active": true,
+    "__v": 0,
+    "createdAt": "2026-07-27T07:39:49.604Z",
+    "updatedAt": "2026-07-27T08:21:24.999Z"
+  },
+  {
+    "_id": "6a670b45b148078fea736932",
+    "slug": "project-site-transportation",
+    "title": "Project & Site Transportation",
+    "group": "corporate",
+    "summary": "Oil & gas, construction, engineering and infrastructure — crews, equipment and HSE discipline.",
+    "body": "Remote sites break ordinary transport arrangements. Project transportation is a different discipline: HSE inductions, journey management plans, defensive-driving-trained drivers, and vehicles specified for the terrain.\n\n- Double-cabin 4x4s with roll cages for field operations\n- Crew-change runs on fixed schedules, day and night\n- Logistics trucks for equipment and material movement\n- Pre-trip inspections documented for every departure\n- Incident reporting aligned with your HSE system\n\nOil & gas operators, construction joint ventures and engineering consultancies run multi-year site fleets with us because the discipline holds up in month eighteen, not just week one.",
+    "image": {
+      "publicId": "",
+      "url": "https://images.unsplash.com/photo-1670054953044-2605dbd0d747?w=1600&q=80&auto=format",
+      "alt": "Project site 4x4 transport"
+    },
+    "relatedVehicleClasses": [
+      "suv",
+      "logistics",
+      "event"
+    ],
+    "order": 5,
+    "active": true,
+    "__v": 0,
+    "createdAt": "2026-07-27T07:39:49.605Z",
+    "updatedAt": "2026-07-27T08:21:25.260Z"
+  },
+  {
+    "_id": "6a670b45b148078fea736933",
+    "slug": "event-transportation",
+    "title": "Event Transportation",
+    "group": "corporate",
+    "summary": "Conferences, delegations, corporate events and weddings — coordinated multi-vehicle movements.",
+    "body": "Moving two hundred delegates between an airport, three hotels and a convention centre is choreography. We plan it, staff it and run it.\n\n- Delegation fleets: executive sedans, SUVs, coasters and buses under one coordinator\n- Airport meet & greet with named signage\n- Wedding cars decorated to your theme, with formally dressed chauffeurs\n- Guest shuttles on published schedules\n- On-site transport desk for large events\n\nOne contract, one coordinator, one accountable operator — however many vehicles the event needs.",
+    "image": {
+      "publicId": "",
+      "url": "https://images.unsplash.com/photo-1669886845445-c2350d2431f5?w=1600&q=80&auto=format",
+      "alt": "Event coaster fleet"
+    },
+    "relatedVehicleClasses": [
+      "vip",
+      "sedan",
+      "event"
+    ],
+    "order": 6,
+    "active": true,
+    "__v": 0,
+    "createdAt": "2026-07-27T07:39:49.605Z",
+    "updatedAt": "2026-07-27T08:21:25.516Z"
+  },
+  {
+    "_id": "6a670b45b148078fea736934",
+    "slug": "airport-transfers",
+    "title": "Airport Transfers",
+    "group": "individual",
+    "summary": "Punctual pickups and drop-offs for every flight — live tracking, meet & greet, 24/7.",
+    "body": "Flight delayed? No problem — we track your flight in real time and adjust the pickup accordingly.\n\n- Live flight tracking on every airport booking\n- Meet & greet at arrivals with named signage\n- Fixed, transparent transfer pricing per vehicle\n- 24/7 availability at all major Pakistani airports\n- Child seats and extra luggage space on request\n\nBook online in minutes; our team confirms by phone or WhatsApp.",
+    "image": {
+      "publicId": "",
+      "url": "https://images.unsplash.com/photo-1436491865332-7a61a109cc05?w=1600&q=80&auto=format",
+      "alt": "Airport terminal pickup"
+    },
+    "relatedVehicleClasses": [
+      "economy",
+      "sedan",
+      "suv",
+      "event"
+    ],
+    "order": 7,
+    "active": true,
+    "__v": 0,
+    "createdAt": "2026-07-27T07:39:49.605Z",
+    "updatedAt": "2026-07-27T08:21:25.770Z"
+  },
+  {
+    "_id": "6a670b45b148078fea736935",
+    "slug": "intercity-travel",
+    "title": "Intercity Travel",
+    "group": "individual",
+    "summary": "Comfortable chauffeur-driven point-to-point journeys between all major cities.",
+    "body": "Travelling between Islamabad, Lahore, Karachi, Peshawar or beyond? Book a chauffeur-driven sedan or SUV for a comfortable, direct door-to-door journey.\n\n- Door-to-door service between any two cities\n- Experienced highway drivers on familiar routes\n- Fixed transparent fares agreed before departure\n- Rest stops planned to your preference\n- One-way and return options\n\nFor groups, our Grand Cabin vans and coasters make the same journeys together.",
+    "image": {
+      "publicId": "",
+      "url": "https://images.unsplash.com/photo-1541625602330-2277a4c46182?w=1600&q=80&auto=format",
+      "alt": "Highway journey between cities"
+    },
+    "relatedVehicleClasses": [
+      "sedan",
+      "suv",
+      "event"
+    ],
+    "order": 8,
+    "active": true,
+    "__v": 0,
+    "createdAt": "2026-07-27T07:39:49.605Z",
+    "updatedAt": "2026-07-27T08:21:26.039Z"
+  },
+  {
+    "_id": "6a670b45b148078fea736936",
+    "slug": "tourism-leisure",
+    "title": "Tourism & Leisure",
+    "group": "individual",
+    "summary": "Family and business tours, Northern Areas expeditions and custom packages with mountain-route drivers.",
+    "body": "Hunza, Skardu, Naran, Swat — Pakistan's north rewards travellers who arrive with the right vehicle and the right driver.\n\n- Custom multi-day itineraries built around your dates\n- Experienced mountain-route drivers who know every pass\n- 4x4s and SUVs specified for northern terrain\n- Family tours, honeymoon packages and business retreats\n- Full route planning, hotel coordination and flexible stops\n\nTell us where you want to wake up; we will plan the road that gets you there.",
+    "image": {
+      "publicId": "",
+      "url": "https://images.unsplash.com/photo-1469854523086-cc02fe5d8800?w=1600&q=80&auto=format",
+      "alt": "SUV on the Karakoram Highway"
+    },
+    "relatedVehicleClasses": [
+      "suv",
+      "event"
+    ],
+    "order": 9,
+    "active": true,
+    "__v": 0,
+    "createdAt": "2026-07-27T07:39:49.605Z",
+    "updatedAt": "2026-07-27T08:21:26.285Z"
+  },
+  {
+    "_id": "6a670b45b148078fea736937",
+    "slug": "executive-vip-transport",
+    "title": "Executive & VIP Transport",
+    "group": "specialized",
+    "summary": "Mercedes, BMW and flagship SUVs with protocol-trained chauffeurs for leadership and delegations.",
+    "body": "When the passenger is the principal, the vehicle and the driver are part of the protocol.\n\n- Executive delegate fleet: Mercedes C/S-Class, BMW 5–7 Series, Toyota Crown, Honda Accord\n- Flagship SUVs: Land Cruiser V8, LX and Prado\n- Protocol-trained, formally dressed chauffeurs\n- Route reconnaissance and timing rehearsals for formal movements\n- Discretion and confidentiality as standard\n\nBoard chairs, ministers, ambassadors and visiting executives are moved on exactly this fleet every week.",
+    "image": {
+      "publicId": "",
+      "url": "https://images.unsplash.com/photo-1563720223185-11003d516935?w=1600&q=80&auto=format",
+      "alt": "Executive Mercedes sedan"
+    },
+    "relatedVehicleClasses": [
+      "vip",
+      "suv"
+    ],
+    "order": 10,
+    "active": true,
+    "__v": 0,
+    "createdAt": "2026-07-27T07:39:49.605Z",
+    "updatedAt": "2026-07-27T07:39:49.605Z"
+  },
+  {
+    "_id": "6a670b45b148078fea736938",
+    "slug": "secure-specialized-transport",
+    "title": "Secure & Specialized Transport",
+    "group": "specialized",
+    "summary": "B-6 armored fleet with security-trained drivers and escort coordination for elevated-threat movements.",
+    "body": "For principals and cargo that face genuine threat, we operate a **B-6 armored fleet** — REVO, Prado, Fortuner and Land Cruiser V8 — supported by procedures, not just steel.\n\n- B-6 ballistic protection as our fleet standard\n- Security-trained drivers with defensive and evasive driving instruction\n- Convoy and escort coordination with your security provider\n- Journey management through the 24/7 Operations Control Room\n- Route planning, alternates and check-in protocols on every movement\n\nEmbassies, missions and corporate security teams engage this capability under standing contracts. See our full [Safety & Security protocol](/safety).",
+    "image": {
+      "publicId": "",
+      "url": "https://images.unsplash.com/photo-1654688554491-69d21d38fb91?w=1600&q=80&auto=format",
+      "alt": "Armored Land Cruiser"
+    },
+    "relatedVehicleClasses": [
+      "specialized",
+      "suv"
+    ],
+    "order": 11,
+    "active": true,
+    "__v": 0,
+    "createdAt": "2026-07-27T07:39:49.605Z",
+    "updatedAt": "2026-07-27T07:39:49.605Z"
+  },
+  {
+    "_id": "6a670b45b148078fea736939",
+    "slug": "self-drive-rental",
+    "title": "Self-Drive Rental",
+    "group": "specialized",
+    "summary": "Drive yourself — verified handover, transparent terms and a joint inspection that protects you too.",
+    "body": "Prefer to drive yourself? Selected vehicles from our fleet are available for self-drive rental under a clear, documented process.\n\n- Original CNIC/passport and valid driving licence verified at pickup — nothing uploaded online\n- Joint handover inspection: condition, fuel and mileage photographed together\n- Transparent permitted-use terms and security deposit\n- 24/7 breakdown support while you drive\n- Joint return inspection closes the rental cleanly\n\nSee the full process, requirements and eligible vehicles on our [Self-Drive page](/self-drive).",
+    "image": {
+      "publicId": "",
+      "url": "https://images.unsplash.com/photo-1638618164682-12b986ec2a75?w=1600&q=80&auto=format",
+      "alt": "Self-drive rental sedan"
+    },
+    "relatedVehicleClasses": [
+      "economy",
+      "sedan"
+    ],
+    "order": 12,
+    "active": true,
+    "__v": 0,
+    "createdAt": "2026-07-27T07:39:49.605Z",
+    "updatedAt": "2026-07-27T07:39:49.605Z"
+  }
+]

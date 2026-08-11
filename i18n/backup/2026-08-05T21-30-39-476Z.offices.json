@@ -1,0 +1,131 @@
+[
+  {
+    "_id": "6a670b43b148078fea736904",
+    "city": "Islamabad",
+    "address": "Head Office, 82-E Fazal-e-Haq Road, Blue Area, Islamabad",
+    "phones": [
+      "+92 51 260 1997",
+      "+92 335 555 1997"
+    ],
+    "email": "info@shanitravels.pk",
+    "mapUrl": "https://maps.google.com/?q=Blue+Area+Islamabad",
+    "isHeadOffice": true,
+    "order": 0,
+    "active": true,
+    "__v": 0,
+    "createdAt": "2026-07-27T07:39:47.721Z",
+    "updatedAt": "2026-07-27T07:39:47.721Z"
+  },
+  {
+    "_id": "6a670b43b148078fea736905",
+    "city": "Lahore",
+    "address": "Regional Office, Main Boulevard, Gulberg III, Lahore",
+    "phones": [
+      "+92 42 357 1997"
+    ],
+    "email": "lahore@shanitravels.pk",
+    "mapUrl": "https://maps.google.com/?q=Gulberg+III+Lahore",
+    "isHeadOffice": false,
+    "order": 1,
+    "active": true,
+    "__v": 0,
+    "createdAt": "2026-07-27T07:39:47.721Z",
+    "updatedAt": "2026-07-27T07:39:47.721Z"
+  },
+  {
+    "_id": "6a670b43b148078fea736906",
+    "city": "Karachi",
+    "address": "Regional Office, Jinnah International Airport area, Karachi",
+    "phones": [
+      "+92 21 345 1997"
+    ],
+    "email": "karachi@shanitravels.pk",
+    "mapUrl": "https://maps.google.com/?q=Jinnah+International+Airport+Karachi",
+    "isHeadOffice": false,
+    "order": 2,
+    "active": true,
+    "__v": 0,
+    "createdAt": "2026-07-27T07:39:47.721Z",
+    "updatedAt": "2026-07-27T07:39:47.721Z"
+  },
+  {
+    "_id": "6a670b43b148078fea736907",
+    "city": "Peshawar",
+    "address": "Branch Office, University Road, Peshawar",
+    "phones": [
+      "+92 91 570 1997"
+    ],
+    "email": "",
+    "mapUrl": "https://maps.google.com/?q=University+Road+Peshawar",
+    "isHeadOffice": false,
+    "order": 3,
+    "active": true,
+    "__v": 0,
+    "createdAt": "2026-07-27T07:39:47.721Z",
+    "updatedAt": "2026-07-27T07:39:47.721Z"
+  },
+  {
+    "_id": "6a670b43b148078fea736908",
+    "city": "Quetta",
+    "address": "Branch Office, Jinnah Road, Quetta",
+    "phones": [
+      "+92 81 282 1997"
+    ],
+    "email": "",
+    "mapUrl": "https://maps.google.com/?q=Jinnah+Road+Quetta",
+    "isHeadOffice": false,
+    "order": 4,
+    "active": true,
+    "__v": 0,
+    "createdAt": "2026-07-27T07:39:47.721Z",
+    "updatedAt": "2026-07-27T07:39:47.721Z"
+  },
+  {
+    "_id": "6a670b43b148078fea736909",
+    "city": "Multan",
+    "address": "Branch Office, Abdali Road, Multan",
+    "phones": [
+      "+92 61 458 1997"
+    ],
+    "email": "",
+    "mapUrl": "https://maps.google.com/?q=Abdali+Road+Multan",
+    "isHeadOffice": false,
+    "order": 5,
+    "active": true,
+    "__v": 0,
+    "createdAt": "2026-07-27T07:39:47.721Z",
+    "updatedAt": "2026-07-27T07:39:47.721Z"
+  },
+  {
+    "_id": "6a670b43b148078fea73690a",
+    "city": "Sukkur",
+    "address": "Branch Office, Military Road, Sukkur",
+    "phones": [
+      "+92 71 561 1997"
+    ],
+    "email": "",
+    "mapUrl": "https://maps.google.com/?q=Military+Road+Sukkur",
+    "isHeadOffice": false,
+    "order": 6,
+    "active": true,
+    "__v": 0,
+    "createdAt": "2026-07-27T07:39:47.721Z",
+    "updatedAt": "2026-07-27T07:39:47.721Z"
+  },
+  {
+    "_id": "6a670b43b148078fea73690b",
+    "city": "Hyderabad",
+    "address": "Branch Office, Auto Bhan Road, Hyderabad",
+    "phones": [
+      "+92 22 278 1997"
+    ],
+    "email": "",
+    "mapUrl": "https://maps.google.com/?q=Auto+Bhan+Road+Hyderabad",
+    "isHeadOffice": false,
+    "order": 7,
+    "active": true,
+    "__v": 0,
+    "createdAt": "2026-07-27T07:39:47.721Z",
+    "updatedAt": "2026-07-27T07:39:47.721Z"
+  }
+]

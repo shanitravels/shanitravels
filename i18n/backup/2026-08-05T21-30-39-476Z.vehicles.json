@@ -1,0 +1,1947 @@
+[
+  {
+    "_id": "6a670b42b148078fea7368d9",
+    "slug": "suzuki-alto-660",
+    "name": "Suzuki Alto 660",
+    "class": "economy",
+    "modelYears": "2021–2026",
+    "seats": 4,
+    "engine": "660cc petrol",
+    "transmission": "Automatic",
+    "driveType": "FWD",
+    "interiorFeatures": [
+      "Air conditioning",
+      "Fuel-efficient engine",
+      "Ideal for city routes",
+      "Comfortable for up to 4"
+    ],
+    "images": [
+      {
+        "publicId": "",
+        "url": "https://images.unsplash.com/photo-1762332968954-a74836324d61?w=1600&q=80&auto=format",
+        "alt": "Suzuki Alto city hatchback",
+        "order": 0
+      }
+    ],
+    "rates": {
+      "perHour": 550,
+      "perDay": 5500,
+      "perWeek": 36575,
+      "perMonth": 132000,
+      "fuelPerKm": 32,
+      "airportTransfer": 4800
+    },
+    "currency": "PKR",
+    "armorLevel": null,
+    "rollCage": false,
+    "selfDriveAvailable": true,
+    "selfDrive": {
+      "perDay": null,
+      "perWeek": null,
+      "perMonth": null,
+      "securityDeposit": null
+    },
+    "featured": false,
+    "active": true,
+    "order": 0,
+    "__v": 0,
+    "createdAt": "2026-07-27T07:39:46.837Z",
+    "updatedAt": "2026-07-27T07:39:46.837Z"
+  },
+  {
+    "_id": "6a670b42b148078fea7368da",
+    "slug": "suzuki-cultus-1000",
+    "name": "Suzuki Cultus 1000",
+    "class": "economy",
+    "modelYears": "2019–2025",
+    "seats": 4,
+    "engine": "1.0L petrol",
+    "transmission": "Automatic / Manual",
+    "driveType": "FWD",
+    "interiorFeatures": [
+      "Air conditioning",
+      "Practical five-door hatch",
+      "Light on fuel",
+      "Easy city parking"
+    ],
+    "images": [
+      {
+        "publicId": "",
+        "url": "https://images.unsplash.com/photo-1762332968954-a74836324d61?w=1600&q=80&auto=format",
+        "alt": "Suzuki Cultus hatchback",
+        "order": 0
+      }
+    ],
+    "rates": {
+      "perHour": 550,
+      "perDay": 5500,
+      "perWeek": 36575,
+      "perMonth": 132000,
+      "fuelPerKm": 32,
+      "airportTransfer": 4800
+    },
+    "currency": "PKR",
+    "armorLevel": null,
+    "rollCage": false,
+    "selfDriveAvailable": true,
+    "selfDrive": {
+      "perDay": null,
+      "perWeek": null,
+      "perMonth": null,
+      "securityDeposit": null
+    },
+    "featured": false,
+    "active": true,
+    "order": 1,
+    "__v": 0,
+    "createdAt": "2026-07-27T07:39:46.839Z",
+    "updatedAt": "2026-07-27T07:39:46.839Z"
+  },
+  {
+    "_id": "6a670b42b148078fea7368db",
+    "slug": "suzuki-wagon-r-1000",
+    "name": "Suzuki Wagon-R 1000",
+    "class": "economy",
+    "modelYears": "2019–2025",
+    "seats": 4,
+    "engine": "1.0L petrol",
+    "transmission": "Manual",
+    "driveType": "FWD",
+    "interiorFeatures": [
+      "Air conditioning",
+      "Tall, roomy cabin",
+      "Fuel-efficient",
+      "City & short-route hire"
+    ],
+    "images": [
+      {
+        "publicId": "",
+        "url": "https://images.unsplash.com/photo-1762332968954-a74836324d61?w=1600&q=80&auto=format",
+        "alt": "Suzuki Wagon-R hatchback",
+        "order": 0
+      }
+    ],
+    "rates": {
+      "perHour": 550,
+      "perDay": 5500,
+      "perWeek": 36575,
+      "perMonth": 132000,
+      "fuelPerKm": 32,
+      "airportTransfer": 4800
+    },
+    "currency": "PKR",
+    "armorLevel": null,
+    "rollCage": false,
+    "selfDriveAvailable": true,
+    "selfDrive": {
+      "perDay": null,
+      "perWeek": null,
+      "perMonth": null,
+      "securityDeposit": null
+    },
+    "featured": false,
+    "active": true,
+    "order": 2,
+    "__v": 0,
+    "createdAt": "2026-07-27T07:39:46.839Z",
+    "updatedAt": "2026-07-27T07:39:46.839Z"
+  },
+  {
+    "_id": "6a670b42b148078fea7368dc",
+    "slug": "kia-picanto-1000",
+    "name": "Kia Picanto 1000",
+    "class": "economy",
+    "modelYears": "2020–2025",
+    "seats": 4,
+    "engine": "1.0L petrol",
+    "transmission": "Automatic",
+    "driveType": "FWD",
+    "interiorFeatures": [
+      "Air conditioning",
+      "Compact automatic",
+      "Easy to drive",
+      "Ideal first self-drive"
+    ],
+    "images": [
+      {
+        "publicId": "",
+        "url": "https://images.unsplash.com/photo-1762332968954-a74836324d61?w=1600&q=80&auto=format",
+        "alt": "Kia Picanto hatchback",
+        "order": 0
+      }
+    ],
+    "rates": {
+      "perHour": 550,
+      "perDay": 5500,
+      "perWeek": 36575,
+      "perMonth": 132000,
+      "fuelPerKm": 32,
+      "airportTransfer": 4800
+    },
+    "currency": "PKR",
+    "armorLevel": null,
+    "rollCage": false,
+    "selfDriveAvailable": true,
+    "selfDrive": {
+      "perDay": null,
+      "perWeek": null,
+      "perMonth": null,
+      "securityDeposit": null
+    },
+    "featured": false,
+    "active": true,
+    "order": 3,
+    "__v": 0,
+    "createdAt": "2026-07-27T07:39:46.839Z",
+    "updatedAt": "2026-07-27T07:39:46.839Z"
+  },
+  {
+    "_id": "6a670b42b148078fea7368dd",
+    "slug": "toyota-corolla-xli-gli",
+    "name": "Toyota Corolla XLI / GLI",
+    "class": "sedan",
+    "modelYears": "2018–2023",
+    "seats": 4,
+    "engine": "1.3L petrol",
+    "transmission": "Manual / Automatic",
+    "driveType": "FWD",
+    "interiorFeatures": [
+      "Chauffeur included",
+      "Central locking & power windows",
+      "Bluetooth/USB infotainment",
+      "Dual airbags"
+    ],
+    "images": [
+      {
+        "publicId": "",
+        "url": "https://images.unsplash.com/photo-1638618164682-12b986ec2a75?w=1600&q=80&auto=format",
+        "alt": "Toyota Corolla GLI sedan",
+        "order": 0
+      }
+    ],
+    "rates": {
+      "perHour": 650,
+      "perDay": 6500,
+      "perWeek": 43225,
+      "perMonth": 156000,
+      "fuelPerKm": 39,
+      "airportTransfer": 5800
+    },
+    "currency": "PKR",
+    "armorLevel": null,
+    "rollCage": false,
+    "selfDriveAvailable": true,
+    "selfDrive": {
+      "perDay": null,
+      "perWeek": null,
+      "perMonth": null,
+      "securityDeposit": null
+    },
+    "featured": false,
+    "active": true,
+    "order": 0,
+    "__v": 0,
+    "createdAt": "2026-07-27T07:39:46.839Z",
+    "updatedAt": "2026-07-27T07:39:46.839Z"
+  },
+  {
+    "_id": "6a670b42b148078fea7368de",
+    "slug": "toyota-yaris",
+    "name": "Toyota Yaris",
+    "class": "sedan",
+    "modelYears": "2022–2026",
+    "seats": 4,
+    "engine": "1.3L petrol",
+    "transmission": "Automatic",
+    "driveType": "FWD",
+    "interiorFeatures": [
+      "Chauffeur included",
+      "Air conditioning",
+      "Smooth city & highway ride",
+      "Comfortable for up to 4"
+    ],
+    "images": [
+      {
+        "publicId": "",
+        "url": "https://images.unsplash.com/photo-1749058983232-59b967855b18?w=1600&q=80&auto=format",
+        "alt": "Toyota Yaris sedan",
+        "order": 0
+      }
+    ],
+    "rates": {
+      "perHour": 750,
+      "perDay": 7500,
+      "perWeek": 49875,
+      "perMonth": 180000,
+      "fuelPerKm": 39,
+      "airportTransfer": 5800
+    },
+    "currency": "PKR",
+    "armorLevel": null,
+    "rollCage": false,
+    "selfDriveAvailable": true,
+    "selfDrive": {
+      "perDay": null,
+      "perWeek": null,
+      "perMonth": null,
+      "securityDeposit": null
+    },
+    "featured": false,
+    "active": true,
+    "order": 1,
+    "__v": 0,
+    "createdAt": "2026-07-27T07:39:46.839Z",
+    "updatedAt": "2026-07-27T07:39:46.839Z"
+  },
+  {
+    "_id": "6a670b42b148078fea7368df",
+    "slug": "toyota-corolla-altis-1600x",
+    "name": "Toyota Corolla Altis 1600 X",
+    "class": "sedan",
+    "modelYears": "2022–2026",
+    "seats": 4,
+    "engine": "1.6L petrol",
+    "transmission": "Automatic (CVT)",
+    "driveType": "FWD",
+    "interiorFeatures": [
+      "Chauffeur included",
+      "Touchscreen infotainment",
+      "ABS/EBD with dual airbags",
+      "Executive-ready cabin"
+    ],
+    "images": [
+      {
+        "publicId": "",
+        "url": "https://images.unsplash.com/photo-1623869675781-80aa31012a5a?w=1600&q=80&auto=format",
+        "alt": "Toyota Corolla Altis X sedan",
+        "order": 0
+      }
+    ],
+    "rates": {
+      "perHour": null,
+      "perDay": null,
+      "perWeek": null,
+      "perMonth": null,
+      "fuelPerKm": null,
+      "airportTransfer": null
+    },
+    "currency": "PKR",
+    "armorLevel": null,
+    "rollCage": false,
+    "selfDriveAvailable": true,
+    "selfDrive": null,
+    "featured": false,
+    "active": true,
+    "order": 2,
+    "__v": 0,
+    "createdAt": "2026-07-27T07:39:46.840Z",
+    "updatedAt": "2026-08-05T09:08:09.280Z"
+  },
+  {
+    "_id": "6a670b42b148078fea7368e0",
+    "slug": "toyota-corolla-grande-1800",
+    "name": "Toyota Corolla Grande 1800CC",
+    "class": "sedan",
+    "modelYears": "2023–2026",
+    "seats": 4,
+    "engine": "1.8L petrol",
+    "transmission": "Automatic (CVT)",
+    "driveType": "FWD",
+    "interiorFeatures": [
+      "Chauffeur included",
+      "Leather seats",
+      "Touchscreen infotainment",
+      "Cruise control"
+    ],
+    "images": [
+      {
+        "publicId": "shani-travels/vehicles/dwld5gbxthdzys7jcyrt",
+        "url": "https://res.cloudinary.com/buhwgcug/image/upload/v1785929791/shani-travels/vehicles/dwld5gbxthdzys7jcyrt.webp",
+        "alt": "",
+        "order": 0
+      },
+      {
+        "publicId": "shani-travels/vehicles/qzxqstcprdsfghegoa3s",
+        "url": "https://res.cloudinary.com/buhwgcug/image/upload/v1785929792/shani-travels/vehicles/qzxqstcprdsfghegoa3s.webp",
+        "alt": "",
+        "order": 1
+      },
+      {
+        "publicId": "shani-travels/vehicles/rjoljdar7yknuzfyzwpp",
+        "url": "https://res.cloudinary.com/buhwgcug/image/upload/v1785929793/shani-travels/vehicles/rjoljdar7yknuzfyzwpp.webp",
+        "alt": "",
+        "order": 2
+      },
+      {
+        "publicId": "shani-travels/vehicles/reuj6q2w3zpssxmawvia",
+        "url": "https://res.cloudinary.com/buhwgcug/image/upload/v1785929794/shani-travels/vehicles/reuj6q2w3zpssxmawvia.webp",
+        "alt": "",
+        "order": 3
+      }
+    ],
+    "rates": {
+      "perHour": 850,
+      "perDay": 8500,
+      "perWeek": 56525,
+      "perMonth": 204000,
+      "fuelPerKm": 42,
+      "airportTransfer": 6800
+    },
+    "currency": "PKR",
+    "armorLevel": null,
+    "rollCage": false,
+    "selfDriveAvailable": true,
+    "selfDrive": {
+      "perDay": null,
+      "perWeek": null,
+      "perMonth": null,
+      "securityDeposit": null
+    },
+    "featured": true,
+    "active": true,
+    "order": 3,
+    "__v": 0,
+    "createdAt": "2026-07-27T07:39:46.840Z",
+    "updatedAt": "2026-08-05T11:36:52.093Z"
+  },
+  {
+    "_id": "6a670b42b148078fea7368e1",
+    "slug": "honda-city-1200",
+    "name": "Honda City 1200",
+    "class": "sedan",
+    "modelYears": "2021–2026",
+    "seats": 4,
+    "engine": "1.2L i-VTEC",
+    "transmission": "Automatic (CVT)",
+    "driveType": "FWD",
+    "interiorFeatures": [
+      "Chauffeur included",
+      "Air conditioning",
+      "Comfortable daily hire",
+      "Compact sedan economy"
+    ],
+    "images": [
+      {
+        "publicId": "",
+        "url": "https://images.unsplash.com/photo-1631547891859-184677884115?w=1600&q=80&auto=format",
+        "alt": "Honda City sedan",
+        "order": 0
+      }
+    ],
+    "rates": {
+      "perHour": null,
+      "perDay": null,
+      "perWeek": null,
+      "perMonth": null,
+      "fuelPerKm": null,
+      "airportTransfer": null
+    },
+    "currency": "PKR",
+    "armorLevel": null,
+    "rollCage": false,
+    "selfDriveAvailable": true,
+    "selfDrive": null,
+    "featured": false,
+    "active": true,
+    "order": 4,
+    "__v": 0,
+    "createdAt": "2026-07-27T07:39:46.840Z",
+    "updatedAt": "2026-08-05T09:08:09.280Z"
+  },
+  {
+    "_id": "6a670b42b148078fea7368e2",
+    "slug": "honda-city-1500",
+    "name": "Honda City 1500",
+    "class": "sedan",
+    "modelYears": "2021–2026",
+    "seats": 4,
+    "engine": "1.5L i-VTEC",
+    "transmission": "Automatic (CVT)",
+    "driveType": "FWD",
+    "interiorFeatures": [
+      "Chauffeur included",
+      "Touchscreen infotainment",
+      "Cruise control",
+      "Comfortable for up to 4"
+    ],
+    "images": [
+      {
+        "publicId": "",
+        "url": "https://images.unsplash.com/photo-1631547891859-184677884115?w=1600&q=80&auto=format",
+        "alt": "Honda City 1.5 sedan",
+        "order": 0
+      }
+    ],
+    "rates": {
+      "perHour": null,
+      "perDay": null,
+      "perWeek": null,
+      "perMonth": null,
+      "fuelPerKm": null,
+      "airportTransfer": null
+    },
+    "currency": "PKR",
+    "armorLevel": null,
+    "rollCage": false,
+    "selfDriveAvailable": true,
+    "selfDrive": null,
+    "featured": false,
+    "active": true,
+    "order": 5,
+    "__v": 0,
+    "createdAt": "2026-07-27T07:39:46.840Z",
+    "updatedAt": "2026-08-05T09:08:09.280Z"
+  },
+  {
+    "_id": "6a670b42b148078fea7368e3",
+    "slug": "honda-civic-vti-oriel",
+    "name": "Honda Civic VTi Oriel 1500",
+    "class": "sedan",
+    "modelYears": "2022–2026",
+    "seats": 4,
+    "engine": "1.5L VTEC Turbo",
+    "transmission": "Automatic (CVT)",
+    "driveType": "FWD",
+    "interiorFeatures": [
+      "Chauffeur included",
+      "Sunroof & push start",
+      "Touchscreen infotainment",
+      "Dual auto climate control"
+    ],
+    "images": [
+      {
+        "publicId": "",
+        "url": "https://images.unsplash.com/photo-1626997077212-cfd5da89824e?w=1600&q=80&auto=format",
+        "alt": "Honda Civic VTi Oriel sedan",
+        "order": 0
+      }
+    ],
+    "rates": {
+      "perHour": 950,
+      "perDay": 9500,
+      "perWeek": 63175,
+      "perMonth": null,
+      "fuelPerKm": 45,
+      "airportTransfer": 7800
+    },
+    "currency": "PKR",
+    "armorLevel": null,
+    "rollCage": false,
+    "selfDriveAvailable": true,
+    "selfDrive": null,
+    "featured": true,
+    "active": true,
+    "order": 6,
+    "__v": 0,
+    "createdAt": "2026-07-27T07:39:46.840Z",
+    "updatedAt": "2026-08-05T09:08:09.280Z"
+  },
+  {
+    "_id": "6a670b42b148078fea7368e4",
+    "slug": "hyundai-elantra",
+    "name": "Hyundai Elantra",
+    "class": "sedan",
+    "modelYears": "2022–2026",
+    "seats": 4,
+    "engine": "1.6L / 2.0L petrol",
+    "transmission": "Automatic",
+    "driveType": "FWD",
+    "interiorFeatures": [
+      "Chauffeur included",
+      "Modern executive cabin",
+      "Touchscreen infotainment",
+      "Comfortable for up to 4"
+    ],
+    "images": [
+      {
+        "publicId": "",
+        "url": "https://images.unsplash.com/photo-1626997077212-cfd5da89824e?w=1600&q=80&auto=format",
+        "alt": "Hyundai Elantra sedan",
+        "order": 0
+      }
+    ],
+    "rates": {
+      "perHour": null,
+      "perDay": null,
+      "perWeek": null,
+      "perMonth": null,
+      "fuelPerKm": null,
+      "airportTransfer": null
+    },
+    "currency": "PKR",
+    "armorLevel": null,
+    "rollCage": false,
+    "selfDriveAvailable": true,
+    "selfDrive": null,
+    "featured": false,
+    "active": true,
+    "order": 7,
+    "__v": 0,
+    "createdAt": "2026-07-27T07:39:46.840Z",
+    "updatedAt": "2026-08-05T09:08:09.280Z"
+  },
+  {
+    "_id": "6a670b42b148078fea7368e5",
+    "slug": "hyundai-sonata",
+    "name": "Hyundai Sonata",
+    "class": "sedan",
+    "modelYears": "2022–2026",
+    "seats": 4,
+    "engine": "2.0L / 2.5L petrol",
+    "transmission": "Automatic",
+    "driveType": "FWD",
+    "interiorFeatures": [
+      "Chauffeur included",
+      "Full-size executive comfort",
+      "Premium infotainment",
+      "Boardroom-to-airport ready"
+    ],
+    "images": [
+      {
+        "publicId": "",
+        "url": "https://images.unsplash.com/photo-1563720223185-11003d516935?w=1600&q=80&auto=format",
+        "alt": "Hyundai Sonata executive sedan",
+        "order": 0
+      }
+    ],
+    "rates": {
+      "perHour": null,
+      "perDay": null,
+      "perWeek": null,
+      "perMonth": null,
+      "fuelPerKm": null,
+      "airportTransfer": null
+    },
+    "currency": "PKR",
+    "armorLevel": null,
+    "rollCage": false,
+    "selfDriveAvailable": true,
+    "selfDrive": null,
+    "featured": false,
+    "active": true,
+    "order": 8,
+    "__v": 0,
+    "createdAt": "2026-07-27T07:39:46.840Z",
+    "updatedAt": "2026-08-05T09:08:09.280Z"
+  },
+  {
+    "_id": "6a670b42b148078fea7368e6",
+    "slug": "toyota-land-cruiser-prado",
+    "name": "Toyota Land Cruiser Prado",
+    "class": "suv",
+    "modelYears": "2022–2026",
+    "seats": 7,
+    "engine": "2.8L diesel",
+    "transmission": "Automatic",
+    "driveType": "4x4",
+    "interiorFeatures": [
+      "Chauffeur included",
+      "7-seat premium cabin",
+      "Heated seats & parking sensors",
+      "City and northern terrain"
+    ],
+    "images": [
+      {
+        "publicId": "",
+        "url": "https://images.unsplash.com/photo-1613859492095-85d9944f09f6?w=1600&q=80&auto=format",
+        "alt": "Toyota Land Cruiser Prado",
+        "order": 0
+      }
+    ],
+    "rates": {
+      "perHour": 5000,
+      "perDay": 19500,
+      "perWeek": 129675,
+      "perMonth": null,
+      "fuelPerKm": 77,
+      "airportTransfer": 15800
+    },
+    "currency": "PKR",
+    "armorLevel": null,
+    "rollCage": false,
+    "selfDriveAvailable": false,
+    "selfDrive": null,
+    "featured": true,
+    "active": true,
+    "order": 0,
+    "__v": 0,
+    "createdAt": "2026-07-27T07:39:46.840Z",
+    "updatedAt": "2026-07-27T07:39:46.840Z"
+  },
+  {
+    "_id": "6a670b42b148078fea7368e7",
+    "slug": "toyota-land-cruiser-v8",
+    "name": "Toyota Land Cruiser V8",
+    "class": "suv",
+    "modelYears": "2019–2026",
+    "seats": 7,
+    "engine": "4.6L V8 petrol",
+    "transmission": "Automatic",
+    "driveType": "4x4",
+    "interiorFeatures": [
+      "Security-trained chauffeur",
+      "Premium wood & leather finish",
+      "360° camera",
+      "VIP & protocol travel"
+    ],
+    "images": [
+      {
+        "publicId": "",
+        "url": "https://images.unsplash.com/photo-1654688554491-69d21d38fb91?w=1600&q=80&auto=format",
+        "alt": "Toyota Land Cruiser V8",
+        "order": 0
+      }
+    ],
+    "rates": {
+      "perHour": 8000,
+      "perDay": 27500,
+      "perWeek": 182875,
+      "perMonth": null,
+      "fuelPerKm": 98,
+      "airportTransfer": 24800
+    },
+    "currency": "PKR",
+    "armorLevel": null,
+    "rollCage": false,
+    "selfDriveAvailable": false,
+    "selfDrive": null,
+    "featured": true,
+    "active": true,
+    "order": 1,
+    "__v": 0,
+    "createdAt": "2026-07-27T07:39:46.840Z",
+    "updatedAt": "2026-07-27T07:39:46.840Z"
+  },
+  {
+    "_id": "6a670b42b148078fea7368e8",
+    "slug": "lexus-lx",
+    "name": "Land Cruiser LX (Lexus)",
+    "class": "suv",
+    "modelYears": "2020–2026",
+    "seats": 7,
+    "engine": "5.7L V8 petrol",
+    "transmission": "Automatic",
+    "driveType": "4x4",
+    "interiorFeatures": [
+      "Security-trained chauffeur",
+      "Lexus luxury cabin",
+      "Flagship delegate SUV",
+      "Protocol movements"
+    ],
+    "images": [
+      {
+        "publicId": "",
+        "url": "https://images.unsplash.com/photo-1654688554491-69d21d38fb91?w=1600&q=80&auto=format",
+        "alt": "Lexus LX luxury SUV",
+        "order": 0
+      }
+    ],
+    "rates": {
+      "perHour": null,
+      "perDay": null,
+      "perWeek": null,
+      "perMonth": null,
+      "fuelPerKm": null,
+      "airportTransfer": null
+    },
+    "currency": "PKR",
+    "armorLevel": null,
+    "rollCage": false,
+    "selfDriveAvailable": false,
+    "selfDrive": null,
+    "featured": false,
+    "active": true,
+    "order": 2,
+    "__v": 0,
+    "createdAt": "2026-07-27T07:39:46.840Z",
+    "updatedAt": "2026-07-27T07:39:46.840Z"
+  },
+  {
+    "_id": "6a670b42b148078fea7368e9",
+    "slug": "toyota-fortuner",
+    "name": "Toyota Fortuner",
+    "class": "suv",
+    "modelYears": "2020–2026",
+    "seats": 7,
+    "engine": "2.7L petrol / 2.8L diesel",
+    "transmission": "Automatic",
+    "driveType": "4x4",
+    "interiorFeatures": [
+      "Chauffeur included",
+      "7-seater leather cabin",
+      "Dual-zone climate control",
+      "Genuine off-road capability"
+    ],
+    "images": [
+      {
+        "publicId": "",
+        "url": "https://images.unsplash.com/photo-1670054953044-2605dbd0d747?w=1600&q=80&auto=format",
+        "alt": "Toyota Fortuner SUV",
+        "order": 0
+      }
+    ],
+    "rates": {
+      "perHour": 3000,
+      "perDay": 17500,
+      "perWeek": 116375,
+      "perMonth": null,
+      "fuelPerKm": 77,
+      "airportTransfer": 14800
+    },
+    "currency": "PKR",
+    "armorLevel": null,
+    "rollCage": false,
+    "selfDriveAvailable": false,
+    "selfDrive": null,
+    "featured": false,
+    "active": true,
+    "order": 3,
+    "__v": 0,
+    "createdAt": "2026-07-27T07:39:46.840Z",
+    "updatedAt": "2026-07-27T07:39:46.840Z"
+  },
+  {
+    "_id": "6a670b42b148078fea7368ea",
+    "slug": "honda-brv",
+    "name": "Honda BR-V (7-seater)",
+    "class": "suv",
+    "modelYears": "2019–2024",
+    "seats": 7,
+    "engine": "1.5L i-VTEC",
+    "transmission": "Automatic (CVT)",
+    "driveType": "FWD",
+    "interiorFeatures": [
+      "Chauffeur included",
+      "7-seat flexible cabin",
+      "Air conditioning",
+      "Ideal for small group travel"
+    ],
+    "images": [
+      {
+        "publicId": "",
+        "url": "https://images.unsplash.com/photo-1570761511122-dd6342842496?w=1600&q=80&auto=format",
+        "alt": "Honda BR-V seven-seater",
+        "order": 0
+      }
+    ],
+    "rates": {
+      "perHour": 850,
+      "perDay": 8500,
+      "perWeek": 56525,
+      "perMonth": 204000,
+      "fuelPerKm": 54,
+      "airportTransfer": 8400
+    },
+    "currency": "PKR",
+    "armorLevel": null,
+    "rollCage": false,
+    "selfDriveAvailable": false,
+    "selfDrive": null,
+    "featured": false,
+    "active": true,
+    "order": 4,
+    "__v": 0,
+    "createdAt": "2026-07-27T07:39:46.840Z",
+    "updatedAt": "2026-07-27T07:39:46.840Z"
+  },
+  {
+    "_id": "6a670b42b148078fea7368eb",
+    "slug": "kia-sportage",
+    "name": "Kia Sportage",
+    "class": "suv",
+    "modelYears": "2021–2026",
+    "seats": 5,
+    "engine": "2.0L petrol",
+    "transmission": "Automatic",
+    "driveType": "AWD",
+    "interiorFeatures": [
+      "Chauffeur included",
+      "Panoramic sunroof",
+      "Dual touchscreen infotainment",
+      "Rain-sensing wipers"
+    ],
+    "images": [
+      {
+        "publicId": "",
+        "url": "https://images.unsplash.com/photo-1647501581530-053b42684b8d?w=1600&q=80&auto=format",
+        "alt": "Kia Sportage crossover",
+        "order": 0
+      }
+    ],
+    "rates": {
+      "perHour": 1150,
+      "perDay": 11500,
+      "perWeek": 76475,
+      "perMonth": null,
+      "fuelPerKm": 64,
+      "airportTransfer": 9800
+    },
+    "currency": "PKR",
+    "armorLevel": null,
+    "rollCage": false,
+    "selfDriveAvailable": false,
+    "selfDrive": null,
+    "featured": true,
+    "active": true,
+    "order": 5,
+    "__v": 0,
+    "createdAt": "2026-07-27T07:39:46.840Z",
+    "updatedAt": "2026-07-27T07:39:46.840Z"
+  },
+  {
+    "_id": "6a670b42b148078fea7368ec",
+    "slug": "hyundai-tucson",
+    "name": "Hyundai Tucson",
+    "class": "suv",
+    "modelYears": "2021–2026",
+    "seats": 5,
+    "engine": "2.0L petrol",
+    "transmission": "Automatic",
+    "driveType": "AWD",
+    "interiorFeatures": [
+      "Chauffeur included",
+      "Modern crossover cabin",
+      "Touchscreen infotainment",
+      "Comfortable for up to 5"
+    ],
+    "images": [
+      {
+        "publicId": "",
+        "url": "https://images.unsplash.com/photo-1647501581530-053b42684b8d?w=1600&q=80&auto=format",
+        "alt": "Hyundai Tucson crossover",
+        "order": 0
+      }
+    ],
+    "rates": {
+      "perHour": null,
+      "perDay": null,
+      "perWeek": null,
+      "perMonth": null,
+      "fuelPerKm": null,
+      "airportTransfer": null
+    },
+    "currency": "PKR",
+    "armorLevel": null,
+    "rollCage": false,
+    "selfDriveAvailable": false,
+    "selfDrive": null,
+    "featured": false,
+    "active": true,
+    "order": 6,
+    "__v": 0,
+    "createdAt": "2026-07-27T07:39:46.840Z",
+    "updatedAt": "2026-07-27T07:39:46.840Z"
+  },
+  {
+    "_id": "6a670b42b148078fea7368ed",
+    "slug": "changan-oshan-x7",
+    "name": "Changan Oshan X7",
+    "class": "suv",
+    "modelYears": "2022–2026",
+    "seats": 7,
+    "engine": "1.5L turbo petrol",
+    "transmission": "Automatic",
+    "driveType": "FWD",
+    "interiorFeatures": [
+      "Chauffeur included",
+      "7-seat family SUV",
+      "Panoramic roof",
+      "Feature-loaded cabin"
+    ],
+    "images": [
+      {
+        "publicId": "",
+        "url": "https://images.unsplash.com/photo-1647501581530-053b42684b8d?w=1600&q=80&auto=format",
+        "alt": "Changan Oshan X7 SUV",
+        "order": 0
+      }
+    ],
+    "rates": {
+      "perHour": null,
+      "perDay": null,
+      "perWeek": null,
+      "perMonth": null,
+      "fuelPerKm": null,
+      "airportTransfer": null
+    },
+    "currency": "PKR",
+    "armorLevel": null,
+    "rollCage": false,
+    "selfDriveAvailable": false,
+    "selfDrive": null,
+    "featured": false,
+    "active": true,
+    "order": 7,
+    "__v": 0,
+    "createdAt": "2026-07-27T07:39:46.841Z",
+    "updatedAt": "2026-07-27T07:39:46.841Z"
+  },
+  {
+    "_id": "6a670b42b148078fea7368ee",
+    "slug": "toyota-revo-4x4",
+    "name": "Toyota D/Cab REVO 4x4",
+    "class": "suv",
+    "modelYears": "2021–2026",
+    "seats": 5,
+    "engine": "2.8L diesel",
+    "transmission": "Automatic",
+    "driveType": "4x4",
+    "interiorFeatures": [
+      "4x4 double cabin",
+      "Experienced mountain-route driver",
+      "6-speed automatic",
+      "Field & project operations"
+    ],
+    "images": [
+      {
+        "publicId": "",
+        "url": "https://images.unsplash.com/photo-1714213624189-9a9fc8a0736a?w=1600&q=80&auto=format",
+        "alt": "Toyota Hilux REVO double cabin",
+        "order": 0
+      }
+    ],
+    "rates": {
+      "perHour": 2500,
+      "perDay": 14500,
+      "perWeek": 96425,
+      "perMonth": 320000,
+      "fuelPerKm": 77,
+      "airportTransfer": 13800
+    },
+    "currency": "PKR",
+    "armorLevel": null,
+    "rollCage": false,
+    "selfDriveAvailable": false,
+    "selfDrive": null,
+    "featured": false,
+    "active": true,
+    "order": 8,
+    "__v": 0,
+    "createdAt": "2026-07-27T07:39:46.841Z",
+    "updatedAt": "2026-07-27T07:39:46.841Z"
+  },
+  {
+    "_id": "6a670b42b148078fea7368ef",
+    "slug": "toyota-grand-cab-van",
+    "name": "Toyota Grand Cab Van",
+    "class": "event",
+    "modelYears": "2017–2022",
+    "seats": 12,
+    "engine": "2.8L diesel",
+    "transmission": "Manual",
+    "driveType": "RWD",
+    "interiorFeatures": [
+      "12+3 seated luxury layout",
+      "Reclining seats with privacy curtains",
+      "Large luggage compartment",
+      "Corporate shuttle favourite"
+    ],
+    "images": [
+      {
+        "publicId": "",
+        "url": "https://images.unsplash.com/photo-1678747172256-b37b7ac99cfc?w=1600&q=80&auto=format",
+        "alt": "Toyota Grand Cabin van",
+        "order": 0
+      }
+    ],
+    "rates": {
+      "perHour": 1500,
+      "perDay": 15000,
+      "perWeek": 99750,
+      "perMonth": 330000,
+      "fuelPerKm": 77,
+      "airportTransfer": 14400
+    },
+    "currency": "PKR",
+    "armorLevel": null,
+    "rollCage": false,
+    "selfDriveAvailable": false,
+    "selfDrive": null,
+    "featured": true,
+    "active": true,
+    "order": 0,
+    "__v": 0,
+    "createdAt": "2026-07-27T07:39:46.841Z",
+    "updatedAt": "2026-07-27T08:21:20.331Z"
+  },
+  {
+    "_id": "6a670b42b148078fea7368f0",
+    "slug": "toyota-hiace-van",
+    "name": "Toyota Hiace Van",
+    "class": "event",
+    "modelYears": "2008–2016",
+    "seats": 12,
+    "engine": "2.7L petrol",
+    "transmission": "Manual",
+    "driveType": "RWD",
+    "interiorFeatures": [
+      "12+3 seated layout",
+      "Privacy curtains",
+      "Large luggage compartment",
+      "Great for group travel"
+    ],
+    "images": [
+      {
+        "publicId": "",
+        "url": "https://images.unsplash.com/photo-1650807486050-a142ea418b19?w=1600&q=80&auto=format",
+        "alt": "Toyota Hiace van",
+        "order": 0
+      }
+    ],
+    "rates": {
+      "perHour": 1250,
+      "perDay": 10000,
+      "perWeek": 66500,
+      "perMonth": 240000,
+      "fuelPerKm": 77,
+      "airportTransfer": 13400
+    },
+    "currency": "PKR",
+    "armorLevel": null,
+    "rollCage": false,
+    "selfDriveAvailable": false,
+    "selfDrive": null,
+    "featured": false,
+    "active": true,
+    "order": 1,
+    "__v": 0,
+    "createdAt": "2026-07-27T07:39:46.841Z",
+    "updatedAt": "2026-07-27T08:21:20.331Z"
+  },
+  {
+    "_id": "6a670b42b148078fea7368f1",
+    "slug": "toyota-coaster-saloon",
+    "name": "Toyota Coaster Saloon 22-Seater",
+    "class": "event",
+    "modelYears": "2015–2024",
+    "seats": 22,
+    "engine": "Diesel (4/5-cylinder)",
+    "transmission": "Manual",
+    "driveType": "RWD",
+    "interiorFeatures": [
+      "22 comfortable seats",
+      "Onboard PA & audio system",
+      "Ideal for weddings & events",
+      "Dedicated professional driver"
+    ],
+    "images": [
+      {
+        "publicId": "",
+        "url": "https://images.unsplash.com/photo-1669886845445-c2350d2431f5?w=1600&q=80&auto=format",
+        "alt": "Toyota Coaster 22-seater",
+        "order": 0
+      }
+    ],
+    "rates": {
+      "perHour": 3000,
+      "perDay": 17500,
+      "perWeek": 116375,
+      "perMonth": null,
+      "fuelPerKm": 98,
+      "airportTransfer": 16400
+    },
+    "currency": "PKR",
+    "armorLevel": null,
+    "rollCage": false,
+    "selfDriveAvailable": false,
+    "selfDrive": null,
+    "featured": false,
+    "active": true,
+    "order": 0,
+    "__v": 0,
+    "createdAt": "2026-07-27T07:39:46.841Z",
+    "updatedAt": "2026-07-27T08:21:20.331Z"
+  },
+  {
+    "_id": "6a670b42b148078fea7368f2",
+    "slug": "yutong-bus",
+    "name": "Yutong Bus",
+    "class": "event",
+    "modelYears": "2018–2024",
+    "seats": 45,
+    "engine": "Diesel",
+    "transmission": "Manual",
+    "driveType": "RWD",
+    "interiorFeatures": [
+      "45+ seats",
+      "Air-conditioned saloon",
+      "Long-route touring",
+      "Event & delegation movement"
+    ],
+    "images": [
+      {
+        "publicId": "",
+        "url": "https://images.unsplash.com/photo-1669886845445-c2350d2431f5?w=1600&q=80&auto=format",
+        "alt": "Yutong touring bus",
+        "order": 0
+      }
+    ],
+    "rates": {
+      "perHour": null,
+      "perDay": null,
+      "perWeek": null,
+      "perMonth": null,
+      "fuelPerKm": null,
+      "airportTransfer": null
+    },
+    "currency": "PKR",
+    "armorLevel": null,
+    "rollCage": false,
+    "selfDriveAvailable": false,
+    "selfDrive": null,
+    "featured": false,
+    "active": true,
+    "order": 1,
+    "__v": 0,
+    "createdAt": "2026-07-27T07:39:46.841Z",
+    "updatedAt": "2026-07-27T08:21:20.331Z"
+  },
+  {
+    "_id": "6a670b42b148078fea7368f3",
+    "slug": "daewoo-bus",
+    "name": "Daewoo Bus",
+    "class": "event",
+    "modelYears": "2016–2024",
+    "seats": 45,
+    "engine": "Diesel",
+    "transmission": "Manual",
+    "driveType": "RWD",
+    "interiorFeatures": [
+      "45+ seats",
+      "Air-conditioned saloon",
+      "Intercity group travel",
+      "Experienced route drivers"
+    ],
+    "images": [
+      {
+        "publicId": "",
+        "url": "https://images.unsplash.com/photo-1669886845445-c2350d2431f5?w=1600&q=80&auto=format",
+        "alt": "Daewoo intercity bus",
+        "order": 0
+      }
+    ],
+    "rates": {
+      "perHour": null,
+      "perDay": null,
+      "perWeek": null,
+      "perMonth": null,
+      "fuelPerKm": null,
+      "airportTransfer": null
+    },
+    "currency": "PKR",
+    "armorLevel": null,
+    "rollCage": false,
+    "selfDriveAvailable": false,
+    "selfDrive": null,
+    "featured": false,
+    "active": true,
+    "order": 2,
+    "__v": 0,
+    "createdAt": "2026-07-27T07:39:46.841Z",
+    "updatedAt": "2026-07-27T08:21:20.331Z"
+  },
+  {
+    "_id": "6a670b42b148078fea7368f4",
+    "slug": "armored-revo-b6",
+    "name": "Armored REVO (B-6)",
+    "class": "specialized",
+    "modelYears": "2020–2025",
+    "seats": 5,
+    "engine": "2.8L diesel",
+    "transmission": "Automatic",
+    "driveType": "4x4",
+    "interiorFeatures": [
+      "B-6 ballistic protection",
+      "Security-trained chauffeur",
+      "Field-security movements",
+      "Convoy coordination available"
+    ],
+    "images": [
+      {
+        "publicId": "",
+        "url": "https://images.unsplash.com/photo-1714213624189-9a9fc8a0736a?w=1600&q=80&auto=format",
+        "alt": "Armored Toyota REVO",
+        "order": 0
+      }
+    ],
+    "rates": {
+      "perHour": null,
+      "perDay": null,
+      "perWeek": null,
+      "perMonth": null,
+      "fuelPerKm": null,
+      "airportTransfer": null
+    },
+    "currency": "PKR",
+    "armorLevel": "B-6",
+    "rollCage": true,
+    "selfDriveAvailable": false,
+    "selfDrive": null,
+    "featured": false,
+    "active": true,
+    "order": 0,
+    "__v": 0,
+    "createdAt": "2026-07-27T07:39:46.841Z",
+    "updatedAt": "2026-07-27T07:39:46.841Z"
+  },
+  {
+    "_id": "6a670b42b148078fea7368f5",
+    "slug": "armored-prado-b6",
+    "name": "Armored Prado (B-6)",
+    "class": "specialized",
+    "modelYears": "2019–2025",
+    "seats": 5,
+    "engine": "2.8L diesel",
+    "transmission": "Automatic",
+    "driveType": "4x4",
+    "interiorFeatures": [
+      "B-6 ballistic protection",
+      "Security-trained chauffeur",
+      "Discreet protocol profile",
+      "Embassy & mission movements"
+    ],
+    "images": [
+      {
+        "publicId": "",
+        "url": "https://images.unsplash.com/photo-1613859492095-85d9944f09f6?w=1600&q=80&auto=format",
+        "alt": "Armored Land Cruiser Prado",
+        "order": 0
+      }
+    ],
+    "rates": {
+      "perHour": null,
+      "perDay": null,
+      "perWeek": null,
+      "perMonth": null,
+      "fuelPerKm": null,
+      "airportTransfer": null
+    },
+    "currency": "PKR",
+    "armorLevel": "B-6",
+    "rollCage": false,
+    "selfDriveAvailable": false,
+    "selfDrive": null,
+    "featured": false,
+    "active": true,
+    "order": 1,
+    "__v": 0,
+    "createdAt": "2026-07-27T07:39:46.841Z",
+    "updatedAt": "2026-07-27T07:39:46.841Z"
+  },
+  {
+    "_id": "6a670b42b148078fea7368f6",
+    "slug": "armored-fortuner-b6",
+    "name": "Armored Fortuner (B-6)",
+    "class": "specialized",
+    "modelYears": "2020–2025",
+    "seats": 5,
+    "engine": "2.8L diesel",
+    "transmission": "Automatic",
+    "driveType": "4x4",
+    "interiorFeatures": [
+      "B-6 ballistic protection",
+      "Security-trained chauffeur",
+      "Urban protective movements",
+      "Low-signature option"
+    ],
+    "images": [
+      {
+        "publicId": "",
+        "url": "https://images.unsplash.com/photo-1670054953044-2605dbd0d747?w=1600&q=80&auto=format",
+        "alt": "Armored Toyota Fortuner",
+        "order": 0
+      }
+    ],
+    "rates": {
+      "perHour": null,
+      "perDay": null,
+      "perWeek": null,
+      "perMonth": null,
+      "fuelPerKm": null,
+      "airportTransfer": null
+    },
+    "currency": "PKR",
+    "armorLevel": "B-6",
+    "rollCage": false,
+    "selfDriveAvailable": false,
+    "selfDrive": null,
+    "featured": false,
+    "active": true,
+    "order": 2,
+    "__v": 0,
+    "createdAt": "2026-07-27T07:39:46.841Z",
+    "updatedAt": "2026-07-27T07:39:46.841Z"
+  },
+  {
+    "_id": "6a670b42b148078fea7368f7",
+    "slug": "armored-land-cruiser-v8-b6",
+    "name": "Armored Land Cruiser V8 (B-6)",
+    "class": "specialized",
+    "modelYears": "2018–2024",
+    "seats": 5,
+    "engine": "4.5L V8 diesel",
+    "transmission": "Automatic",
+    "driveType": "4x4",
+    "interiorFeatures": [
+      "B-6 ballistic protection",
+      "Security-trained chauffeur",
+      "Convoy coordination available",
+      "High-threat movements"
+    ],
+    "images": [
+      {
+        "publicId": "",
+        "url": "https://images.unsplash.com/photo-1654688554491-69d21d38fb91?w=1600&q=80&auto=format",
+        "alt": "Armored Land Cruiser V8",
+        "order": 0
+      }
+    ],
+    "rates": {
+      "perHour": null,
+      "perDay": 85000,
+      "perWeek": null,
+      "perMonth": null,
+      "fuelPerKm": null,
+      "airportTransfer": null
+    },
+    "currency": "PKR",
+    "armorLevel": "B-6",
+    "rollCage": false,
+    "selfDriveAvailable": false,
+    "selfDrive": null,
+    "featured": false,
+    "active": true,
+    "order": 3,
+    "__v": 0,
+    "createdAt": "2026-07-27T07:39:46.841Z",
+    "updatedAt": "2026-07-27T07:39:46.841Z"
+  },
+  {
+    "_id": "6a670b42b148078fea7368f8",
+    "slug": "mercedes-c-class",
+    "name": "Mercedes-Benz C-Class 250",
+    "class": "vip",
+    "modelYears": "2019–2025",
+    "seats": 4,
+    "engine": "2.0L turbo petrol",
+    "transmission": "Automatic",
+    "driveType": "RWD",
+    "interiorFeatures": [
+      "Protocol-trained chauffeur",
+      "Executive rear cabin",
+      "Delegate & VIP movement",
+      "Discreet, immaculate presentation"
+    ],
+    "images": [
+      {
+        "publicId": "",
+        "url": "https://images.unsplash.com/photo-1563720223185-11003d516935?w=1600&q=80&auto=format",
+        "alt": "Mercedes-Benz C-Class",
+        "order": 0
+      }
+    ],
+    "rates": {
+      "perHour": null,
+      "perDay": null,
+      "perWeek": null,
+      "perMonth": null,
+      "fuelPerKm": null,
+      "airportTransfer": null
+    },
+    "currency": "PKR",
+    "armorLevel": null,
+    "rollCage": false,
+    "selfDriveAvailable": false,
+    "selfDrive": null,
+    "featured": false,
+    "active": true,
+    "order": 0,
+    "__v": 0,
+    "createdAt": "2026-07-27T07:39:46.841Z",
+    "updatedAt": "2026-07-27T07:39:46.841Z"
+  },
+  {
+    "_id": "6a670b42b148078fea7368f9",
+    "slug": "mercedes-s-class",
+    "name": "Mercedes-Benz S-Class 500",
+    "class": "vip",
+    "modelYears": "2018–2024",
+    "seats": 4,
+    "engine": "4.0L V8 petrol",
+    "transmission": "Automatic",
+    "driveType": "RWD",
+    "interiorFeatures": [
+      "Protocol-trained chauffeur",
+      "Flagship limousine comfort",
+      "Head-of-delegation vehicle",
+      "State & summit movements"
+    ],
+    "images": [
+      {
+        "publicId": "",
+        "url": "https://images.unsplash.com/photo-1563720223185-11003d516935?w=1600&q=80&auto=format",
+        "alt": "Mercedes-Benz S-Class",
+        "order": 0
+      }
+    ],
+    "rates": {
+      "perHour": null,
+      "perDay": null,
+      "perWeek": null,
+      "perMonth": null,
+      "fuelPerKm": null,
+      "airportTransfer": null
+    },
+    "currency": "PKR",
+    "armorLevel": null,
+    "rollCage": false,
+    "selfDriveAvailable": false,
+    "selfDrive": null,
+    "featured": false,
+    "active": true,
+    "order": 1,
+    "__v": 0,
+    "createdAt": "2026-07-27T07:39:46.841Z",
+    "updatedAt": "2026-07-27T07:39:46.841Z"
+  },
+  {
+    "_id": "6a670b42b148078fea7368fa",
+    "slug": "bmw-5-series",
+    "name": "BMW 5 Series",
+    "class": "vip",
+    "modelYears": "2019–2025",
+    "seats": 4,
+    "engine": "2.0L turbo petrol",
+    "transmission": "Automatic",
+    "driveType": "RWD",
+    "interiorFeatures": [
+      "Protocol-trained chauffeur",
+      "Executive sports sedan",
+      "Corporate leadership travel",
+      "Immaculate presentation"
+    ],
+    "images": [
+      {
+        "publicId": "",
+        "url": "https://images.unsplash.com/photo-1563720223185-11003d516935?w=1600&q=80&auto=format",
+        "alt": "BMW 5 Series",
+        "order": 0
+      }
+    ],
+    "rates": {
+      "perHour": null,
+      "perDay": null,
+      "perWeek": null,
+      "perMonth": null,
+      "fuelPerKm": null,
+      "airportTransfer": null
+    },
+    "currency": "PKR",
+    "armorLevel": null,
+    "rollCage": false,
+    "selfDriveAvailable": false,
+    "selfDrive": null,
+    "featured": false,
+    "active": true,
+    "order": 2,
+    "__v": 0,
+    "createdAt": "2026-07-27T07:39:46.841Z",
+    "updatedAt": "2026-07-27T07:39:46.841Z"
+  },
+  {
+    "_id": "6a670b42b148078fea7368fb",
+    "slug": "bmw-7-series",
+    "name": "BMW 7 Series",
+    "class": "vip",
+    "modelYears": "2018–2024",
+    "seats": 4,
+    "engine": "3.0L turbo petrol",
+    "transmission": "Automatic",
+    "driveType": "RWD",
+    "interiorFeatures": [
+      "Protocol-trained chauffeur",
+      "Long-wheelbase rear comfort",
+      "Delegate & VIP movement",
+      "Summit-grade presentation"
+    ],
+    "images": [
+      {
+        "publicId": "",
+        "url": "https://images.unsplash.com/photo-1563720223185-11003d516935?w=1600&q=80&auto=format",
+        "alt": "BMW 7 Series",
+        "order": 0
+      }
+    ],
+    "rates": {
+      "perHour": null,
+      "perDay": null,
+      "perWeek": null,
+      "perMonth": null,
+      "fuelPerKm": null,
+      "airportTransfer": null
+    },
+    "currency": "PKR",
+    "armorLevel": null,
+    "rollCage": false,
+    "selfDriveAvailable": false,
+    "selfDrive": null,
+    "featured": false,
+    "active": true,
+    "order": 3,
+    "__v": 0,
+    "createdAt": "2026-07-27T07:39:46.841Z",
+    "updatedAt": "2026-07-27T07:39:46.841Z"
+  },
+  {
+    "_id": "6a670b42b148078fea7368fc",
+    "slug": "toyota-crown",
+    "name": "Toyota Crown",
+    "class": "vip",
+    "modelYears": "2018–2024",
+    "seats": 4,
+    "engine": "2.5L hybrid",
+    "transmission": "Automatic",
+    "driveType": "RWD",
+    "interiorFeatures": [
+      "Protocol-trained chauffeur",
+      "Quiet hybrid executive cabin",
+      "Ministerial-style saloon",
+      "Reliable protocol workhorse"
+    ],
+    "images": [
+      {
+        "publicId": "",
+        "url": "https://images.unsplash.com/photo-1563720223185-11003d516935?w=1600&q=80&auto=format",
+        "alt": "Toyota Crown executive sedan",
+        "order": 0
+      }
+    ],
+    "rates": {
+      "perHour": null,
+      "perDay": null,
+      "perWeek": null,
+      "perMonth": null,
+      "fuelPerKm": null,
+      "airportTransfer": null
+    },
+    "currency": "PKR",
+    "armorLevel": null,
+    "rollCage": false,
+    "selfDriveAvailable": false,
+    "selfDrive": null,
+    "featured": false,
+    "active": true,
+    "order": 4,
+    "__v": 0,
+    "createdAt": "2026-07-27T07:39:46.841Z",
+    "updatedAt": "2026-07-27T07:39:46.841Z"
+  },
+  {
+    "_id": "6a670b42b148078fea7368fd",
+    "slug": "honda-accord",
+    "name": "Honda Accord",
+    "class": "vip",
+    "modelYears": "2019–2025",
+    "seats": 4,
+    "engine": "1.5L turbo petrol",
+    "transmission": "Automatic",
+    "driveType": "FWD",
+    "interiorFeatures": [
+      "Protocol-trained chauffeur",
+      "Spacious executive cabin",
+      "Corporate & delegate travel",
+      "Comfort-focused ride"
+    ],
+    "images": [
+      {
+        "publicId": "",
+        "url": "https://images.unsplash.com/photo-1563720223185-11003d516935?w=1600&q=80&auto=format",
+        "alt": "Honda Accord executive sedan",
+        "order": 0
+      }
+    ],
+    "rates": {
+      "perHour": null,
+      "perDay": null,
+      "perWeek": null,
+      "perMonth": null,
+      "fuelPerKm": null,
+      "airportTransfer": null
+    },
+    "currency": "PKR",
+    "armorLevel": null,
+    "rollCage": false,
+    "selfDriveAvailable": false,
+    "selfDrive": null,
+    "featured": false,
+    "active": true,
+    "order": 5,
+    "__v": 0,
+    "createdAt": "2026-07-27T07:39:46.841Z",
+    "updatedAt": "2026-07-27T07:39:46.841Z"
+  },
+  {
+    "_id": "6a670b42b148078fea7368fe",
+    "slug": "suzuki-pickup",
+    "name": "Suzuki Pickup (Ravi)",
+    "class": "logistics",
+    "modelYears": "2018–2025",
+    "seats": 2,
+    "engine": "800cc petrol",
+    "transmission": "Manual",
+    "driveType": "RWD",
+    "interiorFeatures": [
+      "Light cargo runs",
+      "City deliveries",
+      "Payload ~750 kg",
+      "Driver included"
+    ],
+    "images": [
+      {
+        "publicId": "",
+        "url": "https://images.unsplash.com/photo-1601584115197-04ecc0da31d7?w=1600&q=80&auto=format",
+        "alt": "Suzuki pickup light cargo",
+        "order": 0
+      }
+    ],
+    "rates": {
+      "perHour": null,
+      "perDay": null,
+      "perWeek": null,
+      "perMonth": null,
+      "fuelPerKm": null,
+      "airportTransfer": null
+    },
+    "currency": "PKR",
+    "armorLevel": null,
+    "rollCage": false,
+    "selfDriveAvailable": false,
+    "selfDrive": null,
+    "featured": false,
+    "active": true,
+    "order": 0,
+    "__v": 0,
+    "createdAt": "2026-07-27T07:39:46.841Z",
+    "updatedAt": "2026-07-27T07:39:46.841Z"
+  },
+  {
+    "_id": "6a670b42b148078fea7368ff",
+    "slug": "shehzore-mini-truck",
+    "name": "Shehzore Mini Truck",
+    "class": "logistics",
+    "modelYears": "2016–2024",
+    "seats": 2,
+    "engine": "2.6L diesel",
+    "transmission": "Manual",
+    "driveType": "RWD",
+    "interiorFeatures": [
+      "Payload ~2 tons",
+      "Office & site moves",
+      "Intercity cargo",
+      "Driver included"
+    ],
+    "images": [
+      {
+        "publicId": "",
+        "url": "https://images.unsplash.com/photo-1601584115197-04ecc0da31d7?w=1600&q=80&auto=format",
+        "alt": "Shehzore mini truck",
+        "order": 0
+      }
+    ],
+    "rates": {
+      "perHour": null,
+      "perDay": null,
+      "perWeek": null,
+      "perMonth": null,
+      "fuelPerKm": null,
+      "airportTransfer": null
+    },
+    "currency": "PKR",
+    "armorLevel": null,
+    "rollCage": false,
+    "selfDriveAvailable": false,
+    "selfDrive": null,
+    "featured": false,
+    "active": true,
+    "order": 1,
+    "__v": 0,
+    "createdAt": "2026-07-27T07:39:46.841Z",
+    "updatedAt": "2026-07-27T07:39:46.841Z"
+  },
+  {
+    "_id": "6a670b42b148078fea736900",
+    "slug": "mazda-truck",
+    "name": "Mazda Truck",
+    "class": "logistics",
+    "modelYears": "2014–2024",
+    "seats": 3,
+    "engine": "4.0L diesel",
+    "transmission": "Manual",
+    "driveType": "RWD",
+    "interiorFeatures": [
+      "Payload 4–6 tons",
+      "Project cargo movement",
+      "Nationwide routes",
+      "Driver included"
+    ],
+    "images": [
+      {
+        "publicId": "",
+        "url": "https://images.unsplash.com/photo-1601584115197-04ecc0da31d7?w=1600&q=80&auto=format",
+        "alt": "Mazda medium truck",
+        "order": 0
+      }
+    ],
+    "rates": {
+      "perHour": null,
+      "perDay": null,
+      "perWeek": null,
+      "perMonth": null,
+      "fuelPerKm": null,
+      "airportTransfer": null
+    },
+    "currency": "PKR",
+    "armorLevel": null,
+    "rollCage": false,
+    "selfDriveAvailable": false,
+    "selfDrive": null,
+    "featured": false,
+    "active": true,
+    "order": 2,
+    "__v": 0,
+    "createdAt": "2026-07-27T07:39:46.842Z",
+    "updatedAt": "2026-07-27T07:39:46.842Z"
+  },
+  {
+    "_id": "6a670b42b148078fea736901",
+    "slug": "bedford-truck",
+    "name": "Bedford Truck",
+    "class": "logistics",
+    "modelYears": "2010–2022",
+    "seats": 3,
+    "engine": "Diesel",
+    "transmission": "Manual",
+    "driveType": "RWD",
+    "interiorFeatures": [
+      "Payload 6–8 tons",
+      "Heavy project cargo",
+      "Remote-site capable",
+      "Driver included"
+    ],
+    "images": [
+      {
+        "publicId": "",
+        "url": "https://images.unsplash.com/photo-1601584115197-04ecc0da31d7?w=1600&q=80&auto=format",
+        "alt": "Bedford cargo truck",
+        "order": 0
+      }
+    ],
+    "rates": {
+      "perHour": null,
+      "perDay": null,
+      "perWeek": null,
+      "perMonth": null,
+      "fuelPerKm": null,
+      "airportTransfer": null
+    },
+    "currency": "PKR",
+    "armorLevel": null,
+    "rollCage": false,
+    "selfDriveAvailable": false,
+    "selfDrive": null,
+    "featured": false,
+    "active": true,
+    "order": 3,
+    "__v": 0,
+    "createdAt": "2026-07-27T07:39:46.842Z",
+    "updatedAt": "2026-07-27T07:39:46.842Z"
+  },
+  {
+    "_id": "6a670b42b148078fea736902",
+    "slug": "hino-isuzu-10-wheeler",
+    "name": "Hino / Isuzu 10-Wheeler",
+    "class": "logistics",
+    "modelYears": "2015–2024",
+    "seats": 3,
+    "engine": "Heavy diesel",
+    "transmission": "Manual",
+    "driveType": "6x4",
+    "interiorFeatures": [
+      "10-wheeler heavy haul",
+      "Payload 15+ tons",
+      "Long-route logistics",
+      "Driver included"
+    ],
+    "images": [
+      {
+        "publicId": "",
+        "url": "https://images.unsplash.com/photo-1601584115197-04ecc0da31d7?w=1600&q=80&auto=format",
+        "alt": "Hino 10-wheeler truck",
+        "order": 0
+      }
+    ],
+    "rates": {
+      "perHour": null,
+      "perDay": null,
+      "perWeek": null,
+      "perMonth": null,
+      "fuelPerKm": null,
+      "airportTransfer": null
+    },
+    "currency": "PKR",
+    "armorLevel": null,
+    "rollCage": false,
+    "selfDriveAvailable": false,
+    "selfDrive": null,
+    "featured": false,
+    "active": true,
+    "order": 4,
+    "__v": 0,
+    "createdAt": "2026-07-27T07:39:46.842Z",
+    "updatedAt": "2026-07-27T07:39:46.842Z"
+  },
+  {
+    "_id": "6a670b42b148078fea736903",
+    "slug": "vehicle-carrier-22-wheeler",
+    "name": "22-Wheeler Vehicle Carrier",
+    "class": "logistics",
+    "modelYears": "2014–2024",
+    "seats": 3,
+    "engine": "Heavy diesel",
+    "transmission": "Manual",
+    "driveType": "Multi-axle",
+    "interiorFeatures": [
+      "22-wheeler carrier",
+      "Multi-vehicle transport",
+      "Fleet relocation",
+      "Escort coordination available"
+    ],
+    "images": [
+      {
+        "publicId": "",
+        "url": "https://images.unsplash.com/photo-1601584115197-04ecc0da31d7?w=1600&q=80&auto=format",
+        "alt": "22-wheeler vehicle carrier",
+        "order": 0
+      }
+    ],
+    "rates": {
+      "perHour": null,
+      "perDay": null,
+      "perWeek": null,
+      "perMonth": null,
+      "fuelPerKm": null,
+      "airportTransfer": null
+    },
+    "currency": "PKR",
+    "armorLevel": null,
+    "rollCage": false,
+    "selfDriveAvailable": false,
+    "selfDrive": null,
+    "featured": false,
+    "active": true,
+    "order": 5,
+    "__v": 0,
+    "createdAt": "2026-07-27T07:39:46.842Z",
+    "updatedAt": "2026-07-27T07:39:46.842Z"
+  }
+]

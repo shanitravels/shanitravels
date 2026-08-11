@@ -1,0 +1,576 @@
+@import "tailwindcss";
+
+:root {
+  /* Institutional palette — deep desaturated navy + restrained brand red */
+  --color-navy: #0b2447;        /* primary structure / headers / CTAs */
+  --color-navy-light: #163a6b;  /* raised navy surfaces */
+  --color-navy-deep: #071a37;   /* deepest bands / footer */
+  --color-blue: #1e4d8c;        /* secondary blue */
+  --color-blue-light: #2f6fbf;  /* hover / links */
+  --color-accent: #c8102e;      /* brand red — used sparingly */
+  --color-accent-light: #e11d38;
+  --color-offwhite: #f6f7f9;    /* near-white page background */
+  --color-band: #eef1f5;        /* light neutral section band */
+  --color-line: #e2e7ee;        /* hairline borders */
+  --color-ink: #0e1b2e;         /* body text */
+  --color-muted: #5b6b82;       /* secondary text */
+}
+
+@theme inline {
+  --color-navy: var(--color-navy);
+  --color-navy-light: var(--color-navy-light);
+  --color-navy-deep: var(--color-navy-deep);
+  --color-blue: var(--color-blue);
+  --color-blue-light: var(--color-blue-light);
+  --color-accent: var(--color-accent);
+  --color-accent-light: var(--color-accent-light);
+  --color-offwhite: var(--color-offwhite);
+  --color-band: var(--color-band);
+  --color-line: var(--color-line);
+  --color-ink: var(--color-ink);
+  --color-muted: var(--color-muted);
+  --font-heading: var(--font-poppins);
+  --font-body: var(--font-inter);
+  --font-urdu: var(--font-noto-nastaliq);
+
+  /* Elevation — soft, cool-tinted, institutional (not flashy) */
+  --shadow-card: 0 1px 2px rgba(11, 36, 71, 0.04), 0 8px 24px -12px rgba(11, 36, 71, 0.18);
+  --shadow-lift: 0 8px 20px -6px rgba(11, 36, 71, 0.14), 0 20px 48px -20px rgba(11, 36, 71, 0.28);
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  background: var(--color-offwhite);
+  color: var(--color-ink);
+  font-family: var(--font-body), system-ui, sans-serif;
+  -webkit-font-smoothing: antialiased;
+  text-rendering: optimizeLegibility;
+}
+
+h1, h2, h3, h4, h5, h6 {
+  font-family: var(--font-heading), system-ui, sans-serif;
+  letter-spacing: -0.01em;
+}
+
+/* ---------------------------------------------------------------------------
+   Urdu typography
+   ---------------------------------------------------------------------------
+   Nastaliq is the script Urdu readers expect, but its glyphs cascade downward
+   and collide at the line-heights that suit Latin text, so Urdu gets its own
+   leading. The tight heading letter-spacing above is also undone: negative
+   tracking pulls joined Arabic-script letterforms apart from their ligatures.
+
+   Scoped to [lang="ur"] so a single Urdu string inside an English page (or the
+   language switcher, via .font-urdu) picks up the right face on its own. */
+/* Font order matters and is not what you would first write: the Latin face
+   comes FIRST, Nastaliq second. Browsers resolve font-family per glyph, so
+   Latin characters are served by Inter/Poppins (which have them) and Arabic
+   characters fall through to Nastaliq (which they don't). Putting Nastaliq
+   first instead renders English in its Latin glyphs — a heavy serif that
+   looks broken next to the rest of the site. */
+[lang="ur"] body,
+.font-urdu {
+  font-family: var(--font-body), var(--font-urdu), system-ui, sans-serif;
+  letter-spacing: normal;
+}
+
+/* `.hero-title` rides along with the headings in both rules below. The hero
+   stacks every slide's title to hold one height, and only the slide on show is
+   an h1 — the rest are paragraphs standing in for it. Those stand-ins are what
+   reserve the height, so they have to be lettered exactly like the heading or
+   they measure short and the hero starts resizing again. Both rules here beat a
+   Tailwind utility on specificity (0,1,1 against 0,1,0), which is precisely why
+   the class has to be named: `leading-[1.06]` on the element does not win. */
+[lang="ur"] h1,
+[lang="ur"] h2,
+[lang="ur"] h3,
+[lang="ur"] h4,
+[lang="ur"] h5,
+[lang="ur"] h6,
+[lang="ur"] .hero-title {
+  font-family: var(--font-heading), var(--font-urdu), system-ui, sans-serif;
+  letter-spacing: normal;
+}
+
+[lang="ur"] body {
+  line-height: 2;
+}
+
+[lang="ur"] h1,
+[lang="ur"] h2,
+[lang="ur"] h3,
+[lang="ur"] .hero-title {
+  line-height: 1.9;
+}
+
+/* Latin runs inside Urdu pages — phone numbers, prices, "Toyota Corolla" —
+   keep the Latin face. Nastaliq has no Latin glyphs worth using. */
+[lang="ur"] .tabular,
+[lang="ur"] .font-latin {
+  font-family: var(--font-body), system-ui, sans-serif;
+  line-height: 1.5;
+}
+
+/* Tabular figures for rate tables & spec columns */
+.tabular {
+  font-variant-numeric: tabular-nums;
+  font-feature-settings: "tnum" 1;
+}
+
+::selection {
+  background: var(--color-navy);
+  color: #fff;
+}
+
+/* Scrollbar */
+::-webkit-scrollbar {
+  width: 11px;
+}
+::-webkit-scrollbar-track {
+  background: var(--color-band);
+}
+::-webkit-scrollbar-thumb {
+  background: #b9c3d2;
+  border: 3px solid var(--color-band);
+  border-radius: 999px;
+}
+::-webkit-scrollbar-thumb:hover {
+  background: var(--color-navy);
+}
+
+/* Accent underline used under section headings */
+.section-heading-line {
+  display: inline-block;
+  width: 48px;
+  height: 3px;
+  border-radius: 999px;
+  background: var(--color-accent);
+}
+
+/* Frosted surfaces */
+.glass {
+  background: rgba(255, 255, 255, 0.08);
+  -webkit-backdrop-filter: blur(14px);
+  backdrop-filter: blur(14px);
+  border: 1px solid rgba(255, 255, 255, 0.16);
+}
+
+.glass-light {
+  background: rgba(255, 255, 255, 0.82);
+  -webkit-backdrop-filter: blur(16px);
+  backdrop-filter: blur(16px);
+  border: 1px solid rgba(255, 255, 255, 0.6);
+}
+
+/* Elevation helpers */
+.shadow-card {
+  box-shadow: var(--shadow-card);
+}
+.shadow-lift {
+  box-shadow: var(--shadow-lift);
+}
+
+/* --------------------------------------------------------------------------
+   Hero slideshow.
+
+   Four cooperating pieces: the scrims that buy the headline its contrast, the
+   slow drift on the active photograph, the copy that rises as a slide arrives,
+   and the progress bar that shows how long it will stay.
+   -------------------------------------------------------------------------- */
+
+/* The reading scrim.
+
+   Two gradients, because the two jobs are different. On phones the copy runs
+   the full width of the frame, so the wash has to be vertical and even. From
+   md up the copy is a left-hand column and the wash becomes directional —
+   dense under the words, gone by the right third, which is the whole point:
+   the vehicle is the reason the photograph is there, and a uniform scrim
+   erases it. Percentages are tuned against the darkest fleet photo, not the
+   brightest, so a dark car never sinks into the navy behind it. */
+.hero-scrim {
+  background: linear-gradient(
+    to bottom,
+    color-mix(in srgb, var(--color-navy-deep) 88%, transparent) 0%,
+    color-mix(in srgb, var(--color-navy-deep) 70%, transparent) 45%,
+    color-mix(in srgb, var(--color-navy-deep) 58%, transparent) 100%
+  );
+}
+
+@media (min-width: 768px) {
+  .hero-scrim {
+    background: linear-gradient(
+      100deg,
+      color-mix(in srgb, var(--color-navy-deep) 92%, transparent) 0%,
+      color-mix(in srgb, var(--color-navy-deep) 76%, transparent) 26%,
+      color-mix(in srgb, var(--color-navy-deep) 36%, transparent) 54%,
+      color-mix(in srgb, var(--color-navy-deep) 8%, transparent) 80%,
+      transparent 100%
+    );
+  }
+}
+
+/* Grounds the promise strip without dimming the middle of the frame. */
+.hero-scrim-base {
+  background: linear-gradient(
+    to top,
+    color-mix(in srgb, var(--color-navy-deep) 82%, transparent) 0%,
+    color-mix(in srgb, var(--color-navy-deep) 42%, transparent) 24%,
+    color-mix(in srgb, var(--color-navy-deep) 10%, transparent) 52%,
+    transparent 74%
+  );
+}
+
+/* A slow push across the frame, restarted for each slide by the `is-active`
+   class. It rides the wrapper around <Image>, never the scrims above it:
+   animating those together makes the gradients swim against the words they
+   exist to protect. The scale is what keeps the translate from exposing an
+   edge. The duration deliberately outruns the slide interval, so the motion is
+   always mid-travel — it never finishes and sits still. */
+.hero-media {
+  transform: scale(1.05);
+  will-change: transform;
+}
+
+.hero-media.is-active {
+  animation: hero-drift 18s ease-out forwards;
+}
+
+@keyframes hero-drift {
+  from {
+    transform: scale(1.05) translate3d(0, 0, 0);
+  }
+  to {
+    transform: scale(1.14) translate3d(-1.8%, -1.2%, 0);
+  }
+}
+
+/* Lifting the scrim to show the vehicle costs the text some of its background,
+   so the text carries its own. A tight shadow for edge definition plus a wide,
+   soft one that darkens the pixels around a glyph — together they hold up over
+   a bright sky without putting a visible halo on the navy. */
+.hero-legible {
+  text-shadow:
+    0 1px 2px color-mix(in srgb, var(--color-navy-deep) 55%, transparent),
+    0 2px 24px color-mix(in srgb, var(--color-navy-deep) 78%, transparent);
+}
+
+/* The same problem as .hero-legible, one corner over. The social buttons sit on
+   whichever photograph the admin uploaded, and the top-right of a hero shot is
+   usually sky — which can be anything from night to a white overcast. A white
+   ring and a white glyph disappear into the bright end of that range.
+
+   Two shadows, because they do different jobs and `text-shadow` reaches
+   neither: the ring gets a box-shadow that seats the button on the picture,
+   and the glyph gets a drop-shadow, which is the one filter that follows the
+   shape of an SVG path rather than its box. Tuned like the text shadows above —
+   navy rather than black, so nothing reads as grubby against the navy scrim.
+
+   The button also carries a navy fill of its own. Shadows alone were not
+   enough: on a white sky a white glyph sits on a white disc and the shadow only
+   ringed the outside of it, leaving the mark itself barely there. The fill is
+   what guarantees the contrast; the shadows are what stop the disc from
+   dissolving into a dark photograph. */
+.hero-social {
+  box-shadow:
+    0 1px 2px color-mix(in srgb, var(--color-navy-deep) 45%, transparent),
+    0 4px 18px color-mix(in srgb, var(--color-navy-deep) 60%, transparent);
+}
+
+.hero-social svg {
+  filter: drop-shadow(0 1px 2px color-mix(in srgb, var(--color-navy-deep) 85%, transparent));
+}
+
+/* Keyed on the slide index, so it replays on every change. */
+.hero-copy {
+  animation: hero-copy-in 800ms cubic-bezier(0.22, 1, 0.36, 1) both;
+}
+
+@keyframes hero-copy-in {
+  from {
+    opacity: 0;
+    transform: translate3d(0, 18px, 0);
+  }
+  to {
+    opacity: 1;
+    transform: none;
+  }
+}
+
+/* Fills across the life of a slide; holds where it is while paused. */
+.hero-progress-fill {
+  animation: hero-progress var(--hero-interval, 7000ms) linear forwards;
+}
+
+.hero-progress-fill.is-paused {
+  animation-play-state: paused;
+}
+
+@keyframes hero-progress {
+  from {
+    transform: scaleX(0);
+  }
+  to {
+    transform: scaleX(1);
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  /* Auto-advance is switched off in the component, so the bar shows a resting
+     state rather than a countdown to something that will not happen. */
+  .hero-media,
+  .hero-media.is-active {
+    animation: none;
+    transform: scale(1.02);
+  }
+  .hero-copy {
+    animation: none;
+  }
+  .hero-progress-fill {
+    animation: none;
+    transform: scaleX(1);
+  }
+}
+
+/* Fine dotted map / texture backdrop */
+.dot-grid {
+  background-image: radial-gradient(rgba(255, 255, 255, 0.14) 1px, transparent 1px);
+  background-size: 18px 18px;
+}
+
+/* --------------------------------------------------------------------------
+   Tactile keys — the "Book a ride" action group.
+
+   The raised look is a SOLID bottom lip, not a blurred shadow: a hard edge
+   reads as physical material, a blur reads as float. On :active the key travels
+   down by exactly the lip height and the lip collapses to zero, so the top
+   surface lands flush on the well beneath it — struck, not merely nudged. The
+   inset shadow that replaces it is the well's rim shading the sunken key.
+   -------------------------------------------------------------------------- */
+.press-key {
+  --press-travel: 5px;
+  --press-scale: 0.96;
+  --press-lip: rgba(11, 36, 71, 0.18);
+
+  /* Defaults live in the var() fallback, NOT as declarations here: a
+     `--press-bg-down: …` on this rule would outrank the per-key utility class
+     that sets it (same specificity, later in the sheet) and every key would dim
+     to the same colour. The fallback only applies when nothing else sets it. */
+  background-color: var(--press-bg, #ffffff);
+  transform: translateY(0) scale(1);
+  box-shadow:
+    0 var(--press-travel) 0 0 var(--press-lip),
+    0 6px 12px -6px rgba(11, 36, 71, 0.35);
+
+  /* RELEASE: slower, with a slight overshoot so the key springs back rather
+     than easing back — the difference between "animated" and "physical". */
+  transition:
+    transform 240ms cubic-bezier(0.34, 1.56, 0.64, 1),
+    box-shadow 240ms cubic-bezier(0.34, 1.56, 0.64, 1),
+    background-color 240ms ease-out;
+
+  /* Without this, mobile Safari/Chrome paint a grey block over the press. */
+  -webkit-tap-highlight-color: transparent;
+  touch-action: manipulation;
+  -webkit-user-select: none;
+  user-select: none;
+  will-change: transform;
+}
+
+/* Hover only lifts on devices that actually hover — on touch, :hover sticks
+   after the tap and the key would stay raised while it should read as pressed. */
+@media (hover: hover) {
+  .press-key:hover {
+    --press-travel: 7px;
+    transform: translateY(-2px) scale(1.01);
+  }
+}
+
+.press-key:active {
+  /* PRESS: fast and linear-out. Real keys bottom out; they don't ease in. */
+  transition-duration: 70ms;
+  transition-timing-function: cubic-bezier(0.2, 0, 0, 1);
+
+  /* All four cues fire together: sink, shrink, dim, and collapse the lip into
+     an inner shadow so the key reads as recessed below the surrounding rim. */
+  transform: translateY(var(--press-travel)) scale(var(--press-scale));
+  background-color: var(--press-bg-down, var(--color-band));
+  box-shadow:
+    0 0 0 0 var(--press-lip),
+    inset 0 2px 6px rgba(11, 36, 71, 0.22),
+    inset 0 0 0 1px rgba(11, 36, 71, 0.06);
+}
+
+/* Keyboard activation never dwells in :active long enough to be seen, so give
+   Enter/Space an explicit pressed frame. */
+.press-key:focus-visible {
+  outline: 2px solid var(--color-navy);
+  outline-offset: 3px;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  /* Keep the pressed state — it is feedback, not decoration — but remove the
+     travel and the spring, leaving the dim and the shadow flip. */
+  .press-key,
+  .press-key:active {
+    --press-travel: 0px;
+    --press-scale: 1;
+    transition-duration: 0ms;
+  }
+  @media (hover: hover) {
+    .press-key:hover {
+      transform: none;
+    }
+  }
+}
+
+/* --------------------------------------------------------------------------
+   Admin slide-over panel.
+
+   Keyframe animations rather than transitions: an entry transition has to flip a
+   class one painted frame AFTER mount, and React batches that state update into
+   the mounting render — so the panel arrives already at its final position and
+   never animates. A keyframe animation runs on mount by definition, so there is
+   no ordering to get wrong.
+   -------------------------------------------------------------------------- */
+@keyframes drawer-in {
+  from { transform: translateX(100%); }
+  to   { transform: translateX(0); }
+}
+@keyframes drawer-out {
+  from { transform: translateX(0); }
+  to   { transform: translateX(100%); }
+}
+@keyframes scrim-in {
+  from { opacity: 0; }
+  to   { opacity: 1; }
+}
+@keyframes scrim-out {
+  from { opacity: 1; }
+  to   { opacity: 0; }
+}
+
+/* easeOutQuint — a long, soft deceleration; the panel glides to rest instead of
+   arriving and stopping. */
+.drawer-panel-in {
+  animation: drawer-in 460ms cubic-bezier(0.22, 1, 0.36, 1) both;
+  will-change: transform;
+}
+.drawer-panel-out {
+  animation: drawer-out 380ms cubic-bezier(0.64, 0, 0.78, 0) both;
+  will-change: transform;
+}
+.drawer-scrim-in {
+  animation: scrim-in 460ms cubic-bezier(0.22, 1, 0.36, 1) both;
+}
+.drawer-scrim-out {
+  animation: scrim-out 380ms cubic-bezier(0.64, 0, 0.78, 0) both;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .drawer-panel-in,
+  .drawer-panel-out,
+  .drawer-scrim-in,
+  .drawer-scrim-out {
+    animation-duration: 1ms;
+  }
+}
+
+/* Marquee for client logos */
+.marquee-track {
+  animation: marquee 34s linear infinite;
+}
+.marquee-track:hover {
+  animation-play-state: paused;
+}
+@keyframes marquee {
+  from {
+    transform: translateX(0);
+  }
+  to {
+    transform: translateX(-50%);
+  }
+}
+
+.animate-pulse-slow {
+  animation: pulse-slow 2.4s ease-in-out infinite;
+}
+@keyframes pulse-slow {
+  0%, 100% {
+    box-shadow: 0 0 0 0 rgba(37, 211, 102, 0.55);
+  }
+  50% {
+    box-shadow: 0 0 0 14px rgba(37, 211, 102, 0);
+  }
+}
+
+/* Swiper pagination customization */
+.swiper-pagination-bullet {
+  background: #fff !important;
+  opacity: 0.45 !important;
+}
+.swiper-pagination-bullet-active {
+  background: var(--color-accent) !important;
+  opacity: 1 !important;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  html {
+    scroll-behavior: auto;
+  }
+  .marquee-track,
+  .animate-pulse-slow {
+    animation: none;
+  }
+}
+
+/* Rendered markdown (service bodies, commercial terms, about sections) */
+.md-content > * + * {
+  margin-top: 0.9em;
+}
+.md-content h2 {
+  font-family: var(--font-heading), system-ui, sans-serif;
+  font-size: 1.25rem;
+  font-weight: 700;
+  color: var(--color-navy);
+  margin-top: 1.4em;
+}
+.md-content h3 {
+  font-family: var(--font-heading), system-ui, sans-serif;
+  font-size: 1.05rem;
+  font-weight: 600;
+  color: var(--color-navy);
+  margin-top: 1.2em;
+}
+.md-content p {
+  line-height: 1.7;
+}
+.md-content ul,
+.md-content ol {
+  padding-left: 1.25rem;
+  display: flex;
+  flex-direction: column;
+  gap: 0.4rem;
+}
+.md-content ul {
+  list-style: disc;
+}
+.md-content ol {
+  list-style: decimal;
+}
+.md-content li {
+  line-height: 1.6;
+}
+.md-content strong {
+  color: var(--color-navy);
+  font-weight: 600;
+}
+.md-content a {
+  color: var(--color-accent);
+  text-decoration: underline;
+}
+.md-content a:hover {
+  color: var(--color-accent-light);
+}

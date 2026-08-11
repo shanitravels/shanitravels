@@ -1,0 +1,98 @@
+[
+  {
+    "_id": "6a670b44b148078fea736928",
+    "organization": "EU Election Observation Mission, Pakistan",
+    "sector": "un-donor",
+    "quote": {
+      "en": "Secure, punctual and professional throughout the mission, with drivers who knew their assigned areas exceptionally well.",
+      "ur": "پورے مشن کے دوران محفوظ، وقت کے پابند اور پیشہ ور، ایسے ڈرائیوروں کے ساتھ جو اپنے علاقوں سے بخوبی واقف تھے۔"
+    },
+    "year": "2008",
+    "featured": true,
+    "order": 1,
+    "active": true,
+    "__v": 0,
+    "createdAt": "2026-07-27T07:39:48.924Z",
+    "updatedAt": "2026-07-27T07:39:48.924Z"
+  },
+  {
+    "_id": "6a670b44b148078fea736929",
+    "organization": "IOM — International Organization for Migration",
+    "sector": "un-donor",
+    "quote": {
+      "en": "Vehicles provided all over the country with excellent communication and strong local knowledge. A very good experience.",
+      "ur": "ملک بھر میں گاڑیاں فراہم کی گئیں، بہترین رابطہ اور مضبوط مقامی معلومات کے ساتھ۔ بہت اچھا تجربہ رہا۔"
+    },
+    "year": "2013",
+    "featured": true,
+    "order": 2,
+    "active": true,
+    "__v": 0,
+    "createdAt": "2026-07-27T07:39:48.924Z",
+    "updatedAt": "2026-07-27T07:39:48.924Z"
+  },
+  {
+    "_id": "6a670b44b148078fea73692b",
+    "organization": "IOM — Afghan Elections OCRV Project",
+    "sector": "un-donor",
+    "quote": {
+      "en": "Commended for secured transport support during the Afghan Presidential Elections out-of-country voting programme.",
+      "ur": "افغان صدارتی انتخابات کے بیرونِ ملک ووٹنگ پروگرام کے دوران محفوظ ٹرانسپورٹ معاونت پر تعریف۔"
+    },
+    "year": "2004",
+    "featured": false,
+    "order": 4,
+    "active": true,
+    "__v": 0,
+    "createdAt": "2026-07-27T07:39:48.924Z",
+    "updatedAt": "2026-07-27T07:39:48.924Z"
+  },
+  {
+    "_id": "6a670b44b148078fea73692c",
+    "organization": "CCS Comservice Pakistan",
+    "sector": "telecom-corporate",
+    "quote": {
+      "en": "Recognised for the best luxury car services provided to our teams and visiting delegations.",
+      "ur": "ہماری ٹیموں اور آنے والے وفود کو فراہم کی گئی بہترین پرتعیش کار سروسز پر اعتراف۔"
+    },
+    "year": "2010",
+    "featured": false,
+    "order": 5,
+    "active": true,
+    "__v": 0,
+    "createdAt": "2026-07-27T07:39:48.924Z",
+    "updatedAt": "2026-07-27T07:39:48.924Z"
+  },
+  {
+    "_id": "6a670b44b148078fea736927",
+    "organization": "SGAFP–NRSP (USAID-funded project)",
+    "sector": "ngo",
+    "quote": {
+      "en": "Reliable vehicles, professional drivers and prompt service — with full representation in every province of Pakistan.",
+      "ur": "قابلِ اعتماد گاڑیاں، پیشہ ور ڈرائیور اور فوری خدمت — پاکستان کے ہر صوبے میں مکمل نمائندگی کے ساتھ۔"
+    },
+    "year": "2011",
+    "featured": true,
+    "order": 0,
+    "active": true,
+    "__v": 0,
+    "createdAt": "2026-07-27T07:39:48.923Z",
+    "updatedAt": "2026-07-27T07:39:48.923Z"
+  },
+  {
+    "_id": "6a670b44b148078fea73692a",
+    "organization": "Concern Worldwide Pakistan",
+    "sector": "ngo",
+    "quote": {
+      "en": "A well-managed network across the country that follows up exactly as required. Services fully up to the mark.",
+      "ur": "ملک بھر میں بہترین انتظام والا نیٹ ورک جو ضرورت کے عین مطابق پیروی کرتا ہے۔ خدمات مکمل طور پر معیاری ہیں۔"
+    },
+    "year": "2012",
+    "featured": true,
+    "order": 3,
+    "active": true,
+    "__v": 0,
+    "createdAt": "2026-07-27T07:39:48.924Z",
+    "updatedAt": "2026-07-27T07:39:48.924Z"
+  }
+]

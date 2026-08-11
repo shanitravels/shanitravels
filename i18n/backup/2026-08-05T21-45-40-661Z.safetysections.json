@@ -1,0 +1,698 @@
+[
+  {
+    "_id": "6a670b47b148078fea736946",
+    "slug": "driver-verification",
+    "category": "chauffeur",
+    "title": {
+      "en": "Driver Verification",
+      "ur": "ڈرائیور کی تصدیق"
+    },
+    "intro": {
+      "en": "Every chauffeur is verified before their first assignment and re-checked periodically.",
+      "ur": ""
+    },
+    "items": [
+      {
+        "en": "Valid driving licence verified against the issuing authority",
+        "ur": ""
+      },
+      {
+        "en": "CNIC verified and copied to the personnel file",
+        "ur": "شناختی کارڈ کی تصدیق اور ریکارڈ میں شامل"
+      },
+      {
+        "en": "Police character verification completed before first duty",
+        "ur": "پہلی ڈیوٹی سے قبل پولیس کریکٹر سرٹیفکیٹ مکمل"
+      },
+      {
+        "en": "Employment references checked and recorded",
+        "ur": "ملازمت کے حوالہ جات کی جانچ اور ریکارڈ"
+      },
+      {
+        "en": "Periodic re-verification of licence validity and record",
+        "ur": "لائسنس کی مدت اور ریکارڈ کی وقتاً فوقتاً تصدیق"
+      }
+    ],
+    "order": 0,
+    "active": true,
+    "__v": 0,
+    "createdAt": "2026-07-27T07:39:51.022Z",
+    "updatedAt": "2026-07-27T07:39:51.022Z"
+  },
+  {
+    "_id": "6a670b47b148078fea736947",
+    "slug": "vehicle-inspection",
+    "category": "chauffeur",
+    "title": {
+      "en": "Vehicle Inspection",
+      "ur": "گاڑی کا معائنہ"
+    },
+    "intro": {
+      "en": "A documented pre-trip inspection is filed before every departure.",
+      "ur": ""
+    },
+    "items": [
+      {
+        "en": "Brakes, tyres, lights, horn, mirrors and wipers checked",
+        "ur": "بریک، ٹائر، لائٹس، ہارن، آئینے اور وائپرز کی جانچ"
+      },
+      {
+        "en": "Engine oil, coolant and fuel levels confirmed",
+        "ur": "انجن آئل، کولنٹ اور ایندھن کی سطح کی تصدیق"
+      },
+      {
+        "en": "First aid kit and fire extinguisher present and in date",
+        "ur": "فرسٹ ایڈ کٹ اور آگ بجھانے کا آلہ موجود اور کارآمد"
+      },
+      {
+        "en": "Spare tyre, jack, wheel spanner and emergency tools on board",
+        "ur": ""
+      },
+      {
+        "en": "GPS tracker and mobile communication device operational",
+        "ur": "GPS ٹریکر اور موبائل رابطہ آلہ فعال"
+      },
+      {
+        "en": "Any failed item logged with a note and resolved before departure",
+        "ur": ""
+      }
+    ],
+    "order": 1,
+    "active": true,
+    "__v": 0,
+    "createdAt": "2026-07-27T07:39:51.022Z",
+    "updatedAt": "2026-07-27T07:39:51.022Z"
+  },
+  {
+    "_id": "6a670b47b148078fea736948",
+    "slug": "journey-management",
+    "category": "chauffeur",
+    "title": {
+      "en": "Journey Management",
+      "ur": "سفر کا انتظام"
+    },
+    "intro": {
+      "en": "Movements are planned and monitored by the 24/7 Operations Control Room.",
+      "ur": ""
+    },
+    "items": [
+      {
+        "en": "Routes planned before departure, with alternates for long or sensitive movements",
+        "ur": ""
+      },
+      {
+        "en": "GPS tracking monitored throughout the journey",
+        "ur": "پورے سفر کے دوران GPS ٹریکنگ کی نگرانی"
+      },
+      {
+        "en": "Scheduled check-ins on intercity and field routes",
+        "ur": "بین الاضلاعی اور فیلڈ روٹس پر مقررہ رابطہ"
+      },
+      {
+        "en": "Night-travel and no-go-hour rules enforced where clients require them",
+        "ur": ""
+      },
+      {
+        "en": "Immediate escalation path from driver to operations to client focal point",
+        "ur": ""
+      }
+    ],
+    "order": 2,
+    "active": true,
+    "__v": 0,
+    "createdAt": "2026-07-27T07:39:51.022Z",
+    "updatedAt": "2026-07-27T07:39:51.022Z"
+  },
+  {
+    "_id": "6a670b47b148078fea736949",
+    "slug": "driver-conduct",
+    "category": "chauffeur",
+    "title": {
+      "en": "Driver Conduct",
+      "ur": "ڈرائیور کا طرزِ عمل"
+    },
+    "intro": {
+      "en": "Professional conduct is a contract condition, not a courtesy.",
+      "ur": ""
+    },
+    "items": [
+      {
+        "en": "Punctual, presentable and courteous at all times",
+        "ur": "ہر وقت وقت کا پابند، بااخلاق اور مہذب"
+      },
+      {
+        "en": "No smoking in vehicles; phones on hands-free for operations calls only",
+        "ur": ""
+      },
+      {
+        "en": "Speed limits and traffic law observed without exception",
+        "ur": "رفتار کی حد اور ٹریفک قوانین کی بلا استثنا پابندی"
+      },
+      {
+        "en": "Passenger instructions followed within the agreed journey plan",
+        "ur": ""
+      },
+      {
+        "en": "Confidentiality: what is said or seen in the vehicle stays in the vehicle",
+        "ur": ""
+      }
+    ],
+    "order": 3,
+    "active": true,
+    "__v": 0,
+    "createdAt": "2026-07-27T07:39:51.022Z",
+    "updatedAt": "2026-07-27T07:39:51.022Z"
+  },
+  {
+    "_id": "6a670b47b148078fea73694a",
+    "slug": "passenger-security",
+    "category": "chauffeur",
+    "title": {
+      "en": "Passenger Security",
+      "ur": "مسافروں کی حفاظت"
+    },
+    "intro": {
+      "en": "Simple habits that keep passengers safe on every trip.",
+      "ur": "سادہ عادات جو ہر سفر میں مسافروں کو محفوظ رکھتی ہیں۔"
+    },
+    "items": [
+      {
+        "en": "Doors locked during travel; windows managed by passenger preference",
+        "ur": ""
+      },
+      {
+        "en": "Identity of waiting passengers confirmed before departure",
+        "ur": "روانگی سے قبل منتظر مسافروں کی شناخت کی تصدیق"
+      },
+      {
+        "en": "Luggage loaded and unloaded by the driver, checked before leaving",
+        "ur": ""
+      },
+      {
+        "en": "No unauthorized passengers or unplanned stops",
+        "ur": "غیر مجاز مسافر یا غیر طے شدہ رکاوٹ ممنوع"
+      },
+      {
+        "en": "Seatbelts required for all occupants",
+        "ur": "تمام سواروں کے لیے سیٹ بیلٹ لازمی"
+      }
+    ],
+    "order": 4,
+    "active": true,
+    "__v": 0,
+    "createdAt": "2026-07-27T07:39:51.022Z",
+    "updatedAt": "2026-07-27T07:39:51.022Z"
+  },
+  {
+    "_id": "6a670b47b148078fea73694b",
+    "slug": "emergency-response",
+    "category": "chauffeur",
+    "title": {
+      "en": "Emergency Response",
+      "ur": "ہنگامی ردعمل"
+    },
+    "intro": {
+      "en": "When something goes wrong, the response is procedure, not improvisation.",
+      "ur": ""
+    },
+    "items": [
+      {
+        "en": "Driver secures passengers first, then reports to the Operations Control Room",
+        "ur": ""
+      },
+      {
+        "en": "Breakdowns: replacement vehicle dispatched immediately; passengers never stranded",
+        "ur": ""
+      },
+      {
+        "en": "Accidents: scene safety, medical assistance, police involvement per law, full incident report",
+        "ur": ""
+      },
+      {
+        "en": "Medical emergencies: nearest appropriate facility, client focal point informed en route",
+        "ur": ""
+      },
+      {
+        "en": "All incidents documented with photos and closed with a resolution note",
+        "ur": ""
+      }
+    ],
+    "order": 5,
+    "active": true,
+    "__v": 0,
+    "createdAt": "2026-07-27T07:39:51.022Z",
+    "updatedAt": "2026-07-27T07:39:51.022Z"
+  },
+  {
+    "_id": "6a670b47b148078fea73694c",
+    "slug": "high-risk-vip",
+    "category": "chauffeur",
+    "title": {
+      "en": "High-Risk & VIP Procedures",
+      "ur": "زیادہ خطرے اور VIP کے طریقہ کار"
+    },
+    "intro": {
+      "en": "Elevated-threat and protocol movements run under additional controls.",
+      "ur": ""
+    },
+    "items": [
+      {
+        "en": "Security-trained drivers with defensive and evasive driving instruction",
+        "ur": ""
+      },
+      {
+        "en": "B-6 armored vehicles available as the fleet standard for protected movement",
+        "ur": ""
+      },
+      {
+        "en": "Route reconnaissance and timing rehearsals for formal protocol movements",
+        "ur": ""
+      },
+      {
+        "en": "Convoy and escort coordination with client security details",
+        "ur": "کلائنٹ کے سیکیورٹی عملے کے ساتھ قافلہ اور حفاظتی رابطہ"
+      },
+      {
+        "en": "Movement details shared on a strict need-to-know basis",
+        "ur": "نقل و حرکت کی تفصیلات سختی سے ضرورت کی بنیاد پر"
+      }
+    ],
+    "order": 6,
+    "active": true,
+    "__v": 0,
+    "createdAt": "2026-07-27T07:39:51.022Z",
+    "updatedAt": "2026-07-27T07:39:51.022Z"
+  },
+  {
+    "_id": "6a670b47b148078fea73694d",
+    "slug": "sd-verification",
+    "category": "self-drive",
+    "title": {
+      "en": "Renter Verification",
+      "ur": "کرایہ دار کی تصدیق"
+    },
+    "intro": {
+      "en": "Verification happens in person, at pickup. The site never collects document uploads.",
+      "ur": ""
+    },
+    "items": [
+      {
+        "en": "Original CNIC (or passport for foreign nationals) presented and verified",
+        "ur": ""
+      },
+      {
+        "en": "Valid driving licence presented and verified — no licence, no handover",
+        "ur": ""
+      },
+      {
+        "en": "Rental agreement and security declaration signed at the counter",
+        "ur": ""
+      },
+      {
+        "en": "Security deposit confirmed per the agreement",
+        "ur": "معاہدے کے مطابق سیکیورٹی رقم کی تصدیق"
+      },
+      {
+        "en": "Only the verified renter and named additional drivers may drive",
+        "ur": ""
+      }
+    ],
+    "order": 0,
+    "active": true,
+    "__v": 0,
+    "createdAt": "2026-07-27T07:39:51.022Z",
+    "updatedAt": "2026-07-27T07:39:51.022Z"
+  },
+  {
+    "_id": "6a670b47b148078fea73694e",
+    "slug": "sd-handover",
+    "category": "self-drive",
+    "title": {
+      "en": "Joint Handover Inspection",
+      "ur": "مشترکہ حوالگی معائنہ"
+    },
+    "intro": {
+      "en": "The handover inspection protects the renter as much as the company.",
+      "ur": ""
+    },
+    "items": [
+      {
+        "en": "Exterior and interior condition inspected jointly with the renter",
+        "ur": ""
+      },
+      {
+        "en": "Fuel level and odometer reading recorded and agreed",
+        "ur": "ایندھن اور میٹر ریڈنگ کا اندراج اور اتفاق"
+      },
+      {
+        "en": "Existing damages noted and photographed together before departure",
+        "ur": ""
+      },
+      {
+        "en": "Accessories and tools checklist confirmed (spare tyre, jack, documents)",
+        "ur": ""
+      },
+      {
+        "en": "Renter signs the inspection record and receives the summary",
+        "ur": "کرایہ دار معائنہ ریکارڈ پر دستخط کرکے خلاصہ وصول کرتا ہے"
+      }
+    ],
+    "order": 1,
+    "active": true,
+    "__v": 0,
+    "createdAt": "2026-07-27T07:39:51.022Z",
+    "updatedAt": "2026-07-27T07:39:51.022Z"
+  },
+  {
+    "_id": "6a670b47b148078fea73694f",
+    "slug": "sd-permitted-use",
+    "category": "self-drive",
+    "title": {
+      "en": "Permitted Use",
+      "ur": "جائز استعمال"
+    },
+    "intro": {
+      "en": "Clear rules, agreed in writing, so there are no surprises at return.",
+      "ur": ""
+    },
+    "items": [
+      {
+        "en": "Vehicle driven only by the verified renter and named drivers",
+        "ur": ""
+      },
+      {
+        "en": "No racing, contests, towing or any illegal use",
+        "ur": "ریس، مقابلہ، ٹوئنگ یا کوئی غیر قانونی استعمال ممنوع"
+      },
+      {
+        "en": "Travel limited to the agreed geographical area; written approval required to extend",
+        "ur": ""
+      },
+      {
+        "en": "Vehicle kept locked and parked securely when unattended",
+        "ur": "گاڑی غیر موجودگی میں مقفل اور محفوظ کھڑی رکھی جائے"
+      },
+      {
+        "en": "Zero tolerance for driving under the influence of alcohol or intoxicants",
+        "ur": ""
+      }
+    ],
+    "order": 2,
+    "active": true,
+    "__v": 0,
+    "createdAt": "2026-07-27T07:39:51.022Z",
+    "updatedAt": "2026-07-27T07:39:51.022Z"
+  },
+  {
+    "_id": "6a670b47b148078fea736950",
+    "slug": "sd-emergencies",
+    "category": "self-drive",
+    "title": {
+      "en": "Emergencies on the Road",
+      "ur": "سفر کے دوران ہنگامی صورتحال"
+    },
+    "intro": {
+      "en": "Self-drive renters are backed by the same 24/7 operations room as our chauffeured fleet.",
+      "ur": ""
+    },
+    "items": [
+      {
+        "en": "24/7 breakdown helpline printed on the agreement and in the vehicle",
+        "ur": ""
+      },
+      {
+        "en": "Accidents reported immediately to the helpline and to police as required by law",
+        "ur": ""
+      },
+      {
+        "en": "Do not admit liability or settle at the scene; the operations room guides next steps",
+        "ur": ""
+      },
+      {
+        "en": "Replacement or recovery arranged per the agreement terms",
+        "ur": "معاہدے کے مطابق متبادل یا ریکوری کا انتظام"
+      }
+    ],
+    "order": 3,
+    "active": true,
+    "__v": 0,
+    "createdAt": "2026-07-27T07:39:51.022Z",
+    "updatedAt": "2026-07-27T07:39:51.022Z"
+  },
+  {
+    "_id": "6a670b47b148078fea736951",
+    "slug": "sd-return",
+    "category": "self-drive",
+    "title": {
+      "en": "Return & Closure",
+      "ur": "واپسی اور اختتام"
+    },
+    "intro": {
+      "en": "The rental closes the way it opened — jointly, and on the record.",
+      "ur": ""
+    },
+    "items": [
+      {
+        "en": "Joint return inspection against the handover record",
+        "ur": "حوالگی ریکارڈ کے مطابق مشترکہ واپسی معائنہ"
+      },
+      {
+        "en": "Fuel level and odometer recorded and compared",
+        "ur": "ایندھن اور میٹر ریڈنگ کا اندراج اور موازنہ"
+      },
+      {
+        "en": "New damages, if any, assessed transparently per the agreement",
+        "ur": ""
+      },
+      {
+        "en": "Fines or penalties incurred during the rental are the renter's responsibility",
+        "ur": ""
+      },
+      {
+        "en": "Deposit released per the agreement once the inspection closes clean",
+        "ur": ""
+      }
+    ],
+    "order": 4,
+    "active": true,
+    "__v": 0,
+    "createdAt": "2026-07-27T07:39:51.022Z",
+    "updatedAt": "2026-07-27T07:39:51.022Z"
+  },
+  {
+    "_id": "6a670b47b148078fea736952",
+    "slug": "zero-tolerance",
+    "category": "general",
+    "title": {
+      "en": "Zero-Tolerance Standards",
+      "ur": "بلا رعایت معیارات"
+    },
+    "intro": {
+      "en": "Some rules have no exceptions, for anyone, on any contract.",
+      "ur": "کچھ اصولوں میں کسی کے لیے، کسی معاہدے پر کوئی استثنا نہیں۔"
+    },
+    "items": [
+      {
+        "en": "No alcohol or intoxicants — drivers or self-drive renters",
+        "ur": "ڈرائیور یا خود ڈرائیو کرنے والوں کے لیے نشہ آور اشیاء ممنوع"
+      },
+      {
+        "en": "No unauthorized use of client vehicles or client information",
+        "ur": ""
+      },
+      {
+        "en": "No cash handling or errands outside the agreed journey plan",
+        "ur": "طے شدہ سفری منصوبے سے باہر رقم یا کام کی اجازت نہیں"
+      },
+      {
+        "en": "Violations end assignments immediately and are reported to the client",
+        "ur": ""
+      }
+    ],
+    "order": 0,
+    "active": true,
+    "__v": 0,
+    "createdAt": "2026-07-27T07:39:51.022Z",
+    "updatedAt": "2026-07-27T07:39:51.022Z"
+  },
+  {
+    "_id": "6a670b47b148078fea736953",
+    "slug": "confidentiality",
+    "category": "general",
+    "title": {
+      "en": "Confidentiality",
+      "ur": "رازداری"
+    },
+    "intro": {
+      "en": "Clients discuss business in our vehicles. That fact shapes our contracts.",
+      "ur": ""
+    },
+    "items": [
+      {
+        "en": "Driver confidentiality is a written condition of employment",
+        "ur": "ڈرائیور کی رازداری ملازمت کی تحریری شرط ہے"
+      },
+      {
+        "en": "Movement details shared on a need-to-know basis only",
+        "ur": "نقل و حرکت کی تفصیلات صرف ضرورت کی بنیاد پر"
+      },
+      {
+        "en": "No photography or disclosure of client activities",
+        "ur": "کلائنٹ کی سرگرمیوں کی تصویر کشی یا افشا ممنوع"
+      },
+      {
+        "en": "Client data handled per the service agreement and never re-used",
+        "ur": ""
+      }
+    ],
+    "order": 1,
+    "active": true,
+    "__v": 0,
+    "createdAt": "2026-07-27T07:39:51.022Z",
+    "updatedAt": "2026-07-27T07:39:51.022Z"
+  },
+  {
+    "_id": "6a670b47b148078fea736954",
+    "slug": "maintenance-schedule",
+    "category": "general",
+    "title": {
+      "en": "Maintenance Schedule",
+      "ur": "دیکھ بھال کا شیڈول"
+    },
+    "intro": {
+      "en": "Reliability is scheduled, not hoped for.",
+      "ur": "بھروسہ اتفاق نہیں، منصوبہ بندی کا نتیجہ ہے۔"
+    },
+    "items": [
+      {
+        "en": "Documented preventive maintenance for every vehicle",
+        "ur": "ہر گاڑی کی دستاویزی احتیاطی دیکھ بھال"
+      },
+      {
+        "en": "Service records retained and auditable per vehicle",
+        "ur": "ہر گاڑی کا سروس ریکارڈ محفوظ اور قابلِ آڈٹ"
+      },
+      {
+        "en": "Tyres, brakes and safety systems replaced on wear thresholds, not failure",
+        "ur": ""
+      },
+      {
+        "en": "Vehicles rotated out of service for scheduled maintenance without client impact",
+        "ur": ""
+      }
+    ],
+    "order": 2,
+    "active": true,
+    "__v": 0,
+    "createdAt": "2026-07-27T07:39:51.022Z",
+    "updatedAt": "2026-07-27T07:39:51.022Z"
+  },
+  {
+    "_id": "6a670b47b148078fea736955",
+    "slug": "gps-tracking",
+    "category": "general",
+    "title": {
+      "en": "GPS Tracking",
+      "ur": "GPS ٹریکنگ"
+    },
+    "intro": {
+      "en": "Every vehicle reports its position to the Operations Control Room.",
+      "ur": ""
+    },
+    "items": [
+      {
+        "en": "Fleet-wide GPS tracking, monitored 24/7",
+        "ur": "پوری فلیٹ پر GPS ٹریکنگ، 24/7 نگرانی"
+      },
+      {
+        "en": "Movement history retained for client reporting and investigations",
+        "ur": ""
+      },
+      {
+        "en": "Geo-fencing and route-deviation alerts on managed journeys",
+        "ur": "منظم سفر پر جیو فینسنگ اور راستہ تبدیلی کی اطلاع"
+      },
+      {
+        "en": "Tracking data available to corporate clients under agreement",
+        "ur": ""
+      }
+    ],
+    "order": 3,
+    "active": true,
+    "__v": 0,
+    "createdAt": "2026-07-27T07:39:51.022Z",
+    "updatedAt": "2026-07-27T07:39:51.022Z"
+  },
+  {
+    "_id": "6a670b47b148078fea736956",
+    "slug": "periodic-training",
+    "category": "general",
+    "title": {
+      "en": "Periodic Training",
+      "ur": "وقتاً فوقتاً تربیت"
+    },
+    "intro": {
+      "en": "Standards decay without reinforcement, so training is recurring.",
+      "ur": ""
+    },
+    "items": [
+      {
+        "en": "Defensive-driving training with periodic refreshers",
+        "ur": "دفاعی ڈرائیونگ تربیت اور وقتاً فوقتاً تجدید"
+      },
+      {
+        "en": "Client-specific inductions (HSE, safeguarding, protocol) before assignment",
+        "ur": ""
+      },
+      {
+        "en": "First-aid and emergency-response basics for all drivers",
+        "ur": "تمام ڈرائیوروں کے لیے ابتدائی طبی امداد اور ہنگامی تربیت"
+      },
+      {
+        "en": "Conduct and confidentiality briefings repeated annually",
+        "ur": "طرزِ عمل اور رازداری کی سالانہ بریفنگ"
+      }
+    ],
+    "order": 4,
+    "active": true,
+    "__v": 0,
+    "createdAt": "2026-07-27T07:39:51.022Z",
+    "updatedAt": "2026-07-27T07:39:51.022Z"
+  },
+  {
+    "_id": "6a670b47b148078fea736957",
+    "slug": "security-audits",
+    "category": "general",
+    "title": {
+      "en": "Security Audits",
+      "ur": "سیکیورٹی آڈٹ"
+    },
+    "intro": {
+      "en": "We audit our own compliance the way our clients audit us.",
+      "ur": "ہم اپنی پابندی کا اسی طرح آڈٹ کرتے ہیں جیسے ہمارے کلائنٹ ہمارا کرتے ہیں۔"
+    },
+    "items": [
+      {
+        "en": "Periodic internal audits of driver files, inspections and incident records",
+        "ur": ""
+      },
+      {
+        "en": "Client audits and site inspections welcomed under agreement",
+        "ur": "معاہدے کے تحت کلائنٹ آڈٹ اور سائٹ معائنہ خوش آمدید"
+      },
+      {
+        "en": "Corrective actions tracked to closure",
+        "ur": "اصلاحی اقدامات کی تکمیل تک نگرانی"
+      },
+      {
+        "en": "Protocol reviewed and updated annually",
+        "ur": "پروٹوکول کا سالانہ جائزہ اور تجدید"
+      }
+    ],
+    "order": 5,
+    "active": true,
+    "__v": 0,
+    "createdAt": "2026-07-27T07:39:51.022Z",
+    "updatedAt": "2026-07-27T07:39:51.022Z"
+  }
+]

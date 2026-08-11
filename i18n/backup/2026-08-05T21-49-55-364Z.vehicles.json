@@ -1,0 +1,2850 @@
+[
+  {
+    "_id": "6a670b42b148078fea7368d9",
+    "slug": "suzuki-alto-660",
+    "name": "Suzuki Alto 660",
+    "class": "economy",
+    "modelYears": "2021–2026",
+    "seats": 4,
+    "engine": {
+      "en": "660cc petrol",
+      "ur": "660cc پیٹرول"
+    },
+    "transmission": {
+      "en": "Automatic",
+      "ur": "آٹومیٹک"
+    },
+    "driveType": {
+      "en": "FWD",
+      "ur": "FWD"
+    },
+    "interiorFeatures": [
+      {
+        "en": "Air conditioning",
+        "ur": "ایئر کنڈیشننگ"
+      },
+      {
+        "en": "Fuel-efficient engine",
+        "ur": "کم ایندھن خرچ کرنے والا انجن"
+      },
+      {
+        "en": "Ideal for city routes",
+        "ur": "شہری راستوں کے لیے مثالی"
+      },
+      {
+        "en": "Comfortable for up to 4",
+        "ur": "4 افراد تک آرام دہ"
+      }
+    ],
+    "images": [
+      {
+        "publicId": "",
+        "url": "https://images.unsplash.com/photo-1762332968954-a74836324d61?w=1600&q=80&auto=format",
+        "alt": "Suzuki Alto city hatchback",
+        "order": 0
+      }
+    ],
+    "rates": {
+      "perHour": 550,
+      "perDay": 5500,
+      "perWeek": 36575,
+      "perMonth": 132000,
+      "fuelPerKm": 32,
+      "airportTransfer": 4800
+    },
+    "currency": "PKR",
+    "armorLevel": null,
+    "rollCage": false,
+    "selfDriveAvailable": true,
+    "selfDrive": {
+      "perDay": null,
+      "perWeek": null,
+      "perMonth": null,
+      "securityDeposit": null
+    },
+    "featured": false,
+    "active": true,
+    "order": 0,
+    "__v": 0,
+    "createdAt": "2026-07-27T07:39:46.837Z",
+    "updatedAt": "2026-07-27T07:39:46.837Z"
+  },
+  {
+    "_id": "6a670b42b148078fea7368da",
+    "slug": "suzuki-cultus-1000",
+    "name": "Suzuki Cultus 1000",
+    "class": "economy",
+    "modelYears": "2019–2025",
+    "seats": 4,
+    "engine": {
+      "en": "1.0L petrol",
+      "ur": "1.0L پیٹرول"
+    },
+    "transmission": {
+      "en": "Automatic / Manual",
+      "ur": "آٹومیٹک / مینوئل"
+    },
+    "driveType": {
+      "en": "FWD",
+      "ur": "FWD"
+    },
+    "interiorFeatures": [
+      {
+        "en": "Air conditioning",
+        "ur": "ایئر کنڈیشننگ"
+      },
+      {
+        "en": "Practical five-door hatch",
+        "ur": "کارآمد پانچ دروازوں والی ہیچ"
+      },
+      {
+        "en": "Light on fuel",
+        "ur": "کم ایندھن خرچ"
+      },
+      {
+        "en": "Easy city parking",
+        "ur": "شہر میں آسان پارکنگ"
+      }
+    ],
+    "images": [
+      {
+        "publicId": "",
+        "url": "https://images.unsplash.com/photo-1762332968954-a74836324d61?w=1600&q=80&auto=format",
+        "alt": "Suzuki Cultus hatchback",
+        "order": 0
+      }
+    ],
+    "rates": {
+      "perHour": 550,
+      "perDay": 5500,
+      "perWeek": 36575,
+      "perMonth": 132000,
+      "fuelPerKm": 32,
+      "airportTransfer": 4800
+    },
+    "currency": "PKR",
+    "armorLevel": null,
+    "rollCage": false,
+    "selfDriveAvailable": true,
+    "selfDrive": {
+      "perDay": null,
+      "perWeek": null,
+      "perMonth": null,
+      "securityDeposit": null
+    },
+    "featured": false,
+    "active": true,
+    "order": 1,
+    "__v": 0,
+    "createdAt": "2026-07-27T07:39:46.839Z",
+    "updatedAt": "2026-07-27T07:39:46.839Z"
+  },
+  {
+    "_id": "6a670b42b148078fea7368db",
+    "slug": "suzuki-wagon-r-1000",
+    "name": "Suzuki Wagon-R 1000",
+    "class": "economy",
+    "modelYears": "2019–2025",
+    "seats": 4,
+    "engine": {
+      "en": "1.0L petrol",
+      "ur": "1.0L پیٹرول"
+    },
+    "transmission": {
+      "en": "Manual",
+      "ur": "مینوئل"
+    },
+    "driveType": {
+      "en": "FWD",
+      "ur": "FWD"
+    },
+    "interiorFeatures": [
+      {
+        "en": "Air conditioning",
+        "ur": "ایئر کنڈیشننگ"
+      },
+      {
+        "en": "Tall, roomy cabin",
+        "ur": "اونچا، کشادہ کیبن"
+      },
+      {
+        "en": "Fuel-efficient",
+        "ur": "کم ایندھن خرچ"
+      },
+      {
+        "en": "City & short-route hire",
+        "ur": "شہری اور مختصر روٹ کے لیے"
+      }
+    ],
+    "images": [
+      {
+        "publicId": "",
+        "url": "https://images.unsplash.com/photo-1762332968954-a74836324d61?w=1600&q=80&auto=format",
+        "alt": "Suzuki Wagon-R hatchback",
+        "order": 0
+      }
+    ],
+    "rates": {
+      "perHour": 550,
+      "perDay": 5500,
+      "perWeek": 36575,
+      "perMonth": 132000,
+      "fuelPerKm": 32,
+      "airportTransfer": 4800
+    },
+    "currency": "PKR",
+    "armorLevel": null,
+    "rollCage": false,
+    "selfDriveAvailable": true,
+    "selfDrive": {
+      "perDay": null,
+      "perWeek": null,
+      "perMonth": null,
+      "securityDeposit": null
+    },
+    "featured": false,
+    "active": true,
+    "order": 2,
+    "__v": 0,
+    "createdAt": "2026-07-27T07:39:46.839Z",
+    "updatedAt": "2026-07-27T07:39:46.839Z"
+  },
+  {
+    "_id": "6a670b42b148078fea7368dc",
+    "slug": "kia-picanto-1000",
+    "name": "Kia Picanto 1000",
+    "class": "economy",
+    "modelYears": "2020–2025",
+    "seats": 4,
+    "engine": {
+      "en": "1.0L petrol",
+      "ur": "1.0L پیٹرول"
+    },
+    "transmission": {
+      "en": "Automatic",
+      "ur": "آٹومیٹک"
+    },
+    "driveType": {
+      "en": "FWD",
+      "ur": "FWD"
+    },
+    "interiorFeatures": [
+      {
+        "en": "Air conditioning",
+        "ur": "ایئر کنڈیشننگ"
+      },
+      {
+        "en": "Compact automatic",
+        "ur": "کومپیکٹ آٹومیٹک"
+      },
+      {
+        "en": "Easy to drive",
+        "ur": "چلانے میں آسان"
+      },
+      {
+        "en": "Ideal first self-drive",
+        "ur": "پہلی خود ڈرائیو کے لیے مثالی"
+      }
+    ],
+    "images": [
+      {
+        "publicId": "",
+        "url": "https://images.unsplash.com/photo-1762332968954-a74836324d61?w=1600&q=80&auto=format",
+        "alt": "Kia Picanto hatchback",
+        "order": 0
+      }
+    ],
+    "rates": {
+      "perHour": 550,
+      "perDay": 5500,
+      "perWeek": 36575,
+      "perMonth": 132000,
+      "fuelPerKm": 32,
+      "airportTransfer": 4800
+    },
+    "currency": "PKR",
+    "armorLevel": null,
+    "rollCage": false,
+    "selfDriveAvailable": true,
+    "selfDrive": {
+      "perDay": null,
+      "perWeek": null,
+      "perMonth": null,
+      "securityDeposit": null
+    },
+    "featured": false,
+    "active": true,
+    "order": 3,
+    "__v": 0,
+    "createdAt": "2026-07-27T07:39:46.839Z",
+    "updatedAt": "2026-07-27T07:39:46.839Z"
+  },
+  {
+    "_id": "6a670b42b148078fea7368dd",
+    "slug": "toyota-corolla-xli-gli",
+    "name": "Toyota Corolla XLI / GLI",
+    "class": "sedan",
+    "modelYears": "2018–2023",
+    "seats": 4,
+    "engine": {
+      "en": "1.3L petrol",
+      "ur": "1.3L پیٹرول"
+    },
+    "transmission": {
+      "en": "Manual / Automatic",
+      "ur": "مینوئل / آٹومیٹک"
+    },
+    "driveType": {
+      "en": "FWD",
+      "ur": "FWD"
+    },
+    "interiorFeatures": [
+      {
+        "en": "Chauffeur included",
+        "ur": "ڈرائیور شامل"
+      },
+      {
+        "en": "Central locking & power windows",
+        "ur": "سینٹرل لاکنگ اور پاور ونڈوز"
+      },
+      {
+        "en": "Bluetooth/USB infotainment",
+        "ur": "بلوٹوتھ/USB انفوٹینمنٹ"
+      },
+      {
+        "en": "Dual airbags",
+        "ur": "دو ایئر بیگز"
+      }
+    ],
+    "images": [
+      {
+        "publicId": "",
+        "url": "https://images.unsplash.com/photo-1638618164682-12b986ec2a75?w=1600&q=80&auto=format",
+        "alt": "Toyota Corolla GLI sedan",
+        "order": 0
+      }
+    ],
+    "rates": {
+      "perHour": 650,
+      "perDay": 6500,
+      "perWeek": 43225,
+      "perMonth": 156000,
+      "fuelPerKm": 39,
+      "airportTransfer": 5800
+    },
+    "currency": "PKR",
+    "armorLevel": null,
+    "rollCage": false,
+    "selfDriveAvailable": true,
+    "selfDrive": {
+      "perDay": null,
+      "perWeek": null,
+      "perMonth": null,
+      "securityDeposit": null
+    },
+    "featured": false,
+    "active": true,
+    "order": 0,
+    "__v": 0,
+    "createdAt": "2026-07-27T07:39:46.839Z",
+    "updatedAt": "2026-07-27T07:39:46.839Z"
+  },
+  {
+    "_id": "6a670b42b148078fea7368de",
+    "slug": "toyota-yaris",
+    "name": "Toyota Yaris",
+    "class": "sedan",
+    "modelYears": "2022–2026",
+    "seats": 4,
+    "engine": {
+      "en": "1.3L petrol",
+      "ur": "1.3L پیٹرول"
+    },
+    "transmission": {
+      "en": "Automatic",
+      "ur": "آٹومیٹک"
+    },
+    "driveType": {
+      "en": "FWD",
+      "ur": "FWD"
+    },
+    "interiorFeatures": [
+      {
+        "en": "Chauffeur included",
+        "ur": "ڈرائیور شامل"
+      },
+      {
+        "en": "Air conditioning",
+        "ur": "ایئر کنڈیشننگ"
+      },
+      {
+        "en": "Smooth city & highway ride",
+        "ur": "شہر اور ہائی وے پر ہموار سفر"
+      },
+      {
+        "en": "Comfortable for up to 4",
+        "ur": "4 افراد تک آرام دہ"
+      }
+    ],
+    "images": [
+      {
+        "publicId": "",
+        "url": "https://images.unsplash.com/photo-1749058983232-59b967855b18?w=1600&q=80&auto=format",
+        "alt": "Toyota Yaris sedan",
+        "order": 0
+      }
+    ],
+    "rates": {
+      "perHour": 750,
+      "perDay": 7500,
+      "perWeek": 49875,
+      "perMonth": 180000,
+      "fuelPerKm": 39,
+      "airportTransfer": 5800
+    },
+    "currency": "PKR",
+    "armorLevel": null,
+    "rollCage": false,
+    "selfDriveAvailable": true,
+    "selfDrive": {
+      "perDay": null,
+      "perWeek": null,
+      "perMonth": null,
+      "securityDeposit": null
+    },
+    "featured": false,
+    "active": true,
+    "order": 1,
+    "__v": 0,
+    "createdAt": "2026-07-27T07:39:46.839Z",
+    "updatedAt": "2026-07-27T07:39:46.839Z"
+  },
+  {
+    "_id": "6a670b42b148078fea7368df",
+    "slug": "toyota-corolla-altis-1600x",
+    "name": "Toyota Corolla Altis 1600 X",
+    "class": "sedan",
+    "modelYears": "2022–2026",
+    "seats": 4,
+    "engine": {
+      "en": "1.6L petrol",
+      "ur": "1.6L پیٹرول"
+    },
+    "transmission": {
+      "en": "Automatic (CVT)",
+      "ur": "آٹومیٹک (CVT)"
+    },
+    "driveType": {
+      "en": "FWD",
+      "ur": "FWD"
+    },
+    "interiorFeatures": [
+      {
+        "en": "Chauffeur included",
+        "ur": "ڈرائیور شامل"
+      },
+      {
+        "en": "Touchscreen infotainment",
+        "ur": "ٹچ اسکرین انفوٹینمنٹ"
+      },
+      {
+        "en": "ABS/EBD with dual airbags",
+        "ur": "ABS/EBD اور دو ایئر بیگز"
+      },
+      {
+        "en": "Executive-ready cabin",
+        "ur": "ایگزیکٹو کے لیے تیار کیبن"
+      }
+    ],
+    "images": [
+      {
+        "publicId": "",
+        "url": "https://images.unsplash.com/photo-1623869675781-80aa31012a5a?w=1600&q=80&auto=format",
+        "alt": "Toyota Corolla Altis X sedan",
+        "order": 0
+      }
+    ],
+    "rates": {
+      "perHour": null,
+      "perDay": null,
+      "perWeek": null,
+      "perMonth": null,
+      "fuelPerKm": null,
+      "airportTransfer": null
+    },
+    "currency": "PKR",
+    "armorLevel": null,
+    "rollCage": false,
+    "selfDriveAvailable": true,
+    "selfDrive": null,
+    "featured": false,
+    "active": true,
+    "order": 2,
+    "__v": 0,
+    "createdAt": "2026-07-27T07:39:46.840Z",
+    "updatedAt": "2026-08-05T09:08:09.280Z"
+  },
+  {
+    "_id": "6a670b42b148078fea7368e0",
+    "slug": "toyota-corolla-grande-1800",
+    "name": "Toyota Corolla Grande 1800CC",
+    "class": "sedan",
+    "modelYears": "2023–2026",
+    "seats": 4,
+    "engine": {
+      "en": "1.8L petrol",
+      "ur": "1.8L پیٹرول"
+    },
+    "transmission": {
+      "en": "Automatic (CVT)",
+      "ur": "آٹومیٹک (CVT)"
+    },
+    "driveType": {
+      "en": "FWD",
+      "ur": "FWD"
+    },
+    "interiorFeatures": [
+      {
+        "en": "Chauffeur included",
+        "ur": "ڈرائیور شامل"
+      },
+      {
+        "en": "Leather seats",
+        "ur": "چمڑے کی نشستیں"
+      },
+      {
+        "en": "Touchscreen infotainment",
+        "ur": "ٹچ اسکرین انفوٹینمنٹ"
+      },
+      {
+        "en": "Cruise control",
+        "ur": "کروز کنٹرول"
+      }
+    ],
+    "images": [
+      {
+        "publicId": "shani-travels/vehicles/dwld5gbxthdzys7jcyrt",
+        "url": "https://res.cloudinary.com/buhwgcug/image/upload/v1785929791/shani-travels/vehicles/dwld5gbxthdzys7jcyrt.webp",
+        "alt": "",
+        "order": 0
+      },
+      {
+        "publicId": "shani-travels/vehicles/qzxqstcprdsfghegoa3s",
+        "url": "https://res.cloudinary.com/buhwgcug/image/upload/v1785929792/shani-travels/vehicles/qzxqstcprdsfghegoa3s.webp",
+        "alt": "",
+        "order": 1
+      },
+      {
+        "publicId": "shani-travels/vehicles/rjoljdar7yknuzfyzwpp",
+        "url": "https://res.cloudinary.com/buhwgcug/image/upload/v1785929793/shani-travels/vehicles/rjoljdar7yknuzfyzwpp.webp",
+        "alt": "",
+        "order": 2
+      },
+      {
+        "publicId": "shani-travels/vehicles/reuj6q2w3zpssxmawvia",
+        "url": "https://res.cloudinary.com/buhwgcug/image/upload/v1785929794/shani-travels/vehicles/reuj6q2w3zpssxmawvia.webp",
+        "alt": "",
+        "order": 3
+      }
+    ],
+    "rates": {
+      "perHour": 850,
+      "perDay": 8500,
+      "perWeek": 56525,
+      "perMonth": 204000,
+      "fuelPerKm": 42,
+      "airportTransfer": 6800
+    },
+    "currency": "PKR",
+    "armorLevel": null,
+    "rollCage": false,
+    "selfDriveAvailable": true,
+    "selfDrive": {
+      "perDay": null,
+      "perWeek": null,
+      "perMonth": null,
+      "securityDeposit": null
+    },
+    "featured": true,
+    "active": true,
+    "order": 3,
+    "__v": 0,
+    "createdAt": "2026-07-27T07:39:46.840Z",
+    "updatedAt": "2026-08-05T11:36:52.093Z"
+  },
+  {
+    "_id": "6a670b42b148078fea7368e1",
+    "slug": "honda-city-1200",
+    "name": "Honda City 1200",
+    "class": "sedan",
+    "modelYears": "2021–2026",
+    "seats": 4,
+    "engine": {
+      "en": "1.2L i-VTEC",
+      "ur": "1.2L i-VTEC"
+    },
+    "transmission": {
+      "en": "Automatic (CVT)",
+      "ur": "آٹومیٹک (CVT)"
+    },
+    "driveType": {
+      "en": "FWD",
+      "ur": "FWD"
+    },
+    "interiorFeatures": [
+      {
+        "en": "Chauffeur included",
+        "ur": "ڈرائیور شامل"
+      },
+      {
+        "en": "Air conditioning",
+        "ur": "ایئر کنڈیشننگ"
+      },
+      {
+        "en": "Comfortable daily hire",
+        "ur": "روزانہ کے لیے آرام دہ"
+      },
+      {
+        "en": "Compact sedan economy",
+        "ur": "کومپیکٹ سیڈان، کم خرچ"
+      }
+    ],
+    "images": [
+      {
+        "publicId": "",
+        "url": "https://images.unsplash.com/photo-1631547891859-184677884115?w=1600&q=80&auto=format",
+        "alt": "Honda City sedan",
+        "order": 0
+      }
+    ],
+    "rates": {
+      "perHour": null,
+      "perDay": null,
+      "perWeek": null,
+      "perMonth": null,
+      "fuelPerKm": null,
+      "airportTransfer": null
+    },
+    "currency": "PKR",
+    "armorLevel": null,
+    "rollCage": false,
+    "selfDriveAvailable": true,
+    "selfDrive": null,
+    "featured": false,
+    "active": true,
+    "order": 4,
+    "__v": 0,
+    "createdAt": "2026-07-27T07:39:46.840Z",
+    "updatedAt": "2026-08-05T09:08:09.280Z"
+  },
+  {
+    "_id": "6a670b42b148078fea7368e2",
+    "slug": "honda-city-1500",
+    "name": "Honda City 1500",
+    "class": "sedan",
+    "modelYears": "2021–2026",
+    "seats": 4,
+    "engine": {
+      "en": "1.5L i-VTEC",
+      "ur": "1.5L i-VTEC"
+    },
+    "transmission": {
+      "en": "Automatic (CVT)",
+      "ur": "آٹومیٹک (CVT)"
+    },
+    "driveType": {
+      "en": "FWD",
+      "ur": "FWD"
+    },
+    "interiorFeatures": [
+      {
+        "en": "Chauffeur included",
+        "ur": "ڈرائیور شامل"
+      },
+      {
+        "en": "Touchscreen infotainment",
+        "ur": "ٹچ اسکرین انفوٹینمنٹ"
+      },
+      {
+        "en": "Cruise control",
+        "ur": "کروز کنٹرول"
+      },
+      {
+        "en": "Comfortable for up to 4",
+        "ur": "4 افراد تک آرام دہ"
+      }
+    ],
+    "images": [
+      {
+        "publicId": "",
+        "url": "https://images.unsplash.com/photo-1631547891859-184677884115?w=1600&q=80&auto=format",
+        "alt": "Honda City 1.5 sedan",
+        "order": 0
+      }
+    ],
+    "rates": {
+      "perHour": null,
+      "perDay": null,
+      "perWeek": null,
+      "perMonth": null,
+      "fuelPerKm": null,
+      "airportTransfer": null
+    },
+    "currency": "PKR",
+    "armorLevel": null,
+    "rollCage": false,
+    "selfDriveAvailable": true,
+    "selfDrive": null,
+    "featured": false,
+    "active": true,
+    "order": 5,
+    "__v": 0,
+    "createdAt": "2026-07-27T07:39:46.840Z",
+    "updatedAt": "2026-08-05T09:08:09.280Z"
+  },
+  {
+    "_id": "6a670b42b148078fea7368e3",
+    "slug": "honda-civic-vti-oriel",
+    "name": "Honda Civic VTi Oriel 1500",
+    "class": "sedan",
+    "modelYears": "2022–2026",
+    "seats": 4,
+    "engine": {
+      "en": "1.5L VTEC Turbo",
+      "ur": "1.5L VTEC ٹربو"
+    },
+    "transmission": {
+      "en": "Automatic (CVT)",
+      "ur": "آٹومیٹک (CVT)"
+    },
+    "driveType": {
+      "en": "FWD",
+      "ur": "FWD"
+    },
+    "interiorFeatures": [
+      {
+        "en": "Chauffeur included",
+        "ur": "ڈرائیور شامل"
+      },
+      {
+        "en": "Sunroof & push start",
+        "ur": "سن روف اور پش اسٹارٹ"
+      },
+      {
+        "en": "Touchscreen infotainment",
+        "ur": "ٹچ اسکرین انفوٹینمنٹ"
+      },
+      {
+        "en": "Dual auto climate control",
+        "ur": "ڈوئل آٹو کلائمیٹ کنٹرول"
+      }
+    ],
+    "images": [
+      {
+        "publicId": "",
+        "url": "https://images.unsplash.com/photo-1626997077212-cfd5da89824e?w=1600&q=80&auto=format",
+        "alt": "Honda Civic VTi Oriel sedan",
+        "order": 0
+      }
+    ],
+    "rates": {
+      "perHour": 950,
+      "perDay": 9500,
+      "perWeek": 63175,
+      "perMonth": null,
+      "fuelPerKm": 45,
+      "airportTransfer": 7800
+    },
+    "currency": "PKR",
+    "armorLevel": null,
+    "rollCage": false,
+    "selfDriveAvailable": true,
+    "selfDrive": null,
+    "featured": true,
+    "active": true,
+    "order": 6,
+    "__v": 0,
+    "createdAt": "2026-07-27T07:39:46.840Z",
+    "updatedAt": "2026-08-05T09:08:09.280Z"
+  },
+  {
+    "_id": "6a670b42b148078fea7368e4",
+    "slug": "hyundai-elantra",
+    "name": "Hyundai Elantra",
+    "class": "sedan",
+    "modelYears": "2022–2026",
+    "seats": 4,
+    "engine": {
+      "en": "1.6L / 2.0L petrol",
+      "ur": "1.6L / 2.0L پیٹرول"
+    },
+    "transmission": {
+      "en": "Automatic",
+      "ur": "آٹومیٹک"
+    },
+    "driveType": {
+      "en": "FWD",
+      "ur": "FWD"
+    },
+    "interiorFeatures": [
+      {
+        "en": "Chauffeur included",
+        "ur": "ڈرائیور شامل"
+      },
+      {
+        "en": "Modern executive cabin",
+        "ur": "جدید ایگزیکٹو کیبن"
+      },
+      {
+        "en": "Touchscreen infotainment",
+        "ur": "ٹچ اسکرین انفوٹینمنٹ"
+      },
+      {
+        "en": "Comfortable for up to 4",
+        "ur": "4 افراد تک آرام دہ"
+      }
+    ],
+    "images": [
+      {
+        "publicId": "",
+        "url": "https://images.unsplash.com/photo-1626997077212-cfd5da89824e?w=1600&q=80&auto=format",
+        "alt": "Hyundai Elantra sedan",
+        "order": 0
+      }
+    ],
+    "rates": {
+      "perHour": null,
+      "perDay": null,
+      "perWeek": null,
+      "perMonth": null,
+      "fuelPerKm": null,
+      "airportTransfer": null
+    },
+    "currency": "PKR",
+    "armorLevel": null,
+    "rollCage": false,
+    "selfDriveAvailable": true,
+    "selfDrive": null,
+    "featured": false,
+    "active": true,
+    "order": 7,
+    "__v": 0,
+    "createdAt": "2026-07-27T07:39:46.840Z",
+    "updatedAt": "2026-08-05T09:08:09.280Z"
+  },
+  {
+    "_id": "6a670b42b148078fea7368e5",
+    "slug": "hyundai-sonata",
+    "name": "Hyundai Sonata",
+    "class": "sedan",
+    "modelYears": "2022–2026",
+    "seats": 4,
+    "engine": {
+      "en": "2.0L / 2.5L petrol",
+      "ur": "2.0L / 2.5L پیٹرول"
+    },
+    "transmission": {
+      "en": "Automatic",
+      "ur": "آٹومیٹک"
+    },
+    "driveType": {
+      "en": "FWD",
+      "ur": "FWD"
+    },
+    "interiorFeatures": [
+      {
+        "en": "Chauffeur included",
+        "ur": "ڈرائیور شامل"
+      },
+      {
+        "en": "Full-size executive comfort",
+        "ur": "مکمل سائز ایگزیکٹو آرام"
+      },
+      {
+        "en": "Premium infotainment",
+        "ur": "پریمیم انفوٹینمنٹ"
+      },
+      {
+        "en": "Boardroom-to-airport ready",
+        "ur": "بورڈ روم سے ایئرپورٹ تک موزوں"
+      }
+    ],
+    "images": [
+      {
+        "publicId": "",
+        "url": "https://images.unsplash.com/photo-1563720223185-11003d516935?w=1600&q=80&auto=format",
+        "alt": "Hyundai Sonata executive sedan",
+        "order": 0
+      }
+    ],
+    "rates": {
+      "perHour": null,
+      "perDay": null,
+      "perWeek": null,
+      "perMonth": null,
+      "fuelPerKm": null,
+      "airportTransfer": null
+    },
+    "currency": "PKR",
+    "armorLevel": null,
+    "rollCage": false,
+    "selfDriveAvailable": true,
+    "selfDrive": null,
+    "featured": false,
+    "active": true,
+    "order": 8,
+    "__v": 0,
+    "createdAt": "2026-07-27T07:39:46.840Z",
+    "updatedAt": "2026-08-05T09:08:09.280Z"
+  },
+  {
+    "_id": "6a670b42b148078fea7368e6",
+    "slug": "toyota-land-cruiser-prado",
+    "name": "Toyota Land Cruiser Prado",
+    "class": "suv",
+    "modelYears": "2022–2026",
+    "seats": 7,
+    "engine": {
+      "en": "2.8L diesel",
+      "ur": "2.8L ڈیزل"
+    },
+    "transmission": {
+      "en": "Automatic",
+      "ur": "آٹومیٹک"
+    },
+    "driveType": {
+      "en": "4x4",
+      "ur": "4x4"
+    },
+    "interiorFeatures": [
+      {
+        "en": "Chauffeur included",
+        "ur": "ڈرائیور شامل"
+      },
+      {
+        "en": "7-seat premium cabin",
+        "ur": "7 نشستوں والا پریمیم کیبن"
+      },
+      {
+        "en": "Heated seats & parking sensors",
+        "ur": "گرم نشستیں اور پارکنگ سینسر"
+      },
+      {
+        "en": "City and northern terrain",
+        "ur": "شہری اور شمالی علاقوں کے لیے"
+      }
+    ],
+    "images": [
+      {
+        "publicId": "",
+        "url": "https://images.unsplash.com/photo-1613859492095-85d9944f09f6?w=1600&q=80&auto=format",
+        "alt": "Toyota Land Cruiser Prado",
+        "order": 0
+      }
+    ],
+    "rates": {
+      "perHour": 5000,
+      "perDay": 19500,
+      "perWeek": 129675,
+      "perMonth": null,
+      "fuelPerKm": 77,
+      "airportTransfer": 15800
+    },
+    "currency": "PKR",
+    "armorLevel": null,
+    "rollCage": false,
+    "selfDriveAvailable": false,
+    "selfDrive": null,
+    "featured": true,
+    "active": true,
+    "order": 0,
+    "__v": 0,
+    "createdAt": "2026-07-27T07:39:46.840Z",
+    "updatedAt": "2026-07-27T07:39:46.840Z"
+  },
+  {
+    "_id": "6a670b42b148078fea7368e7",
+    "slug": "toyota-land-cruiser-v8",
+    "name": "Toyota Land Cruiser V8",
+    "class": "suv",
+    "modelYears": "2019–2026",
+    "seats": 7,
+    "engine": {
+      "en": "4.6L V8 petrol",
+      "ur": "4.6L V8 پیٹرول"
+    },
+    "transmission": {
+      "en": "Automatic",
+      "ur": "آٹومیٹک"
+    },
+    "driveType": {
+      "en": "4x4",
+      "ur": "4x4"
+    },
+    "interiorFeatures": [
+      {
+        "en": "Security-trained chauffeur",
+        "ur": "سیکیورٹی تربیت یافتہ ڈرائیور"
+      },
+      {
+        "en": "Premium wood & leather finish",
+        "ur": "پریمیم لکڑی اور چمڑے کی تکمیل"
+      },
+      {
+        "en": "360° camera",
+        "ur": "360° کیمرہ"
+      },
+      {
+        "en": "VIP & protocol travel",
+        "ur": "VIP اور پروٹوکول سفر"
+      }
+    ],
+    "images": [
+      {
+        "publicId": "",
+        "url": "https://images.unsplash.com/photo-1654688554491-69d21d38fb91?w=1600&q=80&auto=format",
+        "alt": "Toyota Land Cruiser V8",
+        "order": 0
+      }
+    ],
+    "rates": {
+      "perHour": 8000,
+      "perDay": 27500,
+      "perWeek": 182875,
+      "perMonth": null,
+      "fuelPerKm": 98,
+      "airportTransfer": 24800
+    },
+    "currency": "PKR",
+    "armorLevel": null,
+    "rollCage": false,
+    "selfDriveAvailable": false,
+    "selfDrive": null,
+    "featured": true,
+    "active": true,
+    "order": 1,
+    "__v": 0,
+    "createdAt": "2026-07-27T07:39:46.840Z",
+    "updatedAt": "2026-07-27T07:39:46.840Z"
+  },
+  {
+    "_id": "6a670b42b148078fea7368e8",
+    "slug": "lexus-lx",
+    "name": "Land Cruiser LX (Lexus)",
+    "class": "suv",
+    "modelYears": "2020–2026",
+    "seats": 7,
+    "engine": {
+      "en": "5.7L V8 petrol",
+      "ur": "5.7L V8 پیٹرول"
+    },
+    "transmission": {
+      "en": "Automatic",
+      "ur": "آٹومیٹک"
+    },
+    "driveType": {
+      "en": "4x4",
+      "ur": "4x4"
+    },
+    "interiorFeatures": [
+      {
+        "en": "Security-trained chauffeur",
+        "ur": "سیکیورٹی تربیت یافتہ ڈرائیور"
+      },
+      {
+        "en": "Lexus luxury cabin",
+        "ur": "لیکسس پرتعیش کیبن"
+      },
+      {
+        "en": "Flagship delegate SUV",
+        "ur": "نمایاں ترین وفد SUV"
+      },
+      {
+        "en": "Protocol movements",
+        "ur": "پروٹوکول نقل و حرکت"
+      }
+    ],
+    "images": [
+      {
+        "publicId": "",
+        "url": "https://images.unsplash.com/photo-1654688554491-69d21d38fb91?w=1600&q=80&auto=format",
+        "alt": "Lexus LX luxury SUV",
+        "order": 0
+      }
+    ],
+    "rates": {
+      "perHour": null,
+      "perDay": null,
+      "perWeek": null,
+      "perMonth": null,
+      "fuelPerKm": null,
+      "airportTransfer": null
+    },
+    "currency": "PKR",
+    "armorLevel": null,
+    "rollCage": false,
+    "selfDriveAvailable": false,
+    "selfDrive": null,
+    "featured": false,
+    "active": true,
+    "order": 2,
+    "__v": 0,
+    "createdAt": "2026-07-27T07:39:46.840Z",
+    "updatedAt": "2026-07-27T07:39:46.840Z"
+  },
+  {
+    "_id": "6a670b42b148078fea7368e9",
+    "slug": "toyota-fortuner",
+    "name": "Toyota Fortuner",
+    "class": "suv",
+    "modelYears": "2020–2026",
+    "seats": 7,
+    "engine": {
+      "en": "2.7L petrol / 2.8L diesel",
+      "ur": "2.7L پیٹرول / 2.8L ڈیزل"
+    },
+    "transmission": {
+      "en": "Automatic",
+      "ur": "آٹومیٹک"
+    },
+    "driveType": {
+      "en": "4x4",
+      "ur": "4x4"
+    },
+    "interiorFeatures": [
+      {
+        "en": "Chauffeur included",
+        "ur": "ڈرائیور شامل"
+      },
+      {
+        "en": "7-seater leather cabin",
+        "ur": "7 نشستوں والا چمڑے کا کیبن"
+      },
+      {
+        "en": "Dual-zone climate control",
+        "ur": "ڈوئل زون کلائمیٹ کنٹرول"
+      },
+      {
+        "en": "Genuine off-road capability",
+        "ur": "حقیقی آف روڈ صلاحیت"
+      }
+    ],
+    "images": [
+      {
+        "publicId": "",
+        "url": "https://images.unsplash.com/photo-1670054953044-2605dbd0d747?w=1600&q=80&auto=format",
+        "alt": "Toyota Fortuner SUV",
+        "order": 0
+      }
+    ],
+    "rates": {
+      "perHour": 3000,
+      "perDay": 17500,
+      "perWeek": 116375,
+      "perMonth": null,
+      "fuelPerKm": 77,
+      "airportTransfer": 14800
+    },
+    "currency": "PKR",
+    "armorLevel": null,
+    "rollCage": false,
+    "selfDriveAvailable": false,
+    "selfDrive": null,
+    "featured": false,
+    "active": true,
+    "order": 3,
+    "__v": 0,
+    "createdAt": "2026-07-27T07:39:46.840Z",
+    "updatedAt": "2026-07-27T07:39:46.840Z"
+  },
+  {
+    "_id": "6a670b42b148078fea7368ea",
+    "slug": "honda-brv",
+    "name": "Honda BR-V (7-seater)",
+    "class": "suv",
+    "modelYears": "2019–2024",
+    "seats": 7,
+    "engine": {
+      "en": "1.5L i-VTEC",
+      "ur": "1.5L i-VTEC"
+    },
+    "transmission": {
+      "en": "Automatic (CVT)",
+      "ur": "آٹومیٹک (CVT)"
+    },
+    "driveType": {
+      "en": "FWD",
+      "ur": "FWD"
+    },
+    "interiorFeatures": [
+      {
+        "en": "Chauffeur included",
+        "ur": "ڈرائیور شامل"
+      },
+      {
+        "en": "7-seat flexible cabin",
+        "ur": "7 نشستوں والا لچکدار کیبن"
+      },
+      {
+        "en": "Air conditioning",
+        "ur": "ایئر کنڈیشننگ"
+      },
+      {
+        "en": "Ideal for small group travel",
+        "ur": "چھوٹے گروپ کے سفر کے لیے مثالی"
+      }
+    ],
+    "images": [
+      {
+        "publicId": "",
+        "url": "https://images.unsplash.com/photo-1570761511122-dd6342842496?w=1600&q=80&auto=format",
+        "alt": "Honda BR-V seven-seater",
+        "order": 0
+      }
+    ],
+    "rates": {
+      "perHour": 850,
+      "perDay": 8500,
+      "perWeek": 56525,
+      "perMonth": 204000,
+      "fuelPerKm": 54,
+      "airportTransfer": 8400
+    },
+    "currency": "PKR",
+    "armorLevel": null,
+    "rollCage": false,
+    "selfDriveAvailable": false,
+    "selfDrive": null,
+    "featured": false,
+    "active": true,
+    "order": 4,
+    "__v": 0,
+    "createdAt": "2026-07-27T07:39:46.840Z",
+    "updatedAt": "2026-07-27T07:39:46.840Z"
+  },
+  {
+    "_id": "6a670b42b148078fea7368eb",
+    "slug": "kia-sportage",
+    "name": "Kia Sportage",
+    "class": "suv",
+    "modelYears": "2021–2026",
+    "seats": 5,
+    "engine": {
+      "en": "2.0L petrol",
+      "ur": "2.0L پیٹرول"
+    },
+    "transmission": {
+      "en": "Automatic",
+      "ur": "آٹومیٹک"
+    },
+    "driveType": {
+      "en": "AWD",
+      "ur": "AWD"
+    },
+    "interiorFeatures": [
+      {
+        "en": "Chauffeur included",
+        "ur": "ڈرائیور شامل"
+      },
+      {
+        "en": "Panoramic sunroof",
+        "ur": "پینورامک سن روف"
+      },
+      {
+        "en": "Dual touchscreen infotainment",
+        "ur": "ڈوئل ٹچ اسکرین انفوٹینمنٹ"
+      },
+      {
+        "en": "Rain-sensing wipers",
+        "ur": "بارش محسوس کرنے والے وائپرز"
+      }
+    ],
+    "images": [
+      {
+        "publicId": "",
+        "url": "https://images.unsplash.com/photo-1647501581530-053b42684b8d?w=1600&q=80&auto=format",
+        "alt": "Kia Sportage crossover",
+        "order": 0
+      }
+    ],
+    "rates": {
+      "perHour": 1150,
+      "perDay": 11500,
+      "perWeek": 76475,
+      "perMonth": null,
+      "fuelPerKm": 64,
+      "airportTransfer": 9800
+    },
+    "currency": "PKR",
+    "armorLevel": null,
+    "rollCage": false,
+    "selfDriveAvailable": false,
+    "selfDrive": null,
+    "featured": true,
+    "active": true,
+    "order": 5,
+    "__v": 0,
+    "createdAt": "2026-07-27T07:39:46.840Z",
+    "updatedAt": "2026-07-27T07:39:46.840Z"
+  },
+  {
+    "_id": "6a670b42b148078fea7368ec",
+    "slug": "hyundai-tucson",
+    "name": "Hyundai Tucson",
+    "class": "suv",
+    "modelYears": "2021–2026",
+    "seats": 5,
+    "engine": {
+      "en": "2.0L petrol",
+      "ur": "2.0L پیٹرول"
+    },
+    "transmission": {
+      "en": "Automatic",
+      "ur": "آٹومیٹک"
+    },
+    "driveType": {
+      "en": "AWD",
+      "ur": "AWD"
+    },
+    "interiorFeatures": [
+      {
+        "en": "Chauffeur included",
+        "ur": "ڈرائیور شامل"
+      },
+      {
+        "en": "Modern crossover cabin",
+        "ur": "جدید کراس اوور کیبن"
+      },
+      {
+        "en": "Touchscreen infotainment",
+        "ur": "ٹچ اسکرین انفوٹینمنٹ"
+      },
+      {
+        "en": "Comfortable for up to 5",
+        "ur": "5 افراد تک آرام دہ"
+      }
+    ],
+    "images": [
+      {
+        "publicId": "",
+        "url": "https://images.unsplash.com/photo-1647501581530-053b42684b8d?w=1600&q=80&auto=format",
+        "alt": "Hyundai Tucson crossover",
+        "order": 0
+      }
+    ],
+    "rates": {
+      "perHour": null,
+      "perDay": null,
+      "perWeek": null,
+      "perMonth": null,
+      "fuelPerKm": null,
+      "airportTransfer": null
+    },
+    "currency": "PKR",
+    "armorLevel": null,
+    "rollCage": false,
+    "selfDriveAvailable": false,
+    "selfDrive": null,
+    "featured": false,
+    "active": true,
+    "order": 6,
+    "__v": 0,
+    "createdAt": "2026-07-27T07:39:46.840Z",
+    "updatedAt": "2026-07-27T07:39:46.840Z"
+  },
+  {
+    "_id": "6a670b42b148078fea7368ed",
+    "slug": "changan-oshan-x7",
+    "name": "Changan Oshan X7",
+    "class": "suv",
+    "modelYears": "2022–2026",
+    "seats": 7,
+    "engine": {
+      "en": "1.5L turbo petrol",
+      "ur": "1.5L ٹربو پیٹرول"
+    },
+    "transmission": {
+      "en": "Automatic",
+      "ur": "آٹومیٹک"
+    },
+    "driveType": {
+      "en": "FWD",
+      "ur": "FWD"
+    },
+    "interiorFeatures": [
+      {
+        "en": "Chauffeur included",
+        "ur": "ڈرائیور شامل"
+      },
+      {
+        "en": "7-seat family SUV",
+        "ur": "7 نشستوں والی فیملی SUV"
+      },
+      {
+        "en": "Panoramic roof",
+        "ur": "پینورامک چھت"
+      },
+      {
+        "en": "Feature-loaded cabin",
+        "ur": "سہولیات سے بھرپور کیبن"
+      }
+    ],
+    "images": [
+      {
+        "publicId": "",
+        "url": "https://images.unsplash.com/photo-1647501581530-053b42684b8d?w=1600&q=80&auto=format",
+        "alt": "Changan Oshan X7 SUV",
+        "order": 0
+      }
+    ],
+    "rates": {
+      "perHour": null,
+      "perDay": null,
+      "perWeek": null,
+      "perMonth": null,
+      "fuelPerKm": null,
+      "airportTransfer": null
+    },
+    "currency": "PKR",
+    "armorLevel": null,
+    "rollCage": false,
+    "selfDriveAvailable": false,
+    "selfDrive": null,
+    "featured": false,
+    "active": true,
+    "order": 7,
+    "__v": 0,
+    "createdAt": "2026-07-27T07:39:46.841Z",
+    "updatedAt": "2026-07-27T07:39:46.841Z"
+  },
+  {
+    "_id": "6a670b42b148078fea7368ee",
+    "slug": "toyota-revo-4x4",
+    "name": "Toyota D/Cab REVO 4x4",
+    "class": "suv",
+    "modelYears": "2021–2026",
+    "seats": 5,
+    "engine": {
+      "en": "2.8L diesel",
+      "ur": "2.8L ڈیزل"
+    },
+    "transmission": {
+      "en": "Automatic",
+      "ur": "آٹومیٹک"
+    },
+    "driveType": {
+      "en": "4x4",
+      "ur": "4x4"
+    },
+    "interiorFeatures": [
+      {
+        "en": "4x4 double cabin",
+        "ur": "4x4 ڈبل کیبن"
+      },
+      {
+        "en": "Experienced mountain-route driver",
+        "ur": "پہاڑی راستوں کا تجربہ کار ڈرائیور"
+      },
+      {
+        "en": "6-speed automatic",
+        "ur": "6 اسپیڈ آٹومیٹک"
+      },
+      {
+        "en": "Field & project operations",
+        "ur": "فیلڈ اور پروجیکٹ آپریشنز"
+      }
+    ],
+    "images": [
+      {
+        "publicId": "",
+        "url": "https://images.unsplash.com/photo-1714213624189-9a9fc8a0736a?w=1600&q=80&auto=format",
+        "alt": "Toyota Hilux REVO double cabin",
+        "order": 0
+      }
+    ],
+    "rates": {
+      "perHour": 2500,
+      "perDay": 14500,
+      "perWeek": 96425,
+      "perMonth": 320000,
+      "fuelPerKm": 77,
+      "airportTransfer": 13800
+    },
+    "currency": "PKR",
+    "armorLevel": null,
+    "rollCage": false,
+    "selfDriveAvailable": false,
+    "selfDrive": null,
+    "featured": false,
+    "active": true,
+    "order": 8,
+    "__v": 0,
+    "createdAt": "2026-07-27T07:39:46.841Z",
+    "updatedAt": "2026-07-27T07:39:46.841Z"
+  },
+  {
+    "_id": "6a670b42b148078fea7368ef",
+    "slug": "toyota-grand-cab-van",
+    "name": "Toyota Grand Cab Van",
+    "class": "event",
+    "modelYears": "2017–2022",
+    "seats": 12,
+    "engine": {
+      "en": "2.8L diesel",
+      "ur": "2.8L ڈیزل"
+    },
+    "transmission": {
+      "en": "Manual",
+      "ur": "مینوئل"
+    },
+    "driveType": {
+      "en": "RWD",
+      "ur": "RWD"
+    },
+    "interiorFeatures": [
+      {
+        "en": "12+3 seated luxury layout",
+        "ur": "12+3 نشستوں کی پرتعیش ترتیب"
+      },
+      {
+        "en": "Reclining seats with privacy curtains",
+        "ur": "پردوں کے ساتھ جھکنے والی نشستیں"
+      },
+      {
+        "en": "Large luggage compartment",
+        "ur": "بڑا سامان رکھنے کا خانہ"
+      },
+      {
+        "en": "Corporate shuttle favourite",
+        "ur": "کارپوریٹ شٹل کے لیے پسندیدہ"
+      }
+    ],
+    "images": [
+      {
+        "publicId": "",
+        "url": "https://images.unsplash.com/photo-1678747172256-b37b7ac99cfc?w=1600&q=80&auto=format",
+        "alt": "Toyota Grand Cabin van",
+        "order": 0
+      }
+    ],
+    "rates": {
+      "perHour": 1500,
+      "perDay": 15000,
+      "perWeek": 99750,
+      "perMonth": 330000,
+      "fuelPerKm": 77,
+      "airportTransfer": 14400
+    },
+    "currency": "PKR",
+    "armorLevel": null,
+    "rollCage": false,
+    "selfDriveAvailable": false,
+    "selfDrive": null,
+    "featured": true,
+    "active": true,
+    "order": 0,
+    "__v": 0,
+    "createdAt": "2026-07-27T07:39:46.841Z",
+    "updatedAt": "2026-07-27T08:21:20.331Z"
+  },
+  {
+    "_id": "6a670b42b148078fea7368f0",
+    "slug": "toyota-hiace-van",
+    "name": "Toyota Hiace Van",
+    "class": "event",
+    "modelYears": "2008–2016",
+    "seats": 12,
+    "engine": {
+      "en": "2.7L petrol",
+      "ur": "2.7L پیٹرول"
+    },
+    "transmission": {
+      "en": "Manual",
+      "ur": "مینوئل"
+    },
+    "driveType": {
+      "en": "RWD",
+      "ur": "RWD"
+    },
+    "interiorFeatures": [
+      {
+        "en": "12+3 seated layout",
+        "ur": "12+3 نشستوں کی ترتیب"
+      },
+      {
+        "en": "Privacy curtains",
+        "ur": "پردے"
+      },
+      {
+        "en": "Large luggage compartment",
+        "ur": "بڑا سامان رکھنے کا خانہ"
+      },
+      {
+        "en": "Great for group travel",
+        "ur": "گروپ سفر کے لیے بہترین"
+      }
+    ],
+    "images": [
+      {
+        "publicId": "",
+        "url": "https://images.unsplash.com/photo-1650807486050-a142ea418b19?w=1600&q=80&auto=format",
+        "alt": "Toyota Hiace van",
+        "order": 0
+      }
+    ],
+    "rates": {
+      "perHour": 1250,
+      "perDay": 10000,
+      "perWeek": 66500,
+      "perMonth": 240000,
+      "fuelPerKm": 77,
+      "airportTransfer": 13400
+    },
+    "currency": "PKR",
+    "armorLevel": null,
+    "rollCage": false,
+    "selfDriveAvailable": false,
+    "selfDrive": null,
+    "featured": false,
+    "active": true,
+    "order": 1,
+    "__v": 0,
+    "createdAt": "2026-07-27T07:39:46.841Z",
+    "updatedAt": "2026-07-27T08:21:20.331Z"
+  },
+  {
+    "_id": "6a670b42b148078fea7368f1",
+    "slug": "toyota-coaster-saloon",
+    "name": "Toyota Coaster Saloon 22-Seater",
+    "class": "event",
+    "modelYears": "2015–2024",
+    "seats": 22,
+    "engine": {
+      "en": "Diesel (4/5-cylinder)",
+      "ur": "ڈیزل (4/5 سلنڈر)"
+    },
+    "transmission": {
+      "en": "Manual",
+      "ur": "مینوئل"
+    },
+    "driveType": {
+      "en": "RWD",
+      "ur": "RWD"
+    },
+    "interiorFeatures": [
+      {
+        "en": "22 comfortable seats",
+        "ur": "22 آرام دہ نشستیں"
+      },
+      {
+        "en": "Onboard PA & audio system",
+        "ur": "آن بورڈ PA اور آڈیو سسٹم"
+      },
+      {
+        "en": "Ideal for weddings & events",
+        "ur": "شادیوں اور تقریبات کے لیے مثالی"
+      },
+      {
+        "en": "Dedicated professional driver",
+        "ur": "مخصوص پیشہ ور ڈرائیور"
+      }
+    ],
+    "images": [
+      {
+        "publicId": "",
+        "url": "https://images.unsplash.com/photo-1669886845445-c2350d2431f5?w=1600&q=80&auto=format",
+        "alt": "Toyota Coaster 22-seater",
+        "order": 0
+      }
+    ],
+    "rates": {
+      "perHour": 3000,
+      "perDay": 17500,
+      "perWeek": 116375,
+      "perMonth": null,
+      "fuelPerKm": 98,
+      "airportTransfer": 16400
+    },
+    "currency": "PKR",
+    "armorLevel": null,
+    "rollCage": false,
+    "selfDriveAvailable": false,
+    "selfDrive": null,
+    "featured": false,
+    "active": true,
+    "order": 0,
+    "__v": 0,
+    "createdAt": "2026-07-27T07:39:46.841Z",
+    "updatedAt": "2026-07-27T08:21:20.331Z"
+  },
+  {
+    "_id": "6a670b42b148078fea7368f2",
+    "slug": "yutong-bus",
+    "name": "Yutong Bus",
+    "class": "event",
+    "modelYears": "2018–2024",
+    "seats": 45,
+    "engine": {
+      "en": "Diesel",
+      "ur": "ڈیزل"
+    },
+    "transmission": {
+      "en": "Manual",
+      "ur": "مینوئل"
+    },
+    "driveType": {
+      "en": "RWD",
+      "ur": "RWD"
+    },
+    "interiorFeatures": [
+      {
+        "en": "45+ seats",
+        "ur": "45+ نشستیں"
+      },
+      {
+        "en": "Air-conditioned saloon",
+        "ur": "ایئر کنڈیشنڈ سیلون"
+      },
+      {
+        "en": "Long-route touring",
+        "ur": "طویل روٹ سیاحت"
+      },
+      {
+        "en": "Event & delegation movement",
+        "ur": "تقریبات اور وفود کی نقل و حرکت"
+      }
+    ],
+    "images": [
+      {
+        "publicId": "",
+        "url": "https://images.unsplash.com/photo-1669886845445-c2350d2431f5?w=1600&q=80&auto=format",
+        "alt": "Yutong touring bus",
+        "order": 0
+      }
+    ],
+    "rates": {
+      "perHour": null,
+      "perDay": null,
+      "perWeek": null,
+      "perMonth": null,
+      "fuelPerKm": null,
+      "airportTransfer": null
+    },
+    "currency": "PKR",
+    "armorLevel": null,
+    "rollCage": false,
+    "selfDriveAvailable": false,
+    "selfDrive": null,
+    "featured": false,
+    "active": true,
+    "order": 1,
+    "__v": 0,
+    "createdAt": "2026-07-27T07:39:46.841Z",
+    "updatedAt": "2026-07-27T08:21:20.331Z"
+  },
+  {
+    "_id": "6a670b42b148078fea7368f3",
+    "slug": "daewoo-bus",
+    "name": "Daewoo Bus",
+    "class": "event",
+    "modelYears": "2016–2024",
+    "seats": 45,
+    "engine": {
+      "en": "Diesel",
+      "ur": "ڈیزل"
+    },
+    "transmission": {
+      "en": "Manual",
+      "ur": "مینوئل"
+    },
+    "driveType": {
+      "en": "RWD",
+      "ur": "RWD"
+    },
+    "interiorFeatures": [
+      {
+        "en": "45+ seats",
+        "ur": "45+ نشستیں"
+      },
+      {
+        "en": "Air-conditioned saloon",
+        "ur": "ایئر کنڈیشنڈ سیلون"
+      },
+      {
+        "en": "Intercity group travel",
+        "ur": "بین الاضلاعی گروپ سفر"
+      },
+      {
+        "en": "Experienced route drivers",
+        "ur": "تجربہ کار روٹ ڈرائیورز"
+      }
+    ],
+    "images": [
+      {
+        "publicId": "",
+        "url": "https://images.unsplash.com/photo-1669886845445-c2350d2431f5?w=1600&q=80&auto=format",
+        "alt": "Daewoo intercity bus",
+        "order": 0
+      }
+    ],
+    "rates": {
+      "perHour": null,
+      "perDay": null,
+      "perWeek": null,
+      "perMonth": null,
+      "fuelPerKm": null,
+      "airportTransfer": null
+    },
+    "currency": "PKR",
+    "armorLevel": null,
+    "rollCage": false,
+    "selfDriveAvailable": false,
+    "selfDrive": null,
+    "featured": false,
+    "active": true,
+    "order": 2,
+    "__v": 0,
+    "createdAt": "2026-07-27T07:39:46.841Z",
+    "updatedAt": "2026-07-27T08:21:20.331Z"
+  },
+  {
+    "_id": "6a670b42b148078fea7368f4",
+    "slug": "armored-revo-b6",
+    "name": "Armored REVO (B-6)",
+    "class": "specialized",
+    "modelYears": "2020–2025",
+    "seats": 5,
+    "engine": {
+      "en": "2.8L diesel",
+      "ur": "2.8L ڈیزل"
+    },
+    "transmission": {
+      "en": "Automatic",
+      "ur": "آٹومیٹک"
+    },
+    "driveType": {
+      "en": "4x4",
+      "ur": "4x4"
+    },
+    "interiorFeatures": [
+      {
+        "en": "B-6 ballistic protection",
+        "ur": "B-6 بلٹ پروف تحفظ"
+      },
+      {
+        "en": "Security-trained chauffeur",
+        "ur": "سیکیورٹی تربیت یافتہ ڈرائیور"
+      },
+      {
+        "en": "Field-security movements",
+        "ur": "فیلڈ سیکیورٹی نقل و حرکت"
+      },
+      {
+        "en": "Convoy coordination available",
+        "ur": "قافلہ کوآرڈینیشن دستیاب"
+      }
+    ],
+    "images": [
+      {
+        "publicId": "",
+        "url": "https://images.unsplash.com/photo-1714213624189-9a9fc8a0736a?w=1600&q=80&auto=format",
+        "alt": "Armored Toyota REVO",
+        "order": 0
+      }
+    ],
+    "rates": {
+      "perHour": null,
+      "perDay": null,
+      "perWeek": null,
+      "perMonth": null,
+      "fuelPerKm": null,
+      "airportTransfer": null
+    },
+    "currency": "PKR",
+    "armorLevel": "B-6",
+    "rollCage": true,
+    "selfDriveAvailable": false,
+    "selfDrive": null,
+    "featured": false,
+    "active": true,
+    "order": 0,
+    "__v": 0,
+    "createdAt": "2026-07-27T07:39:46.841Z",
+    "updatedAt": "2026-07-27T07:39:46.841Z"
+  },
+  {
+    "_id": "6a670b42b148078fea7368f5",
+    "slug": "armored-prado-b6",
+    "name": "Armored Prado (B-6)",
+    "class": "specialized",
+    "modelYears": "2019–2025",
+    "seats": 5,
+    "engine": {
+      "en": "2.8L diesel",
+      "ur": "2.8L ڈیزل"
+    },
+    "transmission": {
+      "en": "Automatic",
+      "ur": "آٹومیٹک"
+    },
+    "driveType": {
+      "en": "4x4",
+      "ur": "4x4"
+    },
+    "interiorFeatures": [
+      {
+        "en": "B-6 ballistic protection",
+        "ur": "B-6 بلٹ پروف تحفظ"
+      },
+      {
+        "en": "Security-trained chauffeur",
+        "ur": "سیکیورٹی تربیت یافتہ ڈرائیور"
+      },
+      {
+        "en": "Discreet protocol profile",
+        "ur": "کم نمایاں پروٹوکول انداز"
+      },
+      {
+        "en": "Embassy & mission movements",
+        "ur": "سفارتی اور مشن نقل و حرکت"
+      }
+    ],
+    "images": [
+      {
+        "publicId": "",
+        "url": "https://images.unsplash.com/photo-1613859492095-85d9944f09f6?w=1600&q=80&auto=format",
+        "alt": "Armored Land Cruiser Prado",
+        "order": 0
+      }
+    ],
+    "rates": {
+      "perHour": null,
+      "perDay": null,
+      "perWeek": null,
+      "perMonth": null,
+      "fuelPerKm": null,
+      "airportTransfer": null
+    },
+    "currency": "PKR",
+    "armorLevel": "B-6",
+    "rollCage": false,
+    "selfDriveAvailable": false,
+    "selfDrive": null,
+    "featured": false,
+    "active": true,
+    "order": 1,
+    "__v": 0,
+    "createdAt": "2026-07-27T07:39:46.841Z",
+    "updatedAt": "2026-07-27T07:39:46.841Z"
+  },
+  {
+    "_id": "6a670b42b148078fea7368f6",
+    "slug": "armored-fortuner-b6",
+    "name": "Armored Fortuner (B-6)",
+    "class": "specialized",
+    "modelYears": "2020–2025",
+    "seats": 5,
+    "engine": {
+      "en": "2.8L diesel",
+      "ur": "2.8L ڈیزل"
+    },
+    "transmission": {
+      "en": "Automatic",
+      "ur": "آٹومیٹک"
+    },
+    "driveType": {
+      "en": "4x4",
+      "ur": "4x4"
+    },
+    "interiorFeatures": [
+      {
+        "en": "B-6 ballistic protection",
+        "ur": "B-6 بلٹ پروف تحفظ"
+      },
+      {
+        "en": "Security-trained chauffeur",
+        "ur": "سیکیورٹی تربیت یافتہ ڈرائیور"
+      },
+      {
+        "en": "Urban protective movements",
+        "ur": "شہری حفاظتی نقل و حرکت"
+      },
+      {
+        "en": "Low-signature option",
+        "ur": "کم نمایاں انتخاب"
+      }
+    ],
+    "images": [
+      {
+        "publicId": "",
+        "url": "https://images.unsplash.com/photo-1670054953044-2605dbd0d747?w=1600&q=80&auto=format",
+        "alt": "Armored Toyota Fortuner",
+        "order": 0
+      }
+    ],
+    "rates": {
+      "perHour": null,
+      "perDay": null,
+      "perWeek": null,
+      "perMonth": null,
+      "fuelPerKm": null,
+      "airportTransfer": null
+    },
+    "currency": "PKR",
+    "armorLevel": "B-6",
+    "rollCage": false,
+    "selfDriveAvailable": false,
+    "selfDrive": null,
+    "featured": false,
+    "active": true,
+    "order": 2,
+    "__v": 0,
+    "createdAt": "2026-07-27T07:39:46.841Z",
+    "updatedAt": "2026-07-27T07:39:46.841Z"
+  },
+  {
+    "_id": "6a670b42b148078fea7368f7",
+    "slug": "armored-land-cruiser-v8-b6",
+    "name": "Armored Land Cruiser V8 (B-6)",
+    "class": "specialized",
+    "modelYears": "2018–2024",
+    "seats": 5,
+    "engine": {
+      "en": "4.5L V8 diesel",
+      "ur": "4.5L V8 ڈیزل"
+    },
+    "transmission": {
+      "en": "Automatic",
+      "ur": "آٹومیٹک"
+    },
+    "driveType": {
+      "en": "4x4",
+      "ur": "4x4"
+    },
+    "interiorFeatures": [
+      {
+        "en": "B-6 ballistic protection",
+        "ur": "B-6 بلٹ پروف تحفظ"
+      },
+      {
+        "en": "Security-trained chauffeur",
+        "ur": "سیکیورٹی تربیت یافتہ ڈرائیور"
+      },
+      {
+        "en": "Convoy coordination available",
+        "ur": "قافلہ کوآرڈینیشن دستیاب"
+      },
+      {
+        "en": "High-threat movements",
+        "ur": "زیادہ خطرے والی نقل و حرکت"
+      }
+    ],
+    "images": [
+      {
+        "publicId": "",
+        "url": "https://images.unsplash.com/photo-1654688554491-69d21d38fb91?w=1600&q=80&auto=format",
+        "alt": "Armored Land Cruiser V8",
+        "order": 0
+      }
+    ],
+    "rates": {
+      "perHour": null,
+      "perDay": 85000,
+      "perWeek": null,
+      "perMonth": null,
+      "fuelPerKm": null,
+      "airportTransfer": null
+    },
+    "currency": "PKR",
+    "armorLevel": "B-6",
+    "rollCage": false,
+    "selfDriveAvailable": false,
+    "selfDrive": null,
+    "featured": false,
+    "active": true,
+    "order": 3,
+    "__v": 0,
+    "createdAt": "2026-07-27T07:39:46.841Z",
+    "updatedAt": "2026-07-27T07:39:46.841Z"
+  },
+  {
+    "_id": "6a670b42b148078fea7368f8",
+    "slug": "mercedes-c-class",
+    "name": "Mercedes-Benz C-Class 250",
+    "class": "vip",
+    "modelYears": "2019–2025",
+    "seats": 4,
+    "engine": {
+      "en": "2.0L turbo petrol",
+      "ur": "2.0L ٹربو پیٹرول"
+    },
+    "transmission": {
+      "en": "Automatic",
+      "ur": "آٹومیٹک"
+    },
+    "driveType": {
+      "en": "RWD",
+      "ur": "RWD"
+    },
+    "interiorFeatures": [
+      {
+        "en": "Protocol-trained chauffeur",
+        "ur": "پروٹوکول تربیت یافتہ ڈرائیور"
+      },
+      {
+        "en": "Executive rear cabin",
+        "ur": "ایگزیکٹو پچھلا کیبن"
+      },
+      {
+        "en": "Delegate & VIP movement",
+        "ur": "وفود اور VIP نقل و حرکت"
+      },
+      {
+        "en": "Discreet, immaculate presentation",
+        "ur": "کم نمایاں، بے عیب پیشکش"
+      }
+    ],
+    "images": [
+      {
+        "publicId": "",
+        "url": "https://images.unsplash.com/photo-1563720223185-11003d516935?w=1600&q=80&auto=format",
+        "alt": "Mercedes-Benz C-Class",
+        "order": 0
+      }
+    ],
+    "rates": {
+      "perHour": null,
+      "perDay": null,
+      "perWeek": null,
+      "perMonth": null,
+      "fuelPerKm": null,
+      "airportTransfer": null
+    },
+    "currency": "PKR",
+    "armorLevel": null,
+    "rollCage": false,
+    "selfDriveAvailable": false,
+    "selfDrive": null,
+    "featured": false,
+    "active": true,
+    "order": 0,
+    "__v": 0,
+    "createdAt": "2026-07-27T07:39:46.841Z",
+    "updatedAt": "2026-07-27T07:39:46.841Z"
+  },
+  {
+    "_id": "6a670b42b148078fea7368f9",
+    "slug": "mercedes-s-class",
+    "name": "Mercedes-Benz S-Class 500",
+    "class": "vip",
+    "modelYears": "2018–2024",
+    "seats": 4,
+    "engine": {
+      "en": "4.0L V8 petrol",
+      "ur": "4.0L V8 پیٹرول"
+    },
+    "transmission": {
+      "en": "Automatic",
+      "ur": "آٹومیٹک"
+    },
+    "driveType": {
+      "en": "RWD",
+      "ur": "RWD"
+    },
+    "interiorFeatures": [
+      {
+        "en": "Protocol-trained chauffeur",
+        "ur": "پروٹوکول تربیت یافتہ ڈرائیور"
+      },
+      {
+        "en": "Flagship limousine comfort",
+        "ur": "نمایاں ترین لیموزین آرام"
+      },
+      {
+        "en": "Head-of-delegation vehicle",
+        "ur": "سربراہِ وفد کی گاڑی"
+      },
+      {
+        "en": "State & summit movements",
+        "ur": "ریاستی اور سربراہی اجلاس کی نقل و حرکت"
+      }
+    ],
+    "images": [
+      {
+        "publicId": "",
+        "url": "https://images.unsplash.com/photo-1563720223185-11003d516935?w=1600&q=80&auto=format",
+        "alt": "Mercedes-Benz S-Class",
+        "order": 0
+      }
+    ],
+    "rates": {
+      "perHour": null,
+      "perDay": null,
+      "perWeek": null,
+      "perMonth": null,
+      "fuelPerKm": null,
+      "airportTransfer": null
+    },
+    "currency": "PKR",
+    "armorLevel": null,
+    "rollCage": false,
+    "selfDriveAvailable": false,
+    "selfDrive": null,
+    "featured": false,
+    "active": true,
+    "order": 1,
+    "__v": 0,
+    "createdAt": "2026-07-27T07:39:46.841Z",
+    "updatedAt": "2026-07-27T07:39:46.841Z"
+  },
+  {
+    "_id": "6a670b42b148078fea7368fa",
+    "slug": "bmw-5-series",
+    "name": "BMW 5 Series",
+    "class": "vip",
+    "modelYears": "2019–2025",
+    "seats": 4,
+    "engine": {
+      "en": "2.0L turbo petrol",
+      "ur": "2.0L ٹربو پیٹرول"
+    },
+    "transmission": {
+      "en": "Automatic",
+      "ur": "آٹومیٹک"
+    },
+    "driveType": {
+      "en": "RWD",
+      "ur": "RWD"
+    },
+    "interiorFeatures": [
+      {
+        "en": "Protocol-trained chauffeur",
+        "ur": "پروٹوکول تربیت یافتہ ڈرائیور"
+      },
+      {
+        "en": "Executive sports sedan",
+        "ur": "ایگزیکٹو اسپورٹس سیڈان"
+      },
+      {
+        "en": "Corporate leadership travel",
+        "ur": "کارپوریٹ قیادت کا سفر"
+      },
+      {
+        "en": "Immaculate presentation",
+        "ur": "بے عیب پیشکش"
+      }
+    ],
+    "images": [
+      {
+        "publicId": "",
+        "url": "https://images.unsplash.com/photo-1563720223185-11003d516935?w=1600&q=80&auto=format",
+        "alt": "BMW 5 Series",
+        "order": 0
+      }
+    ],
+    "rates": {
+      "perHour": null,
+      "perDay": null,
+      "perWeek": null,
+      "perMonth": null,
+      "fuelPerKm": null,
+      "airportTransfer": null
+    },
+    "currency": "PKR",
+    "armorLevel": null,
+    "rollCage": false,
+    "selfDriveAvailable": false,
+    "selfDrive": null,
+    "featured": false,
+    "active": true,
+    "order": 2,
+    "__v": 0,
+    "createdAt": "2026-07-27T07:39:46.841Z",
+    "updatedAt": "2026-07-27T07:39:46.841Z"
+  },
+  {
+    "_id": "6a670b42b148078fea7368fb",
+    "slug": "bmw-7-series",
+    "name": "BMW 7 Series",
+    "class": "vip",
+    "modelYears": "2018–2024",
+    "seats": 4,
+    "engine": {
+      "en": "3.0L turbo petrol",
+      "ur": "3.0L ٹربو پیٹرول"
+    },
+    "transmission": {
+      "en": "Automatic",
+      "ur": "آٹومیٹک"
+    },
+    "driveType": {
+      "en": "RWD",
+      "ur": "RWD"
+    },
+    "interiorFeatures": [
+      {
+        "en": "Protocol-trained chauffeur",
+        "ur": "پروٹوکول تربیت یافتہ ڈرائیور"
+      },
+      {
+        "en": "Long-wheelbase rear comfort",
+        "ur": "لمبے وھیل بیس کا پچھلا آرام"
+      },
+      {
+        "en": "Delegate & VIP movement",
+        "ur": "وفود اور VIP نقل و حرکت"
+      },
+      {
+        "en": "Summit-grade presentation",
+        "ur": "سربراہی اجلاس کے معیار کی پیشکش"
+      }
+    ],
+    "images": [
+      {
+        "publicId": "",
+        "url": "https://images.unsplash.com/photo-1563720223185-11003d516935?w=1600&q=80&auto=format",
+        "alt": "BMW 7 Series",
+        "order": 0
+      }
+    ],
+    "rates": {
+      "perHour": null,
+      "perDay": null,
+      "perWeek": null,
+      "perMonth": null,
+      "fuelPerKm": null,
+      "airportTransfer": null
+    },
+    "currency": "PKR",
+    "armorLevel": null,
+    "rollCage": false,
+    "selfDriveAvailable": false,
+    "selfDrive": null,
+    "featured": false,
+    "active": true,
+    "order": 3,
+    "__v": 0,
+    "createdAt": "2026-07-27T07:39:46.841Z",
+    "updatedAt": "2026-07-27T07:39:46.841Z"
+  },
+  {
+    "_id": "6a670b42b148078fea7368fc",
+    "slug": "toyota-crown",
+    "name": "Toyota Crown",
+    "class": "vip",
+    "modelYears": "2018–2024",
+    "seats": 4,
+    "engine": {
+      "en": "2.5L hybrid",
+      "ur": "2.5L ہائبرڈ"
+    },
+    "transmission": {
+      "en": "Automatic",
+      "ur": "آٹومیٹک"
+    },
+    "driveType": {
+      "en": "RWD",
+      "ur": "RWD"
+    },
+    "interiorFeatures": [
+      {
+        "en": "Protocol-trained chauffeur",
+        "ur": "پروٹوکول تربیت یافتہ ڈرائیور"
+      },
+      {
+        "en": "Quiet hybrid executive cabin",
+        "ur": "پرسکون ہائبرڈ ایگزیکٹو کیبن"
+      },
+      {
+        "en": "Ministerial-style saloon",
+        "ur": "وزارتی طرز کی سیلون"
+      },
+      {
+        "en": "Reliable protocol workhorse",
+        "ur": "قابلِ اعتماد پروٹوکول گاڑی"
+      }
+    ],
+    "images": [
+      {
+        "publicId": "",
+        "url": "https://images.unsplash.com/photo-1563720223185-11003d516935?w=1600&q=80&auto=format",
+        "alt": "Toyota Crown executive sedan",
+        "order": 0
+      }
+    ],
+    "rates": {
+      "perHour": null,
+      "perDay": null,
+      "perWeek": null,
+      "perMonth": null,
+      "fuelPerKm": null,
+      "airportTransfer": null
+    },
+    "currency": "PKR",
+    "armorLevel": null,
+    "rollCage": false,
+    "selfDriveAvailable": false,
+    "selfDrive": null,
+    "featured": false,
+    "active": true,
+    "order": 4,
+    "__v": 0,
+    "createdAt": "2026-07-27T07:39:46.841Z",
+    "updatedAt": "2026-07-27T07:39:46.841Z"
+  },
+  {
+    "_id": "6a670b42b148078fea7368fd",
+    "slug": "honda-accord",
+    "name": "Honda Accord",
+    "class": "vip",
+    "modelYears": "2019–2025",
+    "seats": 4,
+    "engine": {
+      "en": "1.5L turbo petrol",
+      "ur": "1.5L ٹربو پیٹرول"
+    },
+    "transmission": {
+      "en": "Automatic",
+      "ur": "آٹومیٹک"
+    },
+    "driveType": {
+      "en": "FWD",
+      "ur": "FWD"
+    },
+    "interiorFeatures": [
+      {
+        "en": "Protocol-trained chauffeur",
+        "ur": "پروٹوکول تربیت یافتہ ڈرائیور"
+      },
+      {
+        "en": "Spacious executive cabin",
+        "ur": "کشادہ ایگزیکٹو کیبن"
+      },
+      {
+        "en": "Corporate & delegate travel",
+        "ur": "کارپوریٹ اور وفود کا سفر"
+      },
+      {
+        "en": "Comfort-focused ride",
+        "ur": "آرام دہ سفر"
+      }
+    ],
+    "images": [
+      {
+        "publicId": "",
+        "url": "https://images.unsplash.com/photo-1563720223185-11003d516935?w=1600&q=80&auto=format",
+        "alt": "Honda Accord executive sedan",
+        "order": 0
+      }
+    ],
+    "rates": {
+      "perHour": null,
+      "perDay": null,
+      "perWeek": null,
+      "perMonth": null,
+      "fuelPerKm": null,
+      "airportTransfer": null
+    },
+    "currency": "PKR",
+    "armorLevel": null,
+    "rollCage": false,
+    "selfDriveAvailable": false,
+    "selfDrive": null,
+    "featured": false,
+    "active": true,
+    "order": 5,
+    "__v": 0,
+    "createdAt": "2026-07-27T07:39:46.841Z",
+    "updatedAt": "2026-07-27T07:39:46.841Z"
+  },
+  {
+    "_id": "6a670b42b148078fea7368fe",
+    "slug": "suzuki-pickup",
+    "name": "Suzuki Pickup (Ravi)",
+    "class": "logistics",
+    "modelYears": "2018–2025",
+    "seats": 2,
+    "engine": {
+      "en": "800cc petrol",
+      "ur": "800cc پیٹرول"
+    },
+    "transmission": {
+      "en": "Manual",
+      "ur": "مینوئل"
+    },
+    "driveType": {
+      "en": "RWD",
+      "ur": "RWD"
+    },
+    "interiorFeatures": [
+      {
+        "en": "Light cargo runs",
+        "ur": "ہلکا سامان"
+      },
+      {
+        "en": "City deliveries",
+        "ur": "شہر میں ترسیل"
+      },
+      {
+        "en": "Payload ~750 kg",
+        "ur": "وزن تقریباً 750 کلوگرام"
+      },
+      {
+        "en": "Driver included",
+        "ur": "ڈرائیور شامل"
+      }
+    ],
+    "images": [
+      {
+        "publicId": "",
+        "url": "https://images.unsplash.com/photo-1601584115197-04ecc0da31d7?w=1600&q=80&auto=format",
+        "alt": "Suzuki pickup light cargo",
+        "order": 0
+      }
+    ],
+    "rates": {
+      "perHour": null,
+      "perDay": null,
+      "perWeek": null,
+      "perMonth": null,
+      "fuelPerKm": null,
+      "airportTransfer": null
+    },
+    "currency": "PKR",
+    "armorLevel": null,
+    "rollCage": false,
+    "selfDriveAvailable": false,
+    "selfDrive": null,
+    "featured": false,
+    "active": true,
+    "order": 0,
+    "__v": 0,
+    "createdAt": "2026-07-27T07:39:46.841Z",
+    "updatedAt": "2026-07-27T07:39:46.841Z"
+  },
+  {
+    "_id": "6a670b42b148078fea7368ff",
+    "slug": "shehzore-mini-truck",
+    "name": "Shehzore Mini Truck",
+    "class": "logistics",
+    "modelYears": "2016–2024",
+    "seats": 2,
+    "engine": {
+      "en": "2.6L diesel",
+      "ur": "2.6L ڈیزل"
+    },
+    "transmission": {
+      "en": "Manual",
+      "ur": "مینوئل"
+    },
+    "driveType": {
+      "en": "RWD",
+      "ur": "RWD"
+    },
+    "interiorFeatures": [
+      {
+        "en": "Payload ~2 tons",
+        "ur": "وزن تقریباً 2 ٹن"
+      },
+      {
+        "en": "Office & site moves",
+        "ur": "دفتر اور سائٹ کی منتقلی"
+      },
+      {
+        "en": "Intercity cargo",
+        "ur": "بین الاضلاعی سامان"
+      },
+      {
+        "en": "Driver included",
+        "ur": "ڈرائیور شامل"
+      }
+    ],
+    "images": [
+      {
+        "publicId": "",
+        "url": "https://images.unsplash.com/photo-1601584115197-04ecc0da31d7?w=1600&q=80&auto=format",
+        "alt": "Shehzore mini truck",
+        "order": 0
+      }
+    ],
+    "rates": {
+      "perHour": null,
+      "perDay": null,
+      "perWeek": null,
+      "perMonth": null,
+      "fuelPerKm": null,
+      "airportTransfer": null
+    },
+    "currency": "PKR",
+    "armorLevel": null,
+    "rollCage": false,
+    "selfDriveAvailable": false,
+    "selfDrive": null,
+    "featured": false,
+    "active": true,
+    "order": 1,
+    "__v": 0,
+    "createdAt": "2026-07-27T07:39:46.841Z",
+    "updatedAt": "2026-07-27T07:39:46.841Z"
+  },
+  {
+    "_id": "6a670b42b148078fea736900",
+    "slug": "mazda-truck",
+    "name": "Mazda Truck",
+    "class": "logistics",
+    "modelYears": "2014–2024",
+    "seats": 3,
+    "engine": {
+      "en": "4.0L diesel",
+      "ur": "4.0L ڈیزل"
+    },
+    "transmission": {
+      "en": "Manual",
+      "ur": "مینوئل"
+    },
+    "driveType": {
+      "en": "RWD",
+      "ur": "RWD"
+    },
+    "interiorFeatures": [
+      {
+        "en": "Payload 4–6 tons",
+        "ur": "وزن 4–6 ٹن"
+      },
+      {
+        "en": "Project cargo movement",
+        "ur": "پروجیکٹ سامان کی نقل و حرکت"
+      },
+      {
+        "en": "Nationwide routes",
+        "ur": "ملک بھر کے راستے"
+      },
+      {
+        "en": "Driver included",
+        "ur": "ڈرائیور شامل"
+      }
+    ],
+    "images": [
+      {
+        "publicId": "",
+        "url": "https://images.unsplash.com/photo-1601584115197-04ecc0da31d7?w=1600&q=80&auto=format",
+        "alt": "Mazda medium truck",
+        "order": 0
+      }
+    ],
+    "rates": {
+      "perHour": null,
+      "perDay": null,
+      "perWeek": null,
+      "perMonth": null,
+      "fuelPerKm": null,
+      "airportTransfer": null
+    },
+    "currency": "PKR",
+    "armorLevel": null,
+    "rollCage": false,
+    "selfDriveAvailable": false,
+    "selfDrive": null,
+    "featured": false,
+    "active": true,
+    "order": 2,
+    "__v": 0,
+    "createdAt": "2026-07-27T07:39:46.842Z",
+    "updatedAt": "2026-07-27T07:39:46.842Z"
+  },
+  {
+    "_id": "6a670b42b148078fea736901",
+    "slug": "bedford-truck",
+    "name": "Bedford Truck",
+    "class": "logistics",
+    "modelYears": "2010–2022",
+    "seats": 3,
+    "engine": {
+      "en": "Diesel",
+      "ur": "ڈیزل"
+    },
+    "transmission": {
+      "en": "Manual",
+      "ur": "مینوئل"
+    },
+    "driveType": {
+      "en": "RWD",
+      "ur": "RWD"
+    },
+    "interiorFeatures": [
+      {
+        "en": "Payload 6–8 tons",
+        "ur": "وزن 6–8 ٹن"
+      },
+      {
+        "en": "Heavy project cargo",
+        "ur": "بھاری پروجیکٹ سامان"
+      },
+      {
+        "en": "Remote-site capable",
+        "ur": "دور دراز مقامات کے لیے موزوں"
+      },
+      {
+        "en": "Driver included",
+        "ur": "ڈرائیور شامل"
+      }
+    ],
+    "images": [
+      {
+        "publicId": "",
+        "url": "https://images.unsplash.com/photo-1601584115197-04ecc0da31d7?w=1600&q=80&auto=format",
+        "alt": "Bedford cargo truck",
+        "order": 0
+      }
+    ],
+    "rates": {
+      "perHour": null,
+      "perDay": null,
+      "perWeek": null,
+      "perMonth": null,
+      "fuelPerKm": null,
+      "airportTransfer": null
+    },
+    "currency": "PKR",
+    "armorLevel": null,
+    "rollCage": false,
+    "selfDriveAvailable": false,
+    "selfDrive": null,
+    "featured": false,
+    "active": true,
+    "order": 3,
+    "__v": 0,
+    "createdAt": "2026-07-27T07:39:46.842Z",
+    "updatedAt": "2026-07-27T07:39:46.842Z"
+  },
+  {
+    "_id": "6a670b42b148078fea736902",
+    "slug": "hino-isuzu-10-wheeler",
+    "name": "Hino / Isuzu 10-Wheeler",
+    "class": "logistics",
+    "modelYears": "2015–2024",
+    "seats": 3,
+    "engine": {
+      "en": "Heavy diesel",
+      "ur": "ہیوی ڈیزل"
+    },
+    "transmission": {
+      "en": "Manual",
+      "ur": "مینوئل"
+    },
+    "driveType": {
+      "en": "6x4",
+      "ur": "6x4"
+    },
+    "interiorFeatures": [
+      {
+        "en": "10-wheeler heavy haul",
+        "ur": "10 پہیوں والا بھاری ٹرک"
+      },
+      {
+        "en": "Payload 15+ tons",
+        "ur": "وزن 15+ ٹن"
+      },
+      {
+        "en": "Long-route logistics",
+        "ur": "طویل روٹ لاجسٹکس"
+      },
+      {
+        "en": "Driver included",
+        "ur": "ڈرائیور شامل"
+      }
+    ],
+    "images": [
+      {
+        "publicId": "",
+        "url": "https://images.unsplash.com/photo-1601584115197-04ecc0da31d7?w=1600&q=80&auto=format",
+        "alt": "Hino 10-wheeler truck",
+        "order": 0
+      }
+    ],
+    "rates": {
+      "perHour": null,
+      "perDay": null,
+      "perWeek": null,
+      "perMonth": null,
+      "fuelPerKm": null,
+      "airportTransfer": null
+    },
+    "currency": "PKR",
+    "armorLevel": null,
+    "rollCage": false,
+    "selfDriveAvailable": false,
+    "selfDrive": null,
+    "featured": false,
+    "active": true,
+    "order": 4,
+    "__v": 0,
+    "createdAt": "2026-07-27T07:39:46.842Z",
+    "updatedAt": "2026-07-27T07:39:46.842Z"
+  },
+  {
+    "_id": "6a670b42b148078fea736903",
+    "slug": "vehicle-carrier-22-wheeler",
+    "name": "22-Wheeler Vehicle Carrier",
+    "class": "logistics",
+    "modelYears": "2014–2024",
+    "seats": 3,
+    "engine": {
+      "en": "Heavy diesel",
+      "ur": "ہیوی ڈیزل"
+    },
+    "transmission": {
+      "en": "Manual",
+      "ur": "مینوئل"
+    },
+    "driveType": {
+      "en": "Multi-axle",
+      "ur": "ملٹی ایکسل"
+    },
+    "interiorFeatures": [
+      {
+        "en": "22-wheeler carrier",
+        "ur": "22 پہیوں والا کیریئر"
+      },
+      {
+        "en": "Multi-vehicle transport",
+        "ur": "متعدد گاڑیوں کی ٹرانسپورٹ"
+      },
+      {
+        "en": "Fleet relocation",
+        "ur": "فلیٹ کی منتقلی"
+      },
+      {
+        "en": "Escort coordination available",
+        "ur": "حفاظتی اسکارٹ کوآرڈینیشن دستیاب"
+      }
+    ],
+    "images": [
+      {
+        "publicId": "",
+        "url": "https://images.unsplash.com/photo-1601584115197-04ecc0da31d7?w=1600&q=80&auto=format",
+        "alt": "22-wheeler vehicle carrier",
+        "order": 0
+      }
+    ],
+    "rates": {
+      "perHour": null,
+      "perDay": null,
+      "perWeek": null,
+      "perMonth": null,
+      "fuelPerKm": null,
+      "airportTransfer": null
+    },
+    "currency": "PKR",
+    "armorLevel": null,
+    "rollCage": false,
+    "selfDriveAvailable": false,
+    "selfDrive": null,
+    "featured": false,
+    "active": true,
+    "order": 5,
+    "__v": 0,
+    "createdAt": "2026-07-27T07:39:46.842Z",
+    "updatedAt": "2026-07-27T07:39:46.842Z"
+  }
+]

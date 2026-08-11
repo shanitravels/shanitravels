@@ -1,0 +1,598 @@
+[
+  {
+    "_id": "6a670b46b148078fea73693b",
+    "slug": "government-organizations",
+    "name": {
+      "en": "Government Organizations",
+      "ur": "سرکاری ادارے"
+    },
+    "icon": "landmark",
+    "heroImage": {
+      "publicId": "",
+      "url": "https://images.unsplash.com/photo-1613859492095-85d9944f09f6?w=1920&q=80&auto=format",
+      "alt": "Government protocol vehicles"
+    },
+    "summary": {
+      "en": "Registered, tax-compliant fleets for ministries, departments and national programmes since 1997.",
+      "ur": "1997 سے وزارتوں، محکموں اور قومی پروگراموں کے لیے رجسٹرڈ، ٹیکس کے مطابق فلیٹ۔"
+    },
+    "body": {
+      "en": "Government procurement needs two things from a transport contractor: capability and paperwork. We bring both. Shani Travels is registered with the Registrar of Firms (Islamabad Capital Territory), NTN and GST compliant, and has served public-sector programmes for nearly three decades — including election-mission deployments and national development projects that required vehicles in every province simultaneously.\n\nFor ministries and departments we run protocol sedans, official-movement SUVs and pool vehicles on monthly contracts with transparent, audit-ready billing. For programmes and authorities we deploy field fleets — double-cabin 4x4s, vans and buses — with journey management, GPS tracking and documented pre-trip inspections. Our 8-city office network means a department in Islamabad can contract once and receive the same standard in Quetta, Sukkur or Peshawar.\n\nDelegation support is a specialty: visiting officials and foreign counterparts are moved on our executive fleet (Mercedes, BMW, Crown, Land Cruiser V8) with protocol-trained chauffeurs, coordinated timing and liaison with security details. Where threat assessments require it, our B-6 armored vehicles operate under the same contract.\n\nDrivers are police-verified, formally trained and inducted on official conduct. Vehicles are comprehensively insured and replaced immediately on breakdown. Invoicing follows your fiscal procedures — itemised per vehicle, per period, with supporting logs.\n\nFrom one protocol car to a nationwide programme fleet, the capability and the compliance file are equally in order. Request a proposal and our government-accounts team will respond within one business day.",
+      "ur": "سرکاری خریداری کو ٹرانسپورٹ ٹھیکیدار سے دو چیزیں درکار ہوتی ہیں: صلاحیت اور کاغذات۔ ہمارے پاس دونوں ہیں۔ شانی ٹریولز رجسٹرار آف فرمز (اسلام آباد کیپیٹل ٹیریٹری) میں رجسٹرڈ، NTN اور GST کے مطابق ہے، اور تقریباً تین دہائیوں سے سرکاری شعبے کے پروگراموں کی خدمت کر رہا ہے — بشمول انتخابی مشن تعیناتیاں اور ایسے قومی ترقیاتی منصوبے جن میں بیک وقت ہر صوبے میں گاڑیاں درکار تھیں۔\n\nوزارتوں اور محکموں کے لیے ہم پروٹوکول سیڈان، سرکاری نقل و حرکت کی SUVs اور پول گاڑیاں ماہانہ معاہدوں پر چلاتے ہیں، شفاف اور آڈٹ کے لیے تیار بلنگ کے ساتھ۔ پروگراموں اور اتھارٹیز کے لیے ہم فیلڈ فلیٹ تعینات کرتے ہیں — ڈبل کیبن 4x4، وین اور بسیں — سفری انتظام، GPS ٹریکنگ اور دستاویزی معائنوں کے ساتھ۔ ہمارے 8 شہروں کے دفتری نیٹ ورک کا مطلب ہے کہ اسلام آباد کا کوئی محکمہ ایک بار معاہدہ کرے اور وہی معیار کوئٹہ، سکھر یا پشاور میں بھی پائے۔\n\nوفود کی معاونت ہماری خاص مہارت ہے: آنے والے سرکاری عہدیدار اور غیر ملکی مہمان ہماری ایگزیکٹو فلیٹ (Mercedes، BMW، Crown، Land Cruiser V8) پر پروٹوکول تربیت یافتہ ڈرائیوروں، مربوط اوقات اور سیکیورٹی عملے کے ساتھ رابطے کے ذریعے سفر کرتے ہیں۔ جہاں خطرے کا جائزہ تقاضا کرے، وہاں ہماری B-6 بکتر بند گاڑیاں اسی معاہدے کے تحت دستیاب ہیں۔\n\nڈرائیور پولیس تصدیق شدہ، باقاعدہ تربیت یافتہ اور سرکاری آداب پر تربیت یافتہ ہیں۔ گاڑیاں مکمل بیمہ شدہ ہیں اور خرابی کی صورت میں فوراً تبدیل کر دی جاتی ہیں۔ بلنگ آپ کے مالیاتی طریقہ کار کے مطابق ہوتی ہے — فی گاڑی، فی مدت، معاون ریکارڈ کے ساتھ تفصیلی۔\n\nایک پروٹوکول گاڑی سے لے کر ملک گیر پروگرام فلیٹ تک، صلاحیت اور کمپلائنس دونوں یکساں طور پر تیار ہیں۔ تجویز طلب کریں، ہماری سرکاری اکاؤنٹس ٹیم ایک کاروباری دن کے اندر جواب دے گی۔"
+    },
+    "relatedServiceSlugs": [
+      "government-transport",
+      "corporate-car-rental",
+      "executive-vip-transport",
+      "event-transportation"
+    ],
+    "relatedVehicleClasses": [
+      "sedan",
+      "suv",
+      "vip"
+    ],
+    "testimonialSector": "government",
+    "seo": {
+      "title": {
+        "en": "Government Transport Services Pakistan — Registered Fleet Contractor",
+        "ur": "سرکاری ٹرانسپورٹ سروسز پاکستان — رجسٹرڈ فلیٹ کنٹریکٹر"
+      },
+      "description": {
+        "en": "Registered, GST/NTN-compliant transport for ministries, departments and national programmes. Protocol vehicles, field fleets and delegation movement across Pakistan since 1997.",
+        "ur": "وزارتوں، محکموں اور قومی پروگراموں کے لیے رجسٹرڈ، GST/NTN کے مطابق ٹرانسپورٹ۔ 1997 سے پاکستان بھر میں پروٹوکول گاڑیاں، فیلڈ فلیٹ اور وفود کی نقل و حرکت۔"
+      }
+    },
+    "featured": true,
+    "order": 1,
+    "active": true,
+    "__v": 0,
+    "createdAt": "2026-07-27T07:39:50.382Z",
+    "updatedAt": "2026-07-27T07:39:50.382Z"
+  },
+  {
+    "_id": "6a670b46b148078fea73693d",
+    "slug": "embassies-foreign-missions",
+    "name": {
+      "en": "Embassies & Foreign Missions",
+      "ur": "سفارت خانے اور غیر ملکی مشن"
+    },
+    "icon": "flag",
+    "heroImage": {
+      "publicId": "",
+      "url": "https://images.unsplash.com/photo-1654688554491-69d21d38fb91?w=1920&q=80&auto=format",
+      "alt": "Armored protocol vehicle"
+    },
+    "summary": {
+      "en": "B-6 armored fleet, protocol movement and security-trained drivers for diplomatic operations.",
+      "ur": "سفارتی آپریشنز کے لیے B-6 بکتر بند فلیٹ، پروٹوکول نقل و حرکت اور سیکیورٹی تربیت یافتہ ڈرائیور۔"
+    },
+    "body": {
+      "en": "Diplomatic transport sits at the intersection of protocol and security, and we have operated there for years. Shani Travels provides embassies, high commissions and foreign missions in Islamabad with both sides of the requirement: immaculate protocol movement for representational duties, and a **B-6 armored fleet** for movements where the threat picture demands protection.\n\nThe armored capability is real and standing — B-6 REVO, Prado, Fortuner and Land Cruiser V8, maintained and ready, driven by security-trained chauffeurs with defensive and evasive driving instruction. Movements run under journey management from our 24/7 Operations Control Room: routes planned with alternates, check-ins on schedule, and coordination with your RSO or security provider, including escort vehicles where required.\n\nFor daily diplomatic life, the executive fleet — Mercedes, BMW, Crown, flagship Land Cruisers — serves national-day events, delegation visits, airport protocol and staff movement. Drivers assigned to missions are police-verified, vetted and briefed on diplomatic conduct and confidentiality; consistency of assignment means your team works with known faces.\n\nOur history with international election observation missions and UN-system organizations means mission security officers can diligence us against real deployments, not brochures. Contracts accommodate mission procurement procedures, and invoicing supports your administrative requirements.\n\nWhether your mission needs one armored SUV on standby or a full transport arrangement, our team will prepare a proposal for your administrative and security officers within one business day.",
+      "ur": "سفارتی ٹرانسپورٹ پروٹوکول اور سیکیورٹی کے سنگم پر ہوتی ہے، اور ہم برسوں سے اسی میدان میں کام کر رہے ہیں۔ شانی ٹریولز اسلام آباد میں سفارت خانوں، ہائی کمیشنوں اور غیر ملکی مشنوں کو اس ضرورت کے دونوں پہلو فراہم کرتا ہے: نمائندگی کے فرائض کے لیے بے عیب پروٹوکول نقل و حرکت، اور ایسی نقل و حرکت کے لیے **B-6 بکتر بند فلیٹ** جہاں خطرے کی صورتحال تحفظ کا تقاضا کرے۔\n\nبکتر بند صلاحیت حقیقی اور ہمہ وقت موجود ہے — B-6 REVO، Prado، Fortuner اور Land Cruiser V8، تیار حالت میں، دفاعی اور بچاؤ ڈرائیونگ کی تربیت یافتہ سیکیورٹی ڈرائیوروں کے ساتھ۔ نقل و حرکت ہمارے 24/7 آپریشنز کنٹرول روم کے سفری انتظام کے تحت چلتی ہے: متبادل راستوں سمیت منصوبہ بندی، مقررہ اوقات پر رابطہ، اور آپ کے RSO یا سیکیورٹی ادارے کے ساتھ تعاون، بشمول ضرورت پڑنے پر حفاظتی گاڑیاں۔\n\nروزمرہ سفارتی زندگی کے لیے ایگزیکٹو فلیٹ — Mercedes، BMW، Crown، نمایاں Land Cruisers — قومی دنوں کی تقریبات، وفود کے دوروں، ایئرپورٹ پروٹوکول اور عملے کی نقل و حرکت کے لیے حاضر ہے۔ مشنوں کو تفویض کردہ ڈرائیور پولیس تصدیق شدہ، جانچے ہوئے اور سفارتی آداب و رازداری پر بریف کیے گئے ہوتے ہیں؛ مستقل تعیناتی کا مطلب ہے کہ آپ کی ٹیم مانوس چہروں کے ساتھ کام کرتی ہے۔\n\nبین الاقوامی انتخابی مشاہداتی مشنوں اور اقوام متحدہ کے اداروں کے ساتھ ہماری تاریخ کا مطلب ہے کہ مشن سیکیورٹی افسران ہمیں کتابچوں کے بجائے حقیقی تعیناتیوں پر پرکھ سکتے ہیں۔ معاہدے مشن کے خریداری طریقہ کار کے مطابق ڈھلتے ہیں، اور بلنگ آپ کے انتظامی تقاضوں کو پورا کرتی ہے۔\n\nچاہے آپ کے مشن کو ایک بکتر بند SUV تیار حالت میں درکار ہو یا مکمل ٹرانسپورٹ انتظام، ہماری ٹیم ایک کاروباری دن کے اندر آپ کے انتظامی اور سیکیورٹی افسران کے لیے تجویز تیار کرے گی۔"
+    },
+    "relatedServiceSlugs": [
+      "secure-specialized-transport",
+      "executive-vip-transport",
+      "corporate-car-rental"
+    ],
+    "relatedVehicleClasses": [
+      "specialized",
+      "vip",
+      "suv"
+    ],
+    "testimonialSector": "un-donor",
+    "seo": {
+      "title": {
+        "en": "Embassy Transport Islamabad — B-6 Armored & Protocol Vehicles",
+        "ur": "سفارت خانہ ٹرانسپورٹ اسلام آباد — B-6 بکتر بند اور پروٹوکول گاڑیاں"
+      },
+      "description": {
+        "en": "Armored B-6 vehicles, protocol fleets and security-trained drivers for embassies and foreign missions in Islamabad. Journey management, escort coordination, vetted chauffeurs.",
+        "ur": "اسلام آباد میں سفارت خانوں اور غیر ملکی مشنوں کے لیے B-6 بکتر بند گاڑیاں، پروٹوکول فلیٹ اور سیکیورٹی تربیت یافتہ ڈرائیور۔ سفر کا انتظام، حفاظتی کوآرڈینیشن، تصدیق شدہ ڈرائیور۔"
+      }
+    },
+    "featured": true,
+    "order": 3,
+    "active": true,
+    "__v": 0,
+    "createdAt": "2026-07-27T07:39:50.382Z",
+    "updatedAt": "2026-07-27T07:39:50.382Z"
+  },
+  {
+    "_id": "6a670b46b148078fea736941",
+    "slug": "telecom",
+    "name": {
+      "en": "Telecom",
+      "ur": "ٹیلی کام"
+    },
+    "icon": "signal",
+    "heroImage": {
+      "publicId": "",
+      "url": "https://images.unsplash.com/photo-1647501581530-053b42684b8d?w=1920&q=80&auto=format",
+      "alt": "Telecom field operations vehicle"
+    },
+    "summary": {
+      "en": "Network-rollout and site-visit fleets proven with Ericsson, Nokia, PTCL and Telenor.",
+      "ur": "Ericsson، Nokia، PTCL اور Telenor کے ساتھ آزمودہ نیٹ ورک رول آؤٹ اور سائٹ وزٹ فلیٹ۔"
+    },
+    "body": {
+      "en": "Telecom networks are built and maintained by teams constantly on the road — and for over two decades, many of those teams have moved in our vehicles. Ericsson, Nokia, PTCL, Telenor and Jazz all appear in our client history because network rollout is a transport-intensive business, and we grew alongside it.\n\nThe work has a familiar shape: engineers visiting tower sites across a region, rollout crews moving between installations on tight schedules, drive-test teams needing patient drivers and steady vehicles for hours of loop routes, and executives moving between regional offices. Our fleet covers all of it — sedans and SUVs for site visits and management, double-cabin 4x4s for rural and off-grid sites, vans for crew movement, and logistics vehicles for equipment.\n\nWhat telecom operations value most is regional depth. A vendor with one office covers Islamabad well and everywhere else badly; our eight-city network means regional rollouts in Sindh, Balochistan or KP run on locally based vehicles with drivers who know the site clusters — not day-trippers from the capital.\n\nContracts are structured for operations: monthly dedicated vehicles per region, on-call pools for surge activity, and per-project fleets for rollout phases, all under consolidated invoicing your procurement team will appreciate. GPS tracking, insured vehicles and vetted drivers are standard, and duty-of-care reporting is available where your EHS policy requires it.\n\nIf a rollout or a regional operations fleet is on your planning board, ask for a proposal — we have probably driven those routes before.",
+      "ur": "ٹیلی کام نیٹ ورک ایسی ٹیمیں بناتی اور سنبھالتی ہیں جو مسلسل سفر میں رہتی ہیں — اور دو دہائیوں سے زائد عرصے سے ان میں سے کئی ٹیمیں ہماری گاڑیوں میں سفر کرتی آئی ہیں۔ Ericsson، Nokia، PTCL، Telenor اور Jazz سب ہماری کلائنٹ فہرست میں شامل ہیں، کیونکہ نیٹ ورک رول آؤٹ ایک ٹرانسپورٹ طلب کاروبار ہے، اور ہم اسی کے ساتھ بڑھے۔\n\nکام کی نوعیت مانوس ہے: انجینئر ایک علاقے میں ٹاور سائٹس کا دورہ کرتے ہیں، رول آؤٹ عملہ سخت اوقات میں تنصیبات کے درمیان سفر کرتا ہے، ڈرائیو ٹیسٹ ٹیموں کو گھنٹوں کے چکر والے راستوں کے لیے صابر ڈرائیور اور مستحکم گاڑیاں درکار ہوتی ہیں، اور ایگزیکٹوز علاقائی دفاتر کے درمیان سفر کرتے ہیں۔ ہماری فلیٹ ان سب کا احاطہ کرتی ہے — سائٹ دوروں اور انتظامیہ کے لیے سیڈان اور SUVs، دیہی اور دور دراز سائٹس کے لیے ڈبل کیبن 4x4، عملے کی نقل و حرکت کے لیے وین، اور سازوسامان کے لیے لاجسٹکس گاڑیاں۔\n\nٹیلی کام آپریشنز جس چیز کو سب سے زیادہ اہمیت دیتے ہیں وہ علاقائی گہرائی ہے۔ ایک دفتر رکھنے والا وینڈر اسلام آباد میں تو بہتر کام کرتا ہے مگر باقی جگہوں پر کمزور رہتا ہے؛ ہمارے آٹھ شہروں کے نیٹ ورک کا مطلب ہے کہ سندھ، بلوچستان یا خیبر پختونخوا میں علاقائی رول آؤٹ مقامی گاڑیوں اور ان ڈرائیوروں کے ساتھ چلتے ہیں جو سائٹ کے علاقوں سے واقف ہیں — نہ کہ دارالحکومت سے آنے والے عارضی ڈرائیور۔\n\nمعاہدے آپریشنز کے مطابق ترتیب دیے جاتے ہیں: فی علاقہ ماہانہ مخصوص گاڑیاں، اضافی سرگرمی کے لیے آن کال پول، اور رول آؤٹ مراحل کے لیے فی منصوبہ فلیٹ، سب یکجا بلنگ کے تحت جسے آپ کی خریداری ٹیم سراہے گی۔ GPS ٹریکنگ، بیمہ شدہ گاڑیاں اور تصدیق شدہ ڈرائیور معیاری ہیں، اور جہاں آپ کی EHS پالیسی تقاضا کرے وہاں نگہداشت رپورٹنگ بھی دستیاب ہے۔\n\nاگر کوئی رول آؤٹ یا علاقائی آپریشنز فلیٹ آپ کے منصوبے میں ہے تو تجویز طلب کریں — غالباً ہم وہ راستے پہلے بھی طے کر چکے ہیں۔"
+    },
+    "relatedServiceSlugs": [
+      "corporate-car-rental",
+      "project-site-transportation",
+      "staff-transportation"
+    ],
+    "relatedVehicleClasses": [
+      "sedan",
+      "suv",
+      "event",
+      "logistics"
+    ],
+    "testimonialSector": "telecom-corporate",
+    "seo": {
+      "title": {
+        "en": "Telecom Fleet Services Pakistan — Network Rollout Transport",
+        "ur": "ٹیلی کام فلیٹ سروسز پاکستان — نیٹ ورک رول آؤٹ ٹرانسپورٹ"
+      },
+      "description": {
+        "en": "Regional fleets for telecom operations across Pakistan: site-visit SUVs, rollout crew transport and equipment logistics. Proven with Ericsson, Nokia, PTCL and Telenor.",
+        "ur": "پاکستان بھر میں ٹیلی کام آپریشنز کے لیے علاقائی فلیٹ: سائٹ وزٹ SUVs، رول آؤٹ عملے کی ٹرانسپورٹ اور سازوسامان کی لاجسٹکس۔ Ericsson، Nokia، PTCL اور Telenor کے ساتھ آزمودہ۔"
+      }
+    },
+    "featured": false,
+    "order": 7,
+    "active": true,
+    "__v": 0,
+    "createdAt": "2026-07-27T07:39:50.382Z",
+    "updatedAt": "2026-07-27T08:21:28.071Z"
+  },
+  {
+    "_id": "6a670b46b148078fea73693c",
+    "slug": "multinational-companies",
+    "name": {
+      "en": "Multinational Companies",
+      "ur": "ملٹی نیشنل کمپنیاں"
+    },
+    "icon": "building",
+    "heroImage": {
+      "publicId": "",
+      "url": "https://images.unsplash.com/photo-1626997077212-cfd5da89824e?w=1920&q=80&auto=format",
+      "alt": "Corporate executive fleet"
+    },
+    "summary": {
+      "en": "Corporate accounts with consolidated invoicing, staff transport and executive fleets — one vendor, nationwide.",
+      "ur": "یکجا بلنگ، عملے کی ٹرانسپورٹ اور ایگزیکٹو فلیٹ کے ساتھ کارپوریٹ اکاؤنٹس — ایک وینڈر، ملک بھر میں۔"
+    },
+    "body": {
+      "en": "Multinationals consolidate vendors, and ground transport is one line item we let you close completely. Under a single corporate account, Shani Travels provides executive movement, staff transportation, intercity travel and event fleets across all eight of our office cities — with one contract, one account manager and one consolidated monthly invoice.\n\nOur corporate operation is shaped by the standards international companies bring with them. Vehicles are late-model, comprehensively insured and GPS-tracked; drivers are background-checked, trained and presentable; every movement is logged and reportable. Where your HSE or duty-of-care policy sets requirements — journey management, night-travel rules, driver hours — we operate inside them and document compliance.\n\nTypical engagements include dedicated sedans for country leadership, pool vehicles for visiting teams, monthly staff pick-and-drop routes for offices and plants, and airport transfer programmes tied to your travel desk. Expatriate staff and their families use the same fleet for personal travel under negotiated corporate rates — including weekend and northern-areas leisure trips with experienced drivers.\n\nCompanies like Ericsson, Nokia, Siemens and Telenor have trusted our fleet for their Pakistan operations. The pattern is consistent: a pilot engagement of a few vehicles, then a consolidated national account once the reliability is proven.\n\nIf your procurement team is reviewing transport vendors, ask us for a proposal with reference contacts — we are comfortable being checked.",
+      "ur": "ملٹی نیشنل کمپنیاں وینڈرز کو یکجا کرتی ہیں، اور زمینی ٹرانسپورٹ وہ شعبہ ہے جسے ہم آپ کے لیے مکمل طور پر سنبھال لیتے ہیں۔ ایک ہی کارپوریٹ اکاؤنٹ کے تحت شانی ٹریولز ہمارے آٹھوں دفتری شہروں میں ایگزیکٹو نقل و حرکت، عملے کی ٹرانسپورٹ، بین الاضلاعی سفر اور تقریباتی فلیٹ فراہم کرتا ہے — ایک معاہدہ، ایک اکاؤنٹ مینیجر اور ایک یکجا ماہانہ بل کے ساتھ۔\n\nہمارا کارپوریٹ نظام ان معیارات کے مطابق ڈھلا ہے جو بین الاقوامی کمپنیاں اپنے ساتھ لاتی ہیں۔ گاڑیاں جدید ماڈل، مکمل بیمہ شدہ اور GPS ٹریک شدہ ہیں؛ ڈرائیور تصدیق شدہ، تربیت یافتہ اور بااخلاق ہیں؛ ہر سفر کا اندراج اور رپورٹ دستیاب ہے۔ جہاں آپ کی HSE یا نگہداشت پالیسی تقاضے مقرر کرتی ہے — سفر کا انتظام، رات کے سفر کے اصول، ڈرائیور کے اوقات — ہم انہی کے اندر کام کرتے اور پابندی کی دستاویز رکھتے ہیں۔\n\nعام معاہدوں میں ملکی قیادت کے لیے مخصوص سیڈان، آنے والی ٹیموں کے لیے پول گاڑیاں، دفاتر اور پلانٹس کے لیے ماہانہ عملہ پک اینڈ ڈراپ روٹس، اور آپ کے ٹریول ڈیسک سے منسلک ایئرپورٹ ٹرانسفر پروگرام شامل ہیں۔ غیر ملکی عملہ اور ان کے خاندان طے شدہ کارپوریٹ نرخوں پر یہی فلیٹ ذاتی سفر کے لیے استعمال کرتے ہیں — بشمول ہفتہ وار اور شمالی علاقہ جات کے تفریحی دورے تجربہ کار ڈرائیوروں کے ساتھ۔\n\nEricsson، Nokia، Siemens اور Telenor جیسی کمپنیاں اپنے پاکستانی آپریشنز کے لیے ہماری فلیٹ پر بھروسہ کر چکی ہیں۔ طریقہ ہمیشہ ایک جیسا رہا: چند گاڑیوں سے آزمائشی آغاز، اور بھروسہ ثابت ہونے پر ایک یکجا قومی اکاؤنٹ۔\n\nاگر آپ کی خریداری ٹیم ٹرانسپورٹ وینڈرز کا جائزہ لے رہی ہے تو ہم سے حوالہ جات سمیت تجویز طلب کریں — ہمیں جانچے جانے میں کوئی جھجک نہیں۔"
+    },
+    "relatedServiceSlugs": [
+      "corporate-car-rental",
+      "staff-transportation",
+      "executive-vip-transport",
+      "airport-transfers"
+    ],
+    "relatedVehicleClasses": [
+      "sedan",
+      "suv",
+      "vip",
+      "event"
+    ],
+    "testimonialSector": "telecom-corporate",
+    "seo": {
+      "title": {
+        "en": "Corporate Transport for Multinational Companies in Pakistan",
+        "ur": "پاکستان میں ملٹی نیشنل کمپنیوں کے لیے کارپوریٹ ٹرانسپورٹ"
+      },
+      "description": {
+        "en": "One vendor for executive fleets, staff transport and airport programmes across Pakistan. Corporate accounts with consolidated invoicing, GPS-tracked insured vehicles, vetted drivers.",
+        "ur": "پاکستان بھر میں ایگزیکٹو فلیٹ، عملے کی ٹرانسپورٹ اور ایئرپورٹ پروگراموں کے لیے ایک وینڈر۔ یکجا بلنگ کے ساتھ کارپوریٹ اکاؤنٹس، GPS ٹریک شدہ بیمہ شدہ گاڑیاں، تصدیق شدہ ڈرائیور۔"
+      }
+    },
+    "featured": true,
+    "order": 2,
+    "active": true,
+    "__v": 0,
+    "createdAt": "2026-07-27T07:39:50.382Z",
+    "updatedAt": "2026-07-27T08:21:27.083Z"
+  },
+  {
+    "_id": "6a670b46b148078fea736940",
+    "slug": "oil-and-gas",
+    "name": {
+      "en": "Oil & Gas",
+      "ur": "تیل اور گیس"
+    },
+    "icon": "oil",
+    "heroImage": {
+      "publicId": "",
+      "url": "https://images.unsplash.com/photo-1670054953044-2605dbd0d747?w=1920&q=80&auto=format",
+      "alt": "Oil and gas field transport"
+    },
+    "summary": {
+      "en": "HSE-disciplined field transport: journey management, defensive drivers and site-specified 4x4s.",
+      "ur": "HSE کے مطابق فیلڈ ٹرانسپورٹ: سفر کا انتظام، دفاعی ڈرائیور اور سائٹ کے مطابق 4x4۔"
+    },
+    "body": {
+      "en": "In the energy sector, transport is an HSE function before it is a convenience. Our oil & gas operation is built on that premise, serving exploration, production and services companies whose sites sit hours past the last paved road.\n\nThe vehicle package is specified for field reality: double-cabin REVO 4x4s — with roll cages where site rules require them — Land Cruisers for management movement, vans for crew changes and logistics trucks for material runs. Every vehicle is GPS-tracked, inspection-tagged and maintained on a documented schedule; pre-trip inspections are filed for every departure, covering brakes, tyres, recovery equipment, first-aid and fire-extinguisher checks.\n\nDrivers are the core of the safety case. Ours are defensively trained, medically screened, inducted on your site's HSE rules, and managed on duty-hour limits. Journey management — routes, convoy rules, check-in points, night-driving restrictions — runs through the 24/7 Operations Control Room, with incident reporting that feeds your HSE statistics in the format your system expects.\n\nWe operate on long crew-change cycles and multi-year contracts, where consistency matters more than a launch-week impression: the same disciplined pre-trip inspection in month eighteen as on day one. Field locations in Sindh, Balochistan, KP and Punjab are supported through our provincial office network with backup vehicles positioned for coverage.\n\nSend your site locations, vehicle specification and HSE requirements, and our projects team will prepare a compliant proposal for your review.",
+      "ur": "توانائی کے شعبے میں ٹرانسپورٹ سہولت سے پہلے ایک HSE ذمہ داری ہے۔ ہمارا تیل و گیس آپریشن اسی اصول پر قائم ہے، اور ان تلاش، پیداوار اور خدمات کی کمپنیوں کی خدمت کرتا ہے جن کی سائٹس آخری پختہ سڑک سے کئی گھنٹے آگے واقع ہیں۔\n\nگاڑیوں کا انتخاب فیلڈ کی حقیقت کے مطابق ہے: ڈبل کیبن REVO 4x4 — جہاں سائٹ کے اصول تقاضا کریں وہاں رول کیج کے ساتھ — انتظامی نقل و حرکت کے لیے Land Cruisers، عملے کی تبدیلی کے لیے وین اور مواد کی ترسیل کے لیے لاجسٹکس ٹرک۔ ہر گاڑی GPS ٹریک شدہ، معائنہ شدہ اور دستاویزی شیڈول کے مطابق برقرار رکھی جاتی ہے؛ ہر روانگی سے قبل معائنہ ریکارڈ کیا جاتا ہے، جس میں بریک، ٹائر، ریکوری سازوسامان، ابتدائی طبی امداد اور آگ بجھانے کے آلات کی جانچ شامل ہے۔\n\nڈرائیور اس حفاظتی نظام کی بنیاد ہیں۔ ہمارے ڈرائیور دفاعی تربیت یافتہ، طبی معائنہ شدہ، آپ کی سائٹ کے HSE قواعد پر تربیت یافتہ، اور ڈیوٹی اوقات کی حد کے تحت منظم ہیں۔ سفر کا انتظام — راستے، قافلے کے اصول، رابطہ پوائنٹس، رات کی ڈرائیونگ کی پابندیاں — 24/7 آپریشنز کنٹرول روم کے ذریعے چلتا ہے، اور واقعات کی رپورٹنگ آپ کے HSE اعدادوشمار میں اسی شکل میں شامل ہوتی ہے جو آپ کا نظام چاہتا ہے۔\n\nہم طویل عملہ تبدیلی سائیکلوں اور کئی سالہ معاہدوں پر کام کرتے ہیں، جہاں پہلے ہفتے کے تاثر سے زیادہ تسلسل اہم ہوتا ہے: اٹھارہویں مہینے میں بھی وہی منظم معائنہ جو پہلے دن تھا۔ سندھ، بلوچستان، خیبر پختونخوا اور پنجاب کے فیلڈ مقامات ہمارے صوبائی دفتری نیٹ ورک اور متبادل گاڑیوں کے ذریعے سنبھالے جاتے ہیں۔\n\nاپنی سائٹ کے مقامات، گاڑیوں کی تفصیل اور HSE تقاضے بھیجیں، ہماری پروجیکٹ ٹیم آپ کے جائزے کے لیے ایک موزوں تجویز تیار کرے گی۔"
+    },
+    "relatedServiceSlugs": [
+      "project-site-transportation",
+      "staff-transportation",
+      "corporate-car-rental"
+    ],
+    "relatedVehicleClasses": [
+      "suv",
+      "event",
+      "logistics"
+    ],
+    "testimonialSector": "telecom-corporate",
+    "seo": {
+      "title": {
+        "en": "Oil and Gas Field Transport Pakistan — HSE-Compliant Fleet",
+        "ur": "تیل و گیس فیلڈ ٹرانسپورٹ پاکستان — HSE کے مطابق فلیٹ"
+      },
+      "description": {
+        "en": "HSE-disciplined transport for oil & gas operations in Pakistan: 4x4 field fleets with roll cages, journey management, defensive drivers, pre-trip inspections and 24/7 ops control.",
+        "ur": "پاکستان میں تیل و گیس آپریشنز کے لیے HSE کے مطابق ٹرانسپورٹ: رول کیج والے 4x4 فیلڈ فلیٹ، سفر کا انتظام، دفاعی ڈرائیور، روانگی سے قبل معائنہ اور 24/7 آپریشنز کنٹرول۔"
+      }
+    },
+    "featured": false,
+    "order": 6,
+    "active": true,
+    "__v": 0,
+    "createdAt": "2026-07-27T07:39:50.382Z",
+    "updatedAt": "2026-07-27T08:21:27.833Z"
+  },
+  {
+    "_id": "6a670b46b148078fea736942",
+    "slug": "construction-engineering",
+    "name": {
+      "en": "Construction & Engineering",
+      "ur": "تعمیرات اور انجینئرنگ"
+    },
+    "icon": "hardhat",
+    "heroImage": {
+      "publicId": "",
+      "url": "https://images.unsplash.com/photo-1601584115197-04ecc0da31d7?w=1920&q=80&auto=format",
+      "alt": "Construction site transport and logistics"
+    },
+    "summary": {
+      "en": "Site fleets and cargo logistics for contractors and consultancies, from survey to handover.",
+      "ur": "ٹھیکیداروں اور کنسلٹنسیوں کے لیے سروے سے حوالگی تک سائٹ فلیٹ اور کارگو لاجسٹکس۔"
+    },
+    "body": {
+      "en": "Construction projects need transport from the first survey visit to the final handover — and the requirement changes shape along the way. We serve contractors, engineering consultancies and infrastructure joint ventures with a fleet that covers the whole lifecycle.\n\nEarly phases run on 4x4s: survey teams and consultants reaching sites that are not yet sites, with experienced drivers on rough approaches. Mobilisation brings staff movement — daily pick-and-drop routes for engineers and site staff on vans and coasters, with attendance reporting for site administration. Through execution, logistics vehicles carry the project: Shehzore and Mazda trucks for materials and small plant, 10-wheelers for heavy loads, and our 22-wheeler carrier for moving machinery and vehicle fleets between sites.\n\nSite rules are respected as contract terms: inducted drivers, documented pre-trip inspections, GPS tracking, and HSE incident reporting formatted for your project system. Where a client's requirements impose journey management or night-movement restrictions, our 24/7 operations room enforces them.\n\nCommercially, project transport works best on our monthly dedicated-fleet model — vehicles and drivers assigned to the project, invoiced per period against the project code, with the flexibility to scale up for peak phases and down after commissioning. Multi-site projects draw on our provincial offices so a package in Punjab and another in Sindh run under one agreement.\n\nShare your project location, phase plan and vehicle schedule, and our projects team will return a proposal your commercial manager can take straight into the budget.",
+      "ur": "تعمیراتی منصوبوں کو پہلے سروے دورے سے لے کر آخری حوالگی تک ٹرانسپورٹ درکار ہوتی ہے — اور یہ ضرورت دوران کار بدلتی رہتی ہے۔ ہم ٹھیکیداروں، انجینئرنگ کنسلٹنسیوں اور بنیادی ڈھانچے کے مشترکہ منصوبوں کو ایسی فلیٹ فراہم کرتے ہیں جو پورے دورانیے کا احاطہ کرتی ہے۔\n\nابتدائی مراحل 4x4 پر چلتے ہیں: سروے ٹیمیں اور کنسلٹنٹس ایسے مقامات تک پہنچتے ہیں جو ابھی سائٹ بنے بھی نہیں، اور دشوار راستوں پر تجربہ کار ڈرائیور ساتھ ہوتے ہیں۔ متحرک ہونے کے مرحلے میں عملے کی نقل و حرکت شروع ہوتی ہے — انجینئروں اور سائٹ عملے کے لیے وین اور کوسٹر پر روزانہ پک اینڈ ڈراپ، سائٹ انتظامیہ کے لیے حاضری رپورٹنگ کے ساتھ۔ تعمیر کے دوران لاجسٹکس گاڑیاں منصوبہ سنبھالتی ہیں: مواد اور چھوٹی مشینری کے لیے شہزور اور مزدا ٹرک، بھاری وزن کے لیے 10 پہیوں والے ٹرک، اور مشینری و گاڑیوں کو سائٹس کے درمیان منتقل کرنے کے لیے ہمارا 22 پہیوں والا کیریئر۔\n\nسائٹ کے اصولوں کو معاہدے کی شرائط کی طرح نبھایا جاتا ہے: تربیت یافتہ ڈرائیور، دستاویزی معائنے، GPS ٹریکنگ، اور آپ کے منصوبے کے نظام کے مطابق HSE واقعات کی رپورٹنگ۔ جہاں کلائنٹ کے تقاضے سفر کے انتظام یا رات کی نقل و حرکت پر پابندی عائد کریں، وہاں ہمارا 24/7 آپریشنز روم ان پر عمل درآمد کراتا ہے۔\n\nتجارتی لحاظ سے پروجیکٹ ٹرانسپورٹ ہمارے ماہانہ مخصوص فلیٹ ماڈل پر بہترین کام کرتی ہے — گاڑیاں اور ڈرائیور منصوبے کو مختص، پروجیکٹ کوڈ کے مطابق فی مدت بلنگ، اور عروج کے مراحل میں بڑھانے اور تکمیل کے بعد کم کرنے کی لچک کے ساتھ۔ متعدد سائٹس والے منصوبے ہمارے صوبائی دفاتر سے فائدہ اٹھاتے ہیں، تاکہ پنجاب کا ایک پیکج اور سندھ کا دوسرا ایک ہی معاہدے کے تحت چلے۔\n\nاپنے منصوبے کا مقام، مراحل کا منصوبہ اور گاڑیوں کا شیڈول بھیجیں، ہماری پروجیکٹ ٹیم ایسی تجویز واپس بھیجے گی جو آپ کا کمرشل مینیجر براہِ راست بجٹ میں شامل کر سکے۔"
+    },
+    "relatedServiceSlugs": [
+      "project-site-transportation",
+      "staff-transportation",
+      "corporate-car-rental"
+    ],
+    "relatedVehicleClasses": [
+      "suv",
+      "event",
+      "logistics"
+    ],
+    "testimonialSector": "telecom-corporate",
+    "seo": {
+      "title": {
+        "en": "Construction Site Transport & Logistics Pakistan",
+        "ur": "تعمیراتی سائٹ ٹرانسپورٹ اور لاجسٹکس پاکستان"
+      },
+      "description": {
+        "en": "Site fleets, staff transport and cargo logistics for construction and engineering projects across Pakistan — 4x4s, crew vans, trucks and heavy carriers under one contract.",
+        "ur": "پاکستان بھر کے تعمیراتی اور انجینئرنگ منصوبوں کے لیے سائٹ فلیٹ، عملے کی ٹرانسپورٹ اور کارگو لاجسٹکس — 4x4، عملہ وین، ٹرک اور بھاری کیریئر ایک ہی معاہدے کے تحت۔"
+      }
+    },
+    "featured": false,
+    "order": 8,
+    "active": true,
+    "__v": 0,
+    "createdAt": "2026-07-27T07:39:50.383Z",
+    "updatedAt": "2026-07-27T08:21:28.347Z"
+  },
+  {
+    "_id": "6a670b46b148078fea736945",
+    "slug": "individuals-families",
+    "name": {
+      "en": "Individuals & Families",
+      "ur": "افراد اور خاندان"
+    },
+    "icon": "family",
+    "heroImage": {
+      "publicId": "",
+      "url": "https://images.unsplash.com/photo-1469854523086-cc02fe5d8800?w=1920&q=80&auto=format",
+      "alt": "Family tour vehicle in the mountains"
+    },
+    "summary": {
+      "en": "Airport transfers, weddings, tours and self-drive — the corporate-grade fleet, for your family.",
+      "ur": "ایئرپورٹ ٹرانسفر، شادیاں، دورے اور خود ڈرائیو — کارپوریٹ معیار کی فلیٹ، آپ کے خاندان کے لیے۔"
+    },
+    "body": {
+      "en": "The same fleet that moves ambassadors and airline crews is available for your family — and it arrives with the same standards.\n\nFor most families the relationship starts with an **airport transfer**: a tracked flight, a driver at arrivals with a name board, and a fixed price agreed before the trip. Then come the occasions — **weddings**, where decorated sedans and SUVs carry the couple and coasters move the guests, all coordinated to the event schedule by one team.\n\n**Tours** are where our drivers earn their reputation. Hunza, Skardu, Naran, Swat: multi-day family itineraries on 4x4s and SUVs specified for the mountains, with drivers who know every fuel stop and photo point on the Karakoram Highway. Tell us your dates and the places you want to wake up; the route plan, hotels coordination and a patient driver are our job.\n\nFor daily life there are chauffeur-driven **city rentals** by the hour or day, **intercity journeys** door to door between any two cities, and **monthly cars with driver** for families who want the convenience without owning another vehicle. Prefer to drive yourself? Selected economy cars and sedans are available for **self-drive rental** under a transparent, documented handover process.\n\nEvery vehicle is insured and tracked; every driver is police-verified and trained. Booking takes minutes online, and a human confirms every request by phone or WhatsApp — because that is how service worked in 1997, and it still does.",
+      "ur": "جو فلیٹ سفیروں اور ایئر لائن عملے کو منتقل کرتی ہے، وہی آپ کے خاندان کے لیے بھی دستیاب ہے — اور انہی معیارات کے ساتھ۔\n\nزیادہ تر خاندانوں کے ساتھ تعلق **ایئرپورٹ ٹرانسفر** سے شروع ہوتا ہے: پرواز کی نگرانی، آمد پر نام کی تختی کے ساتھ ڈرائیور، اور سفر سے قبل طے شدہ مقررہ قیمت۔ پھر آتی ہیں تقریبات — **شادیاں**، جہاں سجی ہوئی سیڈان اور SUVs دلہا دلہن کو اور کوسٹر مہمانوں کو لے جاتے ہیں، سب کچھ ایک ہی ٹیم کے ذریعے تقریب کے شیڈول کے مطابق مربوط۔\n\n**دورے** وہ میدان ہیں جہاں ہمارے ڈرائیور اپنی شہرت کماتے ہیں۔ ہنزہ، سکردو، ناران، سوات: پہاڑوں کے لیے موزوں 4x4 اور SUVs پر کئی دنوں کے خاندانی پروگرام، ایسے ڈرائیوروں کے ساتھ جو شاہراہِ قراقرم کے ہر ایندھن اسٹاپ اور منظر سے واقف ہیں۔ ہمیں اپنی تاریخیں اور وہ مقامات بتائیں جہاں آپ جاگنا چاہتے ہیں؛ راستے کی منصوبہ بندی، ہوٹلوں کا انتظام اور ایک صابر ڈرائیور ہماری ذمہ داری ہے۔\n\nروزمرہ زندگی کے لیے گھنٹے یا دن کے حساب سے ڈرائیور سمیت **شہری کرایہ**، کسی بھی دو شہروں کے درمیان گھر سے گھر تک **بین الاضلاعی سفر**، اور ان خاندانوں کے لیے **ماہانہ گاڑی بمع ڈرائیور** جو ایک اور گاڑی خریدے بغیر سہولت چاہتے ہیں۔ خود ڈرائیو کرنا پسند کریں گے؟ منتخب اکانومی کاریں اور سیڈان ایک شفاف، دستاویزی حوالگی طریقہ کار کے تحت **خود ڈرائیو کرایہ** پر دستیاب ہیں۔\n\nہر گاڑی بیمہ شدہ اور ٹریک شدہ ہے؛ ہر ڈرائیور پولیس تصدیق شدہ اور تربیت یافتہ۔ آن لائن بکنگ میں چند منٹ لگتے ہیں، اور ہر درخواست کی تصدیق ایک شخص فون یا واٹس ایپ پر کرتا ہے — کیونکہ 1997 میں خدمت اسی طرح ہوتی تھی، اور آج بھی ایسی ہی ہے۔"
+    },
+    "relatedServiceSlugs": [
+      "airport-transfers",
+      "tourism-leisure",
+      "intercity-travel",
+      "self-drive-rental",
+      "event-transportation"
+    ],
+    "relatedVehicleClasses": [
+      "economy",
+      "sedan",
+      "suv",
+      "event"
+    ],
+    "testimonialSector": null,
+    "seo": {
+      "title": {
+        "en": "Car Rental with Driver for Families — Islamabad & All Pakistan",
+        "ur": "خاندانوں کے لیے ڈرائیور سمیت کار کرایہ — اسلام آباد اور پورے پاکستان میں"
+      },
+      "description": {
+        "en": "Airport transfers, wedding cars, northern-areas tours, intercity travel and self-drive rentals. Insured, tracked vehicles with vetted drivers — trusted by families since 1997.",
+        "ur": "ایئرپورٹ ٹرانسفر، شادی کی گاڑیاں، شمالی علاقہ جات کے دورے، بین الاضلاعی سفر اور خود ڈرائیو کرایہ۔ بیمہ شدہ، ٹریک شدہ گاڑیاں اور تصدیق شدہ ڈرائیور — 1997 سے خاندانوں کا اعتماد۔"
+      }
+    },
+    "featured": false,
+    "order": 11,
+    "active": true,
+    "__v": 0,
+    "createdAt": "2026-07-27T07:39:50.383Z",
+    "updatedAt": "2026-07-27T08:21:28.844Z"
+  },
+  {
+    "_id": "6a670b46b148078fea73693e",
+    "slug": "ngos-ingos",
+    "name": {
+      "en": "NGOs & INGOs",
+      "ur": "این جی اوز اور آئی این جی اوز"
+    },
+    "icon": "hands",
+    "heroImage": {
+      "publicId": "",
+      "url": "https://images.unsplash.com/photo-1714213624189-9a9fc8a0736a?w=1920&q=80&auto=format",
+      "alt": "Field 4x4 for NGO programmes"
+    },
+    "summary": {
+      "en": "Donor-project fleets with field-ready 4x4s, provincial backup and audit-ready documentation.",
+      "ur": "فیلڈ کے لیے تیار 4x4، صوبائی بیک اپ اور آڈٹ کے لیے تیار دستاویزات کے ساتھ ڈونر پروجیکٹ فلیٹ۔"
+    },
+    "body": {
+      "en": "Development and humanitarian programmes need transport that works in the field and survives the audit. Since the early 2000s — earthquake response, election observation, multi-year rural programmes — NGO and INGO fleets have been the backbone of our business, with references from organizations including Concern Worldwide, NRSP and USAID-funded projects.\n\nA donor-project fleet from Shani Travels is a package, not just vehicles. Field-ready double-cabin 4x4s and SUVs are specified for provincial terrain; drivers are vetted, trained and inducted on humanitarian codes of conduct, safeguarding expectations and your organization's field SOPs. Journey management runs through our 24/7 operations room — GPS tracking, movement logs, check-in protocols for remote routes — and provincial backup vehicles mean a breakdown in Sukkur or Swat delays your team by hours, not days.\n\nThe administrative side is built for compliance officers. Contracts map to project periods and budget lines; invoicing is itemised per vehicle and per month with supporting logs; our registration, NTN and GST documentation is complete. When a donor audit asks how staff moved in month fourteen, the answer is in a file, not a memory.\n\nCountry offices typically start with a base-town fleet and expand to field offices as programmes grow; surge support during emergencies draws on the wider fleet, including vans and buses for staff movement and logistics trucks for relief cargo.\n\nSend us your fleet requirement and duty stations, and our development-sector team will return a costed proposal within one business day.",
+      "ur": "ترقیاتی اور انسانی ہمدردی کے پروگراموں کو ایسی ٹرانسپورٹ درکار ہوتی ہے جو فیلڈ میں بھی کام کرے اور آڈٹ میں بھی پوری اترے۔ 2000 کی دہائی کے آغاز سے — زلزلہ امداد، انتخابی مشاہدہ، کئی سالہ دیہی پروگرام — این جی او اور آئی این جی او فلیٹ ہمارے کاروبار کی بنیاد رہے ہیں، اور Concern Worldwide، NRSP اور USAID سے مالی معاونت یافتہ منصوبوں سمیت اداروں کے حوالہ جات ہمارے پاس موجود ہیں۔\n\nشانی ٹریولز کی ڈونر پروجیکٹ فلیٹ محض گاڑیاں نہیں بلکہ ایک مکمل پیکج ہے۔ فیلڈ کے لیے تیار ڈبل کیبن 4x4 اور SUVs صوبائی راستوں کے مطابق منتخب کی جاتی ہیں؛ ڈرائیور تصدیق شدہ، تربیت یافتہ اور انسانی ہمدردی کے ضابطوں، تحفظ کی توقعات اور آپ کے ادارے کے فیلڈ طریقہ کار پر تربیت یافتہ ہوتے ہیں۔ سفر کا انتظام ہمارے 24/7 آپریشنز روم سے چلتا ہے — GPS ٹریکنگ، نقل و حرکت کا ریکارڈ، دور دراز راستوں کے لیے رابطہ اصول — اور صوبائی متبادل گاڑیوں کا مطلب ہے کہ سکھر یا سوات میں کوئی خرابی آپ کی ٹیم کو دنوں نہیں بلکہ گھنٹوں کی تاخیر دیتی ہے۔\n\nانتظامی پہلو کمپلائنس افسران کے لیے تیار کیا گیا ہے۔ معاہدے منصوبے کی مدت اور بجٹ لائنوں کے مطابق ہوتے ہیں؛ بلنگ ہر گاڑی اور ہر ماہ کے حساب سے تفصیلی ہوتی ہے اور معاون ریکارڈ کے ساتھ آتی ہے؛ ہماری رجسٹریشن، NTN اور GST دستاویزات مکمل ہیں۔ جب کوئی ڈونر آڈٹ پوچھے کہ چودھویں مہینے عملہ کیسے سفر کرتا رہا، تو جواب یادداشت میں نہیں بلکہ فائل میں موجود ہوتا ہے۔\n\nملکی دفاتر عموماً ایک مرکزی شہر کی فلیٹ سے آغاز کرتے ہیں اور پروگرام بڑھنے کے ساتھ فیلڈ دفاتر تک پھیلتے ہیں؛ ہنگامی حالات میں اضافی معاونت وسیع تر فلیٹ سے دی جاتی ہے، جس میں عملے کی نقل و حرکت کے لیے وین اور بسیں اور امدادی سامان کے لیے لاجسٹکس ٹرک شامل ہیں۔\n\nہمیں اپنی فلیٹ کی ضرورت اور ڈیوٹی اسٹیشن بھیجیں، ہماری ترقیاتی شعبہ ٹیم ایک کاروباری دن کے اندر لاگت سمیت تجویز واپس بھیجے گی۔"
+    },
+    "relatedServiceSlugs": [
+      "ngo-transport",
+      "project-site-transportation",
+      "staff-transportation"
+    ],
+    "relatedVehicleClasses": [
+      "suv",
+      "sedan",
+      "event",
+      "logistics"
+    ],
+    "testimonialSector": "ngo",
+    "seo": {
+      "title": {
+        "en": "Transport Services for NGOs in Pakistan — Donor-Project Fleets",
+        "ur": "پاکستان میں این جی اوز کے لیے ٹرانسپورٹ سروسز — ڈونر پروجیکٹ فلیٹ"
+      },
+      "description": {
+        "en": "Field-ready 4x4 fleets for NGOs and INGOs across Pakistan. Journey management, vetted drivers, provincial backup and donor-audit-ready documentation. Serving programmes since 1997.",
+        "ur": "پاکستان بھر کی این جی اوز اور آئی این جی اوز کے لیے فیلڈ کے لیے تیار 4x4 فلیٹ۔ سفر کا انتظام، تصدیق شدہ ڈرائیور، صوبائی بیک اپ اور ڈونر آڈٹ کے لیے تیار دستاویزات۔ 1997 سے پروگراموں کی خدمت۔"
+      }
+    },
+    "featured": true,
+    "order": 4,
+    "active": true,
+    "__v": 0,
+    "createdAt": "2026-07-27T07:39:50.382Z",
+    "updatedAt": "2026-07-27T08:21:27.334Z"
+  },
+  {
+    "_id": "6a670b46b148078fea73693f",
+    "slug": "un-agencies",
+    "name": {
+      "en": "UN Agencies",
+      "ur": "اقوام متحدہ کے ادارے"
+    },
+    "icon": "globe",
+    "heroImage": {
+      "publicId": "",
+      "url": "https://images.unsplash.com/photo-1650807486050-a142ea418b19?w=1920&q=80&auto=format",
+      "alt": "UN programme transport"
+    },
+    "summary": {
+      "en": "Mission-tested fleets for the UN system — journey management, tracked vehicles and vetted drivers.",
+      "ur": "اقوام متحدہ کے نظام کے لیے آزمودہ فلیٹ — سفر کا انتظام، ٹریک شدہ گاڑیاں اور تصدیق شدہ ڈرائیور۔"
+    },
+    "body": {
+      "en": "Working with the UN system means operating inside its security framework, and our track record shows we can. Shani Travels has supported UN-system operations for two decades — including IOM's Afghan-elections out-of-country voting programme, earthquake-response movements for displaced persons, and the EU Election Observation Missions that deployed observers across every province of Pakistan.\n\nUN transport requirements are specific, and our standing capability maps to them. Vehicles are GPS-tracked, comprehensively insured and maintained on documented schedules; communication equipment can be fitted to mission specification. Drivers are police-verified, defensively trained, and experienced in working alongside field security officers — check-ins, convoy procedures, no-go hours and route clearances are familiar practice, not new instructions.\n\nJourney management runs through our 24/7 Operations Control Room: movement requests, tracking, and immediate escalation paths for incidents. Provincial reach through eight offices means agency sub-offices and field missions receive the same standard as Islamabad — with backup vehicles positioned so field plans hold.\n\nFor security-elevated movements, the B-6 armored fleet operates under the same account, driven by security-trained chauffeurs and coordinated with your security management team.\n\nAdministratively, we work within UN procurement processes — from RFQ responses to LTA-style arrangements — with itemised invoicing and complete registration documentation. Agencies can diligence us against named past deployments and speak to long-standing references.\n\nIf your agency or implementing partner is establishing or re-tendering a transport arrangement, we would welcome the opportunity to submit.",
+      "ur": "اقوام متحدہ کے نظام کے ساتھ کام کرنے کا مطلب ہے اس کے سیکیورٹی فریم ورک کے اندر کام کرنا، اور ہمارا ریکارڈ ثابت کرتا ہے کہ ہم یہ کر سکتے ہیں۔ شانی ٹریولز دو دہائیوں سے اقوام متحدہ کے اداروں کے آپریشنز کی معاونت کر رہا ہے — بشمول IOM کا افغان انتخابات کے لیے بیرونِ ملک ووٹنگ پروگرام، زلزلہ متاثرین کی نقل و حرکت، اور یورپی یونین کے انتخابی مشاہداتی مشن جنہوں نے پاکستان کے ہر صوبے میں مبصرین تعینات کیے۔\n\nاقوام متحدہ کے ٹرانسپورٹ تقاضے مخصوص ہوتے ہیں، اور ہماری موجودہ صلاحیت ان سے مکمل مطابقت رکھتی ہے۔ گاڑیاں GPS ٹریک شدہ، مکمل بیمہ شدہ اور دستاویزی شیڈول کے مطابق برقرار ہیں؛ مشن کی تفصیل کے مطابق مواصلاتی آلات نصب کیے جا سکتے ہیں۔ ڈرائیور پولیس تصدیق شدہ، دفاعی تربیت یافتہ، اور فیلڈ سیکیورٹی افسران کے ساتھ کام کرنے کے تجربہ کار ہیں — رابطہ، قافلے کے طریقہ کار، ممنوعہ اوقات اور راستوں کی اجازت ان کے لیے مانوس عمل ہیں، نئی ہدایات نہیں۔\n\nسفر کا انتظام ہمارے 24/7 آپریشنز کنٹرول روم سے چلتا ہے: نقل و حرکت کی درخواستیں، ٹریکنگ، اور واقعات کے لیے فوری رابطے کے راستے۔ آٹھ دفاتر کے ذریعے صوبائی رسائی کا مطلب ہے کہ ادارے کے ذیلی دفاتر اور فیلڈ مشن کو وہی معیار ملتا ہے جو اسلام آباد کو — اور متبادل گاڑیاں ایسی جگہوں پر موجود ہوتی ہیں کہ فیلڈ منصوبے قائم رہیں۔\n\nزیادہ سیکیورٹی والی نقل و حرکت کے لیے B-6 بکتر بند فلیٹ اسی اکاؤنٹ کے تحت دستیاب ہے، سیکیورٹی تربیت یافتہ ڈرائیوروں کے ساتھ اور آپ کی سیکیورٹی انتظامی ٹیم کے ساتھ رابطے میں۔\n\nانتظامی طور پر ہم اقوام متحدہ کے خریداری طریقہ کار کے اندر کام کرتے ہیں — RFQ کے جوابات سے لے کر LTA طرز کے انتظامات تک — تفصیلی بلنگ اور مکمل رجسٹریشن دستاویزات کے ساتھ۔ ادارے ہمیں نامزد سابقہ تعیناتیوں پر پرکھ سکتے ہیں اور دیرینہ حوالہ جات سے بات کر سکتے ہیں۔\n\nاگر آپ کا ادارہ یا نفاذی شراکت دار کوئی ٹرانسپورٹ انتظام قائم یا دوبارہ ٹینڈر کر رہا ہے، تو ہم درخواست جمع کرانے کے موقع کا خیرمقدم کریں گے۔"
+    },
+    "relatedServiceSlugs": [
+      "ngo-transport",
+      "secure-specialized-transport",
+      "project-site-transportation"
+    ],
+    "relatedVehicleClasses": [
+      "suv",
+      "sedan",
+      "event",
+      "specialized"
+    ],
+    "testimonialSector": "un-donor",
+    "seo": {
+      "title": {
+        "en": "UN Agency Transport Pakistan — Mission-Tested Fleet Contractor",
+        "ur": "اقوام متحدہ ادارہ ٹرانسپورٹ پاکستان — آزمودہ فلیٹ کنٹریکٹر"
+      },
+      "description": {
+        "en": "Two decades supporting UN-system operations in Pakistan: tracked and insured fleets, journey management, vetted drivers, B-6 armored options and nationwide provincial reach.",
+        "ur": "پاکستان میں اقوام متحدہ کے نظام کی معاونت کے دو عشرے: ٹریک شدہ اور بیمہ شدہ فلیٹ، سفر کا انتظام، تصدیق شدہ ڈرائیور، B-6 بکتر بند سہولت اور ملک گیر صوبائی رسائی۔"
+      }
+    },
+    "featured": true,
+    "order": 5,
+    "active": true,
+    "__v": 0,
+    "createdAt": "2026-07-27T07:39:50.382Z",
+    "updatedAt": "2026-07-27T08:21:27.589Z"
+  },
+  {
+    "_id": "6a670b46b148078fea736943",
+    "slug": "banks-financial-institutions",
+    "name": {
+      "en": "Banks & Financial Institutions",
+      "ur": "بینک اور مالیاتی ادارے"
+    },
+    "icon": "bank",
+    "heroImage": {
+      "publicId": "",
+      "url": "https://images.unsplash.com/photo-1563720223185-11003d516935?w=1920&q=80&auto=format",
+      "alt": "Executive banking transport"
+    },
+    "summary": {
+      "en": "Executive movement and branch-network support with the discretion financial institutions require.",
+      "ur": "مالیاتی اداروں کی مطلوبہ رازداری کے ساتھ ایگزیکٹو نقل و حرکت اور برانچ نیٹ ورک معاونت۔"
+    },
+    "body": {
+      "en": "Financial institutions bring a specific combination of requirements: executive presentation, absolute discretion, and a vendor whose own compliance file passes a bank's onboarding. Shani Travels serves banks, insurers and financial-services firms on all three counts.\n\nExecutive movement is the visible layer — presidents, country heads and visiting principals moved on our delegate fleet of Mercedes, BMW, Crown and flagship Land Cruisers, with protocol-trained chauffeurs who understand that what is discussed in the car stays in the car. Confidentiality is a formal condition of our driver contracts, not a courtesy.\n\nBeneath that sits the operational layer: branch-network support. Regional managers auditing branches across a province, project teams rolling out systems branch by branch, training cohorts moving between cities — our eight-office network keeps these programmes moving on locally based vehicles with consistent standards. Staff transportation on fixed routes serves head-office and operations-centre shifts, including secure late-hour protocols for night staff.\n\nWhere risk assessments require it — executive protection reviews, elevated-threat periods — our B-6 armored vehicles and security-trained drivers operate under the same account, with journey management from the 24/7 operations room.\n\nVendor onboarding is straightforward: full registration, NTN and GST documentation, comprehensive insurance certificates, driver verification records and references from corporate clients of comparable standing. Contracts support the approval workflows and consolidated invoicing bank procurement expects.\n\nAsk our corporate team for a proposal, and we will include the compliance pack your vendor-management process will request anyway.",
+      "ur": "مالیاتی ادارے تقاضوں کا ایک خاص مجموعہ رکھتے ہیں: ایگزیکٹو پیشکش، مکمل رازداری، اور ایسا وینڈر جس کی اپنی کمپلائنس فائل کسی بینک کے آن بورڈنگ عمل سے گزر سکے۔ شانی ٹریولز بینکوں، بیمہ کمپنیوں اور مالیاتی خدمات کے اداروں کو ان تینوں پہلوؤں پر پورا اترتے ہوئے خدمات فراہم کرتا ہے۔\n\nایگزیکٹو نقل و حرکت نمایاں پہلو ہے — صدور، ملکی سربراہان اور آنے والے اہم مہمان ہماری Mercedes، BMW، Crown اور نمایاں Land Cruisers پر مشتمل وفد فلیٹ پر سفر کرتے ہیں، ایسے پروٹوکول تربیت یافتہ ڈرائیوروں کے ساتھ جو سمجھتے ہیں کہ گاڑی میں ہونے والی گفتگو وہیں رہتی ہے۔ رازداری ہمارے ڈرائیور معاہدوں کی باقاعدہ شرط ہے، محض رعایت نہیں۔\n\nاس کے نیچے آپریشنل پہلو ہے: برانچ نیٹ ورک معاونت۔ علاقائی مینیجر صوبے بھر کی برانچوں کا آڈٹ کرتے ہیں، پروجیکٹ ٹیمیں برانچ در برانچ نظام نافذ کرتی ہیں، تربیتی گروہ شہروں کے درمیان سفر کرتے ہیں — ہمارا آٹھ دفاتر کا نیٹ ورک ان پروگراموں کو مقامی گاڑیوں اور یکساں معیار کے ساتھ رواں رکھتا ہے۔ مقررہ راستوں پر عملے کی ٹرانسپورٹ ہیڈ آفس اور آپریشنز سینٹر کی شفٹوں کو سنبھالتی ہے، بشمول رات کے عملے کے لیے محفوظ دیر رات کے اصول۔\n\nجہاں خطرے کا جائزہ تقاضا کرے — ایگزیکٹو تحفظ کے جائزے، زیادہ خطرے کے ادوار — وہاں ہماری B-6 بکتر بند گاڑیاں اور سیکیورٹی تربیت یافتہ ڈرائیور اسی اکاؤنٹ کے تحت کام کرتے ہیں، 24/7 آپریشنز روم کے سفری انتظام کے ساتھ۔\n\nوینڈر آن بورڈنگ سیدھا سادہ ہے: مکمل رجسٹریشن، NTN اور GST دستاویزات، جامع بیمہ سرٹیفکیٹ، ڈرائیور تصدیق کے ریکارڈ اور اسی درجے کے کارپوریٹ کلائنٹس کے حوالہ جات۔ معاہدے ان منظوری کے مراحل اور یکجا بلنگ کی معاونت کرتے ہیں جو بینک کی خریداری ٹیم چاہتی ہے۔\n\nہماری کارپوریٹ ٹیم سے تجویز طلب کریں، ہم اس میں وہ کمپلائنس دستاویزات بھی شامل کریں گے جو آپ کا وینڈر مینجمنٹ عمل بہرحال مانگے گا۔"
+    },
+    "relatedServiceSlugs": [
+      "executive-vip-transport",
+      "corporate-car-rental",
+      "staff-transportation",
+      "secure-specialized-transport"
+    ],
+    "relatedVehicleClasses": [
+      "vip",
+      "sedan",
+      "specialized"
+    ],
+    "testimonialSector": "telecom-corporate",
+    "seo": {
+      "title": {
+        "en": "Executive Transport for Banks in Pakistan — Discreet Corporate Fleets",
+        "ur": "پاکستان میں بینکوں کے لیے ایگزیکٹو ٹرانسپورٹ — پُرخلوص کارپوریٹ فلیٹ"
+      },
+      "description": {
+        "en": "Executive movement, branch-network support and secure options for banks and financial institutions across Pakistan. Vetted chauffeurs, confidentiality terms, full compliance pack.",
+        "ur": "پاکستان بھر کے بینکوں اور مالیاتی اداروں کے لیے ایگزیکٹو نقل و حرکت، برانچ نیٹ ورک معاونت اور محفوظ سہولیات۔ تصدیق شدہ ڈرائیور، رازداری کی شرائط، مکمل کمپلائنس دستاویزات۔"
+      }
+    },
+    "featured": false,
+    "order": 9,
+    "active": true,
+    "__v": 0,
+    "createdAt": "2026-07-27T07:39:50.383Z",
+    "updatedAt": "2026-07-27T07:39:50.383Z"
+  },
+  {
+    "_id": "6a670b46b148078fea73693a",
+    "slug": "airlines",
+    "name": {
+      "en": "Airlines",
+      "ur": "ایئر لائنز"
+    },
+    "icon": "plane",
+    "heroImage": {
+      "publicId": "",
+      "url": "https://images.unsplash.com/photo-1436491865332-7a61a109cc05?w=1920&q=80&auto=format",
+      "alt": "Airport crew transport"
+    },
+    "summary": {
+      "en": "24/7 crew dispatch proven at the national flag carrier — we move PIA's cockpit crews at Karachi.",
+      "ur": "قومی ایئر لائن پر آزمودہ 24/7 عملہ ڈسپیچ — ہم کراچی میں PIA کے کاک پٹ عملے کو منتقل کرتے ہیں۔"
+    },
+    "body": {
+      "en": "Airlines run on report times, and so do we. Shani Travels is the contracted **cockpit crew transport provider for Pakistan International Airlines**, operating from our Karachi office at Jinnah International Airport. That contract is the hardest possible test of a ground-transport operator: crews must reach briefing on time against roster changes, delays, diversions and 3 a.m. departures — every single day.\n\nOur crew operation is built around a 24/7 dispatch desk that works from your flight schedule, not a booking sheet. Dispatchers monitor movements and adjust pickups when a rotation changes; drivers are badged, security-cleared for airport procedures, and assigned consistently so crews see familiar faces. Vehicles are maintained to a documented schedule with instant substitution — an aircraft never waits because a car broke down.\n\nBeyond crew movement, we support airline ground operations end to end: station staff shift transport on fixed routes, executive movement for management and visiting delegations, and event fleets for inaugural flights and industry gatherings. For foreign carriers and charter operators without a permanent station setup, we act as the local transport partner your ground handler coordinates with.\n\nEvery vehicle is GPS-tracked and comprehensively insured, every driver vetted and trained, and every movement logged — the compliance posture an airline's safety and security departments expect from a contractor. References from our national-carrier operation are available to airline procurement teams on request.\n\nIf your airline needs crew transport it can stop thinking about, start with the operator that already runs it for the flag carrier.",
+      "ur": "ایئر لائنز رپورٹنگ ٹائم پر چلتی ہیں، اور ہم بھی۔ شانی ٹریولز **پاکستان انٹرنیشنل ایئر لائنز کے کاک پٹ عملے کی ٹرانسپورٹ کا معاہدہ دار فراہم کنندہ** ہے، جو جناح انٹرنیشنل ایئرپورٹ پر واقع ہمارے کراچی دفتر سے کام کرتا ہے۔ یہ معاہدہ کسی بھی زمینی ٹرانسپورٹ ادارے کے لیے سخت ترین امتحان ہے: عملے کو روسٹر تبدیلیوں، تاخیر، رخ بدلنے اور رات تین بجے کی روانگیوں کے باوجود وقت پر بریفنگ تک پہنچنا ہوتا ہے — ہر ایک دن۔\n\nہمارا عملہ آپریشن ایک 24/7 ڈسپیچ ڈیسک پر مبنی ہے جو بکنگ شیٹ نہیں بلکہ آپ کے فلائٹ شیڈول کے مطابق کام کرتا ہے۔ ڈسپیچر نقل و حرکت کی نگرانی کرتے ہیں اور روٹیشن بدلنے پر پک اپ ایڈجسٹ کرتے ہیں؛ ڈرائیور بیج یافتہ، ایئرپورٹ طریقہ کار کے لیے سیکیورٹی کلیئر شدہ، اور مستقل تعینات ہوتے ہیں تاکہ عملہ مانوس چہرے دیکھے۔ گاڑیاں دستاویزی شیڈول کے مطابق برقرار رکھی جاتی ہیں اور فوری متبادل دستیاب ہوتا ہے — کوئی طیارہ کسی گاڑی کی خرابی کی وجہ سے انتظار نہیں کرتا۔\n\nعملے کی نقل و حرکت کے علاوہ ہم ایئر لائن کے زمینی آپریشنز کی مکمل معاونت کرتے ہیں: مقررہ راستوں پر اسٹیشن عملے کی شفٹ ٹرانسپورٹ، انتظامیہ اور آنے والے وفود کے لیے ایگزیکٹو نقل و حرکت، اور افتتاحی پروازوں و صنعتی تقریبات کے لیے تقریباتی فلیٹ۔ ان غیر ملکی ایئر لائنز اور چارٹر آپریٹرز کے لیے جن کا مستقل اسٹیشن سیٹ اپ نہیں، ہم وہ مقامی ٹرانسپورٹ پارٹنر ہیں جس سے آپ کا گراؤنڈ ہینڈلر رابطہ رکھتا ہے۔\n\nہر گاڑی GPS ٹریک شدہ اور مکمل بیمہ شدہ ہے، ہر ڈرائیور جانچا اور تربیت یافتہ ہے، اور ہر سفر کا اندراج ہوتا ہے — یعنی وہی کمپلائنس معیار جو کسی ایئر لائن کے حفاظتی و سیکیورٹی شعبے ٹھیکیدار سے چاہتے ہیں۔ ہمارے قومی ایئر لائن آپریشن کے حوالہ جات ایئر لائن خریداری ٹیموں کو درخواست پر دستیاب ہیں۔\n\nاگر آپ کی ایئر لائن کو ایسی عملہ ٹرانسپورٹ درکار ہے جس کی فکر ختم ہو جائے، تو اس ادارے سے آغاز کریں جو یہ کام پہلے ہی قومی ایئر لائن کے لیے کر رہا ہے۔"
+    },
+    "relatedServiceSlugs": [
+      "airline-crew-transportation",
+      "staff-transportation",
+      "corporate-car-rental"
+    ],
+    "relatedVehicleClasses": [
+      "sedan",
+      "event"
+    ],
+    "testimonialSector": "telecom-corporate",
+    "seo": {
+      "title": {
+        "en": "Airline Crew Transportation in Pakistan — PIA's Contracted Provider",
+        "ur": "پاکستان میں ایئر لائن عملہ ٹرانسپورٹ — PIA کا معاہدہ دار فراہم کنندہ"
+      },
+      "description": {
+        "en": "24/7 airline crew transport and dispatch in Pakistan. Shani Travels is PIA's cockpit crew transport contractor at Karachi (JIAP). Crew, staff and executive movement for airlines.",
+        "ur": "پاکستان میں 24/7 ایئر لائن عملہ ٹرانسپورٹ اور ڈسپیچ۔ شانی ٹریولز کراچی (JIAP) میں PIA کے کاک پٹ عملے کی ٹرانسپورٹ کا معاہدہ دار ہے۔ ایئر لائنز کے لیے عملہ، اسٹاف اور ایگزیکٹو نقل و حرکت۔"
+      }
+    },
+    "featured": true,
+    "order": 0,
+    "active": true,
+    "__v": 0,
+    "createdAt": "2026-07-27T07:39:50.382Z",
+    "updatedAt": "2026-07-27T08:21:26.826Z"
+  },
+  {
+    "_id": "6a670b46b148078fea736944",
+    "slug": "educational-institutions",
+    "name": {
+      "en": "Educational Institutions",
+      "ur": "تعلیمی ادارے"
+    },
+    "icon": "school",
+    "heroImage": {
+      "publicId": "",
+      "url": "https://images.unsplash.com/photo-1669886845445-c2350d2431f5?w=1920&q=80&auto=format",
+      "alt": "Institutional coaster transport"
+    },
+    "summary": {
+      "en": "Staff and student transport with vetted drivers, fixed routes and safeguarding-aware operations.",
+      "ur": "تصدیق شدہ ڈرائیوروں، مقررہ راستوں اور تحفظ کے اصولوں کے ساتھ عملہ اور طلبہ کی ٹرانسپورٹ۔"
+    },
+    "body": {
+      "en": "Schools, universities and training institutes carry a duty of care that makes transport a governance question. Our institutional transport is built to answer it.\n\nThe backbone is fixed-route staff and student movement: Coaster buses and Hi-Ace vans on published morning and afternoon routes, with consistent, police-verified drivers who are known to your administration and your passengers. Attendance and tracking reports give transport coordinators a daily record; GPS tracking means a route query is answered with data. Where institutions require it, escorts or monitors travel on board, and our drivers are briefed on the institution's safeguarding and conduct policies as a contract condition.\n\nBeyond the daily routes, institutional life generates constant movement: faculty travelling between campuses, external examiners and visiting academics on airport transfers, sports teams and study trips on buses, and leadership on executive sedans for official engagements. All of it runs under one account with consolidated termly or monthly invoicing that fits institutional budgeting.\n\nNorthern-areas study tours and educational trips are a specialty — the same experienced mountain-route drivers and specified vehicles we run for tourism, with itineraries planned around institutional risk-assessment requirements.\n\nFor private schools and university networks operating in multiple cities, our office network provides the same standard at every campus. Fleet sizes flex with the academic calendar — examination periods, admissions season, events — without renegotiating the contract.\n\nShare your routes and passenger numbers, and we will propose a transport plan your board can approve with confidence.",
+      "ur": "اسکول، جامعات اور تربیتی ادارے ایسی ذمہ داری اٹھاتے ہیں جو ٹرانسپورٹ کو ایک انتظامی سوال بنا دیتی ہے۔ ہماری ادارہ جاتی ٹرانسپورٹ اسی کا جواب دینے کے لیے بنائی گئی ہے۔\n\nبنیاد مقررہ راستوں پر عملے اور طلبہ کی نقل و حرکت ہے: صبح اور دوپہر کے اعلان کردہ راستوں پر کوسٹر بسیں اور Hi-Ace وین، ایسے مستقل، پولیس تصدیق شدہ ڈرائیوروں کے ساتھ جو آپ کی انتظامیہ اور مسافروں کے لیے مانوس ہوں۔ حاضری اور ٹریکنگ رپورٹس ٹرانسپورٹ کوآرڈینیٹرز کو روزانہ ریکارڈ فراہم کرتی ہیں؛ GPS ٹریکنگ کا مطلب ہے کہ راستے سے متعلق کسی سوال کا جواب اعدادوشمار سے دیا جاتا ہے۔ جہاں ادارے تقاضا کریں وہاں نگران عملہ ساتھ سفر کرتا ہے، اور ہمارے ڈرائیوروں کو ادارے کی تحفظ اور طرزِ عمل پالیسیوں پر بریف کرنا معاہدے کی شرط ہے۔\n\nروزمرہ راستوں کے علاوہ ادارہ جاتی زندگی مسلسل نقل و حرکت پیدا کرتی ہے: اساتذہ کا کیمپسوں کے درمیان سفر، بیرونی ممتحن اور مہمان ماہرین کے ایئرپورٹ ٹرانسفر، کھیلوں کی ٹیمیں اور تعلیمی دورے بسوں پر، اور سرکاری مصروفیات کے لیے قیادت کی ایگزیکٹو سیڈان۔ یہ سب ایک ہی اکاؤنٹ کے تحت چلتا ہے، ایسی یکجا سہ ماہی یا ماہانہ بلنگ کے ساتھ جو ادارہ جاتی بجٹ کے مطابق ہو۔\n\nشمالی علاقہ جات کے تعلیمی دورے ہماری خاص مہارت ہیں — وہی تجربہ کار پہاڑی ڈرائیور اور مخصوص گاڑیاں جو ہم سیاحت کے لیے استعمال کرتے ہیں، اور ایسے پروگرام جو ادارے کے خطرے کے جائزے کے تقاضوں کے مطابق بنائے جاتے ہیں۔\n\nمتعدد شہروں میں کام کرنے والے نجی اسکولوں اور یونیورسٹی نیٹ ورکس کے لیے ہمارا دفتری نیٹ ورک ہر کیمپس پر وہی معیار فراہم کرتا ہے۔ فلیٹ کی تعداد تعلیمی کیلنڈر کے ساتھ بدلتی رہتی ہے — امتحانات، داخلوں کا موسم، تقریبات — بغیر معاہدے پر دوبارہ بات چیت کے۔\n\nاپنے راستے اور مسافروں کی تعداد بھیجیں، ہم ایسا ٹرانسپورٹ منصوبہ تجویز کریں گے جسے آپ کا بورڈ اعتماد کے ساتھ منظور کر سکے۔"
+    },
+    "relatedServiceSlugs": [
+      "staff-transportation",
+      "event-transportation",
+      "tourism-leisure"
+    ],
+    "relatedVehicleClasses": [
+      "event",
+      "sedan"
+    ],
+    "testimonialSector": "government",
+    "seo": {
+      "title": {
+        "en": "School & University Transport Services Pakistan",
+        "ur": "اسکول اور یونیورسٹی ٹرانسپورٹ سروسز پاکستان"
+      },
+      "description": {
+        "en": "Staff and student transport for educational institutions: fixed routes, vetted drivers, GPS tracking, safeguarding-aware operations and study-tour fleets across Pakistan.",
+        "ur": "تعلیمی اداروں کے لیے عملہ اور طلبہ کی ٹرانسپورٹ: مقررہ راستے، تصدیق شدہ ڈرائیور، GPS ٹریکنگ، تحفظ کے اصولوں کے مطابق آپریشنز اور پاکستان بھر میں تعلیمی دوروں کے لیے فلیٹ۔"
+      }
+    },
+    "featured": false,
+    "order": 10,
+    "active": true,
+    "__v": 0,
+    "createdAt": "2026-07-27T07:39:50.383Z",
+    "updatedAt": "2026-07-27T08:21:28.598Z"
+  }
+]

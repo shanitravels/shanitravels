@@ -1,0 +1,412 @@
+[
+  {
+    "_id": "6a670b45b148078fea73692d",
+    "slug": "corporate-car-rental",
+    "title": {
+      "en": "Corporate Car Rental",
+      "ur": "کارپوریٹ کار کرایہ"
+    },
+    "group": "corporate",
+    "summary": {
+      "en": "Daily, weekly, monthly and long-term rentals with dedicated fleets and consolidated invoicing.",
+      "ur": "روزانہ، ہفتہ وار، ماہانہ اور طویل مدتی کرایہ، مخصوص فلیٹ اور یکجا بلنگ کے ساتھ۔"
+    },
+    "body": {
+      "en": "From a single executive sedan on a monthly contract to a dedicated multi-vehicle fleet assigned to your organization for years, corporate rental is the core of what we have done since 1997.\n\n- Daily, weekly, monthly and long-term contracts\n- Dedicated vehicles and drivers assigned to your account\n- Consolidated monthly invoicing with agreed credit terms\n- Replacement vehicles during maintenance — your operations never stop\n- A dedicated account manager who knows your movement patterns\n\nEvery vehicle is comprehensively insured, GPS-tracked, and maintained on a documented schedule. Ask us for a proposal — most corporate fleets are contracted within a week.",
+      "ur": "ماہانہ معاہدے پر ایک ایگزیکٹو سیڈان سے لے کر برسوں کے لیے آپ کے ادارے کو مختص متعدد گاڑیوں کی فلیٹ تک، کارپوریٹ کرایہ وہی کام ہے جو ہم 1997 سے کرتے آ رہے ہیں۔\n\n- روزانہ، ہفتہ وار، ماہانہ اور طویل مدتی معاہدے\n- آپ کے اکاؤنٹ کے لیے مختص گاڑیاں اور ڈرائیور\n- طے شدہ ادائیگی شرائط کے ساتھ یکجا ماہانہ بلنگ\n- دیکھ بھال کے دوران متبادل گاڑیاں — آپ کا کام کبھی نہیں رکتا\n- ایک مخصوص اکاؤنٹ مینیجر جو آپ کی ضروریات سے واقف ہو\n\nہر گاڑی مکمل بیمہ شدہ، GPS ٹریک شدہ اور دستاویزی شیڈول کے مطابق برقرار رکھی جاتی ہے۔ ہم سے تجویز طلب کریں — زیادہ تر کارپوریٹ فلیٹ ایک ہفتے میں طے ہو جاتی ہیں۔"
+    },
+    "image": {
+      "publicId": "",
+      "url": "https://images.unsplash.com/photo-1626997077212-cfd5da89824e?w=1600&q=80&auto=format",
+      "alt": "Executive corporate sedan"
+    },
+    "relatedVehicleClasses": [
+      "sedan",
+      "suv",
+      "vip"
+    ],
+    "order": 0,
+    "active": true,
+    "__v": 0,
+    "createdAt": "2026-07-27T07:39:49.604Z",
+    "updatedAt": "2026-07-27T07:39:49.604Z"
+  },
+  {
+    "_id": "6a670b45b148078fea736935",
+    "slug": "intercity-travel",
+    "title": {
+      "en": "Intercity Travel",
+      "ur": "بین الاضلاعی سفر"
+    },
+    "group": "individual",
+    "summary": {
+      "en": "Comfortable chauffeur-driven point-to-point journeys between all major cities.",
+      "ur": "تمام بڑے شہروں کے درمیان ڈرائیور سمیت آرام دہ سفر۔"
+    },
+    "body": {
+      "en": "Travelling between Islamabad, Lahore, Karachi, Peshawar or beyond? Book a chauffeur-driven sedan or SUV for a comfortable, direct door-to-door journey.\n\n- Door-to-door service between any two cities\n- Experienced highway drivers on familiar routes\n- Fixed transparent fares agreed before departure\n- Rest stops planned to your preference\n- One-way and return options\n\nFor groups, our Grand Cabin vans and coasters make the same journeys together.",
+      "ur": "اسلام آباد، لاہور، کراچی، پشاور یا اس سے آگے سفر کر رہے ہیں؟ آرام دہ، براہِ راست گھر سے گھر تک سفر کے لیے ڈرائیور سمیت سیڈان یا SUV بک کریں۔\n\n- کسی بھی دو شہروں کے درمیان گھر سے گھر تک سروس\n- واقف راستوں پر تجربہ کار ہائی وے ڈرائیور\n- روانگی سے قبل طے شدہ شفاف کرایہ\n- آپ کی مرضی کے مطابق آرام کے وقفے\n- یک طرفہ اور واپسی دونوں سہولیات\n\nگروپس کے لیے ہماری گرینڈ کیبن وین اور کوسٹر یہی سفر ایک ساتھ طے کرتے ہیں۔"
+    },
+    "image": {
+      "publicId": "",
+      "url": "https://images.unsplash.com/photo-1541625602330-2277a4c46182?w=1600&q=80&auto=format",
+      "alt": "Highway journey between cities"
+    },
+    "relatedVehicleClasses": [
+      "sedan",
+      "suv",
+      "event"
+    ],
+    "order": 8,
+    "active": true,
+    "__v": 0,
+    "createdAt": "2026-07-27T07:39:49.605Z",
+    "updatedAt": "2026-07-27T08:21:26.039Z"
+  },
+  {
+    "_id": "6a670b45b148078fea736936",
+    "slug": "tourism-leisure",
+    "title": {
+      "en": "Tourism & Leisure",
+      "ur": "سیاحت اور تفریح"
+    },
+    "group": "individual",
+    "summary": {
+      "en": "Family and business tours, Northern Areas expeditions and custom packages with mountain-route drivers.",
+      "ur": "خاندانی اور کاروباری دورے، شمالی علاقہ جات کے سفر اور پہاڑی راستوں کے ڈرائیوروں کے ساتھ خصوصی پیکجز۔"
+    },
+    "body": {
+      "en": "Hunza, Skardu, Naran, Swat — Pakistan's north rewards travellers who arrive with the right vehicle and the right driver.\n\n- Custom multi-day itineraries built around your dates\n- Experienced mountain-route drivers who know every pass\n- 4x4s and SUVs specified for northern terrain\n- Family tours, honeymoon packages and business retreats\n- Full route planning, hotel coordination and flexible stops\n\nTell us where you want to wake up; we will plan the road that gets you there.",
+      "ur": "ہنزہ، سکردو، ناران، سوات — پاکستان کا شمال ان مسافروں کو نوازتا ہے جو درست گاڑی اور درست ڈرائیور کے ساتھ پہنچتے ہیں۔\n\n- آپ کی تاریخوں کے مطابق کئی دنوں کے خصوصی پروگرام\n- ہر درّے سے واقف تجربہ کار پہاڑی ڈرائیور\n- شمالی علاقوں کے لیے موزوں 4x4 اور SUVs\n- خاندانی دورے، ہنی مون پیکجز اور کاروباری تقریبات\n- مکمل روٹ پلاننگ، ہوٹل کا انتظام اور لچکدار وقفے\n\nہمیں بتائیں آپ کہاں جاگنا چاہتے ہیں؛ وہاں تک کا راستہ ہم بنا دیں گے۔"
+    },
+    "image": {
+      "publicId": "",
+      "url": "https://images.unsplash.com/photo-1469854523086-cc02fe5d8800?w=1600&q=80&auto=format",
+      "alt": "SUV on the Karakoram Highway"
+    },
+    "relatedVehicleClasses": [
+      "suv",
+      "event"
+    ],
+    "order": 9,
+    "active": true,
+    "__v": 0,
+    "createdAt": "2026-07-27T07:39:49.605Z",
+    "updatedAt": "2026-07-27T08:21:26.285Z"
+  },
+  {
+    "_id": "6a670b45b148078fea736934",
+    "slug": "airport-transfers",
+    "title": {
+      "en": "Airport Transfers",
+      "ur": "ایئرپورٹ ٹرانسفر"
+    },
+    "group": "individual",
+    "summary": {
+      "en": "Punctual pickups and drop-offs for every flight — live tracking, meet & greet, 24/7.",
+      "ur": "ہر پرواز کے لیے وقت کی پابندی سے پک اپ اور ڈراپ — لائیو ٹریکنگ، استقبال، 24/7۔"
+    },
+    "body": {
+      "en": "Flight delayed? No problem — we track your flight in real time and adjust the pickup accordingly.\n\n- Live flight tracking on every airport booking\n- Meet & greet at arrivals with named signage\n- Fixed, transparent transfer pricing per vehicle\n- 24/7 availability at all major Pakistani airports\n- Child seats and extra luggage space on request\n\nBook online in minutes; our team confirms by phone or WhatsApp.",
+      "ur": "پرواز تاخیر کا شکار ہے؟ کوئی مسئلہ نہیں — ہم آپ کی پرواز کی براہِ راست نگرانی کرتے ہیں اور پک اپ کا وقت اسی کے مطابق ایڈجسٹ کرتے ہیں۔\n\n- ہر ایئرپورٹ بکنگ پر لائیو فلائٹ ٹریکنگ\n- آمد پر نام کی تختی کے ساتھ استقبال\n- ہر گاڑی کے لیے مقررہ، شفاف کرایہ\n- پاکستان کے تمام بڑے ایئرپورٹس پر 24/7 دستیابی\n- درخواست پر بچوں کی نشستیں اور اضافی سامان کی گنجائش\n\nچند منٹ میں آن لائن بک کریں؛ ہماری ٹیم فون یا واٹس ایپ پر تصدیق کرتی ہے۔"
+    },
+    "image": {
+      "publicId": "",
+      "url": "https://images.unsplash.com/photo-1436491865332-7a61a109cc05?w=1600&q=80&auto=format",
+      "alt": "Airport terminal pickup"
+    },
+    "relatedVehicleClasses": [
+      "economy",
+      "sedan",
+      "suv",
+      "event"
+    ],
+    "order": 7,
+    "active": true,
+    "__v": 0,
+    "createdAt": "2026-07-27T07:39:49.605Z",
+    "updatedAt": "2026-07-27T08:21:25.770Z"
+  },
+  {
+    "_id": "6a670b45b148078fea736939",
+    "slug": "self-drive-rental",
+    "title": {
+      "en": "Self-Drive Rental",
+      "ur": "خود ڈرائیو کرایہ"
+    },
+    "group": "specialized",
+    "summary": {
+      "en": "Drive yourself — verified handover, transparent terms and a joint inspection that protects you too.",
+      "ur": "خود ڈرائیو کریں — تصدیق شدہ حوالگی، شفاف شرائط اور مشترکہ معائنہ جو آپ کا بھی تحفظ کرتا ہے۔"
+    },
+    "body": {
+      "en": "Prefer to drive yourself? Selected vehicles from our fleet are available for self-drive rental under a clear, documented process.\n\n- Original CNIC/passport and valid driving licence verified at pickup — nothing uploaded online\n- Joint handover inspection: condition, fuel and mileage photographed together\n- Transparent permitted-use terms and security deposit\n- 24/7 breakdown support while you drive\n- Joint return inspection closes the rental cleanly\n\nSee the full process, requirements and eligible vehicles on our [Self-Drive page](/self-drive).",
+      "ur": "خود ڈرائیو کرنا پسند کریں گے؟ ہماری فلیٹ کی منتخب گاڑیاں ایک واضح، دستاویزی طریقہ کار کے تحت خود ڈرائیو کے لیے دستیاب ہیں۔\n\n- اصل شناختی کارڈ/پاسپورٹ اور کارآمد لائسنس گاڑی لیتے وقت تصدیق شدہ — آن لائن کچھ اپ لوڈ نہیں ہوتا\n- مشترکہ حوالگی معائنہ: حالت، ایندھن اور مائلیج کی تصاویر ایک ساتھ\n- شفاف جائز استعمال کی شرائط اور سیکیورٹی رقم\n- ڈرائیو کے دوران 24/7 خرابی معاونت\n- مشترکہ واپسی معائنہ کرایہ کو صاف طور پر مکمل کرتا ہے\n\nمکمل طریقہ کار، شرائط اور اہل گاڑیاں ہمارے [خود ڈرائیو صفحے](/self-drive) پر دیکھیں۔"
+    },
+    "image": {
+      "publicId": "",
+      "url": "https://images.unsplash.com/photo-1638618164682-12b986ec2a75?w=1600&q=80&auto=format",
+      "alt": "Self-drive rental sedan"
+    },
+    "relatedVehicleClasses": [
+      "economy",
+      "sedan"
+    ],
+    "order": 12,
+    "active": true,
+    "__v": 0,
+    "createdAt": "2026-07-27T07:39:49.605Z",
+    "updatedAt": "2026-07-27T07:39:49.605Z"
+  },
+  {
+    "_id": "6a670b45b148078fea73692e",
+    "slug": "staff-transportation",
+    "title": {
+      "en": "Staff Transportation",
+      "ur": "عملے کی ٹرانسپورٹ"
+    },
+    "group": "corporate",
+    "summary": {
+      "en": "Pick & drop and shift transport on fixed company contracts — vans, coasters and route planning included.",
+      "ur": "مقررہ کمپنی معاہدوں پر پک اینڈ ڈراپ اور شفٹ ٹرانسپورٹ — وین، کوسٹر اور روٹ پلاننگ شامل۔"
+    },
+    "body": {
+      "en": "Reliable staff transport is an operational commitment, not just a vehicle. We run daily pick & drop and shift-based routes for offices, factories, call centres and airlines.\n\n- Route design and optimisation for your staff addresses\n- Fixed monthly contracts with Hi-Ace vans and Coaster buses\n- Attendance and tracking reports for HR\n- Trained, vetted drivers on consistent routes\n- Night-shift and female-staff transport protocols\n\nShift changes at midnight or 6 a.m. are exactly where our 24/7 operations room earns its keep.",
+      "ur": "قابلِ اعتماد عملہ ٹرانسپورٹ محض گاڑی نہیں، ایک آپریشنل ذمہ داری ہے۔ ہم دفاتر، فیکٹریوں، کال سینٹرز اور ایئر لائنز کے لیے روزانہ پک اینڈ ڈراپ اور شفٹ کے راستے چلاتے ہیں۔\n\n- آپ کے عملے کے پتوں کے مطابق راستوں کی ترتیب اور بہتری\n- Hi-Ace وین اور کوسٹر بسوں کے ساتھ مقررہ ماہانہ معاہدے\n- HR کے لیے حاضری اور ٹریکنگ رپورٹس\n- مستقل راستوں پر تربیت یافتہ، تصدیق شدہ ڈرائیور\n- رات کی شفٹ اور خواتین عملے کے لیے خصوصی حفاظتی اصول\n\nرات بارہ بجے یا صبح چھ بجے کی شفٹ تبدیلی ہی وہ موقع ہے جہاں ہمارا 24/7 آپریشنز روم اپنی اہمیت ثابت کرتا ہے۔"
+    },
+    "image": {
+      "publicId": "",
+      "url": "https://images.unsplash.com/photo-1678747172256-b37b7ac99cfc?w=1600&q=80&auto=format",
+      "alt": "Employee shuttle van"
+    },
+    "relatedVehicleClasses": [
+      "event"
+    ],
+    "order": 1,
+    "active": true,
+    "__v": 0,
+    "createdAt": "2026-07-27T07:39:49.604Z",
+    "updatedAt": "2026-07-27T08:21:23.886Z"
+  },
+  {
+    "_id": "6a670b45b148078fea736938",
+    "slug": "secure-specialized-transport",
+    "title": {
+      "en": "Secure & Specialized Transport",
+      "ur": "محفوظ اور خصوصی ٹرانسپورٹ"
+    },
+    "group": "specialized",
+    "summary": {
+      "en": "B-6 armored fleet with security-trained drivers and escort coordination for elevated-threat movements.",
+      "ur": "زیادہ خطرے کی نقل و حرکت کے لیے B-6 بکتر بند فلیٹ، سیکیورٹی تربیت یافتہ ڈرائیور اور حفاظتی کوآرڈینیشن۔"
+    },
+    "body": {
+      "en": "For principals and cargo that face genuine threat, we operate a **B-6 armored fleet** — REVO, Prado, Fortuner and Land Cruiser V8 — supported by procedures, not just steel.\n\n- B-6 ballistic protection as our fleet standard\n- Security-trained drivers with defensive and evasive driving instruction\n- Convoy and escort coordination with your security provider\n- Journey management through the 24/7 Operations Control Room\n- Route planning, alternates and check-in protocols on every movement\n\nEmbassies, missions and corporate security teams engage this capability under standing contracts. See our full [Safety & Security protocol](/safety).",
+      "ur": "ان شخصیات اور سامان کے لیے جنہیں حقیقی خطرہ درپیش ہو، ہم **B-6 بکتر بند فلیٹ** چلاتے ہیں — REVO، Prado، Fortuner اور Land Cruiser V8 — جس کی پشت پر صرف فولاد نہیں بلکہ طے شدہ طریقہ کار بھی ہے۔\n\n- B-6 بلٹ پروف تحفظ بطور ہمارا فلیٹ معیار\n- دفاعی اور بچاؤ ڈرائیونگ کی تربیت یافتہ سیکیورٹی ڈرائیور\n- آپ کے سیکیورٹی ادارے کے ساتھ قافلہ اور حفاظتی کوآرڈینیشن\n- 24/7 آپریشنز کنٹرول روم کے ذریعے سفر کا انتظام\n- ہر سفر پر راستے کی منصوبہ بندی، متبادل اور رابطے کے اصول\n\nسفارت خانے، مشن اور کارپوریٹ سیکیورٹی ٹیمیں یہ سہولت مستقل معاہدوں کے تحت لیتی ہیں۔ ہمارا مکمل [حفاظت و سلامتی پروٹوکول](/safety) دیکھیں۔"
+    },
+    "image": {
+      "publicId": "",
+      "url": "https://images.unsplash.com/photo-1654688554491-69d21d38fb91?w=1600&q=80&auto=format",
+      "alt": "Armored Land Cruiser"
+    },
+    "relatedVehicleClasses": [
+      "specialized",
+      "suv"
+    ],
+    "order": 11,
+    "active": true,
+    "__v": 0,
+    "createdAt": "2026-07-27T07:39:49.605Z",
+    "updatedAt": "2026-07-27T07:39:49.605Z"
+  },
+  {
+    "_id": "6a670b45b148078fea736933",
+    "slug": "event-transportation",
+    "title": {
+      "en": "Event Transportation",
+      "ur": "تقریبات کی ٹرانسپورٹ"
+    },
+    "group": "corporate",
+    "summary": {
+      "en": "Conferences, delegations, corporate events and weddings — coordinated multi-vehicle movements.",
+      "ur": "کانفرنسیں، وفود، کارپوریٹ تقریبات اور شادیاں — مربوط متعدد گاڑیوں کی نقل و حرکت۔"
+    },
+    "body": {
+      "en": "Moving two hundred delegates between an airport, three hotels and a convention centre is choreography. We plan it, staff it and run it.\n\n- Delegation fleets: executive sedans, SUVs, coasters and buses under one coordinator\n- Airport meet & greet with named signage\n- Wedding cars decorated to your theme, with formally dressed chauffeurs\n- Guest shuttles on published schedules\n- On-site transport desk for large events\n\nOne contract, one coordinator, one accountable operator — however many vehicles the event needs.",
+      "ur": "دو سو مندوبین کو ایئرپورٹ، تین ہوٹلوں اور کنونشن سینٹر کے درمیان منتقل کرنا ایک باقاعدہ ترتیب کا کام ہے۔ ہم اس کی منصوبہ بندی، عملہ اور انتظام سنبھالتے ہیں۔\n\n- وفد فلیٹ: ایگزیکٹو سیڈان، SUVs، کوسٹر اور بسیں، ایک کوآرڈینیٹر کے تحت\n- نام کی تختی کے ساتھ ایئرپورٹ پر استقبال\n- آپ کی پسند کے مطابق سجی شادی کی گاڑیاں، باوقار لباس میں ڈرائیوروں کے ساتھ\n- طے شدہ اوقات پر مہمانوں کی شٹل\n- بڑی تقریبات کے لیے موقع پر ٹرانسپورٹ ڈیسک\n\nایک معاہدہ، ایک کوآرڈینیٹر، ایک جوابدہ ادارہ — تقریب کو جتنی بھی گاڑیاں درکار ہوں۔"
+    },
+    "image": {
+      "publicId": "",
+      "url": "https://images.unsplash.com/photo-1669886845445-c2350d2431f5?w=1600&q=80&auto=format",
+      "alt": "Event coaster fleet"
+    },
+    "relatedVehicleClasses": [
+      "vip",
+      "sedan",
+      "event"
+    ],
+    "order": 6,
+    "active": true,
+    "__v": 0,
+    "createdAt": "2026-07-27T07:39:49.605Z",
+    "updatedAt": "2026-07-27T08:21:25.516Z"
+  },
+  {
+    "_id": "6a670b45b148078fea73692f",
+    "slug": "airline-crew-transportation",
+    "title": {
+      "en": "Airline Crew Transportation",
+      "ur": "ایئر لائن عملے کی ٹرانسپورٹ"
+    },
+    "group": "corporate",
+    "summary": {
+      "en": "24/7 crew dispatch and flight-operation support — we are PIA's cockpit crew transport contractor.",
+      "ur": "24/7 عملہ ڈسپیچ اور فلائٹ آپریشن معاونت — ہم PIA کے کاک پٹ عملے کی ٹرانسپورٹ کے معاہدہ دار ہیں۔"
+    },
+    "body": {
+      "en": "## Proven at the national flag carrier\n\nShani Travels is the contracted cockpit crew transport provider for **Pakistan International Airlines** through our Karachi office at Jinnah International Airport (JIAP). Every day, our vehicles and dispatch team move flight crews between the airport, hotels and residences against hard flight-operation deadlines.\n\nWhat that contract has taught us is what every airline needs:\n\n- **24/7 dispatch desk** synchronised with flight schedules, delays and roster changes\n- Punctuality measured against report times, not traffic excuses\n- Clean, comfortable vehicles that respect crew rest requirements\n- Vetted, badged drivers familiar with airport security procedures\n- Instant replacement vehicles — a crew never waits on a breakdown\n\nIf your airline, charter operation or ground handler needs crew movement it can stop thinking about, we are the contractor that already does this for the national carrier.",
+      "ur": "## قومی ایئر لائن پر آزمودہ\n\nشانی ٹریولز، جناح انٹرنیشنل ایئرپورٹ (JIAP) پر واقع اپنے کراچی دفتر کے ذریعے **پاکستان انٹرنیشنل ایئر لائنز** کے کاک پٹ عملے کی ٹرانسپورٹ کا معاہدہ دار فراہم کنندہ ہے۔ ہر روز ہماری گاڑیاں اور ڈسپیچ ٹیم پرواز کے سخت اوقات کے مطابق عملے کو ایئرپورٹ، ہوٹلوں اور رہائش گاہوں کے درمیان منتقل کرتی ہے۔\n\nاس معاہدے نے ہمیں وہی سکھایا ہے جو ہر ایئر لائن کو درکار ہوتا ہے:\n\n- **24/7 ڈسپیچ ڈیسک** جو پرواز کے اوقات، تاخیر اور روسٹر تبدیلیوں سے ہم آہنگ ہو\n- وقت کی پابندی رپورٹنگ ٹائم کے مطابق، ٹریفک کے بہانوں سے نہیں\n- صاف ستھری، آرام دہ گاڑیاں جو عملے کے آرام کا خیال رکھیں\n- ایئرپورٹ سیکیورٹی طریقہ کار سے واقف تصدیق شدہ، بیج یافتہ ڈرائیور\n- فوری متبادل گاڑیاں — عملہ کبھی خرابی کا انتظار نہیں کرتا\n\nاگر آپ کی ایئر لائن، چارٹر آپریشن یا گراؤنڈ ہینڈلر کو ایسی عملہ ٹرانسپورٹ درکار ہے جس کی فکر ختم ہو جائے، تو ہم وہی ادارہ ہیں جو یہ کام پہلے سے قومی ایئر لائن کے لیے کر رہا ہے۔"
+    },
+    "image": {
+      "publicId": "",
+      "url": "https://images.unsplash.com/photo-1436491865332-7a61a109cc05?w=1600&q=80&auto=format",
+      "alt": "Airport crew transport at terminal"
+    },
+    "relatedVehicleClasses": [
+      "sedan",
+      "event"
+    ],
+    "order": 2,
+    "active": true,
+    "__v": 0,
+    "createdAt": "2026-07-27T07:39:49.604Z",
+    "updatedAt": "2026-07-27T08:21:24.583Z"
+  },
+  {
+    "_id": "6a670b45b148078fea736930",
+    "slug": "government-transport",
+    "title": {
+      "en": "Government & Development Sector Transport",
+      "ur": "سرکاری اور ترقیاتی شعبے کی ٹرانسپورٹ"
+    },
+    "group": "corporate",
+    "summary": {
+      "en": "Registered, tax-compliant transport for ministries, departments and development programmes.",
+      "ur": "وزارتوں، محکموں اور ترقیاتی پروگراموں کے لیے رجسٹرڈ، ٹیکس کے مطابق ٹرانسپورٹ۔"
+    },
+    "body": {
+      "en": "Public-sector procurement demands documentation, and we have it: registered with the Registrar of Firms, NTN and GST compliant, with nearly three decades of references from government and development-sector programmes.\n\n- Fleet provision for departments, projects and visiting delegations\n- Election-mission and census-scale deployments — we have done both\n- Transparent per-vehicle billing that survives audit\n- Provincial coverage through our 8-city office network\n- Protocol vehicles for official movements\n\nFrom a single ministry sedan to a hundred-vehicle field deployment, the paperwork and the vehicles are equally in order.",
+      "ur": "سرکاری خریداری کے لیے دستاویزات ضروری ہیں، اور وہ ہمارے پاس مکمل ہیں: رجسٹرار آف فرمز میں رجسٹرڈ، NTN اور GST کے مطابق، اور سرکاری و ترقیاتی پروگراموں سے تقریباً تین دہائیوں کے حوالہ جات۔\n\n- محکموں، منصوبوں اور آنے والے وفود کے لیے فلیٹ کی فراہمی\n- انتخابی مشن اور مردم شماری جیسے بڑے آپریشنز — ہم دونوں کر چکے ہیں\n- شفاف فی گاڑی بلنگ جو آڈٹ میں پوری اترتی ہے\n- 8 شہروں کے دفتری نیٹ ورک کے ذریعے صوبائی رسائی\n- سرکاری نقل و حرکت کے لیے پروٹوکول گاڑیاں\n\nایک وزارتی سیڈان سے لے کر سو گاڑیوں کی فیلڈ تعیناتی تک، کاغذات اور گاڑیاں دونوں یکساں طور پر تیار ہیں۔"
+    },
+    "image": {
+      "publicId": "",
+      "url": "https://images.unsplash.com/photo-1613859492095-85d9944f09f6?w=1600&q=80&auto=format",
+      "alt": "Government protocol vehicle"
+    },
+    "relatedVehicleClasses": [
+      "sedan",
+      "suv",
+      "vip"
+    ],
+    "order": 3,
+    "active": true,
+    "__v": 0,
+    "createdAt": "2026-07-27T07:39:49.604Z",
+    "updatedAt": "2026-07-27T07:39:49.604Z"
+  },
+  {
+    "_id": "6a670b45b148078fea736937",
+    "slug": "executive-vip-transport",
+    "title": {
+      "en": "Executive & VIP Transport",
+      "ur": "ایگزیکٹو اور VIP ٹرانسپورٹ"
+    },
+    "group": "specialized",
+    "summary": {
+      "en": "Mercedes, BMW and flagship SUVs with protocol-trained chauffeurs for leadership and delegations.",
+      "ur": "قیادت اور وفود کے لیے پروٹوکول تربیت یافتہ ڈرائیوروں کے ساتھ Mercedes، BMW اور نمایاں SUVs۔"
+    },
+    "body": {
+      "en": "When the passenger is the principal, the vehicle and the driver are part of the protocol.\n\n- Executive delegate fleet: Mercedes C/S-Class, BMW 5–7 Series, Toyota Crown, Honda Accord\n- Flagship SUVs: Land Cruiser V8, LX and Prado\n- Protocol-trained, formally dressed chauffeurs\n- Route reconnaissance and timing rehearsals for formal movements\n- Discretion and confidentiality as standard\n\nBoard chairs, ministers, ambassadors and visiting executives are moved on exactly this fleet every week.",
+      "ur": "جب مسافر خود اہم شخصیت ہو تو گاڑی اور ڈرائیور بھی پروٹوکول کا حصہ بن جاتے ہیں۔\n\n- ایگزیکٹو وفد فلیٹ: Mercedes C/S-Class، BMW 5–7 Series، Toyota Crown، Honda Accord\n- نمایاں SUVs: Land Cruiser V8، LX اور Prado\n- پروٹوکول تربیت یافتہ، باوقار لباس میں ڈرائیور\n- باقاعدہ نقل و حرکت کے لیے راستے کا جائزہ اور اوقات کی مشق\n- رازداری اور احتیاط بطور معیار\n\nبورڈ سربراہان، وزراء، سفراء اور آنے والے ایگزیکٹوز ہر ہفتے اسی فلیٹ پر سفر کرتے ہیں۔"
+    },
+    "image": {
+      "publicId": "",
+      "url": "https://images.unsplash.com/photo-1563720223185-11003d516935?w=1600&q=80&auto=format",
+      "alt": "Executive Mercedes sedan"
+    },
+    "relatedVehicleClasses": [
+      "vip",
+      "suv"
+    ],
+    "order": 10,
+    "active": true,
+    "__v": 0,
+    "createdAt": "2026-07-27T07:39:49.605Z",
+    "updatedAt": "2026-07-27T07:39:49.605Z"
+  },
+  {
+    "_id": "6a670b45b148078fea736931",
+    "slug": "ngo-transport",
+    "title": {
+      "en": "NGO & International Organization Transport",
+      "ur": "این جی او اور بین الاقوامی اداروں کی ٹرانسپورٹ"
+    },
+    "group": "corporate",
+    "summary": {
+      "en": "Donor-project fleets with field-ready 4x4s, provincial reach and the compliance NGOs require.",
+      "ur": "فیلڈ کے لیے تیار 4x4، صوبائی رسائی اور این جی اوز کی مطلوبہ پابندی کے ساتھ ڈونر پروجیکٹ فلیٹ۔"
+    },
+    "body": {
+      "en": "NGOs and international organizations have been our anchor clients since the early 2000s — from earthquake response to election observation to multi-year development programmes.\n\n- Field-ready double-cabin 4x4s and SUVs for provincial operations\n- Journey management with GPS tracking and a 24/7 operations room\n- Drivers vetted, trained and inducted on humanitarian codes of conduct\n- Provincial backup vehicles so field plans survive breakdowns\n- Documentation that satisfies donor compliance and audit requirements\n\nOrganizations including IOM, Concern Worldwide and USAID-funded programmes have put their teams in our vehicles across every province of Pakistan.",
+      "ur": "این جی اوز اور بین الاقوامی ادارے 2000 کی دہائی کے آغاز سے ہمارے بنیادی کلائنٹ رہے ہیں — زلزلہ امداد سے لے کر انتخابی مشاہدے اور کئی سالہ ترقیاتی پروگراموں تک۔\n\n- صوبائی آپریشنز کے لیے فیلڈ کے لیے تیار ڈبل کیبن 4x4 اور SUVs\n- GPS ٹریکنگ اور 24/7 آپریشنز روم کے ساتھ سفر کا انتظام\n- انسانی ہمدردی کے ضابطوں پر تصدیق شدہ، تربیت یافتہ ڈرائیور\n- صوبائی متبادل گاڑیاں تاکہ فیلڈ منصوبے خرابی سے متاثر نہ ہوں\n- ایسی دستاویزات جو ڈونر کمپلائنس اور آڈٹ کے تقاضے پورے کریں\n\nIOM، Concern Worldwide اور USAID سے مالی معاونت یافتہ پروگراموں سمیت متعدد ادارے پاکستان کے ہر صوبے میں اپنی ٹیمیں ہماری گاڑیوں میں سفر کرا چکے ہیں۔"
+    },
+    "image": {
+      "publicId": "",
+      "url": "https://images.unsplash.com/photo-1714213624189-9a9fc8a0736a?w=1600&q=80&auto=format",
+      "alt": "Field-ready 4x4 for NGO operations"
+    },
+    "relatedVehicleClasses": [
+      "suv",
+      "sedan",
+      "event"
+    ],
+    "order": 4,
+    "active": true,
+    "__v": 0,
+    "createdAt": "2026-07-27T07:39:49.604Z",
+    "updatedAt": "2026-07-27T08:21:24.999Z"
+  },
+  {
+    "_id": "6a670b45b148078fea736932",
+    "slug": "project-site-transportation",
+    "title": {
+      "en": "Project & Site Transportation",
+      "ur": "پروجیکٹ اور سائٹ ٹرانسپورٹ"
+    },
+    "group": "corporate",
+    "summary": {
+      "en": "Oil & gas, construction, engineering and infrastructure — crews, equipment and HSE discipline.",
+      "ur": "تیل و گیس، تعمیرات، انجینئرنگ اور بنیادی ڈھانچہ — عملہ، سازوسامان اور HSE نظم۔"
+    },
+    "body": {
+      "en": "Remote sites break ordinary transport arrangements. Project transportation is a different discipline: HSE inductions, journey management plans, defensive-driving-trained drivers, and vehicles specified for the terrain.\n\n- Double-cabin 4x4s with roll cages for field operations\n- Crew-change runs on fixed schedules, day and night\n- Logistics trucks for equipment and material movement\n- Pre-trip inspections documented for every departure\n- Incident reporting aligned with your HSE system\n\nOil & gas operators, construction joint ventures and engineering consultancies run multi-year site fleets with us because the discipline holds up in month eighteen, not just week one.",
+      "ur": "دور دراز مقامات عام ٹرانسپورٹ انتظامات کو ناکام بنا دیتے ہیں۔ پروجیکٹ ٹرانسپورٹ ایک الگ شعبہ ہے: HSE تربیت، سفری منصوبے، دفاعی ڈرائیونگ کے تربیت یافتہ ڈرائیور، اور علاقے کے مطابق مخصوص گاڑیاں۔\n\n- فیلڈ آپریشنز کے لیے رول کیج والی ڈبل کیبن 4x4\n- دن اور رات، مقررہ اوقات پر عملے کی تبدیلی کے سفر\n- سازوسامان اور مواد کی منتقلی کے لیے لاجسٹکس ٹرک\n- ہر روانگی کے لیے دستاویزی معائنہ\n- آپ کے HSE نظام کے مطابق واقعات کی رپورٹنگ\n\nتیل و گیس کے ادارے، تعمیراتی جوائنٹ وینچرز اور انجینئرنگ کنسلٹنسیاں ہمارے ساتھ کئی سالہ سائٹ فلیٹ چلاتی ہیں، کیونکہ یہ نظم اٹھارہویں مہینے میں بھی اسی طرح قائم رہتا ہے جیسے پہلے ہفتے میں۔"
+    },
+    "image": {
+      "publicId": "",
+      "url": "https://images.unsplash.com/photo-1670054953044-2605dbd0d747?w=1600&q=80&auto=format",
+      "alt": "Project site 4x4 transport"
+    },
+    "relatedVehicleClasses": [
+      "suv",
+      "logistics",
+      "event"
+    ],
+    "order": 5,
+    "active": true,
+    "__v": 0,
+    "createdAt": "2026-07-27T07:39:49.605Z",
+    "updatedAt": "2026-07-27T08:21:25.260Z"
+  }
+]
