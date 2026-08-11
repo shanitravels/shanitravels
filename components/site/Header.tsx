@@ -93,13 +93,16 @@ export function Header({ helpline, whatsapp }: { helpline: string; whatsapp: str
               <span className="block font-heading text-lg font-bold text-navy md:text-xl">
                 {t.nav.brandName}
               </span>
-              <span className="block text-[10px] font-medium uppercase tracking-[0.18em] text-muted md:text-[11px]">
+              <span className="block text-[11px] font-medium uppercase tracking-[0.18em] text-muted">
                 {t.nav.brandTagline}
               </span>
             </span>
           </Link>
 
-          <div className="hidden items-center gap-8 lg:flex">
+          {/* gap-8 at exactly 1024px pushed the actions past the viewport edge —
+              the desktop nav switches on at lg, where it only just fits. The
+              roomier spacing returns at xl. */}
+          <div className="hidden items-center gap-5 lg:flex xl:gap-8">
             {LINKS.map((link) => {
               const active = isActive(link.href);
               return (

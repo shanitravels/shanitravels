@@ -105,8 +105,10 @@ export function UsersManager({ initial, currentUserId }: { initial: AdminUser[];
         </Button>
       </div>
 
-      <Card className="overflow-hidden">
-        <table className="w-full text-sm">
+      {/* overflow-x-auto, not hidden: at 320px the table is ~650px wide, and
+          hiding the excess made the trailing columns unreachable. */}
+      <Card className="overflow-x-auto">
+        <table className="w-full min-w-[640px] text-sm">
           <thead>
             <tr className="border-b border-slate-100 text-left text-xs uppercase tracking-wide text-slate-400">
               <th className="px-4 py-3 font-medium">Name</th>

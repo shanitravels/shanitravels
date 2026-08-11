@@ -100,9 +100,10 @@ export function VehiclesTable({ initial }: { initial: Vehicle[] }) {
         />
       ) : (
         <>
-          {/* Desktop table */}
-          <Card className="hidden overflow-hidden md:block">
-            <table className="w-full text-sm">
+          {/* Desktop table — scrolls rather than clips, since the md breakpoint
+              turns on the sidebar and this table at the same time. */}
+          <Card className="hidden overflow-x-auto md:block">
+            <table className="w-full min-w-[640px] text-sm">
               <thead>
                 <tr className="border-b border-slate-100 text-left text-xs uppercase tracking-wide text-slate-400">
                   <th className="px-4 py-3 font-medium">Vehicle</th>

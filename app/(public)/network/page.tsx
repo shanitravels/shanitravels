@@ -40,7 +40,7 @@ export default async function NetworkPage() {
                     <FiMapPin className="h-4 w-4 text-accent" /> {o.city}
                   </h2>
                   {o.isHeadOffice && (
-                    <span className="rounded-full bg-navy/10 px-2 py-0.5 text-[10px] font-semibold text-navy">
+                    <span className="rounded-full bg-navy/10 px-2 py-0.5 text-[11px] font-semibold text-navy">
                       {t.network.headOffice}
                     </span>
                   )}

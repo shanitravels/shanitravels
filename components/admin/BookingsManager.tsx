@@ -143,8 +143,11 @@ export function BookingsManager({ initial }: { initial: Booking[] }) {
         <EmptyState title="No bookings" message="Booking requests from the website will appear here." />
       ) : (
         <>
-          <Card className="hidden overflow-hidden md:block">
-            <table className="w-full text-sm">
+          {/* The sidebar and this table both appear at md, leaving ~480px of
+              content width — less than the table needs. Scroll it rather than
+              clipping columns out of reach. */}
+          <Card className="hidden overflow-x-auto md:block">
+            <table className="w-full min-w-[680px] text-sm">
               <thead>
                 <tr className="border-b border-slate-100 text-left text-xs uppercase tracking-wide text-slate-400">
                   <th className="px-4 py-3 font-medium">Ref</th>

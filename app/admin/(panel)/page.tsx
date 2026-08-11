@@ -24,8 +24,11 @@ export default async function DashboardPage() {
         <StatCard label="Published testimonials" value={stats.publishedTestimonials} href="/admin/testimonials" />
       </div>
 
+      {/* min-w-0: without it these grid items keep their `min-width: auto`,
+          so the nowrap row content sets the floor and the truncate classes
+          inside never get a chance to truncate. */}
       <div className="mt-6 grid gap-4 lg:grid-cols-2">
-        <Card>
+        <Card className="min-w-0">
           <div className="flex items-center justify-between border-b border-slate-100 px-4 py-3">
             <h2 className="text-sm font-semibold text-slate-700">Latest bookings</h2>
             <ViewAllLink href="/admin/bookings" label="All bookings" />
@@ -33,7 +36,7 @@ export default async function DashboardPage() {
           <DashboardBookings items={recentBookings} />
         </Card>
 
-        <Card>
+        <Card className="min-w-0">
           <div className="flex items-center justify-between border-b border-slate-100 px-4 py-3">
             <h2 className="text-sm font-semibold text-slate-700">Latest enquiries</h2>
             <ViewAllLink href="/admin/enquiries" label="All enquiries" />

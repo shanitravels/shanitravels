@@ -73,8 +73,10 @@ export function EnquiriesManager({ initial }: { initial: Enquiry[] }) {
         <EmptyState title="No enquiries" message="Corporate proposals and general enquiries from the website will appear here." />
       ) : (
         <>
-          <Card className="hidden overflow-hidden md:block">
-            <table className="w-full text-sm">
+          {/* See BookingsManager: ~480px of content width at the md breakpoint,
+              so the table scrolls instead of losing its trailing columns. */}
+          <Card className="hidden overflow-x-auto md:block">
+            <table className="w-full min-w-[520px] text-sm">
               <thead>
                 <tr className="border-b border-slate-100 text-left text-xs uppercase tracking-wide text-slate-400">
                   <th className="px-4 py-3 font-medium">Ref</th>

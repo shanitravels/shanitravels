@@ -237,7 +237,7 @@ export default async function HomePage() {
                   className="inline-flex items-center gap-1.5 rounded-full border border-line bg-white px-4 py-2 text-sm font-medium text-navy shadow-card"
                 >
                   <FiMapPin className="h-3.5 w-3.5 text-accent" /> {o.city}
-                  {o.isHeadOffice && <span className="text-[10px] text-muted">{t.home.hq}</span>}
+                  {o.isHeadOffice && <span className="text-[11px] text-muted">{t.home.hq}</span>}
                 </span>
               ))}
             </div>

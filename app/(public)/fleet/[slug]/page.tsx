@@ -109,7 +109,10 @@ export default async function VehicleDetailPage({
       <div className="mx-auto max-w-7xl px-4 py-8 sm:px-6 lg:py-12">
         <div className="grid gap-8 lg:grid-cols-5">
           {/* Left: gallery + details */}
-          <div className="lg:col-span-3">
+          {/* min-w-0 overrides the grid item's default `min-width: auto`, which
+              otherwise pins the column to its widest content — the thumbnail
+              strip — and pushes the whole page wider than the viewport. */}
+          <div className="min-w-0 lg:col-span-3">
             <VehicleGallery images={vehicle.images} name={vehicle.name} />
 
             <div className="mt-8">
@@ -234,7 +237,7 @@ export default async function VehicleDetailPage({
           </div>
 
           {/* Right: sticky booking + estimator */}
-          <aside className="lg:col-span-2">
+          <aside className="min-w-0 lg:col-span-2">
             <div className="space-y-4 lg:sticky lg:top-24">
               <div className="rounded-2xl border border-line bg-white p-5 shadow-card">
                 <p className="text-xs uppercase tracking-wide text-muted">

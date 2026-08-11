@@ -98,12 +98,14 @@ export function Footer({
                 <h3 className="text-xs font-semibold uppercase tracking-wider text-white">
                   {label(t, col.titleKey)}
                 </h3>
-                <ul className="mt-3 space-y-2.5">
+                {/* py-1 lifts these from a 20px to a ~28px touch target; the
+                    list spacing tightens to keep the column height unchanged. */}
+                <ul className="mt-3 space-y-1">
                   {col.links.map((l) => (
                     <li key={l.href}>
                       <Link
                         href={l.href}
-                        className="inline-block text-sm text-white/60 transition hover:text-white"
+                        className="inline-block py-1 text-sm text-white/60 transition hover:text-white"
                       >
                         {label(t, l.key)}
                       </Link>
