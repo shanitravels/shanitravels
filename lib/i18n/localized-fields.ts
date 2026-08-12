@@ -53,5 +53,5 @@ export const LOCALIZED_ARRAY_FIELDS: Record<string, readonly string[]> = {
 
 /** Paths that sit inside an array of subdocuments (`credentials[].label`). */
 export const LOCALIZED_SUBDOC_ARRAYS: Record<string, readonly string[]> = {
-  sitesettings: ["credentials"],
+  sitesettings: ["credentials", "heroImages"],
 };

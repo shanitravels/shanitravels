@@ -289,6 +289,14 @@ function defaultsAsPairs(): SiteSettingsDoc {
     ...d,
     heroHeadline: pair(d.heroHeadline),
     heroSubheadline: pair(d.heroSubheadline),
+    // Empty by default, but mapped rather than spread so the slide copy is
+    // widened to pairs the moment a default slide is ever added.
+    heroImages: d.heroImages.map((s) => ({
+      ...s,
+      eyebrow: pair(s.eyebrow),
+      title: pair(s.title),
+      body: pair(s.body),
+    })),
     announcementBar: d.announcementBar
       ? { text: pair(d.announcementBar.text), active: d.announcementBar.active }
       : null,

@@ -178,6 +178,20 @@ export interface MediaImage {
   order: number;
 }
 
+/**
+ * A homepage hero slide — a {@link MediaImage} that also carries the words laid
+ * over it, so every slide is editable rather than only the first.
+ *
+ * Each line is optional: blank falls back to the site headline on slide one and
+ * to the UI dictionary on the rest, which is what lets a settings document
+ * saved before these fields existed keep rendering unchanged.
+ */
+export interface HeroSlideDoc extends MediaImage {
+  eyebrow: LocalizedString;
+  title: LocalizedString;
+  body: LocalizedString;
+}
+
 export interface VehicleRates {
   perHour?: number | null;
   /** null → "on request" (executive/logistics vehicles are often unpublished) */
@@ -471,7 +485,8 @@ export interface SiteSettingsDoc {
   };
   heroHeadline: LocalizedString;
   heroSubheadline: LocalizedString;
-  heroImages: MediaImage[];
+  /** Slides, in order. Slide one falls back to the two fields above. */
+  heroImages: HeroSlideDoc[];
   announcementBar?: { text: LocalizedString; active: boolean } | null;
   /**
    * The campaign bar that sits above the navbar.

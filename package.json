@@ -9,6 +9,7 @@
     "lint": "eslint",
     "seed": "tsx scripts/seed.ts",
     "backfill:mailing-list": "tsx scripts/backfill-mailing-list.ts",
+    "backfill:hero-slides": "tsx scripts/backfill-hero-slides.ts",
     "db:check": "tsx scripts/db-check.ts",
     "mail:test": "tsx --conditions react-server scripts/mail-test.ts",
     "self-drive:enable": "tsx scripts/enable-self-drive.ts",

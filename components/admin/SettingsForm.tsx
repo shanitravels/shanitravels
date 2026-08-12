@@ -6,11 +6,22 @@ import { useToast } from "./Toast";
 import { Field, TextInput, TextArea, Toggle, Button, LocalizedField } from "./form";
 import { ImageManager, SingleImageField } from "./ImageManager";
 import { saveSettings } from "@/lib/actions/settings";
-import type { SiteSettingsDoc, MediaImage, CredentialDoc } from "@/lib/types";
+import type { SiteSettingsDoc, HeroSlideDoc, CredentialDoc } from "@/lib/types";
 import type { LocalizedString } from "@/lib/i18n/localize";
 import { isPromoLive } from "@/lib/types";
 
 const emptyPair: LocalizedString = { en: "", ur: "" };
+
+/**
+ * What an empty line does. Nothing is substituted any more — each slide renders
+ * exactly its own row — so the note says so plainly rather than naming a
+ * fallback that no longer exists.
+ */
+function slideFieldHint(line: "eyebrow" | "title" | "body"): string {
+  if (line === "title") return "Shown as the slide's heading. Leave blank and the slide shows no heading.";
+  if (line === "body") return "Optional supporting sentence beneath the heading.";
+  return "Small line above the heading.";
+}
 
 const blankPromo = {
   active: false,
@@ -39,7 +50,7 @@ export function SettingsForm({ settings }: { settings: SiteSettingsDoc }) {
   const [socials, setSocials] = useState(settings.socials);
   const [heroHeadline, setHeroHeadline] = useState(settings.heroHeadline);
   const [heroSub, setHeroSub] = useState(settings.heroSubheadline);
-  const [heroImages, setHeroImages] = useState<MediaImage[]>(settings.heroImages);
+  const [heroImages, setHeroImages] = useState<HeroSlideDoc[]>(settings.heroImages);
   const [announce, setAnnounce] = useState(settings.announcementBar ?? { text: emptyPair, active: false });
   const [promo, setPromo] = useState(settings.promo ?? blankPromo);
   const [stats, setStats] = useState({
@@ -149,22 +160,127 @@ export function SettingsForm({ settings }: { settings: SiteSettingsDoc }) {
 
       <Section title="Hero">
         <div className="space-y-4">
+          {/* These two used to be slide one's copy. Slide one now carries its
+              own, like every other slide, so all these do is keep the homepage
+              from rendering a wordless hero on a database with no slides in it
+              — which the hints say outright, so nobody edits them expecting the
+              first slide to change. */}
           <LocalizedField
-            label="Headline"
+            label="Headline (no-slides fallback)"
+            hint="Only shown if there are no slides at all. To edit the first slide, use Slide 1 below."
             required
             error={errors.heroHeadline}
             value={heroHeadline}
             onChange={(v) => { setHeroHeadline(v); touch(); }}
           />
           <LocalizedField
-            label="Subheadline"
+            label="Subheadline (no-slides fallback)"
+            hint="Only shown if there are no slides at all."
             multiline
             value={heroSub}
             onChange={(v) => { setHeroSub(v); touch(); }}
           />
           <Field label="Hero images (slider)">
-            <ImageManager value={heroImages} onChange={(v) => { setHeroImages(v); touch(); }} subfolder="hero" />
+            {/* ImageManager speaks MediaImage. It carries the slide copy through
+                untouched — reorder, alt edits and removal all spread the item —
+                but a freshly uploaded slide is built from the picture fields
+                alone, so the blank pairs are seeded here. Spreading `img` last
+                keeps the copy of every slide that already had some. */}
+            <ImageManager
+              value={heroImages}
+              onChange={(v) => {
+                setHeroImages(
+                  v.map((img) => ({
+                    eyebrow: emptyPair,
+                    title: emptyPair,
+                    body: emptyPair,
+                    ...(img as Partial<HeroSlideDoc> & typeof img),
+                  }))
+                );
+                touch();
+              }}
+              subfolder="hero"
+            />
           </Field>
+
+          {/* One block per slide, in the order the pictures are arranged above.
+              Each block is the whole slide — its picture, that picture's alt
+              text and the three lines laid over it — so a slide can be written
+              in one place instead of half here and half in the picker. */}
+          {heroImages.length > 0 && (
+            <Field
+              label="Slides"
+              hint="Every slide's words live here and nothing is substituted for them: what you write is what the homepage shows, in the order the pictures are arranged above."
+            >
+              <div className="space-y-3">
+                {heroImages.map((slide, i) => {
+                  const patch = (next: Partial<HeroSlideDoc>) => {
+                    setHeroImages(heroImages.map((s, idx) => (idx === i ? { ...s, ...next } : s)));
+                    touch();
+                  };
+                  return (
+                    <div
+                      key={`${slide.publicId || slide.url}-${i}`}
+                      className="rounded-xl border border-slate-200 bg-slate-50/60 p-4"
+                    >
+                      <div className="mb-3 flex items-start gap-3">
+                        {/* eslint-disable-next-line @next/next/no-img-element */}
+                        <img
+                          src={slide.url}
+                          alt=""
+                          className="h-16 w-24 shrink-0 rounded-md border border-slate-200 object-cover"
+                        />
+                        <div className="min-w-0 flex-1">
+                          <p className="text-xs font-semibold uppercase tracking-wide text-slate-500">
+                            Slide {i + 1}
+                            {i === 0 && " · also the page's H1"}
+                          </p>
+                          {/* The same value the picker above edits — bound to
+                              the same state, so the two never disagree. Repeated
+                              here so a slide reads as one unit. */}
+                          <TextInput
+                            className="mt-1.5"
+                            value={slide.alt}
+                            onChange={(e) => patch({ alt: e.target.value })}
+                            placeholder="Image alt text — describes the picture for screen readers and search"
+                          />
+                          <p className="mt-1 text-xs text-slate-400">
+                            Add or reorder pictures in “Hero images” above.
+                          </p>
+                        </div>
+                      </div>
+
+                      <div className="space-y-3">
+                        <LocalizedField
+                          label="Eyebrow"
+                          maxLength={90}
+                          value={slide.eyebrow ?? emptyPair}
+                          onChange={(eyebrow) => patch({ eyebrow })}
+                          hint={slideFieldHint("eyebrow")}
+                        />
+                        <LocalizedField
+                          label="Headline"
+                          maxLength={160}
+                          value={slide.title ?? emptyPair}
+                          onChange={(title) => patch({ title })}
+                          hint={slideFieldHint("title")}
+                        />
+                        <LocalizedField
+                          label="Body"
+                          multiline
+                          rows={2}
+                          maxLength={300}
+                          value={slide.body ?? emptyPair}
+                          onChange={(body) => patch({ body })}
+                          hint={slideFieldHint("body")}
+                        />
+                      </div>
+                    </div>
+                  );
+                })}
+              </div>
+            </Field>
+          )}
         </div>
       </Section>
 

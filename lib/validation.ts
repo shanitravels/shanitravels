@@ -282,7 +282,25 @@ export const settingsSchema = z.object({
   }),
   heroHeadline: localizedText(160, "Hero headline"),
   heroSubheadline: localizedOptional(300),
-  heroImages: z.array(imageSchema).max(8).default([]),
+  /**
+   * Slides. `imageSchema` plus the copy laid over each one — every line
+   * optional, because a blank falls back (site headline on slide one, the
+   * dictionary on the rest) rather than rendering empty. `.extend` rather than
+   * a fresh object so the picture fields stay defined in exactly one place.
+   */
+  heroImages: z
+    .array(
+      imageSchema.extend({
+        // Defaulted, not merely optional: ImageManager builds a freshly
+        // uploaded slide from the picture fields alone, so these three arrive
+        // absent and would otherwise fail the union.
+        eyebrow: localizedOptional(90).default({ en: "", ur: "" }),
+        title: localizedOptional(160).default({ en: "", ur: "" }),
+        body: localizedOptional(300).default({ en: "", ur: "" }),
+      })
+    )
+    .max(8)
+    .default([]),
   announcementBar: z.object({
     text: localizedOptional(200),
     active: z.boolean().default(false),

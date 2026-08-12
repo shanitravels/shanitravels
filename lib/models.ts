@@ -344,6 +344,31 @@ const marketingContactSchema = new Schema(
   { timestamps: true }
 );
 
+/**
+ * A hero slide: the picture plus the words shown over it.
+ *
+ * Its own schema rather than the shared `imageSchema`, because only the hero
+ * carries copy alongside the photograph — putting these three on `imageSchema`
+ * would hang them off every vehicle gallery and media record too.
+ *
+ * All three lines are optional. Blank means "use the fallback", which is the
+ * site headline for the first slide and the dictionary for the rest, so a
+ * settings document written before this field existed still renders exactly as
+ * it did.
+ */
+const heroSlideSchema = new Schema(
+  {
+    publicId: { type: String, default: "" },
+    url: { type: String, required: true },
+    alt: { type: String, default: "" },
+    order: { type: Number, default: 0 },
+    eyebrow: localized(),
+    title: localized(),
+    body: localized(),
+  },
+  { _id: false }
+);
+
 // ---------------------------------------------------------------------------
 // SiteSettings — singleton, everything global the admin can edit
 // ---------------------------------------------------------------------------
@@ -362,7 +387,7 @@ const settingsSchema = new Schema(
     },
     heroHeadline: localized(),
     heroSubheadline: localized(),
-    heroImages: { type: [imageSchema], default: [] },
+    heroImages: { type: [heroSlideSchema], default: [] },
     announcementBar: {
       text: localized(),
       active: { type: Boolean, default: false },

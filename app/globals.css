@@ -230,12 +230,90 @@ h1, h2, h3, h4, h5, h6 {
    edge. The duration deliberately outruns the slide interval, so the motion is
    always mid-travel — it never finishes and sits still. */
 .hero-media {
-  transform: scale(1.05);
   will-change: transform;
 }
 
-.hero-media.is-active {
-  animation: hero-drift 18s ease-out forwards;
+/* Desktop only. Below xl the picture is a fixed-ratio band showing the whole
+   frame, and a 1.05–1.14 scale would crop 14% off its edges — which is exactly
+   where the chauffeur stands. */
+@media (min-width: 1280px) {
+  .hero-media {
+    transform: scale(1.05);
+  }
+
+  .hero-media.is-active {
+    animation: hero-drift 18s ease-out forwards;
+  }
+}
+
+/* Below xl the photograph is a band with navy above and below it, and the join
+   has to be invisible.
+
+   A navy gradient laid *over* the picture cannot quite do that. However closely
+   the overlay is matched, the composite lands a hair off the flat background
+   beside it — measured at ~1 luminance step in the first device row, held for
+   two, which on a bright frame is exactly the line you see. Compositing a
+   transformed image under a clip is where that discrepancy comes from, and no
+   amount of tuning the stops removes it.
+
+   So the image's own alpha is taken to nothing at its edges instead. Where it
+   is transparent, what shows is the section's real background — the same navy,
+   the same single dot layer as the copy above. There is nothing left at the
+   edge to differ, so nothing can mark it.
+
+   Opaque across 27–83%, which is the car and chauffeur; the fade lives in the
+   sky and forecourt on either side of them. Eased rather than linear: a linear
+   ramp leaves a slope discontinuity at the boundary, which the eye finds as a
+   Mach band even when the values are continuous. */
+@media (max-width: 1279.98px) {
+  .hero-band-fade {
+    -webkit-mask-image: linear-gradient(
+      to bottom,
+      /* Fully clear for the first and last few percent, not merely approaching
+         clear at the very edge. The band's height is fractional (210.94px), so
+         overflow-hidden clips the scaled image on a sub-pixel boundary and that
+         antialiased row reads dark. Holding the mask at zero across the clip
+         means there is no image content there for it to darken. */
+      transparent 0%,
+      transparent 2.5%,
+      rgb(0 0 0 / 0.05) 6%,
+      rgb(0 0 0 / 0.18) 11%,
+      rgb(0 0 0 / 0.4) 15.5%,
+      rgb(0 0 0 / 0.65) 19.5%,
+      rgb(0 0 0 / 0.86) 23.5%,
+      #000 27%,
+      #000 82%,
+      rgb(0 0 0 / 0.88) 86%,
+      rgb(0 0 0 / 0.66) 89%,
+      rgb(0 0 0 / 0.42) 92%,
+      rgb(0 0 0 / 0.2) 94%,
+      rgb(0 0 0 / 0.06) 96%,
+      transparent 97.5%
+    );
+    mask-image: linear-gradient(
+      to bottom,
+      /* Fully clear for the first and last few percent, not merely approaching
+         clear at the very edge. The band's height is fractional (210.94px), so
+         overflow-hidden clips the scaled image on a sub-pixel boundary and that
+         antialiased row reads dark. Holding the mask at zero across the clip
+         means there is no image content there for it to darken. */
+      transparent 0%,
+      transparent 2.5%,
+      rgb(0 0 0 / 0.05) 6%,
+      rgb(0 0 0 / 0.18) 11%,
+      rgb(0 0 0 / 0.4) 15.5%,
+      rgb(0 0 0 / 0.65) 19.5%,
+      rgb(0 0 0 / 0.86) 23.5%,
+      #000 27%,
+      #000 82%,
+      rgb(0 0 0 / 0.88) 86%,
+      rgb(0 0 0 / 0.66) 89%,
+      rgb(0 0 0 / 0.42) 92%,
+      rgb(0 0 0 / 0.2) 94%,
+      rgb(0 0 0 / 0.06) 96%,
+      transparent 97.5%
+    );
+  }
 }
 
 @keyframes hero-drift {
@@ -299,9 +377,13 @@ h1, h2, h3, h4, h5, h6 {
   }
 }
 
-/* Fills across the life of a slide; holds where it is while paused. */
+/* Fills across the life of a slide; holds where it is while paused.
+   This animation is the hero's clock — its `animationend` is what advances the
+   slide — so pausing it holds the picture and the bar together, and the two can
+   never drift apart. The fallback matches SLIDE_MS in components/site/Hero.tsx;
+   the component sets the real value through `--hero-interval`. */
 .hero-progress-fill {
-  animation: hero-progress var(--hero-interval, 7000ms) linear forwards;
+  animation: hero-progress var(--hero-interval, 5000ms) linear forwards;
 }
 
 .hero-progress-fill.is-paused {
@@ -323,7 +405,16 @@ h1, h2, h3, h4, h5, h6 {
   .hero-media,
   .hero-media.is-active {
     animation: none;
-    transform: scale(1.02);
+    transform: none;
+  }
+
+  /* The resting scale is a desktop nicety for the same reason the drift is:
+     below xl it would crop the band. */
+  @media (min-width: 1280px) {
+    .hero-media,
+    .hero-media.is-active {
+      transform: scale(1.02);
+    }
   }
   .hero-copy {
     animation: none;
