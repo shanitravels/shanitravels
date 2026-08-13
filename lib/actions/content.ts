@@ -1,6 +1,6 @@
 "use server";
 
-import { revalidateTag } from "next/cache";
+import { updateTag } from "next/cache";
 import { requireAdmin } from "@/lib/auth/session";
 import { connectDB } from "@/lib/db";
 import {
@@ -81,7 +81,7 @@ export async function createContent(
     }
 
     const doc = await (model as Model<Record<string, unknown>>).create(data as Record<string, unknown>);
-    revalidateTag(tag, "max");
+    updateTag(tag);
     return { ok: true, data: { id: String(doc._id) }, message: `${label} created.` };
   } catch (err) {
     return toActionError(err);
@@ -119,7 +119,7 @@ export async function updateContent(
       { runValidators: true }
     );
     if (!doc) return { ok: false, error: `${label} not found.` };
-    revalidateTag(tag, "max");
+    updateTag(tag);
     return { ok: true, message: `${label} saved.` };
   } catch (err) {
     return toActionError(err);
@@ -140,7 +140,7 @@ export async function toggleContentFlag(
       [flag]: value,
     });
     if (!doc) return { ok: false, error: `${label} not found.` };
-    revalidateTag(tag, "max");
+    updateTag(tag);
     return { ok: true };
   } catch (err) {
     return toActionError(err);
@@ -160,7 +160,7 @@ export async function reorderContent(
         updateOne: { filter: { _id: id }, update: { order } },
       }))
     );
-    revalidateTag(tag, "max");
+    updateTag(tag);
     return { ok: true };
   } catch (err) {
     return toActionError(err);
@@ -174,7 +174,7 @@ export async function deleteContent(collection: Collection, id: string): Promise
     await connectDB();
     const doc = await (model as Model<Record<string, unknown>>).findByIdAndDelete(id);
     if (!doc) return { ok: false, error: `${label} not found.` };
-    revalidateTag(tag, "max");
+    updateTag(tag);
     return { ok: true, message: `${label} deleted.` };
   } catch (err) {
     return toActionError(err);

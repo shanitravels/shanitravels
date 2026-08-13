@@ -1,6 +1,6 @@
 "use server";
 
-import { revalidateTag } from "next/cache";
+import { updateTag } from "next/cache";
 import { requireAdmin } from "@/lib/auth/session";
 import { connectDB } from "@/lib/db";
 import { SettingsModel } from "@/lib/models";
@@ -11,7 +11,12 @@ import type { ActionResult } from "@/lib/types";
 
 /**
  * Save the SiteSettings singleton. Settings feed the global chrome (header,
- * footer, hero, SEO defaults), so saving revalidates every public tag.
+ * footer, hero, SEO defaults), so saving invalidates every public tag.
+ *
+ * `updateTag`, not `revalidateTag(tag, "max")`: the latter is
+ * stale-while-revalidate, so the admin saves a new phone number, reloads the
+ * site and is still served the old one from cache. `updateTag` expires the
+ * entry outright — the next request waits for fresh data (read-your-own-writes).
  */
 export async function saveSettings(input: unknown): Promise<ActionResult> {
   try {
@@ -27,7 +32,7 @@ export async function saveSettings(input: unknown): Promise<ActionResult> {
       { $set: data },
       { upsert: true, runValidators: true }
     );
-    for (const tag of ALL_TAGS) revalidateTag(tag, "max");
+    for (const tag of ALL_TAGS) updateTag(tag);
     return { ok: true, message: "Settings saved — the public site is updated." };
   } catch (err) {
     return toActionError(err);
@@ -44,7 +49,7 @@ export async function setAnnouncementActive(active: boolean): Promise<ActionResu
       { $set: { "announcementBar.active": active } },
       { upsert: true }
     );
-    revalidateTag(TAGS.settings, "max");
+    updateTag(TAGS.settings);
     return { ok: true };
   } catch (err) {
     return toActionError(err);

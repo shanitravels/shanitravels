@@ -39,7 +39,11 @@ export async function POST(req: NextRequest) {
       ? [requested as CacheTag]
       : ALL_TAGS;
 
-  for (const tag of tags) revalidateTag(tag, "max");
+  // `{ expire: 0 }` rather than "max": this endpoint exists to force a bad entry
+  // out, and stale-while-revalidate would keep serving exactly the value the
+  // caller is trying to purge. `updateTag` is not an option here — Server
+  // Actions only.
+  for (const tag of tags) revalidateTag(tag, { expire: 0 });
 
   return NextResponse.json(
     { ok: true, purged: tags, at: new Date().toISOString() },

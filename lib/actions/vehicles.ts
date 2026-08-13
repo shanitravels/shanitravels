@@ -1,6 +1,6 @@
 "use server";
 
-import { revalidateTag } from "next/cache";
+import { updateTag } from "next/cache";
 import { requireAdmin } from "@/lib/auth/session";
 import { connectDB } from "@/lib/db";
 import { VehicleModel, BookingModel } from "@/lib/models";
@@ -18,7 +18,7 @@ export async function createVehicle(input: unknown): Promise<ActionResult<{ id: 
     const data = vehicleSchema.parse(input);
     await connectDB();
     const doc = await VehicleModel.create(data);
-    revalidateTag(TAGS.vehicles, "max");
+    updateTag(TAGS.vehicles);
     return { ok: true, data: { id: String(doc._id) }, message: `${data.name} created.` };
   } catch (err) {
     return toActionError(err);
@@ -38,7 +38,7 @@ export async function updateVehicle(id: string, input: unknown): Promise<ActionR
       runValidators: true,
     });
     if (!doc) return { ok: false, error: "Vehicle not found." };
-    revalidateTag(TAGS.vehicles, "max");
+    updateTag(TAGS.vehicles);
     return { ok: true, message: `${data.name} saved.` };
   } catch (err) {
     return toActionError(err);
@@ -55,7 +55,7 @@ export async function toggleVehicleFlag(
     await connectDB();
     const doc = await VehicleModel.findByIdAndUpdate(id, { [flag]: value });
     if (!doc) return { ok: false, error: "Vehicle not found." };
-    revalidateTag(TAGS.vehicles, "max");
+    updateTag(TAGS.vehicles);
     return { ok: true };
   } catch (err) {
     return toActionError(err);
@@ -72,7 +72,7 @@ export async function reorderVehicles(orders: { id: string; order: number }[]): 
         updateOne: { filter: { _id: id }, update: { order } },
       }))
     );
-    revalidateTag(TAGS.vehicles, "max");
+    updateTag(TAGS.vehicles);
     return { ok: true };
   } catch (err) {
     return toActionError(err);
@@ -96,7 +96,7 @@ export async function deleteVehicle(id: string): Promise<ActionResult> {
     }
     const doc = await VehicleModel.findByIdAndDelete(id);
     if (!doc) return { ok: false, error: "Vehicle not found." };
-    revalidateTag(TAGS.vehicles, "max");
+    updateTag(TAGS.vehicles);
     return { ok: true, message: `${doc.name} permanently deleted.` };
   } catch (err) {
     return toActionError(err);
@@ -114,7 +114,7 @@ export async function saveRatesBulk(input: unknown): Promise<ActionResult> {
         updateOne: { filter: { _id: id }, update: { rates } },
       }))
     );
-    revalidateTag(TAGS.vehicles, "max");
+    updateTag(TAGS.vehicles);
     return { ok: true, message: `Rates saved for ${rows.length} vehicle(s).` };
   } catch (err) {
     return toActionError(err);

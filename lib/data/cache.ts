@@ -11,8 +11,10 @@ import { getLocale } from "@/lib/i18n/server";
  * revalidate window.
  *
  * v2 — cleared entries poisoned by database-unreachable deployments.
+ * v3 — cleared contact numbers held stale by revalidateTag's
+ *      stale-while-revalidate; admin writes now use updateTag (lib/actions/*).
  */
-const CACHE_VERSION = "v2";
+const CACHE_VERSION = "v3";
 
 /**
  * Cached read that never caches a failure.

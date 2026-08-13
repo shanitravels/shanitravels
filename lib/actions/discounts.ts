@@ -1,6 +1,6 @@
 "use server";
 
-import { revalidateTag } from "next/cache";
+import { updateTag } from "next/cache";
 import { connectDB } from "@/lib/db";
 import { DiscountModel } from "@/lib/models";
 import { discountSchema } from "@/lib/validation";
@@ -16,8 +16,8 @@ import type { ActionResult, DiscountDoc } from "@/lib/types";
  * keep serving the undiscounted figures from cache.
  */
 function bust(): void {
-  revalidateTag(TAGS.discounts, "max");
-  revalidateTag(TAGS.vehicles, "max");
+  updateTag(TAGS.discounts);
+  updateTag(TAGS.vehicles);
 }
 
 function toDoc(data: ReturnType<typeof discountSchema.parse>) {

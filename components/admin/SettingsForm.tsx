@@ -131,9 +131,22 @@ export function SettingsForm({ settings }: { settings: SiteSettingsDoc }) {
     <div className="space-y-6 pb-20">
       <Section title="Contact & socials">
         <div className="grid gap-4 sm:grid-cols-2">
-          <StringList label="Helpline numbers" values={helplines} onChange={(v) => { setHelplines(v); touch(); }} placeholder="+92 51 …" />
+          {/* Helpline and WhatsApp are independent: each drives its own button,
+              so they can be two different numbers. The hints say so, because
+              nothing else on screen makes the split obvious. */}
+          <StringList
+            label="Helpline numbers"
+            hint="The first number is what every “Call us” button dials."
+            values={helplines}
+            onChange={(v) => { setHelplines(v); touch(); }}
+            placeholder="+92 51 …"
+          />
           <StringList label="Emails" values={emails} onChange={(v) => { setEmails(v); touch(); }} placeholder="info@…" />
-          <Field label="WhatsApp number" error={errors.whatsappNumber}>
+          <Field
+            label="WhatsApp number"
+            hint="Where every WhatsApp button opens a chat. Independent of the helpline."
+            error={errors.whatsappNumber}
+          >
             <TextInput value={whatsapp} onChange={(e) => { setWhatsapp(e.target.value); touch(); }} />
           </Field>
           <Field label="Head office address" error={errors.headOfficeAddress} className="sm:col-span-2">
@@ -602,16 +615,19 @@ function StringList({
   values,
   onChange,
   placeholder,
+  hint,
 }: {
   label: string;
   values: string[];
   onChange: (v: string[]) => void;
   placeholder?: string;
+  hint?: string;
 }) {
   const list = values.length ? values : [""];
   return (
     <div>
       <label className="mb-1 block text-sm font-medium text-slate-700">{label}</label>
+      {hint && <p className="mb-2 text-xs text-slate-500">{hint}</p>}
       <div className="space-y-2">
         {list.map((val, i) => (
           <div key={i} className="flex gap-2">
