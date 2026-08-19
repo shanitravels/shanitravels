@@ -5,6 +5,7 @@ import { requireAdmin } from "@/lib/auth/session";
 import { connectDB } from "@/lib/db";
 import { VehicleModel, BookingModel } from "@/lib/models";
 import { serialize } from "@/lib/serialize";
+import { normalizeVehicleRates } from "@/lib/pricing";
 import { TAGS } from "@/lib/tags";
 import { vehicleSchema, ratesBulkSchema } from "@/lib/validation";
 import { toActionError } from "@/lib/actions/helpers";
@@ -127,7 +128,7 @@ export async function listVehiclesAdmin(): Promise<ActionResult<Vehicle[]>> {
     await requireAdmin();
     await connectDB();
     const docs = await VehicleModel.find().sort({ class: 1, order: 1, name: 1 }).lean();
-    return { ok: true, data: serialize<Vehicle[]>(docs) };
+    return { ok: true, data: serialize<Vehicle[]>(docs).map(normalizeVehicleRates) };
   } catch (err) {
     return toActionError(err);
   }

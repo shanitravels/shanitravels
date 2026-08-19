@@ -1,9 +1,10 @@
 "use client";
 
-import { useEffect, useMemo, useRef, useState } from "react";
+import { useCallback, useEffect, useMemo, useRef, useState } from "react";
+import Link from "next/link";
 import { usePathname, useRouter } from "next/navigation";
 import { clsx } from "clsx";
-import { FiKey, FiSearch, FiX, FiChevronDown } from "react-icons/fi";
+import { FiKey, FiSearch, FiX, FiChevronDown, FiChevronLeft, FiChevronRight } from "react-icons/fi";
 import { VehicleCard } from "./VehicleCard";
 import { bestDiscountFor } from "@/lib/pricing";
 import { makeOptions, vehicleMake } from "@/lib/vehicle-make";
@@ -13,6 +14,9 @@ import { useI18n } from "./LocaleProvider";
 import { fmt } from "@/lib/i18n/format";
 
 type SortKey = "featured" | "price-asc" | "price-desc" | "seats-desc";
+
+/** Three full rows of the three-column grid, so no page ends on a ragged row. */
+const PAGE_SIZE = 9;
 
 /** Sort options carry a dictionary key; the label is resolved at render time. */
 const SORTS: { key: SortKey; labelKey: "sortFeatured" | "sortPriceAsc" | "sortPriceDesc" | "sortSeatsDesc" }[] = [
@@ -31,6 +35,8 @@ export interface FleetFilters {
   q: string;
   /** Companies to keep. Empty means every company. */
   makes: string[];
+  /** 1-based, already clamped to a sane range by the server. */
+  page: number;
 }
 
 /**
@@ -60,6 +66,11 @@ export function FleetCatalog({
   const [sort, setSort] = useState<SortKey>(initial.sort);
   const [selfDriveOnly, setSelfDriveOnly] = useState(initial.selfDriveOnly);
   const [q, setQ] = useState(initial.q);
+  const [page, setPage] = useState(initial.page);
+
+  // The results grid, so a page change can bring its first row into view
+  // instead of leaving the reader stranded at the foot of the previous page.
+  const resultsTop = useRef<HTMLDivElement>(null);
 
   // Companies present in the fleet, with a count each.
   const companies = useMemo(() => makeOptions(vehicles.map((v) => v.name)), [vehicles]);
@@ -71,29 +82,17 @@ export function FleetCatalog({
     initial.makes.filter((m) => companies.some((c) => c.make === m))
   );
 
-  // Mirror filter state into the URL (replace, so filtering doesn't spam history).
-  // A ref skips the first run so we don't rewrite the URL we just arrived on.
-  // Debounced because the query changes on every keystroke, and a router call
-  // per character is both wasteful and visibly janky.
-  const isFirstRun = useRef(true);
-  useEffect(() => {
-    if (isFirstRun.current) {
-      isFirstRun.current = false;
-      return;
-    }
-    const timer = window.setTimeout(() => {
-      const params = new URLSearchParams();
-      if (cls !== "all") params.set("class", cls);
-      if (seats !== "any") params.set("seats", seats);
-      if (sort !== "featured") params.set("sort", sort);
-      if (selfDriveOnly) params.set("selfdrive", "1");
-      if (q.trim()) params.set("q", q.trim());
-      if (makes.length) params.set("make", makes.join(","));
-      const qs = params.toString();
-      router.replace(qs ? `${pathname}?${qs}` : pathname, { scroll: false });
-    }, 250);
-    return () => window.clearTimeout(timer);
-  }, [cls, seats, sort, selfDriveOnly, q, makes, pathname, router]);
+  /**
+   * Every filter change goes back to page one. Page 4 of the old result set
+   * says nothing about the new one and is usually past its end, which would
+   * answer a narrowed search with an empty grid.
+   */
+  const changeCls = (v: string) => { setCls(v); setPage(1); };
+  const changeSeats = (v: string) => { setSeats(v); setPage(1); };
+  const changeSort = (v: SortKey) => { setSort(v); setPage(1); };
+  const changeQ = (v: string) => { setQ(v); setPage(1); };
+  const changeMakes = (v: string[]) => { setMakes(v); setPage(1); };
+  const toggleSelfDrive = () => { setSelfDriveOnly((v) => !v); setPage(1); };
 
   // Only show class tabs for classes that actually have vehicles.
   const availableClasses = useMemo(
@@ -153,6 +152,85 @@ export function FleetCatalog({
     });
   }, [vehicles, cls, seats, sort, selfDriveOnly, makes, terms, haystack]);
 
+  const totalPages = Math.max(1, Math.ceil(filtered.length / PAGE_SIZE));
+  /**
+   * Derived rather than corrected in state: a hand-typed `?page=99` must not
+   * slice past the end and answer with an empty grid. `current` is what the
+   * grid, the controls and the URL all use, so the out-of-range number never
+   * escapes this line.
+   */
+  const current = Math.min(page, totalPages);
+
+  const start = (current - 1) * PAGE_SIZE;
+  const paged = useMemo(
+    () => filtered.slice(start, start + PAGE_SIZE),
+    [filtered, start]
+  );
+
+  /**
+   * The URL for the current filters on a given page. Shared by the effect that
+   * mirrors state into the address bar and by the page links, so the address
+   * someone copies and the address they land on are built the same way.
+   */
+  const urlFor = useCallback(
+    (targetPage: number) => {
+      const params = new URLSearchParams();
+      if (cls !== "all") params.set("class", cls);
+      if (seats !== "any") params.set("seats", seats);
+      if (sort !== "featured") params.set("sort", sort);
+      if (selfDriveOnly) params.set("selfdrive", "1");
+      if (q.trim()) params.set("q", q.trim());
+      if (makes.length) params.set("make", makes.join(","));
+      if (targetPage > 1) params.set("page", String(targetPage));
+      const qs = params.toString();
+      return qs ? `${pathname}?${qs}` : pathname;
+    },
+    [cls, seats, sort, selfDriveOnly, q, makes, pathname]
+  );
+
+  // Identifies the filter set, to tell paging apart from filtering below.
+  const filterKey = useMemo(
+    () => JSON.stringify([cls, seats, sort, selfDriveOnly, q.trim(), makes]),
+    [cls, seats, sort, selfDriveOnly, q, makes]
+  );
+
+  /**
+   * Mirror the state into the URL. Runs after `current` is derived, so the URL
+   * carries the page actually on screen rather than an out-of-range one typed
+   * into the address bar. A ref skips the first run so we don't rewrite the URL
+   * we just arrived on. Debounced because the query changes on every keystroke,
+   * and a router call per character is both wasteful and visibly janky.
+   */
+  const isFirstRun = useRef(true);
+  const lastFilterKey = useRef("");
+  useEffect(() => {
+    if (isFirstRun.current) {
+      isFirstRun.current = false;
+      lastFilterKey.current = filterKey;
+      return;
+    }
+    const timer = window.setTimeout(() => {
+      // Only the page moved → push, so Back walks back through the pages.
+      // Otherwise replace, so filtering doesn't spam history a keystroke at a time.
+      const pagedOnly = filterKey === lastFilterKey.current;
+      lastFilterKey.current = filterKey;
+      const url = urlFor(current);
+      if (pagedOnly) router.push(url, { scroll: false });
+      else router.replace(url, { scroll: false });
+    }, 250);
+    return () => window.clearTimeout(timer);
+  }, [filterKey, current, urlFor, router]);
+
+  const goToPage = (next: number) => {
+    setPage(Math.min(Math.max(1, next), totalPages));
+    // Scrolled to the results rather than the document top: the filters stay in
+    // view, so the reader can see the search that produced the page they landed on.
+    resultsTop.current?.scrollIntoView({
+      behavior: window.matchMedia("(prefers-reduced-motion: reduce)").matches ? "auto" : "smooth",
+      block: "start",
+    });
+  };
+
   const clearAll = () => {
     setCls("all");
     setSeats("any");
@@ -160,6 +238,7 @@ export function FleetCatalog({
     setSelfDriveOnly(false);
     setQ("");
     setMakes([]);
+    setPage(1);
   };
 
   return (
@@ -179,7 +258,7 @@ export function FleetCatalog({
             id="fleet-search"
             type="search"
             value={q}
-            onChange={(e) => setQ(e.target.value)}
+            onChange={(e) => changeQ(e.target.value)}
             placeholder={t.fleet.searchPlaceholder}
             // The count below is a live region, so a screen reader hears how
             // many vehicles are left without leaving the field.
@@ -189,7 +268,7 @@ export function FleetCatalog({
           {q && (
             <button
               type="button"
-              onClick={() => setQ("")}
+              onClick={() => changeQ("")}
               aria-label={t.fleet.searchClear}
               className="absolute right-2 top-1/2 flex h-7 w-7 -translate-y-1/2 items-center justify-center rounded-md text-muted transition hover:bg-band hover:text-navy"
             >
@@ -202,11 +281,11 @@ export function FleetCatalog({
       {/* Class tabs — wrap so every category stays visible at any width;
           no horizontal scroll, nothing hidden off-screen. */}
       <div className="mb-5 flex flex-wrap gap-2">
-        <Tab active={cls === "all"} onClick={() => setCls("all")}>
+        <Tab active={cls === "all"} onClick={() => changeCls("all")}>
           {t.vehicleClass.all}
         </Tab>
         {availableClasses.map((c) => (
-          <Tab key={c} active={cls === c} onClick={() => setCls(c)}>
+          <Tab key={c} active={cls === c} onClick={() => changeCls(c)}>
             {t.vehicleClass[c as VehicleClass]}
           </Tab>
         ))}
@@ -218,7 +297,7 @@ export function FleetCatalog({
           <CompanyFilter
             options={companies}
             selected={makes}
-            onChange={setMakes}
+            onChange={changeMakes}
             label={t.fleet.company}
             allLabel={t.fleet.allCompanies}
             countLabel={t.fleet.companiesSelected}
@@ -230,7 +309,7 @@ export function FleetCatalog({
           {t.fleet.minSeats}
           <select
             value={seats}
-            onChange={(e) => setSeats(e.target.value)}
+            onChange={(e) => changeSeats(e.target.value)}
             className="rounded-lg border border-line bg-white px-3 py-1.5 text-sm text-ink"
           >
             <option value="any">{t.fleet.any}</option>
@@ -244,7 +323,7 @@ export function FleetCatalog({
         {selfDriveEnabled && (
           <button
             type="button"
-            onClick={() => setSelfDriveOnly((v) => !v)}
+            onClick={toggleSelfDrive}
             aria-pressed={selfDriveOnly}
             className={clsx(
               "inline-flex items-center gap-1.5 rounded-lg border px-3 py-1.5 text-sm font-medium transition",
@@ -261,7 +340,7 @@ export function FleetCatalog({
           {t.fleet.sort}
           <select
             value={sort}
-            onChange={(e) => setSort(e.target.value as SortKey)}
+            onChange={(e) => changeSort(e.target.value as SortKey)}
             className="rounded-lg border border-line bg-white px-3 py-1.5 text-sm text-ink"
           >
             {SORTS.map((s) => (
@@ -273,10 +352,22 @@ export function FleetCatalog({
         </label>
       </div>
 
+      {/* The anchor a page change scrolls to — above the count, so the new
+          page announces its own range. */}
+      <div ref={resultsTop} className="scroll-mt-24" />
+
       <p className="mb-4 text-sm text-muted" aria-live="polite">
-        {t.fleet.showing}{" "}
-        <span className="font-semibold text-navy tabular">{filtered.length}</span>{" "}
-        {filtered.length === 1 ? t.fleet.vehicle : t.fleet.vehicles}
+        {totalPages > 1
+          ? fmt(t.fleet.countRange, {
+              from: start + 1,
+              to: start + paged.length,
+              total: filtered.length,
+              noun: filtered.length === 1 ? t.fleet.vehicle : t.fleet.vehicles,
+            })
+          : fmt(t.fleet.countAll, {
+              total: filtered.length,
+              noun: filtered.length === 1 ? t.fleet.vehicle : t.fleet.vehicles,
+            })}
         {cls !== "all" && fmt(t.fleet.inClass, { label: t.vehicleClass[cls as VehicleClass] })}
       </p>
 
@@ -288,19 +379,193 @@ export function FleetCatalog({
           </button>
         </div>
       ) : (
-        <div id="fleet-results" className="grid gap-5 sm:grid-cols-2 lg:grid-cols-3">
-          {filtered.map((v, i) => (
-            <VehicleCard
-              key={v.id}
-              vehicle={v}
-              priority={i < 3}
-              showSelfDrive={selfDriveEnabled}
-              discount={bestDiscountFor(v, discounts)}
+        <>
+          <div id="fleet-results" className="grid gap-5 sm:grid-cols-2 lg:grid-cols-3">
+            {paged.map((v, i) => (
+              <VehicleCard
+                key={v.id}
+                vehicle={v}
+                priority={i < 3}
+                showSelfDrive={selfDriveEnabled}
+                discount={bestDiscountFor(v, discounts)}
+              />
+            ))}
+          </div>
+
+          {totalPages > 1 && (
+            <Pagination
+              current={current}
+              total={totalPages}
+              onGo={goToPage}
+              hrefFor={urlFor}
+              labels={{
+                nav: t.fleet.pagination,
+                prev: t.fleet.pagePrev,
+                next: t.fleet.pageNext,
+                goTo: t.fleet.pageGoTo,
+                summary: t.fleet.pageCurrent,
+              }}
             />
-          ))}
-        </div>
+          )}
+        </>
       )}
     </div>
+  );
+}
+
+/**
+ * The page numbers to draw: the ends, the current page and its neighbours, with
+ * gaps for the rest. A fleet of forty fits on five buttons today, but the list
+ * grows with the business and a row of twenty numbers would wrap into the grid.
+ */
+function pageWindow(current: number, total: number): (number | "gap")[] {
+  if (total <= 7) return Array.from({ length: total }, (_, i) => i + 1);
+  const pages = new Set([1, total, current, current - 1, current + 1]);
+  const kept = [...pages].filter((p) => p >= 1 && p <= total).sort((a, b) => a - b);
+  const out: (number | "gap")[] = [];
+  for (const [i, p] of kept.entries()) {
+    if (i > 0 && p - (kept[i - 1] as number) > 1) out.push("gap");
+    out.push(p);
+  }
+  return out;
+}
+
+/**
+ * Pages are links, not buttons.
+ *
+ * The filters above are buttons because they change a view; moving between
+ * pages changes the address, and every address here is one the server can
+ * render on its own. So it gets an `<a href>`: crawlers can follow it,
+ * cmd-click opens page three in a new tab, and the status bar tells you where
+ * you are going. The click handler is the enhancement, not the mechanism —
+ * modified clicks fall through to the browser.
+ */
+function Pagination({
+  current,
+  total,
+  onGo,
+  hrefFor,
+  labels,
+}: {
+  current: number;
+  total: number;
+  onGo: (page: number) => void;
+  hrefFor: (page: number) => string;
+  labels: { nav: string; prev: string; next: string; goTo: string; summary: string };
+}) {
+  return (
+    <nav aria-label={labels.nav} className="mt-8 flex items-center justify-center gap-1.5">
+      <PageLink
+        page={current - 1}
+        disabled={current === 1}
+        label={labels.prev}
+        onGo={onGo}
+        hrefFor={hrefFor}
+        className="px-2.5 sm:px-3"
+      >
+        <FiChevronLeft aria-hidden className="h-4 w-4" />
+        <span className="hidden sm:inline">{labels.prev}</span>
+      </PageLink>
+
+      {/* Numbers where there is room; a plain "Page 2 of 5" on a phone, where
+          five tap targets plus two arrows would not fit the row. */}
+      <span className="px-3 text-sm text-muted sm:hidden">
+        {fmt(labels.summary, { n: current, total })}
+      </span>
+      <span className="hidden items-center gap-1.5 sm:flex">
+        {pageWindow(current, total).map((p, i) =>
+          p === "gap" ? (
+            <span key={`gap-${i}`} aria-hidden className="px-1 text-muted">
+              …
+            </span>
+          ) : (
+            <PageLink
+              key={p}
+              page={p}
+              label={fmt(labels.goTo, { n: p })}
+              onGo={onGo}
+              hrefFor={hrefFor}
+              currentPage={p === current}
+              className="min-w-9 justify-center px-2"
+            >
+              {p}
+            </PageLink>
+          )
+        )}
+      </span>
+
+      <PageLink
+        page={current + 1}
+        disabled={current === total}
+        label={labels.next}
+        onGo={onGo}
+        hrefFor={hrefFor}
+        className="px-2.5 sm:px-3"
+      >
+        <span className="hidden sm:inline">{labels.next}</span>
+        <FiChevronRight aria-hidden className="h-4 w-4" />
+      </PageLink>
+    </nav>
+  );
+}
+
+function PageLink({
+  page,
+  label,
+  onGo,
+  hrefFor,
+  disabled = false,
+  currentPage = false,
+  className,
+  children,
+}: {
+  page: number;
+  label: string;
+  onGo: (page: number) => void;
+  hrefFor: (page: number) => string;
+  disabled?: boolean;
+  currentPage?: boolean;
+  className?: string;
+  children: React.ReactNode;
+}) {
+  const base = "inline-flex h-9 items-center gap-1 rounded-lg text-sm font-medium tabular-nums transition";
+
+  // A dead end is a disabled control, not a link to nowhere: no href, so it is
+  // skipped by the keyboard and ignored by crawlers.
+  if (disabled) {
+    return (
+      <span
+        aria-disabled
+        aria-label={label}
+        className={clsx(base, "cursor-not-allowed border border-line bg-white text-ink/70 opacity-40", className)}
+      >
+        {children}
+      </span>
+    );
+  }
+
+  return (
+    <Link
+      href={hrefFor(page)}
+      scroll={false}
+      aria-label={label}
+      aria-current={currentPage ? "page" : undefined}
+      onClick={(e) => {
+        // Let the browser have cmd/ctrl/shift-click and middle-click.
+        if (e.metaKey || e.ctrlKey || e.shiftKey || e.altKey) return;
+        e.preventDefault();
+        onGo(page);
+      }}
+      className={clsx(
+        base,
+        currentPage
+          ? "bg-navy text-white"
+          : "border border-line bg-white text-ink/70 hover:border-navy/40 hover:text-navy",
+        className
+      )}
+    >
+      {children}
+    </Link>
   );
 }
 

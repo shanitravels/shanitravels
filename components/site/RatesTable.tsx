@@ -98,7 +98,13 @@ export function RatesTable({
                 </td>
                 {COLS.map((c) => (
                   <td key={c.key} className="px-3 py-3 text-right tabular-nums text-ink/80">
-                    {v.rates[c.key] != null ? formatRateCell(rateFor(v)[c.key]) : "—"}
+                    {v.rates[c.key] != null ? (
+                      formatRateCell(rateFor(v)[c.key])
+                    ) : (
+                      // Withdrawn rates say so rather than showing a bare dash,
+                      // which reads as missing data instead of "ask us".
+                      <span className="text-xs text-muted">{t.common.onRequest}</span>
+                    )}
                   </td>
                 ))}
                 <td className="px-4 py-3 text-right">
@@ -132,7 +138,11 @@ export function RatesTable({
                 <div key={c.key} className="flex justify-between">
                   <dt className="text-muted">{t.rates[c.labelKey]}</dt>
                   <dd className="font-medium tabular-nums text-ink/80">
-                    {v.rates[c.key] != null ? formatRateCell(rateFor(v)[c.key]) : "—"}
+                    {v.rates[c.key] != null ? (
+                      formatRateCell(rateFor(v)[c.key])
+                    ) : (
+                      <span className="text-xs font-normal text-muted">{t.common.onRequest}</span>
+                    )}
                   </dd>
                 </div>
               ))}

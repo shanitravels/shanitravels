@@ -17,6 +17,7 @@ type Search = {
   selfdrive?: string;
   q?: string;
   make?: string;
+  page?: string;
 };
 
 /** Narrow an arbitrary query value to a known class, or null. */
@@ -26,6 +27,16 @@ function parseClass(value?: string): VehicleClass | null {
     : null;
 }
 
+/**
+ * A 1-based page number from the URL. Anything else — a word, a negative, a
+ * float — is page one. The upper end is left to the catalog, which is the only
+ * side that knows how many vehicles survived the filters.
+ */
+function parsePage(value?: string): number {
+  const n = Number(value);
+  return Number.isInteger(n) && n > 1 ? n : 1;
+}
+
 /** Deep links get their own title/description so each filtered view ranks on its own terms. */
 export async function generateMetadata({
   searchParams,
@@ -33,19 +44,31 @@ export async function generateMetadata({
   searchParams: Promise<Search>;
 }): Promise<Metadata> {
   const { t } = await getI18n();
-  const cls = parseClass((await searchParams).class);
+  const params = await searchParams;
+  const cls = parseClass(params.class);
+  const page = parsePage(params.page);
+  /**
+   * Each page of the list is its own canonical URL. Pointing them all at
+   * `/fleet` would tell a crawler that page three is a duplicate of page one,
+   * and the vehicles only listed on page three would drop out of the index.
+   */
+  const canonical = `/fleet${cls ? `?class=${cls}` : ""}${
+    page > 1 ? `${cls ? "&" : "?"}page=${page}` : ""
+  }`;
+  // Distinguishes the tab and the search result; the root layout appends
+  // "· Shani Travels", so don't repeat the brand here.
+  const suffix = page > 1 ? fmt(t.fleet.metaPageSuffix, { n: page }) : "";
   if (cls) {
-    // The root layout appends "· Shani Travels", so don't repeat the brand here.
     return {
-      title: fmt(t.fleet.metaClassTitle, { label: t.vehicleClass[cls] }),
+      title: fmt(t.fleet.metaClassTitle, { label: t.vehicleClass[cls] }) + suffix,
       description: fmt(t.fleet.metaClassDescription, { blurb: t.vehicleClassBlurb[cls] }),
-      alternates: { canonical: `/fleet?class=${cls}` },
+      alternates: { canonical },
     };
   }
   return {
-    title: t.fleet.metaTitle,
+    title: t.fleet.metaTitle + suffix,
     description: t.fleet.metaDescription,
-    alternates: { canonical: "/fleet" },
+    alternates: { canonical },
   };
 }
 
@@ -80,6 +103,7 @@ export default async function FleetPage({
       .map((m) => m.trim())
       .filter(Boolean)
       .slice(0, 20),
+    page: parsePage(params.page),
   };
 
   return (

@@ -285,10 +285,22 @@ export const en = {
     sortPriceDesc: "Price: high to low",
     sortSeatsDesc: "Most seats",
     selfDriveAvailable: "Self-drive available",
-    showing: "Showing",
+    /**
+     * The result count, as whole sentences rather than assembled fragments:
+     * Urdu puts the verb last and the total before the range, which no amount
+     * of concatenating "Showing" + a number can produce.
+     */
+    countAll: "Showing {total} {noun}",
+    countRange: "Showing {from}–{to} of {total} {noun}",
     vehicle: "vehicle",
     vehicles: "vehicles",
     inClass: " in {label}",
+    pagination: "Fleet pages",
+    pagePrev: "Previous",
+    pageNext: "Next",
+    pageGoTo: "Go to page {n}",
+    pageCurrent: "Page {n} of {total}",
+    metaPageSuffix: " — Page {n}",
     noMatch: "No vehicles match these filters.",
     clearFilters: "Clear filters",
     classDescription: "{blurb} — insured, GPS-tracked and chauffeur-driven.",

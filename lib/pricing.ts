@@ -1,10 +1,56 @@
-import type { Discount, Vehicle, VehicleRates } from "@/lib/types";
+import type { Discount, SelfDriveRates, Vehicle, VehicleRates } from "@/lib/types";
 
 /**
  * Discount application. Deliberately free of `server-only` — prices render in
  * both server components (fleet pages) and client components (booking wizard,
  * fare estimator), and both must compute the same number.
  */
+
+/**
+ * A rate is published only when it is a positive number.
+ *
+ * Zero is not a price. "PKR 0" on a rate card reads as free hire rather than as
+ * an unquoted vehicle, so anything non-positive folds back to null — the single
+ * value the whole site already renders as "On request". Saving a zero is now
+ * rejected (see `optionalRate` in lib/validation), and this keeps rows written
+ * before that rule — a cleared per-day field used to be stored as 0 — reading
+ * as "On request" rather than as free.
+ */
+export function publishedRate(value: number | null | undefined): number | null {
+  return typeof value === "number" && Number.isFinite(value) && value > 0 ? value : null;
+}
+
+/**
+ * Every rate on a vehicle put through `publishedRate`, applied once where
+ * vehicles are read so no page has to remember the distinction.
+ */
+export function normalizeVehicleRates<
+  T extends { rates: VehicleRates; selfDrive?: SelfDriveRates | null },
+>(vehicle: T): T {
+  return {
+    ...vehicle,
+    rates: {
+      ...vehicle.rates,
+      perHour: publishedRate(vehicle.rates.perHour),
+      perDay: publishedRate(vehicle.rates.perDay),
+      perWeek: publishedRate(vehicle.rates.perWeek),
+      perMonth: publishedRate(vehicle.rates.perMonth),
+      fuelPerKm: publishedRate(vehicle.rates.fuelPerKm),
+      airportTransfer: publishedRate(vehicle.rates.airportTransfer),
+    },
+    selfDrive: vehicle.selfDrive
+      ? {
+          ...vehicle.selfDrive,
+          perDay: publishedRate(vehicle.selfDrive.perDay),
+          perWeek: publishedRate(vehicle.selfDrive.perWeek),
+          perMonth: publishedRate(vehicle.selfDrive.perMonth),
+          // Left alone: a zero deposit is a real term — "no deposit" — whereas
+          // a blank one means the amount is agreed at booking.
+          securityDeposit: vehicle.selfDrive.securityDeposit,
+        }
+      : vehicle.selfDrive,
+  };
+}
 
 /**
  * Live right now: switched on, started, and not yet expired.

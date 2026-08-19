@@ -17,6 +17,7 @@ import {
 } from "@/lib/models";
 import { serialize } from "@/lib/serialize";
 import { localize } from "@/lib/i18n/localize";
+import { normalizeVehicleRates } from "@/lib/pricing";
 import type {
   Vehicle,
   VehicleDoc,
@@ -114,7 +115,10 @@ export async function allVehicles(): Promise<Vehicle[]> {
   try {
     await connectDB();
     const docs = await VehicleModel.find().sort({ class: 1, order: 1, name: 1 }).lean();
-    return adminText(serialize<Vehicle[]>(docs));
+    // Normalized like the public reads: a zero left by an older save shows as an
+    // empty "On request" cell, which is both what the site prints and a value
+    // the grid can save again — a literal 0 would now fail validation.
+    return adminText(serialize<Vehicle[]>(docs)).map(normalizeVehicleRates);
   } catch {
     return [];
   }
@@ -125,7 +129,7 @@ export async function vehicleById(id: string): Promise<VehicleDoc | null> {
   try {
     await connectDB();
     const doc = await VehicleModel.findById(id).lean();
-    return doc ? serialize<VehicleDoc>(doc) : null;
+    return doc ? normalizeVehicleRates(serialize<VehicleDoc>(doc)) : null;
   } catch {
     return null;
   }

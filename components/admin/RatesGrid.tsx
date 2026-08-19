@@ -27,6 +27,20 @@ interface Row {
 
 const toStr = (n: number | null | undefined) => (n === null || n === undefined ? "" : String(n));
 
+/**
+ * A cell holds either a price or nothing at all.
+ *
+ * Blank is deliberate — it is how a rate is withdrawn and shown as "On request"
+ * on the vehicle page and the public rate list. Zero is not: it would publish
+ * the vehicle at "PKR 0", so it is caught here before the save is attempted,
+ * where the offending cell can still be pointed at. The server rejects it too.
+ */
+const isBadCell = (raw: string) => {
+  if (raw.trim() === "") return false;
+  const n = Number(raw);
+  return !Number.isFinite(n) || n <= 0;
+};
+
 export function RatesGrid({ vehicles }: { vehicles: Vehicle[] }) {
   const toast = useToast();
   const [pending, start] = useTransition();
@@ -54,7 +68,22 @@ export function RatesGrid({ vehicles }: { vehicles: Vehicle[] }) {
     setDirty(true);
   };
 
+  // Named rather than counted: with six columns across a long fleet, "2 cells"
+  // is not enough to find them by.
+  const invalidRows = useMemo(
+    () => rows.filter((r) => COLUMNS.some((c) => isBadCell(r.rates[c.key]))),
+    [rows]
+  );
+
   const save = () => {
+    if (invalidRows.length > 0) {
+      toast.error(
+        `Rates must be greater than zero — fix ${invalidRows
+          .map((r) => r.name)
+          .join(", ")}. Clear a cell instead to show “On request”.`
+      );
+      return;
+    }
     const payload = rows.map((r) => ({
       id: r.id,
       rates: {
@@ -119,10 +148,16 @@ export function RatesGrid({ vehicles }: { vehicles: Vehicle[] }) {
           <FiDownload className="h-4 w-4" /> Export CSV
         </button>
         <div className="ml-auto flex items-center gap-3">
-          {dirty && <span className="text-xs text-amber-600">Unsaved changes</span>}
+          {invalidRows.length > 0 ? (
+            <span className="text-xs text-red-600">
+              Rates must be greater than zero — clear the cell to show “On request”
+            </span>
+          ) : (
+            dirty && <span className="text-xs text-amber-600">Unsaved changes</span>
+          )}
           <button
             onClick={save}
-            disabled={pending || !dirty}
+            disabled={pending || !dirty || invalidRows.length > 0}
             className="inline-flex items-center gap-2 rounded-lg bg-navy px-4 py-1.5 text-sm font-semibold text-white transition hover:bg-navy-light disabled:opacity-50"
           >
             <FiSave className="h-4 w-4" /> {pending ? "Saving…" : "Save all"}
@@ -149,26 +184,38 @@ export function RatesGrid({ vehicles }: { vehicles: Vehicle[] }) {
                   <p className="font-medium text-slate-800">{r.name}</p>
                   <p className="text-xs text-slate-400">{r.cls}</p>
                 </td>
-                {COLUMNS.map((c) => (
-                  <td key={c.key} className="px-3 py-2">
-                    <input
-                      type="number"
-                      min={0}
-                      inputMode="numeric"
-                      value={r.rates[c.key]}
-                      onChange={(e) => setCell(r.id, c.key, e.target.value)}
-                      placeholder="—"
-                      className="w-24 rounded border border-slate-200 px-2 py-1 text-right tabular-nums focus:border-navy focus:outline-none focus:ring-1 focus:ring-navy/20"
-                    />
-                  </td>
-                ))}
+                {COLUMNS.map((c) => {
+                  const bad = isBadCell(r.rates[c.key]);
+                  return (
+                    <td key={c.key} className="px-3 py-2">
+                      <input
+                        type="number"
+                        min={0.01}
+                        step="any"
+                        inputMode="decimal"
+                        value={r.rates[c.key]}
+                        onChange={(e) => setCell(r.id, c.key, e.target.value)}
+                        placeholder="On request"
+                        aria-invalid={bad}
+                        aria-label={`${r.name} — ${c.label}`}
+                        title={bad ? "Rates must be greater than zero. Clear the cell to show “On request”." : undefined}
+                        className={`w-24 rounded border px-2 py-1 text-right tabular-nums placeholder:text-[11px] placeholder:text-slate-300 focus:outline-none focus:ring-1 ${
+                          bad
+                            ? "border-red-300 bg-red-50 focus:border-red-400 focus:ring-red-100"
+                            : "border-slate-200 focus:border-navy focus:ring-navy/20"
+                        }`}
+                      />
+                    </td>
+                  );
+                })}
               </tr>
             ))}
           </tbody>
         </table>
       </div>
       <p className="mt-2 text-xs text-slate-400">
-        All amounts in PKR. Leave a cell blank to show “On request” on the public site.
+        All amounts in PKR and greater than zero. Clear a cell to withdraw that rate — the vehicle
+        page and the public rate list then show “On request” in its place.
       </p>
     </div>
   );

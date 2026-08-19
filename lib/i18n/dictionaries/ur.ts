@@ -280,10 +280,20 @@ export const ur = {
     sortPriceDesc: "قیمت: زیادہ سے کم",
     sortSeatsDesc: "زیادہ نشستیں",
     selfDriveAvailable: "خود ڈرائیو دستیاب",
-    showing: "دکھایا جا رہا ہے",
+    countAll: "{total} {noun} دکھائی جا رہی ہیں",
+    // The noun is spelled out rather than interpolated: before "میں سے" it
+    // takes the oblique plural (گاڑیوں), not the nominative {noun} the count
+    // line passes. A range only appears past ten vehicles, so it is never singular.
+    countRange: "{total} گاڑیوں میں سے {from}–{to} دکھائی جا رہی ہیں",
     vehicle: "گاڑی",
     vehicles: "گاڑیاں",
     inClass: " — {label}",
+    pagination: "فلیٹ کے صفحات",
+    pagePrev: "پچھلا",
+    pageNext: "اگلا",
+    pageGoTo: "صفحہ {n} پر جائیں",
+    pageCurrent: "صفحہ {n} از {total}",
+    metaPageSuffix: " — صفحہ {n}",
     noMatch: "ان شرائط پر کوئی گاڑی نہیں ملی۔",
     clearFilters: "فلٹر ہٹائیں",
     classDescription: "{blurb} — بیمہ شدہ، GPS ٹریک شدہ اور ڈرائیور سمیت۔",

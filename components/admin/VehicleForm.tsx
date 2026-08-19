@@ -158,7 +158,9 @@ export function VehicleForm({ vehicle }: { vehicle?: VehicleDoc }) {
       images: form.images,
       rates: {
         perHour: strToNum(form.perHour),
-        perDay: strToNum(form.perDay) ?? 0,
+        // Blank stays null rather than falling back to 0: clearing the field is
+        // how a vehicle is moved from a printed price back to "On request".
+        perDay: strToNum(form.perDay),
         perWeek: strToNum(form.perWeek),
         perMonth: strToNum(form.perMonth),
         fuelPerKm: strToNum(form.fuelPerKm),
@@ -334,14 +336,17 @@ export function VehicleForm({ vehicle }: { vehicle?: VehicleDoc }) {
       </Section>
 
       {/* Rates */}
-      <Section title="Rates" subtitle="Leave a field blank to show “On request”. Per-day is required.">
+      <Section
+        title="Rates"
+        subtitle="Clear a field — or press “On request” — to unpublish that rate; the vehicle page and the public rate list then read “On request” in its place. A rate that is filled in must be greater than zero."
+      >
         <div className="grid gap-4 sm:grid-cols-3">
-          <RateField label="Per hour" value={form.perHour} onChange={(v) => set("perHour", v)} />
-          <RateField label="Per day" required value={form.perDay} onChange={(v) => set("perDay", v)} error={errors["rates.perDay"]} />
-          <RateField label="Per week" value={form.perWeek} onChange={(v) => set("perWeek", v)} />
-          <RateField label="Per month" value={form.perMonth} onChange={(v) => set("perMonth", v)} />
-          <RateField label="Fuel per km" value={form.fuelPerKm} onChange={(v) => set("fuelPerKm", v)} />
-          <RateField label="Airport transfer" value={form.airportTransfer} onChange={(v) => set("airportTransfer", v)} />
+          <RateField label="Per hour" value={form.perHour} onChange={(v) => set("perHour", v)} error={errors["rates.perHour"]} />
+          <RateField label="Per day" value={form.perDay} onChange={(v) => set("perDay", v)} error={errors["rates.perDay"]} />
+          <RateField label="Per week" value={form.perWeek} onChange={(v) => set("perWeek", v)} error={errors["rates.perWeek"]} />
+          <RateField label="Per month" value={form.perMonth} onChange={(v) => set("perMonth", v)} error={errors["rates.perMonth"]} />
+          <RateField label="Fuel per km" value={form.fuelPerKm} onChange={(v) => set("fuelPerKm", v)} error={errors["rates.fuelPerKm"]} />
+          <RateField label="Airport transfer" value={form.airportTransfer} onChange={(v) => set("airportTransfer", v)} error={errors["rates.airportTransfer"]} />
         </div>
       </Section>
 
@@ -367,10 +372,20 @@ export function VehicleForm({ vehicle }: { vehicle?: VehicleDoc }) {
             />
             {form.selfDriveAvailable && (
               <div className="mt-4 grid gap-4 sm:grid-cols-2">
-                <RateField label="Self-drive per day" value={form.sdPerDay} onChange={(v) => set("sdPerDay", v)} />
-                <RateField label="Self-drive per week" value={form.sdPerWeek} onChange={(v) => set("sdPerWeek", v)} />
-                <RateField label="Self-drive per month" value={form.sdPerMonth} onChange={(v) => set("sdPerMonth", v)} />
-                <RateField label="Security deposit" value={form.sdDeposit} onChange={(v) => set("sdDeposit", v)} />
+                <RateField label="Self-drive per day" value={form.sdPerDay} onChange={(v) => set("sdPerDay", v)} error={errors["selfDrive.perDay"]} />
+                <RateField label="Self-drive per week" value={form.sdPerWeek} onChange={(v) => set("sdPerWeek", v)} error={errors["selfDrive.perWeek"]} />
+                <RateField label="Self-drive per month" value={form.sdPerMonth} onChange={(v) => set("sdPerMonth", v)} error={errors["selfDrive.perMonth"]} />
+                {/* Blank here means "confirmed at booking", and zero is allowed:
+                    it is how a no-deposit vehicle is published. */}
+                <RateField
+                  label="Security deposit"
+                  value={form.sdDeposit}
+                  onChange={(v) => set("sdDeposit", v)}
+                  error={errors["selfDrive.securityDeposit"]}
+                  allowZero
+                  clearLabel="Clear"
+                  placeholder="Confirmed at booking"
+                />
               </div>
             )}
           </>
@@ -433,34 +448,62 @@ function Section({
   );
 }
 
+/**
+ * One money field, with an explicit way back to "unpublished".
+ *
+ * Emptying the box is what unpublishes a rate, but an empty box is an easy
+ * thing to mistake for "not filled in yet", so the state is spelled out: the
+ * placeholder names what the public site will print, and the button next to a
+ * filled field clears it in one press. `step="any"` keeps the browser from
+ * rejecting whole rupee amounts against the fractional minimum.
+ */
 function RateField({
   label,
   value,
   onChange,
-  required,
   error,
+  allowZero = false,
+  clearLabel = "On request",
+  placeholder = "On request",
 }: {
   label: string;
   value: string;
   onChange: (v: string) => void;
-  required?: boolean;
   error?: string[];
+  /** Security deposit only: zero is a term, not an unset rate. */
+  allowZero?: boolean;
+  clearLabel?: string;
+  placeholder?: string;
 }) {
+  const filled = value.trim() !== "";
   return (
-    <Field label={label} required={required} error={error}>
+    <Field label={label} error={error}>
       <div className="relative">
         <span className="pointer-events-none absolute left-3 top-1/2 -translate-y-1/2 text-xs text-slate-400">
           PKR
         </span>
         <TextInput
           type="number"
-          min={0}
+          min={allowZero ? 0 : 0.01}
+          step="any"
           value={value}
           onChange={(e) => onChange(e.target.value)}
-          placeholder="—"
-          className="pl-11 tabular-nums"
+          placeholder={placeholder}
+          // Spinners off: they are useless on a rupee amount and would sit
+          // underneath the clear button.
+          className={`pl-11 tabular-nums [appearance:textfield] [&::-webkit-inner-spin-button]:appearance-none [&::-webkit-outer-spin-button]:appearance-none ${filled ? "pr-24" : ""}`}
           invalid={!!error}
         />
+        {filled && (
+          <button
+            type="button"
+            onClick={() => onChange("")}
+            title={`Clear this rate — the site will show “${clearLabel}”`}
+            className="absolute right-1.5 top-1/2 -translate-y-1/2 rounded px-2 py-1 text-[11px] font-medium text-slate-500 transition hover:bg-slate-100 hover:text-navy"
+          >
+            {clearLabel}
+          </button>
+        )}
       </div>
     </Field>
   );

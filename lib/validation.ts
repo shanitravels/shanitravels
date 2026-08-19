@@ -39,9 +39,26 @@ const photo = z.object({
   url: z.string().url(),
 });
 
+/**
+ * A published rate, or null for "on request".
+ *
+ * Blank clears the rate — that is how a vehicle moves from a printed price back
+ * to "On request". A number, on the other hand, has to be a price someone can
+ * actually be charged: zero would publish the vehicle as free hire, so it is
+ * rejected rather than quietly shown as "PKR 0".
+ */
 const optionalRate = z.preprocess(
   (v) => (v === "" || v === null || v === undefined ? null : v),
-  z.coerce.number().min(0).nullable()
+  z.coerce
+    .number()
+    .positive("Enter an amount greater than zero, or leave it blank for “On request”")
+    .nullable()
+);
+
+/** Same, but zero is a meaningful figure (a deposit of nothing). */
+const optionalAmount = z.preprocess(
+  (v) => (v === "" || v === null || v === undefined ? null : v),
+  z.coerce.number().min(0, "Amount cannot be negative").nullable()
 );
 
 const trimmed = (max: number, label: string) =>
@@ -108,7 +125,7 @@ export const vehicleSchema = z.object({
   images: z.array(imageSchema).max(20).default([]),
   rates: z.object({
     perHour: optionalRate,
-    perDay: optionalRate, // null → "on request"
+    perDay: optionalRate, // null → "on request"; see optionalRate above
     perWeek: optionalRate,
     perMonth: optionalRate,
     fuelPerKm: optionalRate,
@@ -125,7 +142,7 @@ export const vehicleSchema = z.object({
       perDay: optionalRate,
       perWeek: optionalRate,
       perMonth: optionalRate,
-      securityDeposit: optionalRate,
+      securityDeposit: optionalAmount,
     })
     .nullable()
     .default(null),

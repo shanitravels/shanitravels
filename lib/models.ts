@@ -73,6 +73,22 @@ const localized = () => ({ type: localizedSchema, default: () => ({ en: "", ur: 
 /** An array of bilingual strings (interior features, safety checklist items). */
 const localizedArray = () => ({ type: [localizedSchema], default: [] });
 
+/**
+ * A published rate. Unset (null) is how a vehicle shows "on request"; a stored
+ * figure must be a price that can be charged, so zero is refused here as well
+ * as in lib/validation — "PKR 0" on the rate card would read as free hire.
+ */
+const rateField = () => ({
+  type: Number,
+  default: null,
+  // Tuple-annotated: inferred as (string | number)[], Mongoose's typings want
+  // the [limit, message] pair.
+  min: [0.01, "Rates must be greater than zero — leave the field blank for “on request”."] as [
+    number,
+    string,
+  ],
+});
+
 const vehicleSchema = new Schema(
   {
     slug: { type: String, required: true, unique: true, index: true, trim: true, lowercase: true },
@@ -85,14 +101,16 @@ const vehicleSchema = new Schema(
     driveType: localized(),
     interiorFeatures: localizedArray(),
     images: { type: [imageSchema], default: [] },
+    // null → "on request" (executive/logistics fleet is often unpublished);
+    // a stored number must be a real price. `min` skips null, so clearing a
+    // rate stays legal while zero does not. See rateField above.
     rates: {
-      perHour: { type: Number, default: null },
-      // null → "on request" (executive/logistics fleet is often unpublished)
-      perDay: { type: Number, default: null, min: 0 },
-      perWeek: { type: Number, default: null },
-      perMonth: { type: Number, default: null },
-      fuelPerKm: { type: Number, default: null },
-      airportTransfer: { type: Number, default: null },
+      perHour: rateField(),
+      perDay: rateField(),
+      perWeek: rateField(),
+      perMonth: rateField(),
+      fuelPerKm: rateField(),
+      airportTransfer: rateField(),
     },
     currency: { type: String, default: "PKR" },
     armorLevel: { type: String, enum: [...ARMOR_LEVELS, null], default: null },
@@ -101,10 +119,11 @@ const vehicleSchema = new Schema(
     selfDrive: {
       type: new Schema(
         {
-          perDay: { type: Number, default: null },
-          perWeek: { type: Number, default: null },
-          perMonth: { type: Number, default: null },
-          securityDeposit: { type: Number, default: null },
+          perDay: rateField(),
+          perWeek: rateField(),
+          perMonth: rateField(),
+          // Not a rateField: a deposit of zero is a real term, "no deposit".
+          securityDeposit: { type: Number, default: null, min: 0 },
         },
         { _id: false }
       ),
