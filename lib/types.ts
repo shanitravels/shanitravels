@@ -56,6 +56,30 @@ export const VEHICLE_CLASS_BLURBS: Record<VehicleClass, string> = {
 };
 
 /**
+ * The two super-categories the rate card is split into.
+ *
+ * A grouping for the pricing page only — the fleet, the booking wizard and the
+ * admin all still work in `VehicleClass`. Kept here rather than in the page so
+ * the card grid and the per-category route agree on which classes belong where,
+ * and so a class added to VEHICLE_CLASSES without being placed in a group is a
+ * type error rather than a silently missing card.
+ */
+export const RATE_GROUPS = ["passenger", "transport"] as const;
+export type RateGroup = (typeof RATE_GROUPS)[number];
+
+export const RATE_GROUP_CLASSES = {
+  passenger: ["economy", "sedan", "vip", "suv"],
+  transport: ["event", "specialized", "logistics"],
+} as const satisfies Record<RateGroup, readonly VehicleClass[]>;
+
+/** Which group a class belongs to, for the detail page's breadcrumb. */
+export function rateGroupOf(cls: VehicleClass): RateGroup {
+  return RATE_GROUPS.find((g) =>
+    (RATE_GROUP_CLASSES[g] as readonly VehicleClass[]).includes(cls)
+  )!;
+}
+
+/**
  * Self-drive is offered on everyday cars only. Event coaches, executive cars,
  * armored vehicles and logistics trucks are chauffeur-only regardless of what
  * the `selfDriveAvailable` flag on an individual vehicle says — this list is
@@ -98,6 +122,38 @@ export interface LeadAnalytics {
   totals: { bookings: number; corporate: number; general: number };
   /** Same window, immediately before `from` — for the period-on-period delta. */
   previous: { bookings: number; corporate: number; general: number };
+}
+
+/**
+ * Conversion actions worth counting, all of which end the visit.
+ *
+ * A form submission leaves a Booking or Enquiry document behind, so those are
+ * already countable. These are the ones that were not: a WhatsApp or phone tap
+ * hands the visitor to another app and the session simply ends, which made the
+ * single most common way to contact Shani Travels invisible to the business.
+ */
+export const CONVERSION_KINDS = ["whatsapp", "call", "email", "directions"] as const;
+export type ConversionKind = (typeof CONVERSION_KINDS)[number];
+
+export const CONVERSION_KIND_LABELS: Record<ConversionKind, string> = {
+  whatsapp: "WhatsApp",
+  call: "Phone call",
+  email: "Email",
+  directions: "Directions",
+};
+
+export interface ConversionTotals {
+  whatsapp: number;
+  call: number;
+  email: number;
+  directions: number;
+}
+
+/** Where on the site the tap happened, for "which page drives contact". */
+export interface ConversionSource {
+  path: string;
+  kind: ConversionKind;
+  count: number;
 }
 
 export const DISCOUNT_TYPES = ["percentage", "fixed"] as const;
@@ -228,7 +284,10 @@ export interface VehicleDoc {
   rollCage: boolean;
   selfDriveAvailable: boolean;
   selfDrive?: SelfDriveRates | null;
+  /** Shown in the homepage "featured fleet" strip. */
   featured: boolean;
+  /** Pinned to the "Recommended" group at the top of the booking wizard picker. */
+  recommended: boolean;
   active: boolean;
   order: number;
   createdAt: string;
@@ -244,7 +303,10 @@ export interface OfficeDoc {
   address: LocalizedString;
   phones: string[];
   email?: string | null;
+  /** Directions link, followed in a new tab from /network. */
   mapUrl?: string | null;
+  /** Google Maps "Embed a map" iframe src, framed on /contact. */
+  mapEmbedUrl?: string | null;
   isHeadOffice: boolean;
   order: number;
   active: boolean;
@@ -282,6 +344,100 @@ export interface TestimonialDoc {
 
 /** Localized view of {@link TestimonialDoc}. */
 export type Testimonial = Flatten<TestimonialDoc>;
+
+// ---------------------------------------------------------------------------
+// Gallery — the photo wall on /gallery
+// ---------------------------------------------------------------------------
+
+/**
+ * Filter buckets on the gallery page, in the order the chips render.
+ *
+ * "All photos" is not a member: it is the absence of a filter, and modelling it
+ * as a category would let an admin file a photograph under it.
+ */
+export const GALLERY_CATEGORIES = [
+  "happy-clients",
+  "our-team",
+  "corporate-events",
+  "journeys",
+  "fleet",
+  "behind-the-scenes",
+] as const;
+export type GalleryCategory = (typeof GALLERY_CATEGORIES)[number];
+
+/** Admin-side display only; the public chips read the dictionary. */
+export const GALLERY_CATEGORY_LABELS: Record<GalleryCategory, string> = {
+  "happy-clients": "Happy Clients",
+  "our-team": "Our Team",
+  "corporate-events": "Corporate Events",
+  journeys: "Journeys",
+  fleet: "Fleet",
+  "behind-the-scenes": "Behind The Scenes",
+};
+
+export interface GalleryImageDoc {
+  id: string;
+  image: { publicId: string; url: string; alt: string };
+  caption: LocalizedString;
+  category: GalleryCategory;
+  /**
+   * Promotes the photograph to a large tile in the mosaic. Purely a layout
+   * weight — see `galleryTileSpan` in components/site/GalleryGrid.
+   */
+  featured: boolean;
+  order: number;
+  active: boolean;
+  createdAt: string;
+  updatedAt: string;
+}
+
+/** Localized view of {@link GalleryImageDoc}. */
+export type GalleryImage = Flatten<GalleryImageDoc>;
+
+// ---------------------------------------------------------------------------
+// Award — recognition wall on /awards
+// ---------------------------------------------------------------------------
+
+export const AWARD_CATEGORIES = [
+  "industry-awards",
+  "client-appreciations",
+  "certificates",
+  "milestones",
+  "press-media",
+] as const;
+export type AwardCategory = (typeof AWARD_CATEGORIES)[number];
+
+/** Admin-side display only; the public filter rail reads the dictionary. */
+export const AWARD_CATEGORY_LABELS: Record<AwardCategory, string> = {
+  "industry-awards": "Industry Awards",
+  "client-appreciations": "Client Appreciations",
+  certificates: "Certificates",
+  milestones: "Milestones",
+  "press-media": "Press & Media",
+};
+
+export interface AwardDoc {
+  id: string;
+  title: LocalizedString;
+  /** Who gave it — rendered in accent under the title. */
+  issuer: LocalizedString;
+  description: LocalizedString;
+  image?: { publicId: string; url: string; alt: string } | null;
+  /**
+   * Date on the certificate, as a plain `YYYY-MM-DD` string rather than a Date.
+   * Only ever formatted for display, and a Date would drag the whole
+   * timezone question into a field where "May 2023" is the real precision.
+   */
+  awardedOn?: string | null;
+  category: AwardCategory;
+  order: number;
+  active: boolean;
+  createdAt: string;
+  updatedAt: string;
+}
+
+/** Localized view of {@link AwardDoc}. */
+export type Award = Flatten<AwardDoc>;
 
 export const SERVICE_GROUPS = ["corporate", "individual", "specialized"] as const;
 export type ServiceGroup = (typeof SERVICE_GROUPS)[number];
@@ -537,6 +693,9 @@ export interface SiteSettingsDoc {
     ceoMessage: LocalizedString;
     /** Proper noun — not translated. */
     ceoName: string;
+    /** Portrait floated beside the letter on /about. Optional: the text runs
+     *  full width when no photograph has been uploaded. */
+    ceoImage?: { publicId: string; url: string; alt: string } | null;
     hseSummary: LocalizedString;
   };
   /** Launch-dark switch for the self-drive service line (insurance pending). */

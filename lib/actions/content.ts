@@ -10,6 +10,8 @@ import {
   ServiceModel,
   IndustryModel,
   SafetySectionModel,
+  GalleryImageModel,
+  AwardModel,
 } from "@/lib/models";
 import { TAGS, type CacheTag } from "@/lib/tags";
 import {
@@ -19,6 +21,8 @@ import {
   serviceSchema,
   industrySchema,
   safetySectionSchema,
+  galleryImageSchema,
+  awardSchema,
 } from "@/lib/validation";
 import { toActionError, preserveUrdu } from "@/lib/actions/helpers";
 import type { ActionResult } from "@/lib/types";
@@ -30,7 +34,15 @@ import type { Model } from "mongoose";
  * revalidating its cache tag.
  */
 
-type Collection = "office" | "client" | "testimonial" | "service" | "industry" | "safety";
+type Collection =
+  | "office"
+  | "client"
+  | "testimonial"
+  | "service"
+  | "industry"
+  | "safety"
+  | "gallery"
+  | "award";
 
 const registry: Record<
   Collection,
@@ -52,6 +64,13 @@ const registry: Record<
     tag: TAGS.safety,
     label: "Safety section",
   },
+  gallery: {
+    model: GalleryImageModel as Model<never>,
+    schema: galleryImageSchema,
+    tag: TAGS.gallery,
+    label: "Photo",
+  },
+  award: { model: AwardModel as Model<never>, schema: awardSchema, tag: TAGS.awards, label: "Award" },
 };
 
 /**
@@ -63,7 +82,15 @@ const registry: Record<
  * would let an English edit blank the translation; omitting one that has Urdu
  * inputs would make clearing a translation impossible.
  */
-const BILINGUAL_EDITORS = new Set<Collection>(["service", "testimonial", "office", "industry", "safety"]);
+const BILINGUAL_EDITORS = new Set<Collection>([
+  "service",
+  "testimonial",
+  "office",
+  "industry",
+  "safety",
+  "gallery",
+  "award",
+]);
 
 export async function createContent(
   collection: Collection,

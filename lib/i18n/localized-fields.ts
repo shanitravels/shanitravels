@@ -24,6 +24,8 @@ export const LOCALIZED_FIELDS = {
   safetysections: ["title", "intro", "items"],
   offices: ["city", "address"],
   testimonials: ["quote"],
+  galleryimages: ["caption"],
+  awards: ["title", "issuer", "description"],
   discounts: ["label"],
   sitesettings: [
     "heroHeadline",
@@ -35,6 +37,7 @@ export const LOCALIZED_FIELDS = {
     "seoDefaults.title",
     "seoDefaults.description",
     "commercialTerms",
+    "about.mission",
     "about.story",
     "about.ceoMessage",
     "about.hseSummary",

@@ -15,6 +15,8 @@ export const TAGS = {
   industries: "industries",
   safety: "safety",
   discounts: "discounts",
+  gallery: "gallery",
+  awards: "awards",
 } as const;
 
 export type CacheTag = (typeof TAGS)[keyof typeof TAGS];

@@ -4,27 +4,42 @@ import { useCallback, useEffect, useMemo, useRef, useState } from "react";
 import Link from "next/link";
 import { usePathname, useRouter } from "next/navigation";
 import { clsx } from "clsx";
-import { FiKey, FiSearch, FiX, FiChevronDown, FiChevronLeft, FiChevronRight } from "react-icons/fi";
+import { FiKey, FiSearch, FiX, FiChevronDown, FiChevronLeft, FiChevronRight, FiSliders } from "react-icons/fi";
 import { VehicleCard } from "./VehicleCard";
 import { bestDiscountFor } from "@/lib/pricing";
+import { byEngineSize } from "@/lib/engine-size";
 import { makeOptions, vehicleMake } from "@/lib/vehicle-make";
 import type { Discount } from "@/lib/types";
 import { VEHICLE_CLASSES, type Vehicle, type VehicleClass, isSelfDriveEligible } from "@/lib/types";
 import { useI18n } from "./LocaleProvider";
 import { fmt } from "@/lib/i18n/format";
 
-type SortKey = "featured" | "price-asc" | "price-desc" | "seats-desc";
+type SortKey = "category" | "engine-asc" | "featured" | "price-asc" | "price-desc" | "seats-desc";
 
 /** Three full rows of the three-column grid, so no page ends on a ragged row. */
 const PAGE_SIZE = 9;
 
 /** Sort options carry a dictionary key; the label is resolved at render time. */
-const SORTS: { key: SortKey; labelKey: "sortFeatured" | "sortPriceAsc" | "sortPriceDesc" | "sortSeatsDesc" }[] = [
+const SORTS: {
+  key: SortKey;
+  labelKey:
+    | "sortCategory"
+    | "sortEngineAsc"
+    | "sortFeatured"
+    | "sortPriceAsc"
+    | "sortPriceDesc"
+    | "sortSeatsDesc";
+}[] = [
+  { key: "category", labelKey: "sortCategory" },
+  { key: "engine-asc", labelKey: "sortEngineAsc" },
   { key: "featured", labelKey: "sortFeatured" },
   { key: "price-asc", labelKey: "sortPriceAsc" },
   { key: "price-desc", labelKey: "sortPriceDesc" },
   { key: "seats-desc", labelKey: "sortSeatsDesc" },
 ];
+
+/** Position of a vehicle's class in the browse order defined by VEHICLE_CLASSES. */
+const classRank = (v: Vehicle) => VEHICLE_CLASSES.indexOf(v.class);
 
 export interface FleetFilters {
   cls: string;
@@ -64,6 +79,12 @@ export function FleetCatalog({
   const [cls, setCls] = useState<string>(initial.cls);
   const [seats, setSeats] = useState<string>(initial.seats);
   const [sort, setSort] = useState<SortKey>(initial.sort);
+  /**
+   * Below lg the rail collapses — a full filter column above the grid would
+   * push the first vehicle off a phone screen entirely. At lg and up the panel
+   * is always shown and this is ignored.
+   */
+  const [railOpen, setRailOpen] = useState(false);
   const [selfDriveOnly, setSelfDriveOnly] = useState(initial.selfDriveOnly);
   const [q, setQ] = useState(initial.q);
   const [page, setPage] = useState(initial.page);
@@ -94,9 +115,13 @@ export function FleetCatalog({
   const changeMakes = (v: string[]) => { setMakes(v); setPage(1); };
   const toggleSelfDrive = () => { setSelfDriveOnly((v) => !v); setPage(1); };
 
-  // Only show class tabs for classes that actually have vehicles.
+  // Only list classes that actually have vehicles, and carry the count so the
+  // rail can show what each filter would leave — the question a filter list is
+  // always implicitly asked.
   const availableClasses = useMemo(
-    () => VEHICLE_CLASSES.filter((c) => vehicles.some((v) => v.class === c)),
+    () =>
+      VEHICLE_CLASSES.map((c) => ({ cls: c, count: vehicles.filter((v) => v.class === c).length }))
+        .filter((x) => x.count > 0),
     [vehicles]
   );
 
@@ -140,6 +165,15 @@ export function FleetCatalog({
     const day = (v: Vehicle) => v.rates.perDay ?? Number.POSITIVE_INFINITY;
     return [...list].sort((a, b) => {
       switch (sort) {
+        // Default. Groups the grid by category and walks up the engine range
+        // inside each one. Sorting by price instead used to strand every
+        // "on request" vehicle in one undifferentiated block at the end —
+        // which is how the Honda City and Hyundai sedans ended up sitting
+        // among the armoured B-6 units rather than with the other saloons.
+        case "category":
+          return classRank(a) - classRank(b) || byEngineSize(a, b);
+        case "engine-asc":
+          return byEngineSize(a, b);
         case "price-asc":
           return day(a) - day(b);
         case "price-desc":
@@ -177,7 +211,7 @@ export function FleetCatalog({
       const params = new URLSearchParams();
       if (cls !== "all") params.set("class", cls);
       if (seats !== "any") params.set("seats", seats);
-      if (sort !== "featured") params.set("sort", sort);
+      if (sort !== "category") params.set("sort", sort);
       if (selfDriveOnly) params.set("selfdrive", "1");
       if (q.trim()) params.set("q", q.trim());
       if (makes.length) params.set("make", makes.join(","));
@@ -234,182 +268,342 @@ export function FleetCatalog({
   const clearAll = () => {
     setCls("all");
     setSeats("any");
-    setSort("featured");
+    setSort("category");
     setSelfDriveOnly(false);
     setQ("");
     setMakes([]);
     setPage(1);
   };
 
+  /** Drives the "Clear filters" affordance and the badge on the mobile toggle. */
+  const activeCount =
+    (cls !== "all" ? 1 : 0) +
+    (seats !== "any" ? 1 : 0) +
+    (selfDriveOnly ? 1 : 0) +
+    (q.trim() ? 1 : 0) +
+    makes.length;
+
+  const toggleMake = (make: string) =>
+    changeMakes(makes.includes(make) ? makes.filter((m) => m !== make) : [...makes, make]);
+
+  const seatOptions = [
+    { value: "any", label: t.fleet.any },
+    { value: "4", label: "4+" },
+    { value: "7", label: "7+" },
+    { value: "12", label: "12+" },
+    { value: "22", label: "22+" },
+  ];
+
   return (
-    <div>
-      {/* Search sits above the class tabs: it searches the whole fleet, not the
-          tab in front of it, and reading it first makes that order plain. */}
-      <div className="mb-5">
-        <label htmlFor="fleet-search" className="sr-only">
-          {t.fleet.searchLabel}
-        </label>
-        <div className="relative">
-          <FiSearch
-            aria-hidden
-            className="pointer-events-none absolute left-3.5 top-1/2 h-4 w-4 -translate-y-1/2 text-muted"
-          />
-          <input
-            id="fleet-search"
-            type="search"
-            value={q}
-            onChange={(e) => changeQ(e.target.value)}
-            placeholder={t.fleet.searchPlaceholder}
-            // The count below is a live region, so a screen reader hears how
-            // many vehicles are left without leaving the field.
-            aria-controls="fleet-results"
-            className="w-full rounded-lg border border-line bg-white py-2.5 pl-10 pr-10 text-sm text-ink placeholder:text-muted focus:border-navy focus:outline-none"
-          />
-          {q && (
-            <button
-              type="button"
-              onClick={() => changeQ("")}
-              aria-label={t.fleet.searchClear}
-              className="absolute right-2 top-1/2 flex h-7 w-7 -translate-y-1/2 items-center justify-center rounded-md text-muted transition hover:bg-band hover:text-navy"
-            >
-              <FiX className="h-4 w-4" />
-            </button>
-          )}
-        </div>
-      </div>
-
-      {/* Class tabs — wrap so every category stays visible at any width;
-          no horizontal scroll, nothing hidden off-screen. */}
-      <div className="mb-5 flex flex-wrap gap-2">
-        <Tab active={cls === "all"} onClick={() => changeCls("all")}>
-          {t.vehicleClass.all}
-        </Tab>
-        {availableClasses.map((c) => (
-          <Tab key={c} active={cls === c} onClick={() => changeCls(c)}>
-            {t.vehicleClass[c as VehicleClass]}
-          </Tab>
-        ))}
-      </div>
-
-      {/* Filters */}
-      <div className="mb-6 flex flex-wrap items-center gap-3">
-        {companies.length > 1 && (
-          <CompanyFilter
-            options={companies}
-            selected={makes}
-            onChange={changeMakes}
-            label={t.fleet.company}
-            allLabel={t.fleet.allCompanies}
-            countLabel={t.fleet.companiesSelected}
-            clearLabel={t.fleet.clearFilters}
-          />
-        )}
-
-        <label className="flex items-center gap-2 text-sm text-muted">
-          {t.fleet.minSeats}
-          <select
-            value={seats}
-            onChange={(e) => changeSeats(e.target.value)}
-            className="rounded-lg border border-line bg-white px-3 py-1.5 text-sm text-ink"
-          >
-            <option value="any">{t.fleet.any}</option>
-            <option value="4">4+</option>
-            <option value="7">7+</option>
-            <option value="12">12+</option>
-            <option value="22">22+</option>
-          </select>
-        </label>
-
-        {selfDriveEnabled && (
-          <button
-            type="button"
-            onClick={toggleSelfDrive}
-            aria-pressed={selfDriveOnly}
-            className={clsx(
-              "inline-flex items-center gap-1.5 rounded-lg border px-3 py-1.5 text-sm font-medium transition",
-              selfDriveOnly
-                ? "border-emerald-600 bg-emerald-600 text-white"
-                : "border-line bg-white text-ink/70 hover:text-navy"
+    /**
+     * Filters sit in a left rail rather than stacked above the grid. The set
+     * had grown past what reads cleanly as a toolbar, and a rail keeps every
+     * filter and its current state visible while the results scroll past.
+     *
+     * minmax(0,1fr) on the results track, not a plain 1fr: a grid track sizes
+     * to its content by default, so a long vehicle name would widen the column
+     * past the space available instead of wrapping inside it.
+     */
+    <div className="lg:grid lg:grid-cols-[15rem_minmax(0,1fr)] lg:items-start lg:gap-8">
+      <aside className="mb-6 lg:sticky lg:top-24 lg:mb-0">
+        {/* Collapsed on phones — a full filter column above the grid would push
+            the first vehicle off the screen. Hidden at lg, where it is open. */}
+        <button
+          type="button"
+          onClick={() => setRailOpen((v) => !v)}
+          aria-expanded={railOpen}
+          aria-controls="fleet-filters"
+          className="flex w-full items-center justify-between rounded-xl border border-line bg-white px-4 py-3 text-sm font-semibold text-navy lg:hidden"
+        >
+          <span className="flex items-center gap-2">
+            <FiSliders aria-hidden className="h-4 w-4 text-accent" />
+            {railOpen ? t.fleet.hideFilters : t.fleet.showFilters}
+            {activeCount > 0 && (
+              <span className="tabular rounded-full bg-accent px-1.5 py-0.5 text-[11px] font-semibold text-white">
+                {activeCount}
+              </span>
             )}
-          >
-            <FiKey className="h-3.5 w-3.5" /> {t.fleet.selfDriveAvailable}
-          </button>
-        )}
+          </span>
+          <FiChevronDown
+            aria-hidden
+            className={clsx("h-4 w-4 transition-transform", railOpen && "rotate-180")}
+          />
+        </button>
 
-        <label className="ml-auto flex items-center gap-2 text-sm text-muted">
-          {t.fleet.sort}
-          <select
-            value={sort}
-            onChange={(e) => changeSort(e.target.value as SortKey)}
-            className="rounded-lg border border-line bg-white px-3 py-1.5 text-sm text-ink"
-          >
-            {SORTS.map((s) => (
-              <option key={s.key} value={s.key}>
-                {t.fleet[s.labelKey]}
-              </option>
-            ))}
-          </select>
-        </label>
-      </div>
-
-      {/* The anchor a page change scrolls to — above the count, so the new
-          page announces its own range. */}
-      <div ref={resultsTop} className="scroll-mt-24" />
-
-      <p className="mb-4 text-sm text-muted" aria-live="polite">
-        {totalPages > 1
-          ? fmt(t.fleet.countRange, {
-              from: start + 1,
-              to: start + paged.length,
-              total: filtered.length,
-              noun: filtered.length === 1 ? t.fleet.vehicle : t.fleet.vehicles,
-            })
-          : fmt(t.fleet.countAll, {
-              total: filtered.length,
-              noun: filtered.length === 1 ? t.fleet.vehicle : t.fleet.vehicles,
-            })}
-        {cls !== "all" && fmt(t.fleet.inClass, { label: t.vehicleClass[cls as VehicleClass] })}
-      </p>
-
-      {filtered.length === 0 ? (
-        <div id="fleet-results" className="rounded-2xl border border-dashed border-line bg-white p-12 text-center">
-          <p className="text-sm text-muted">{t.fleet.noMatch}</p>
-          <button onClick={clearAll} className="mt-3 text-sm font-semibold text-accent hover:underline">
-            {t.fleet.clearFilters}
-          </button>
-        </div>
-      ) : (
-        <>
-          <div id="fleet-results" className="grid gap-5 sm:grid-cols-2 lg:grid-cols-3">
-            {paged.map((v, i) => (
-              <VehicleCard
-                key={v.id}
-                vehicle={v}
-                priority={i < 3}
-                showSelfDrive={selfDriveEnabled}
-                discount={bestDiscountFor(v, discounts)}
-              />
-            ))}
+        <div
+          id="fleet-filters"
+          className={clsx(
+            "mt-2 overflow-hidden rounded-2xl border border-line bg-white lg:mt-0 lg:block",
+            railOpen ? "block" : "hidden"
+          )}
+        >
+          <div className="flex items-center justify-between border-b border-line px-4 py-3">
+            <h2 className="text-[11px] font-semibold uppercase tracking-[0.14em] text-muted">
+              {t.fleet.filters}
+            </h2>
+            {activeCount > 0 && (
+              <button
+                type="button"
+                onClick={clearAll}
+                className="text-xs font-semibold text-accent hover:underline"
+              >
+                {t.fleet.clearFilters}
+              </button>
+            )}
           </div>
 
-          {totalPages > 1 && (
-            <Pagination
-              current={current}
-              total={totalPages}
-              onGo={goToPage}
-              hrefFor={urlFor}
-              labels={{
-                nav: t.fleet.pagination,
-                prev: t.fleet.pagePrev,
-                next: t.fleet.pageNext,
-                goTo: t.fleet.pageGoTo,
-                summary: t.fleet.pageCurrent,
-              }}
-            />
+          <RailSection>
+            <label htmlFor="fleet-search" className="sr-only">
+              {t.fleet.searchLabel}
+            </label>
+            <div className="relative">
+              <FiSearch
+                aria-hidden
+                className="pointer-events-none absolute left-3 top-1/2 h-4 w-4 -translate-y-1/2 text-muted"
+              />
+              <input
+                id="fleet-search"
+                type="search"
+                value={q}
+                onChange={(e) => changeQ(e.target.value)}
+                placeholder={t.fleet.searchPlaceholder}
+                aria-controls="fleet-results"
+                className="w-full rounded-lg border border-line bg-white py-2 pl-9 pr-8 text-sm text-ink placeholder:text-muted focus:border-navy focus:outline-none"
+              />
+              {q && (
+                <button
+                  type="button"
+                  onClick={() => changeQ("")}
+                  aria-label={t.fleet.searchClear}
+                  className="absolute right-1.5 top-1/2 flex h-6 w-6 -translate-y-1/2 items-center justify-center rounded-md text-muted transition hover:bg-band hover:text-navy"
+                >
+                  <FiX className="h-3.5 w-3.5" />
+                </button>
+              )}
+            </div>
+          </RailSection>
+
+          <RailSection title={t.fleet.vehicleType}>
+            <div className="space-y-0.5">
+              <RailChoice
+                name="fleet-class"
+                checked={cls === "all"}
+                onSelect={() => changeCls("all")}
+                label={t.vehicleClass.all}
+                count={vehicles.length}
+              />
+              {availableClasses.map(({ cls: c, count }) => (
+                <RailChoice
+                  key={c}
+                  name="fleet-class"
+                  checked={cls === c}
+                  onSelect={() => changeCls(c)}
+                  label={t.vehicleClass[c as VehicleClass]}
+                  count={count}
+                />
+              ))}
+            </div>
+          </RailSection>
+
+          {companies.length > 1 && (
+            <RailSection title={t.fleet.company}>
+              {/* Capped and scrollable: the make list grows with the fleet and
+                  must not push the seating filter below the fold. */}
+              <div className="-mr-1 max-h-52 space-y-0.5 overflow-y-auto pr-1">
+                {companies.map(({ make, count }) => (
+                  <label
+                    key={make}
+                    className="flex cursor-pointer items-center gap-2.5 rounded-lg px-2 py-1.5 text-sm text-ink transition hover:bg-band"
+                  >
+                    <input
+                      type="checkbox"
+                      checked={makes.includes(make)}
+                      onChange={() => toggleMake(make)}
+                      className="h-4 w-4 shrink-0 accent-navy"
+                    />
+                    <span className="flex-1 truncate">{make}</span>
+                    <span className="tabular text-xs text-muted">{count}</span>
+                  </label>
+                ))}
+              </div>
+            </RailSection>
           )}
-        </>
-      )}
+
+          <RailSection title={t.fleet.minSeats}>
+            <div className="space-y-0.5">
+              {seatOptions.map((o) => (
+                <RailChoice
+                  key={o.value}
+                  name="fleet-seats"
+                  checked={seats === o.value}
+                  onSelect={() => changeSeats(o.value)}
+                  label={o.label}
+                />
+              ))}
+            </div>
+          </RailSection>
+
+          {selfDriveEnabled && (
+            <RailSection title={t.fleet.selfDriveGroup}>
+              <button
+                type="button"
+                onClick={toggleSelfDrive}
+                aria-pressed={selfDriveOnly}
+                className={clsx(
+                  "flex w-full items-center gap-2 rounded-lg border px-3 py-2 text-sm font-medium transition",
+                  selfDriveOnly
+                    ? "border-emerald-600 bg-emerald-600 text-white"
+                    : "border-line bg-white text-ink/70 hover:border-navy/40 hover:text-navy"
+                )}
+              >
+                <FiKey className="h-3.5 w-3.5 shrink-0" /> {t.fleet.selfDriveAvailable}
+              </button>
+            </RailSection>
+          )}
+        </div>
+      </aside>
+
+      <div>
+        {/* The anchor a page change scrolls to — above the count, so the new
+            page announces its own range. */}
+        <div ref={resultsTop} className="scroll-mt-24" />
+
+        <div className="mb-4 flex flex-wrap items-center justify-between gap-3">
+          <p className="text-sm text-muted" aria-live="polite">
+            {totalPages > 1
+              ? fmt(t.fleet.countRange, {
+                  from: start + 1,
+                  to: start + paged.length,
+                  total: filtered.length,
+                  noun: filtered.length === 1 ? t.fleet.vehicle : t.fleet.vehicles,
+                })
+              : fmt(t.fleet.countAll, {
+                  total: filtered.length,
+                  noun: filtered.length === 1 ? t.fleet.vehicle : t.fleet.vehicles,
+                })}
+            {cls !== "all" && fmt(t.fleet.inClass, { label: t.vehicleClass[cls as VehicleClass] })}
+          </p>
+
+          {/* Sort stays with the results rather than in the rail: it reorders
+              what is already there instead of narrowing it. */}
+          <label className="flex items-center gap-2 text-sm text-muted">
+            {t.fleet.sort}
+            <select
+              value={sort}
+              onChange={(e) => changeSort(e.target.value as SortKey)}
+              className="rounded-lg border border-line bg-white px-3 py-1.5 text-sm text-ink"
+            >
+              {SORTS.map((so) => (
+                <option key={so.key} value={so.key}>
+                  {t.fleet[so.labelKey]}
+                </option>
+              ))}
+            </select>
+          </label>
+        </div>
+
+        {filtered.length === 0 ? (
+          <div
+            id="fleet-results"
+            className="rounded-2xl border border-dashed border-line bg-white p-12 text-center"
+          >
+            <p className="text-sm text-muted">{t.fleet.noMatch}</p>
+            <button
+              onClick={clearAll}
+              className="mt-3 text-sm font-semibold text-accent hover:underline"
+            >
+              {t.fleet.clearFilters}
+            </button>
+          </div>
+        ) : (
+          <>
+            {/* Two columns once the rail appears, three only at xl. The rail
+                takes 15rem out of the row, and holding three columns at lg
+                would squeeze each card below the width its 16:10 image needs
+                to stay legible. */}
+            <div id="fleet-results" className="grid gap-5 sm:grid-cols-2 xl:grid-cols-3">
+              {paged.map((v, i) => (
+                <VehicleCard
+                  key={v.id}
+                  vehicle={v}
+                  priority={i < 3}
+                  showSelfDrive={selfDriveEnabled}
+                  discount={bestDiscountFor(v, discounts)}
+                />
+              ))}
+            </div>
+
+            {totalPages > 1 && (
+              <Pagination
+                current={current}
+                total={totalPages}
+                onGo={goToPage}
+                hrefFor={urlFor}
+                labels={{
+                  nav: t.fleet.pagination,
+                  prev: t.fleet.pagePrev,
+                  next: t.fleet.pageNext,
+                  goTo: t.fleet.pageGoTo,
+                  summary: t.fleet.pageCurrent,
+                }}
+              />
+            )}
+          </>
+        )}
+      </div>
     </div>
+  );
+}
+
+/** One labelled block in the filter rail, separated by a hairline. */
+function RailSection({ title, children }: { title?: string; children: React.ReactNode }) {
+  return (
+    <div className="border-b border-line px-4 py-3.5 last:border-b-0">
+      {title && (
+        <h3 className="mb-2 text-[11px] font-semibold uppercase tracking-[0.12em] text-muted">
+          {title}
+        </h3>
+      )}
+      {children}
+    </div>
+  );
+}
+
+/**
+ * A single-choice row. A real radio input, not a styled button: sharing a
+ * `name` makes the group one tab stop with arrow-key movement between options,
+ * and screen readers announce it as a choice of one rather than as N buttons.
+ */
+function RailChoice({
+  name,
+  checked,
+  onSelect,
+  label,
+  count,
+}: {
+  name: string;
+  checked: boolean;
+  onSelect: () => void;
+  label: string;
+  count?: number;
+}) {
+  return (
+    <label
+      className={clsx(
+        "flex cursor-pointer items-center gap-2.5 rounded-lg px-2 py-1.5 text-sm transition",
+        checked ? "bg-band font-medium text-navy" : "text-ink/80 hover:bg-band"
+      )}
+    >
+      <input
+        type="radio"
+        name={name}
+        checked={checked}
+        onChange={onSelect}
+        className="h-4 w-4 shrink-0 accent-navy"
+      />
+      <span className="flex-1 truncate">{label}</span>
+      {count !== undefined && <span className="tabular text-xs text-muted">{count}</span>}
+    </label>
   );
 }
 
@@ -566,145 +760,5 @@ function PageLink({
     >
       {children}
     </Link>
-  );
-}
-
-/**
- * Company picker — a checkbox list behind a button.
- *
- * Not the class tabs' chip treatment: there are fifteen companies against nine
- * classes, and a fourth row of chips would push the fleet itself below the fold.
- * Not a native `<select multiple>` either — on a phone that is a scroll trap,
- * and it cannot show the per-company counts that tell someone whether a filter
- * is worth applying.
- */
-function CompanyFilter({
-  options,
-  selected,
-  onChange,
-  label,
-  allLabel,
-  countLabel,
-  clearLabel,
-}: {
-  options: { make: string; count: number }[];
-  selected: string[];
-  onChange: (next: string[]) => void;
-  label: string;
-  allLabel: string;
-  countLabel: string;
-  clearLabel: string;
-}) {
-  const [open, setOpen] = useState(false);
-  const wrap = useRef<HTMLDivElement>(null);
-
-  // Close on outside click or Escape. Bound only while open, so the page is not
-  // carrying two document listeners for a panel nobody has opened.
-  useEffect(() => {
-    if (!open) return;
-    const onPointer = (e: MouseEvent) => {
-      if (wrap.current && !wrap.current.contains(e.target as Node)) setOpen(false);
-    };
-    const onKey = (e: KeyboardEvent) => {
-      if (e.key === "Escape") setOpen(false);
-    };
-    document.addEventListener("mousedown", onPointer);
-    document.addEventListener("keydown", onKey);
-    return () => {
-      document.removeEventListener("mousedown", onPointer);
-      document.removeEventListener("keydown", onKey);
-    };
-  }, [open]);
-
-  const toggle = (make: string) =>
-    onChange(
-      selected.includes(make) ? selected.filter((m) => m !== make) : [...selected, make]
-    );
-
-  const summary =
-    selected.length === 0
-      ? allLabel
-      : selected.length === 1
-        ? selected[0]
-        : fmt(countLabel, { n: selected.length });
-
-  return (
-    <div ref={wrap} className="relative">
-      <button
-        type="button"
-        onClick={() => setOpen((v) => !v)}
-        aria-expanded={open}
-        aria-haspopup="true"
-        className={clsx(
-          "inline-flex items-center gap-2 rounded-lg border bg-white px-3 py-1.5 text-sm transition",
-          selected.length ? "border-navy text-navy" : "border-line text-ink/70 hover:text-navy"
-        )}
-      >
-        <span className="text-muted">{label}</span>
-        <span className="font-medium">{summary}</span>
-        <FiChevronDown
-          aria-hidden
-          className={clsx("h-4 w-4 shrink-0 transition-transform", open && "rotate-180")}
-        />
-      </button>
-
-      {open && (
-        <div
-          role="group"
-          aria-label={label}
-          className="absolute left-0 top-full z-20 mt-2 max-h-72 w-60 overflow-y-auto rounded-xl border border-line bg-white p-1.5 shadow-lift"
-        >
-          {options.map(({ make, count }) => (
-            <label
-              key={make}
-              className="flex cursor-pointer items-center gap-2.5 rounded-lg px-2.5 py-2 text-sm text-ink hover:bg-band"
-            >
-              <input
-                type="checkbox"
-                checked={selected.includes(make)}
-                onChange={() => toggle(make)}
-                className="h-4 w-4 shrink-0 accent-navy"
-              />
-              <span className="flex-1 truncate">{make}</span>
-              <span className="tabular text-xs text-muted">{count}</span>
-            </label>
-          ))}
-          {selected.length > 0 && (
-            <button
-              type="button"
-              onClick={() => onChange([])}
-              className="mt-1 w-full rounded-lg px-2.5 py-2 text-left text-sm font-semibold text-accent hover:bg-band"
-            >
-              {clearLabel}
-            </button>
-          )}
-        </div>
-      )}
-    </div>
-  );
-}
-
-function Tab({
-  active,
-  onClick,
-  children,
-}: {
-  active: boolean;
-  onClick: () => void;
-  children: React.ReactNode;
-}) {
-  return (
-    <button
-      onClick={onClick}
-      aria-pressed={active}
-      className={clsx(
-        "rounded-full px-3 py-1.5 text-[13px] font-medium transition sm:px-4 sm:py-2 sm:text-sm",
-        active
-          ? "bg-navy text-white"
-          : "border border-line bg-white text-ink/70 hover:border-navy/40 hover:text-navy"
-      )}
-    >
-      {children}
-    </button>
   );
 }

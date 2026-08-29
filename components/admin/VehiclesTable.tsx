@@ -31,7 +31,7 @@ export function VehiclesTable({ initial }: { initial: Vehicle[] }) {
     [rows, classFilter, statusFilter]
   );
 
-  const flip = (v: Vehicle, flag: "active" | "featured", value: boolean) => {
+  const flip = (v: Vehicle, flag: "active" | "featured" | "recommended", value: boolean) => {
     setRows((prev) => prev.map((r) => (r.id === v.id ? { ...r, [flag]: value } : r)));
     start(async () => {
       const res = await toggleVehicleFlag(v.id, flag, value);
@@ -103,13 +103,18 @@ export function VehiclesTable({ initial }: { initial: Vehicle[] }) {
           {/* Desktop table — scrolls rather than clips, since the md breakpoint
               turns on the sidebar and this table at the same time. */}
           <Card className="hidden overflow-x-auto md:block">
-            <table className="w-full min-w-[640px] text-sm">
+            <table className="w-full min-w-[760px] text-sm">
               <thead>
                 <tr className="border-b border-slate-100 text-left text-xs uppercase tracking-wide text-slate-400">
                   <th className="px-4 py-3 font-medium">Vehicle</th>
                   <th className="px-4 py-3 font-medium">Class</th>
                   <th className="px-4 py-3 text-right font-medium">Per day</th>
-                  <th className="px-4 py-3 text-center font-medium">Featured</th>
+                  <th className="px-4 py-3 text-center font-medium" title="Homepage strip">
+                    Featured
+                  </th>
+                  <th className="px-4 py-3 text-center font-medium" title="Top of the booking picker">
+                    Recommended
+                  </th>
                   <th className="px-4 py-3 text-center font-medium">Active</th>
                   <th className="px-4 py-3 text-right font-medium">Actions</th>
                 </tr>
@@ -132,6 +137,12 @@ export function VehiclesTable({ initial }: { initial: Vehicle[] }) {
                     </td>
                     <td className="px-4 py-3 text-center">
                       <Toggle checked={v.featured} onChange={(val) => flip(v, "featured", val)} />
+                    </td>
+                    <td className="px-4 py-3 text-center">
+                      <Toggle
+                        checked={Boolean(v.recommended)}
+                        onChange={(val) => flip(v, "recommended", val)}
+                      />
                     </td>
                     <td className="px-4 py-3 text-center">
                       <Toggle checked={v.active} onChange={(val) => flip(v, "active", val)} />
@@ -185,10 +196,17 @@ export function VehiclesTable({ initial }: { initial: Vehicle[] }) {
                     <FiTrash2 className="h-4 w-4" />
                   </button>
                 </div>
-                <div className="mt-3 flex gap-4 border-t border-slate-100 pt-3 text-sm">
+                <div className="mt-3 flex flex-wrap gap-4 border-t border-slate-100 pt-3 text-sm">
                   <label className="flex items-center gap-2">
                     <Toggle checked={v.featured} onChange={(val) => flip(v, "featured", val)} />
                     <span className="text-xs text-slate-500">Featured</span>
+                  </label>
+                  <label className="flex items-center gap-2">
+                    <Toggle
+                      checked={Boolean(v.recommended)}
+                      onChange={(val) => flip(v, "recommended", val)}
+                    />
+                    <span className="text-xs text-slate-500">Recommended</span>
                   </label>
                   <label className="flex items-center gap-2">
                     <Toggle checked={v.active} onChange={(val) => flip(v, "active", val)} />

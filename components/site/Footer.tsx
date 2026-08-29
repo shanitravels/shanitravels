@@ -2,6 +2,8 @@ import Link from "next/link";
 import { FiPhone, FiMail, FiMapPin, FiArrowRight } from "react-icons/fi";
 import { FaWhatsapp } from "react-icons/fa";
 import { telHref, whatsappHref } from "@/lib/format";
+import { ContactLink } from "./ContactLink";
+import type { ConversionKind } from "@/lib/types";
 import { socialLinks, SOCIAL_ICONS } from "@/lib/social-links";
 import type { SiteSettings, Office } from "@/lib/types";
 import type { Dictionary } from "@/lib/i18n/dictionaries/en";
@@ -16,6 +18,7 @@ const SITEMAP = [
       { href: "/services", key: "services" },
       { href: "/industries", key: "industries" },
       { href: "/clients", key: "clients" },
+      { href: "/gallery", key: "gallery" },
     ],
   },
   {
@@ -24,6 +27,7 @@ const SITEMAP = [
       { href: "/corporate", key: "corporateTransport" },
       { href: "/safety", key: "safety" },
       { href: "/about", key: "aboutUs" },
+      { href: "/awards", key: "awards" },
       { href: "/network", key: "ourNetwork" },
       { href: "/contact", key: "contact" },
     ],
@@ -124,7 +128,7 @@ export function Footer({
             <ul className="mt-3 space-y-2">
               {settings.helplineNumbers.slice(0, 2).map((phone) => (
                 <li key={phone}>
-                  <ContactRow href={telHref(phone)} icon={<FiPhone />}>
+                  <ContactRow kind="call" href={telHref(phone)} icon={<FiPhone />}>
                     <span className="tabular">{phone}</span>
                   </ContactRow>
                 </li>
@@ -132,6 +136,7 @@ export function Footer({
               {settings.whatsappNumber && (
                 <li>
                   <ContactRow
+                    kind="whatsapp"
                     href={whatsappHref(settings.whatsappNumber)}
                     icon={<FaWhatsapp />}
                     external
@@ -143,7 +148,7 @@ export function Footer({
               )}
               {settings.emails.slice(0, 1).map((email) => (
                 <li key={email}>
-                  <ContactRow href={`mailto:${email}`} icon={<FiMail />}>
+                  <ContactRow kind="email" href={`mailto:${email}`} icon={<FiMail />}>
                     {email}
                   </ContactRow>
                 </li>
@@ -206,17 +211,21 @@ function ContactRow({
   href,
   icon,
   children,
+  kind,
   external = false,
   accent = "default",
 }: {
   href: string;
   icon: React.ReactNode;
   children: React.ReactNode;
+  /** What the tap means, so it lands in the conversion counts. */
+  kind: ConversionKind;
   external?: boolean;
   accent?: "default" | "whatsapp";
 }) {
   return (
-    <a
+    <ContactLink
+      kind={kind}
       href={href}
       {...(external ? { target: "_blank", rel: "noopener noreferrer" } : {})}
       className="flex items-center gap-3 rounded-lg bg-white/[0.04] px-3 py-2.5 transition hover:bg-white/10"
@@ -229,7 +238,7 @@ function ContactRow({
         <span className="text-[13px]">{icon}</span>
       </span>
       <span className="text-sm text-white/70">{children}</span>
-    </a>
+    </ContactLink>
   );
 }
 

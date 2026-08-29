@@ -25,6 +25,8 @@ import {
   FiTag,
   FiGlobe,
   FiShield,
+  FiCamera,
+  FiStar,
 } from "react-icons/fi";
 import { clsx } from "clsx";
 import { ToastProvider } from "./Toast";
@@ -83,6 +85,8 @@ export function AdminShell({
         { href: "/admin/services", label: "Services", icon: <FiLayers /> },
         { href: "/admin/industries", label: "Industries", icon: <FiGlobe /> },
         { href: "/admin/safety", label: "Safety", icon: <FiShield /> },
+        { href: "/admin/gallery", label: "Gallery", icon: <FiCamera /> },
+        { href: "/admin/awards", label: "Awards", icon: <FiStar /> },
         { href: "/admin/offices", label: "Offices", icon: <FiMapPin /> },
         { href: "/admin/media", label: "Media", icon: <FiImage /> },
       ],

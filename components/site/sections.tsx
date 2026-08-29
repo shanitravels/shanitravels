@@ -1,6 +1,6 @@
 import Link from "next/link";
 import Image from "next/image";
-import { FiArrowRight, FiBriefcase, FiCreditCard, FiShield } from "react-icons/fi";
+import { FiArrowRight, FiBriefcase, FiChevronRight, FiCreditCard, FiShield } from "react-icons/fi";
 import Counter from "@/components/ui/Counter";
 import Reveal from "@/components/ui/Reveal";
 import type {
@@ -13,6 +13,8 @@ import type {
   VehicleClass,
 } from "@/lib/types";
 import { isDiscountLive } from "@/lib/pricing";
+import { TbShieldCheck, TbMapPin, TbCar, TbHeadset } from "react-icons/tb";
+import type { IconType } from "react-icons";
 import { getI18n } from "@/lib/i18n/server";
 
 /** Section shell with an eyebrow + heading, reused across public pages. */
@@ -22,20 +24,27 @@ export function SectionHead({
   description,
   light = false,
   center = true,
+  rule = false,
 }: {
   eyebrow?: string;
   title: string;
   description?: string;
   light?: boolean;
   center?: boolean;
+  /** Short accent rule under the title. Opt-in — most headings do without it. */
+  rule?: boolean;
 }) {
   return (
     <div className={`max-w-2xl ${center ? "mx-auto text-center" : ""}`}>
       {eyebrow && (
         <span
-          className={`inline-flex items-center gap-2 text-xs font-semibold uppercase tracking-[0.18em] ${
+          // 14px bold rather than 12px semibold: at the smaller weight the
+          // eyebrow read as a caption under the title rather than a label above
+          // it. Tracking tightens slightly to stop the heavier letterforms
+          // sprawling across the measure.
+          className={`inline-flex items-center gap-2 text-sm font-bold uppercase tracking-[0.16em] ${
             center ? "justify-center" : ""
-          } ${light ? "text-white/70" : "text-accent"}`}
+          } ${light ? "text-white/80" : "text-accent"}`}
         >
           {eyebrow}
         </span>
@@ -47,6 +56,12 @@ export function SectionHead({
       >
         {title}
       </h2>
+      {rule && (
+        <span
+          aria-hidden
+          className={`mt-3 block h-0.5 w-12 rounded-full bg-accent ${center ? "mx-auto" : ""}`}
+        />
+      )}
       {description && (
         <p className={`mt-3 text-base leading-relaxed ${light ? "text-white/70" : "text-muted"}`}>
           {description}
@@ -56,28 +71,81 @@ export function SectionHead({
   );
 }
 
-/** Stats trust band, e.g. "Since 1997 · 8 cities · 120 vehicles". */
-export async function TrustBand({ settings }: { settings: SiteSettings }) {
+/**
+ * Written out in full rather than interpolated: Tailwind scans source text for
+ * complete class names, and `max-w-${width}` would never be generated.
+ */
+const TRUST_BAND_WIDTHS = {
+  "6xl": "max-w-6xl",
+  "7xl": "max-w-7xl",
+} as const;
+
+/**
+ * Stats trust band — a dark inset card, four figures with an icon each.
+ *
+ * The icon sits beside the number rather than above it: at four across, a
+ * stacked icon pushes the figures far enough apart that the row stops reading
+ * as one object. Tabler's line icons are used here rather than Feather's, which
+ * has no car.
+ *
+ * `width` matches the card to the page it sits on. The columns are evenly
+ * divided whatever it is, but the card is content rather than chrome, so its
+ * edges have to line up with the sections around it — at 7xl on a page whose
+ * sections are 6xl, the first stat visibly overhangs the heading below it.
+ */
+export async function TrustBand({
+  settings,
+  width = "7xl",
+}: {
+  settings: SiteSettings;
+  width?: keyof typeof TRUST_BAND_WIDTHS;
+}) {
   const { t } = await getI18n();
-  const items = [
-    { value: settings.stats.yearsOperating, suffix: "+", label: t.sections.statYears },
-    { value: settings.stats.cities, suffix: "", label: t.sections.statCities },
+  const items: { Icon: IconType; value: number; suffix: string; label: string }[] = [
+    {
+      Icon: TbShieldCheck,
+      value: settings.stats.yearsOperating,
+      suffix: "+",
+      label: t.sections.statYears,
+    },
+    { Icon: TbMapPin, value: settings.stats.cities, suffix: "", label: t.sections.statCities },
+    // Only when a fleet size is published — a "0+ vehicles" tile is worse than
+    // three tiles.
     ...(settings.stats.fleetSize
-      ? [{ value: settings.stats.fleetSize, suffix: "+", label: t.sections.statFleet }]
+      ? [
+          {
+            Icon: TbCar,
+            value: settings.stats.fleetSize,
+            suffix: "+",
+            label: t.sections.statFleet,
+          },
+        ]
       : []),
-    { value: 24, suffix: "/7", label: t.sections.statOps },
+    { Icon: TbHeadset, value: 24, suffix: "/7", label: t.sections.statOps },
   ];
+
+  // Padding is asymmetric: the card wants air above it, but whatever follows
+  // brings its own top padding, and stacking both left a dead band between the
+  // card and the next heading.
   return (
-    <section className="border-y border-line bg-white">
-      <div className="mx-auto grid max-w-7xl grid-cols-2 gap-6 px-4 py-10 sm:px-6 lg:grid-cols-4">
-        {items.map((item) => (
-          <div key={item.label} className="text-center">
-            <p className="font-heading text-3xl font-bold text-navy sm:text-4xl">
-              <Counter value={item.value} suffix={item.suffix} />
-            </p>
-            <p className="mt-1 text-sm text-muted">{item.label}</p>
-          </div>
-        ))}
+    <section className="pb-6 pt-10">
+      <div className={`mx-auto ${TRUST_BAND_WIDTHS[width]} px-4 sm:px-6`}>
+        <ul className="grid grid-cols-2 gap-6 rounded-3xl bg-navy-deep px-5 py-7 shadow-lift sm:gap-8 sm:px-8 lg:grid-cols-4 lg:divide-x lg:divide-white/10">
+          {items.map(({ Icon, value, suffix, label }, i) => (
+            <li
+              key={label}
+              className={`flex items-center gap-3.5 sm:gap-4 ${i > 0 ? "lg:pl-8" : ""}`}
+            >
+              <Icon className="h-8 w-8 shrink-0 text-accent sm:h-9 sm:w-9" aria-hidden />
+              <span className="min-w-0">
+                <span className="block font-heading text-2xl font-bold leading-tight text-white sm:text-3xl">
+                  <Counter value={value} suffix={suffix} />
+                </span>
+                <span className="block text-xs leading-snug text-white/55 sm:text-sm">{label}</span>
+              </span>
+            </li>
+          ))}
+        </ul>
       </div>
     </section>
   );
@@ -366,79 +434,117 @@ const ACCOUNT_BENEFITS = [
 ] as const;
 
 /**
- * Corporate-account band: one dark full-bleed frame carrying the headline, its
- * action, and the three benefits as panels over the same photograph.
+ * Corporate-account band: the pitch on the left, the benefits ranged beside it.
+ *
+ * Brand red rather than the navy-over-photograph it used to be. The photograph
+ * went with it: at this size the picture sat behind text on every breakpoint
+ * and had to be dimmed so far to keep the copy legible that it read as noise.
+ * A flat field lets the benefits carry the section instead.
+ *
+ * The column count follows ACCOUNT_BENEFITS rather than being fixed, so adding
+ * a fourth benefit needs no layout change here.
  */
-export async function CorporateAccountBand({ image }: { image?: MediaImage | null }) {
+export async function CorporateAccountBand() {
   const { t } = await getI18n();
 
   return (
-    <section className="relative isolate overflow-hidden bg-navy-deep">
-      {image && (
-        <Image
-          src={image.url}
-          alt={image.alt || ""}
-          fill
-          className="object-cover object-[70%_center]"
-          sizes="100vw"
-        />
-      )}
-      <div className="absolute inset-0 bg-gradient-to-r from-navy-deep via-navy-deep/90 to-navy-deep/60" />
-      <div className="absolute inset-0 bg-navy-deep/40" />
+    <section className="relative isolate overflow-hidden bg-[#75091a]">
+      {/* Two flat layers rather than one gradient: the diagonal darkens the
+          corners, the radial lifts the middle-left where the headline sits.
+          Deliberately well below `--color-accent` (#c8102e) — at full brand red
+          the white body copy sat at the edge of comfortable contrast and the
+          band shouted over the sections either side of it. */}
+      <div
+        aria-hidden
+        className="absolute inset-0 bg-gradient-to-br from-[#8a0c1f] via-[#75091a] to-[#4d0511]"
+      />
+      <div
+        aria-hidden
+        className="absolute inset-0 bg-[radial-gradient(60%_80%_at_20%_40%,rgba(255,255,255,0.07),transparent_70%)]"
+      />
 
-      <div className="relative z-10 mx-auto max-w-7xl px-4 py-16 sm:px-6 lg:py-20">
-        <div className="max-w-2xl">
-          <span className="flex items-center gap-3 text-[11px] font-semibold uppercase tracking-[0.24em] text-white/70">
-            <span className="h-px w-8 bg-accent" />
-            {t.sections.accountEyebrow}
-          </span>
-          <h2 className="mt-5 font-heading text-3xl font-extrabold uppercase leading-[1.06] text-white sm:text-4xl lg:text-[2.85rem]">
-            {t.sections.accountTitle}
-          </h2>
-          <p className="mt-4 max-w-xl text-base leading-relaxed text-white/70">
-            {t.sections.accountDesc}
-          </p>
-          <Link
-            href="/corporate"
-            className="mt-7 inline-flex items-center gap-2 rounded-lg bg-accent px-6 py-3 text-sm font-semibold text-white shadow-[0_14px_30px_-14px_rgba(200,16,46,0.9)] transition hover:bg-accent-light"
-          >
-            {t.sections.accountCta} <FiArrowRight className="h-4 w-4" />
-          </Link>
-        </div>
-
-        <div className="mt-12 grid gap-3 sm:grid-cols-2 lg:grid-cols-3">
-          {ACCOUNT_BENEFITS.map(({ icon: Icon, title, body }) => (
-            <div
-              key={title}
-              className="border-l-2 border-accent bg-white/[0.06] p-5 backdrop-blur-sm transition-colors hover:bg-white/[0.12]"
+      <div className="relative z-10 mx-auto max-w-7xl px-4 py-14 sm:px-6 lg:py-16">
+        <div className="grid gap-10 lg:grid-cols-[minmax(0,19rem)_minmax(0,1fr)] lg:gap-12">
+          {/* Pitch */}
+          <div className="lg:border-r lg:border-white/20 lg:pr-12">
+            <span className="flex items-center gap-3 text-[11px] font-semibold uppercase tracking-[0.24em] text-white/75">
+              <span className="h-px w-8 bg-white/60" />
+              {t.sections.accountEyebrow}
+            </span>
+            <h2 className="mt-4 font-heading text-2xl font-bold leading-tight text-white sm:text-3xl">
+              {t.sections.accountTitle}
+            </h2>
+            <p className="mt-4 text-sm leading-relaxed text-white/75">{t.sections.accountDesc}</p>
+            {/* Outlined, not the usual solid accent button — a red button on a
+                red field is invisible. */}
+            <Link
+              href="/corporate"
+              className="mt-7 inline-flex items-center gap-2 rounded-xl border border-white/60 px-5 py-3 text-sm font-semibold text-white transition hover:bg-white hover:text-accent"
             >
-              <span className="flex items-center gap-2.5 font-heading text-[13px] font-bold uppercase tracking-[0.12em] text-white">
-                <Icon className="h-4 w-4 text-accent-light" />
-                {t.sections[title]}
-              </span>
-              <p className="mt-2.5 text-[13px] leading-relaxed text-white/65">{t.sections[body]}</p>
-            </div>
-          ))}
+              {t.sections.accountCta} <FiArrowRight className="h-4 w-4" />
+            </Link>
+          </div>
+
+          {/* Benefits */}
+          <ul className="grid gap-8 sm:grid-cols-2 lg:grid-cols-3 lg:gap-0 lg:divide-x lg:divide-white/20">
+            {ACCOUNT_BENEFITS.map(({ icon: Icon, title, body }, i) => (
+              <li key={title} className={i > 0 ? "lg:pl-8" : "lg:pr-8"}>
+                <span className="flex h-11 w-11 items-center justify-center rounded-full bg-white/10 text-white ring-1 ring-inset ring-white/25">
+                  <Icon className="h-5 w-5" aria-hidden />
+                </span>
+                <h3 className="mt-4 font-heading text-base font-bold leading-snug text-white">
+                  {t.sections[title]}
+                </h3>
+                <p className="mt-2 text-sm leading-relaxed text-white/70">{t.sections[body]}</p>
+              </li>
+            ))}
+          </ul>
         </div>
       </div>
     </section>
   );
 }
 
-/** Final call-to-action band with dual paths. */
+/**
+ * Final call-to-action — a slim band: two-line headline left, both paths right.
+ *
+ * The photograph runs behind the middle and is masked to the band colour at
+ * both ends, so it reads as texture between the headline and the buttons
+ * rather than as a picture competing with either.
+ *
+ * A fixed asset rather than a CMS image: it is cut for this band's very wide
+ * crop, and a hero slide dropped in here would be cropped to an unrecognisable
+ * strip. Replace the file to change it.
+ */
+const CTA_IMAGE = "/HP-new.jpg";
+
 export async function CtaBand() {
   const { t } = await getI18n();
 
   return (
-    <section className="bg-navy">
-      <div className="mx-auto max-w-5xl px-4 py-14 text-center sm:px-6">
-        <h2 className="font-heading text-2xl font-bold text-white sm:text-3xl">
+    <section className="relative isolate overflow-hidden bg-navy-deep">
+      <Image
+        src={CTA_IMAGE}
+        alt=""
+        fill
+        // Local /public asset: the Cloudinary loader passes it through with no
+        // width to resolve. See lib/cloudinary-loader.ts.
+        unoptimized
+        className="object-cover object-center"
+        sizes="100vw"
+      />
+      <div
+        aria-hidden
+        className="absolute inset-0 bg-gradient-to-r from-navy-deep via-navy-deep/75 to-navy-deep"
+      />
+
+      <div className="relative z-10 mx-auto flex max-w-7xl flex-col gap-6 px-4 py-8 sm:px-6 lg:flex-row lg:items-center lg:justify-between lg:gap-10 lg:py-9">
+        <h2 className="font-heading text-xl font-bold leading-tight text-white sm:text-2xl">
           {t.sections.ctaTitle}
+          <span className="block text-accent-light">{t.sections.ctaTitleAccent}</span>
         </h2>
-        <p className="mx-auto mt-3 max-w-xl text-white/70">
-          {t.sections.ctaBody}
-        </p>
-        <div className="mt-7 flex flex-col justify-center gap-3 sm:flex-row">
+
+        <div className="flex flex-wrap gap-3">
           <Link
             href="/book"
             className="inline-flex items-center justify-center gap-2 rounded-lg bg-accent px-6 py-3 text-sm font-semibold text-white transition hover:bg-accent-light"
@@ -447,9 +553,9 @@ export async function CtaBand() {
           </Link>
           <Link
             href="/corporate"
-            className="inline-flex items-center justify-center gap-2 rounded-lg border border-white/30 px-6 py-3 text-sm font-semibold text-white transition hover:bg-white/10"
+            className="inline-flex items-center justify-center gap-2 rounded-lg border border-white/40 px-6 py-3 text-sm font-semibold text-white transition hover:bg-white hover:text-navy"
           >
-            {t.sections.ctaProposal}
+            {t.sections.ctaProposal} <FiChevronRight className="h-4 w-4" />
           </Link>
         </div>
       </div>

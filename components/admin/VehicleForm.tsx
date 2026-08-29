@@ -50,6 +50,7 @@ interface FormState {
   sdPerMonth: string;
   sdDeposit: string;
   featured: boolean;
+  recommended: boolean;
   active: boolean;
   order: string;
 }
@@ -82,6 +83,7 @@ function fromVehicle(v?: VehicleDoc): FormState {
     sdPerMonth: numToStr(v?.selfDrive?.perMonth),
     sdDeposit: numToStr(v?.selfDrive?.securityDeposit),
     featured: v?.featured ?? false,
+    recommended: v?.recommended ?? false,
     active: v?.active ?? true,
     order: v ? String(v.order) : "0",
   };
@@ -179,6 +181,7 @@ export function VehicleForm({ vehicle }: { vehicle?: VehicleDoc }) {
           }
         : null,
       featured: form.featured,
+      recommended: form.recommended,
       active: form.active,
       order: form.order,
     };
@@ -402,6 +405,11 @@ export function VehicleForm({ vehicle }: { vehicle?: VehicleDoc }) {
       <Section title="Flags & visibility">
         <div className="grid gap-3 sm:grid-cols-2">
           <FlagRow label="Featured on homepage" checked={form.featured} onChange={(v) => set("featured", v)} />
+          <FlagRow
+            label="Recommended in booking flow"
+            checked={form.recommended}
+            onChange={(v) => set("recommended", v)}
+          />
           <FlagRow label="Active (visible on site)" checked={form.active} onChange={(v) => set("active", v)} />
           <Field label="Armor level" hint="B-6 is the fleet standard for protected movement">
             <Select value={form.armorLevel} onChange={(e) => set("armorLevel", e.target.value)}>

@@ -48,7 +48,7 @@ export async function updateVehicle(id: string, input: unknown): Promise<ActionR
 
 export async function toggleVehicleFlag(
   id: string,
-  flag: "active" | "featured",
+  flag: "active" | "featured" | "recommended",
   value: boolean
 ): Promise<ActionResult> {
   try {

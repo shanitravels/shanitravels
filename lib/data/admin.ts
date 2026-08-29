@@ -5,6 +5,8 @@ import {
   OfficeModel,
   ClientModel,
   TestimonialModel,
+  GalleryImageModel,
+  AwardModel,
   ServiceModel,
   IndustryModel,
   SafetySectionModel,
@@ -24,6 +26,8 @@ import type {
   OfficeDoc,
   Client,
   TestimonialDoc,
+  GalleryImageDoc,
+  AwardDoc,
   Service,
   ServiceDoc,
   IndustryDoc,
@@ -162,6 +166,28 @@ export async function allTestimonials(): Promise<TestimonialDoc[]> {
     await connectDB();
     const docs = await TestimonialModel.find().sort({ order: 1 }).lean();
     return serialize<TestimonialDoc[]>(docs);
+  } catch {
+    return [];
+  }
+}
+
+/** Uncollapsed: the gallery editor has Urdu inputs. See allServicesBilingual. */
+export async function allGalleryImages(): Promise<GalleryImageDoc[]> {
+  try {
+    await connectDB();
+    const docs = await GalleryImageModel.find().sort({ order: 1, createdAt: -1 }).lean();
+    return serialize<GalleryImageDoc[]>(docs);
+  } catch {
+    return [];
+  }
+}
+
+/** Uncollapsed: the awards editor has Urdu inputs. See allServicesBilingual. */
+export async function allAwards(): Promise<AwardDoc[]> {
+  try {
+    await connectDB();
+    const docs = await AwardModel.find().sort({ order: 1, awardedOn: -1 }).lean();
+    return serialize<AwardDoc[]>(docs);
   } catch {
     return [];
   }

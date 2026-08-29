@@ -19,6 +19,7 @@ import { PageIntro } from "@/components/site/PageIntro";
 import { VehicleCard } from "@/components/site/VehicleCard";
 import { getActiveDiscounts } from "@/lib/data/discounts";
 import { bestDiscountFor } from "@/lib/pricing";
+import { ContactLink } from "@/components/site/ContactLink";
 import { telHref } from "@/lib/format";
 import { isSelfDriveEligible } from "@/lib/types";
 import { getI18n } from "@/lib/i18n/server";
@@ -179,12 +180,13 @@ export default async function SelfDrivePage() {
             >
               {t.selfDrive.ctaBook} <FiArrowRight className="h-4 w-4" />
             </Link>
-            <a
+            <ContactLink
+              kind="call"
               href={telHref(settings.helplineNumbers[0] ?? "")}
               className="inline-flex items-center justify-center gap-2 rounded-lg border border-white/30 px-6 py-3 text-sm font-semibold text-white transition hover:bg-white/10"
             >
               <FiPhone className="h-4 w-4" /> {t.selfDrive.ctaTalk}
-            </a>
+            </ContactLink>
           </div>
         </div>
       </section>

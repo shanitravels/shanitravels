@@ -14,16 +14,19 @@ import {
   FiAlertCircle,
   FiUser,
   FiKey,
+  FiStar,
 } from "react-icons/fi";
 import { FaWhatsapp } from "react-icons/fa";
 import { clsx } from "clsx";
 import { submitBooking } from "@/lib/actions/public";
 import { EMPTY_FORM_STATE } from "@/lib/form-state";
 import { estimateFare, formatPKR, telHref, whatsappHref, rateForType } from "@/lib/format";
+import { ContactLink } from "./ContactLink";
 import { useI18n } from "./LocaleProvider";
 import { fmt } from "@/lib/i18n/format";
 import {
   RATE_TYPES,
+  VEHICLE_CLASSES,
   type RateType,
   type ServiceMode,
   type Vehicle,
@@ -127,10 +130,44 @@ export function BookingWizard({
   }, [vehicle, isSelfDrive]);
   const effectiveType = availableTypes.includes(rateType) ? rateType : availableTypes[0];
 
-  const filteredVehicles = useMemo(
-    () => pickableVehicles.filter((v) => v.name.toLowerCase().includes(query.toLowerCase())),
-    [pickableVehicles, query]
-  );
+  const filteredVehicles = useMemo(() => {
+    const q = query.trim().toLowerCase();
+    if (!q) return pickableVehicles;
+    // The class name is searchable too now that the picker is grouped by it —
+    // typing "sedan" should narrow to the section the visitor can see.
+    return pickableVehicles.filter((v) =>
+      `${v.name} ${t.vehicleClass[v.class]}`.toLowerCase().includes(q)
+    );
+  }, [pickableVehicles, query, t]);
+
+  /**
+   * The picker's sections: a "Recommended" shelf the admin curates (the
+   * `recommended` flag on a vehicle, separate from the homepage `featured`
+   * one), then the remaining vehicles by class in VEHICLE_CLASSES order.
+   *
+   * A recommended vehicle is deliberately listed only once — under
+   * Recommended, not again in its class — so a selected card is never drawn
+   * twice with two ticks.
+   */
+  const vehicleGroups = useMemo(() => {
+    const groups: { key: string; label: string; pinned: boolean; vehicles: Vehicle[] }[] = [];
+    const recommended = filteredVehicles.filter((v) => v.recommended);
+    if (recommended.length > 0) {
+      groups.push({
+        key: "recommended",
+        label: t.wizard.recommendedGroup,
+        pinned: true,
+        vehicles: recommended,
+      });
+    }
+    for (const c of VEHICLE_CLASSES) {
+      const inClass = filteredVehicles.filter((v) => !v.recommended && v.class === c);
+      if (inClass.length > 0) {
+        groups.push({ key: c, label: t.vehicleClass[c], pinned: false, vehicles: inClass });
+      }
+    }
+    return groups;
+  }, [filteredVehicles, t]);
 
   const fare = vehicle ? estimateFare(ratesFor(vehicle), effectiveType, { units: 1 }) : null;
 
@@ -158,17 +195,18 @@ export function BookingWizard({
       {/* Contact alternatives — visible on every step */}
       <div className="mb-6 flex flex-wrap items-center justify-center gap-3 rounded-xl border border-line bg-band px-4 py-3 text-sm">
         <span className="text-muted">{t.wizard.preferToTalk}</span>
-        <a href={telHref(helpline)} className="inline-flex items-center gap-1.5 font-semibold text-navy hover:text-accent">
+        <ContactLink kind="call" href={telHref(helpline)} className="inline-flex items-center gap-1.5 font-semibold text-navy hover:text-accent">
           <FiPhone className="h-4 w-4" /> {t.wizard.callUs}
-        </a>
-        <a
+        </ContactLink>
+        <ContactLink
+          kind="whatsapp"
           href={whatsappHref(whatsapp, t.wizard.whatsappMessage)}
           target="_blank"
           rel="noopener noreferrer"
           className="inline-flex items-center gap-1.5 font-semibold text-[#25D366]"
         >
           <FaWhatsapp className="h-4 w-4" /> {t.nav.whatsapp}
-        </a>
+        </ContactLink>
       </div>
 
       {/* Stepper */}
@@ -260,39 +298,55 @@ export function BookingWizard({
             />
           </div>
           {err("vehicleId") && <p className="mt-1 text-xs text-red-600">{err("vehicleId")}</p>}
-          <div className="mt-3 grid max-h-[420px] gap-2 overflow-y-auto pr-1 sm:grid-cols-2">
-            {filteredVehicles.map((v) => {
-              const day = ratesFor(v).perDay;
-              return (
-                <button
-                  type="button"
-                  key={v.id}
-                  onClick={() => setVehicleId(v.id)}
+          <div className="mt-3 max-h-[420px] space-y-5 overflow-y-auto pr-1">
+            {vehicleGroups.map((group) => (
+              <section key={group.key}>
+                <h3
                   className={clsx(
-                    "flex items-center gap-3 rounded-xl border p-2.5 text-left transition",
-                    vehicleId === v.id ? "border-navy bg-navy/5 ring-1 ring-navy" : "border-line bg-white hover:border-navy/40"
+                    "sticky top-0 z-10 -mx-1 flex items-center gap-1.5 bg-white/95 px-1 pb-1.5 text-[11px] font-semibold uppercase tracking-wide backdrop-blur",
+                    group.pinned ? "text-accent" : "text-muted"
                   )}
                 >
-                  <div className="relative h-12 w-16 shrink-0 overflow-hidden rounded-md bg-band">
-                    {v.images[0] && (
-                      <Image src={v.images[0].url} alt={v.images[0].alt || v.name} fill className="object-cover" sizes="64px" />
-                    )}
-                  </div>
-                  <div className="min-w-0 flex-1">
-                    <p className="truncate text-sm font-medium text-navy">{v.name}</p>
-                    <p className="text-xs text-muted">
-                      {day != null
-                        ? `${formatPKR(day)}${t.common.perDay}`
-                        : t.wizard.ratesOnRequest}
-                      {isSelfDrive ? " · self-drive" : ""}
-                    </p>
-                  </div>
-                  {vehicleId === v.id && <FiCheck className="h-4 w-4 shrink-0 text-navy" />}
-                </button>
-              );
-            })}
-            {filteredVehicles.length === 0 && (
-              <p className="py-8 text-center text-sm text-muted sm:col-span-2">
+                  {group.pinned && <FiStar className="h-3.5 w-3.5 shrink-0" aria-hidden />}
+                  {group.label}
+                  <span className="font-normal text-muted/70">({group.vehicles.length})</span>
+                </h3>
+                <div className="grid gap-2 sm:grid-cols-2">
+                  {group.vehicles.map((v) => {
+                    const day = ratesFor(v).perDay;
+                    return (
+                      <button
+                        type="button"
+                        key={v.id}
+                        onClick={() => setVehicleId(v.id)}
+                        className={clsx(
+                          "flex items-center gap-3 rounded-xl border p-2.5 text-left transition",
+                          vehicleId === v.id ? "border-navy bg-navy/5 ring-1 ring-navy" : "border-line bg-white hover:border-navy/40"
+                        )}
+                      >
+                        <div className="relative h-12 w-16 shrink-0 overflow-hidden rounded-md bg-band">
+                          {v.images[0] && (
+                            <Image src={v.images[0].url} alt={v.images[0].alt || v.name} fill className="object-cover" sizes="64px" />
+                          )}
+                        </div>
+                        <div className="min-w-0 flex-1">
+                          <p className="truncate text-sm font-medium text-navy">{v.name}</p>
+                          <p className="text-xs text-muted">
+                            {day != null
+                              ? `${formatPKR(day)}${t.common.perDay}`
+                              : t.wizard.ratesOnRequest}
+                            {isSelfDrive ? " · self-drive" : ""}
+                          </p>
+                        </div>
+                        {vehicleId === v.id && <FiCheck className="h-4 w-4 shrink-0 text-navy" />}
+                      </button>
+                    );
+                  })}
+                </div>
+              </section>
+            ))}
+            {vehicleGroups.length === 0 && (
+              <p className="py-8 text-center text-sm text-muted">
                 {fmt(t.wizard.noVehiclesMatch, {
                   mode: isSelfDrive ? t.wizard.selfDrivePrefix : "",
                 })}

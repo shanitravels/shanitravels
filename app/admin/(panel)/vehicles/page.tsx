@@ -13,7 +13,7 @@ export default async function VehiclesPage() {
     <div>
       <PageHeader
         title="Vehicles"
-        description="Manage the fleet catalog. Toggle featured/active inline; edit for full details."
+        description="Manage the fleet catalog. Featured shows on the homepage, Recommended pins to the top of the booking picker — toggle either inline; edit for full details."
         action={
           <Link
             href="/admin/vehicles/new"

@@ -665,3 +665,63 @@ h1, h2, h3, h4, h5, h6 {
 .md-content a:hover {
   color: var(--color-accent-light);
 }
+
+/**
+ * Justified body copy, opt-in per block.
+ *
+ * The child combinator is the point: it reaches the prose paragraphs of a
+ * markdown body and stops there. A descendant selector would also justify the
+ * text inside list cards, where lines run a few words long and justification
+ * only stretches them into gaps.
+ *
+ * Hyphenation is not optional here. Justifying without it is what opens the
+ * rivers of white space that make justified web text look broken; the browser
+ * takes the language from the root <html lang>.
+ */
+.md-justify > p {
+  text-align: justify;
+  hyphens: auto;
+}
+
+/**
+ * Opt-in variant for markdown bodies whose bullet list is really a set of
+ * commitments rather than prose asides — currently About -> Our mission.
+ *
+ * Applied alongside .md-content on the wrapper, so the surrounding paragraphs
+ * and headings keep their normal treatment and only the list changes shape.
+ * Every other markdown body (service copy, commercial terms) is untouched.
+ */
+.md-grid-list ul {
+  list-style: none;
+  padding-left: 0;
+  display: grid;
+  gap: 0.6rem;
+  margin-top: 1.1em;
+}
+@media (min-width: 640px) {
+  .md-grid-list ul {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+}
+.md-grid-list ul > li {
+  position: relative;
+  padding: 0.8rem 0.9rem 0.8rem 2.35rem;
+  border: 1px solid var(--color-line);
+  border-radius: 0.75rem;
+  background: #fff;
+  font-size: 0.875rem;
+  line-height: 1.55;
+}
+/* Tick drawn in CSS rather than an <svg> per item: the list comes from
+   markdown, so there is no per-item JSX to hang an icon component on. */
+.md-grid-list ul > li::before {
+  content: "";
+  position: absolute;
+  left: 0.85rem;
+  top: 1.05rem;
+  width: 0.7rem;
+  height: 0.4rem;
+  border-left: 2px solid var(--color-accent);
+  border-bottom: 2px solid var(--color-accent);
+  transform: rotate(-45deg);
+}

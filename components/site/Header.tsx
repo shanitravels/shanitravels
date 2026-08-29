@@ -1,20 +1,28 @@
 "use client";
 
-import { useEffect, useRef, useState } from "react";
+import { useCallback, useEffect, useRef, useState } from "react";
 import Image from "next/image";
 import Link from "next/link";
 import { usePathname } from "next/navigation";
 import { HiMenu, HiX } from "react-icons/hi";
 import { FaPhoneAlt, FaWhatsapp } from "react-icons/fa";
-import { FiArrowRight } from "react-icons/fi";
+import { FiArrowRight, FiChevronDown } from "react-icons/fi";
 import { cn } from "@/lib/utils";
 import Button from "@/components/ui/Button";
 import { telHref, whatsappHref } from "@/lib/format";
+import { ContactLink } from "./ContactLink";
 import { useI18n } from "./LocaleProvider";
 import { LanguageSwitcher } from "./LanguageSwitcher";
 
-/** Labels are resolved per-render from the dictionary, so the nav re-labels
- *  itself on a language switch without the route map changing. */
+/**
+ * Labels are resolved per-render from the dictionary, so the nav re-labels
+ * itself on a language switch without the route map changing.
+ *
+ * An item with `children` renders as a dropdown on desktop and as an indented
+ * group in the mobile drawer. The parent stays a real link — About is a page in
+ * its own right, not just a heading — so the group works even before the panel
+ * is opened, and on touch where there is no hover at all.
+ */
 const LINKS = [
   { href: "/", key: "home" },
   { href: "/fleet", key: "fleet" },
@@ -22,22 +30,40 @@ const LINKS = [
   { href: "/corporate", key: "corporate" },
   { href: "/industries", key: "industries" },
   { href: "/services", key: "services" },
-  { href: "/about", key: "about" },
+  {
+    href: "/about",
+    key: "about",
+    children: [
+      { href: "/about", key: "aboutOverview" },
+      { href: "/gallery", key: "gallery" },
+      { href: "/awards", key: "awards" },
+    ],
+  },
   { href: "/contact", key: "contact" },
 ] as const;
+
+/** Leaving the trigger should not snatch the panel away mid-reach: the pointer
+ *  has to cross a few pixels of gap to get there. */
+const CLOSE_DELAY_MS = 120;
 
 export function Header({ helpline, whatsapp }: { helpline: string; whatsapp: string }) {
   const { t } = useI18n();
   const [scrolled, setScrolled] = useState(false);
   const [open, setOpen] = useState(false);
+  // Which dropdown is open, by parent href. One at a time — opening a second
+  // group closes the first, which is what a menu bar is expected to do.
+  const [openGroup, setOpenGroup] = useState<string | null>(null);
   const pathname = usePathname();
   const [prevPathname, setPrevPathname] = useState(pathname);
   const panelRef = useRef<HTMLDivElement>(null);
 
-  // Close the drawer on navigation (adjust-state-during-render pattern).
+  // Close the drawer and any open dropdown on navigation (adjust-state-during-
+  // render pattern). Without the dropdown half, the panel hangs over the new
+  // page until the pointer happens to move off it.
   if (pathname !== prevPathname) {
     setPrevPathname(pathname);
     setOpen(false);
+    setOpenGroup(null);
   }
 
   useEffect(() => {
@@ -65,6 +91,35 @@ export function Header({ helpline, whatsapp }: { helpline: string; whatsapp: str
 
   const isActive = (href: string) =>
     href === "/" ? pathname === "/" : pathname === href || pathname.startsWith(href + "/");
+
+  /** A group is lit while the visitor is on the parent page or any child. */
+  const isGroupActive = (link: (typeof LINKS)[number]) =>
+    isActive(link.href) || ("children" in link && link.children.some((c) => isActive(c.href)));
+
+  const closeTimer = useRef<ReturnType<typeof setTimeout> | null>(null);
+
+  const cancelClose = useCallback(() => {
+    if (closeTimer.current) {
+      clearTimeout(closeTimer.current);
+      closeTimer.current = null;
+    }
+  }, []);
+
+  const openMenu = useCallback(
+    (href: string) => {
+      cancelClose();
+      setOpenGroup(href);
+    },
+    [cancelClose]
+  );
+
+  const scheduleClose = useCallback(() => {
+    cancelClose();
+    closeTimer.current = setTimeout(() => setOpenGroup(null), CLOSE_DELAY_MS);
+  }, [cancelClose]);
+
+  // A pending close must not fire into an unmounted component.
+  useEffect(() => cancelClose, [cancelClose]);
 
   return (
     <>
@@ -104,17 +159,30 @@ export function Header({ helpline, whatsapp }: { helpline: string; whatsapp: str
               roomier spacing returns at xl. */}
           <div className="hidden items-center gap-5 lg:flex xl:gap-8">
             {LINKS.map((link) => {
-              const active = isActive(link.href);
-              return (
+              const active = isGroupActive(link);
+              const children = "children" in link ? link.children : null;
+              const expanded = openGroup === link.href;
+
+              const trigger = (
                 <Link
-                  key={link.href}
                   href={link.href}
+                  aria-haspopup={children ? "true" : undefined}
+                  aria-expanded={children ? expanded : undefined}
                   className={cn(
-                    "relative py-1 text-sm font-medium transition-colors",
+                    "relative flex items-center gap-1 py-1 text-sm font-medium transition-colors",
                     active ? "text-navy" : "text-navy/60 hover:text-navy"
                   )}
                 >
                   {t.nav[link.key]}
+                  {children && (
+                    <FiChevronDown
+                      aria-hidden
+                      className={cn(
+                        "h-3.5 w-3.5 transition-transform duration-200",
+                        expanded && "rotate-180"
+                      )}
+                    />
+                  )}
                   <span
                     className={cn(
                       "absolute -bottom-1 left-0 right-0 h-0.5 rounded-full bg-accent transition-transform duration-300 ease-out",
@@ -122,6 +190,59 @@ export function Header({ helpline, whatsapp }: { helpline: string; whatsapp: str
                     )}
                   />
                 </Link>
+              );
+
+              if (!children) return <div key={link.href}>{trigger}</div>;
+
+              return (
+                <div
+                  key={link.href}
+                  className="relative"
+                  onMouseEnter={() => openMenu(link.href)}
+                  onMouseLeave={scheduleClose}
+                  // Opens for keyboard users too: tabbing onto the parent
+                  // reveals the panel so the children are reachable by Tab.
+                  onFocus={() => openMenu(link.href)}
+                  onBlur={(e) => {
+                    if (!e.currentTarget.contains(e.relatedTarget as Node | null)) {
+                      setOpenGroup(null);
+                    }
+                  }}
+                  onKeyDown={(e) => {
+                    if (e.key === "Escape") setOpenGroup(null);
+                  }}
+                >
+                  {trigger}
+                  {expanded && (
+                    /* pt-3 is a deliberate bridge: without it the pointer
+                       crosses a dead gap between trigger and panel. */
+                    <div className="absolute left-1/2 top-full z-50 -translate-x-1/2 pt-3">
+                      <ul className="min-w-[190px] rounded-xl border border-line bg-white p-1.5 shadow-xl shadow-navy/10">
+                        {children.map((child) => (
+                          <li key={child.href}>
+                            <Link
+                              href={child.href}
+                              className={cn(
+                                "flex items-center justify-between gap-3 rounded-lg px-3 py-2 text-sm font-medium transition",
+                                isActive(child.href)
+                                  ? "bg-accent/10 text-navy"
+                                  : "text-navy/70 hover:bg-band hover:text-navy"
+                              )}
+                            >
+                              {t.nav[child.key]}
+                              <FiArrowRight
+                                className={cn(
+                                  "h-3.5 w-3.5",
+                                  isActive(child.href) ? "text-accent" : "text-navy/20"
+                                )}
+                              />
+                            </Link>
+                          </li>
+                        ))}
+                      </ul>
+                    </div>
+                  )}
+                </div>
               );
             })}
           </div>
@@ -188,24 +309,61 @@ export function Header({ helpline, whatsapp }: { helpline: string; whatsapp: str
         </div>
 
         <nav className="flex-1 overflow-y-auto px-3 py-3" aria-label={t.nav.mobile}>
-          {LINKS.map((link) => (
-            <Link
-              key={link.href}
-              href={link.href}
-              onClick={() => setOpen(false)}
-              className={cn(
-                "flex min-h-[48px] items-center justify-between rounded-lg px-4 text-[15px] font-medium transition",
-                isActive(link.href)
-                  ? "bg-accent/10 text-navy"
-                  : "text-navy/70 hover:bg-navy/5 hover:text-navy"
-              )}
-            >
-              {t.nav[link.key]}
-              <FiArrowRight
-                className={cn("h-4 w-4", isActive(link.href) ? "text-accent" : "text-navy/25")}
-              />
-            </Link>
-          ))}
+          {LINKS.map((link) => {
+            const children = "children" in link ? link.children : null;
+            const row = (
+              <Link
+                href={link.href}
+                onClick={() => setOpen(false)}
+                className={cn(
+                  "flex min-h-[48px] items-center justify-between rounded-lg px-4 text-[15px] font-medium transition",
+                  isActive(link.href)
+                    ? "bg-accent/10 text-navy"
+                    : "text-navy/70 hover:bg-navy/5 hover:text-navy"
+                )}
+              >
+                {t.nav[link.key]}
+                <FiArrowRight
+                  className={cn("h-4 w-4", isActive(link.href) ? "text-accent" : "text-navy/25")}
+                />
+              </Link>
+            );
+
+            if (!children) return <div key={link.href}>{row}</div>;
+
+            // Listed flat rather than behind an accordion: there is no hover on
+            // touch, and three extra rows cost less than a control to open them.
+            return (
+              <div key={link.href}>
+                {row}
+                <div className="mb-1 ml-4 border-l border-line pl-2">
+                  {children
+                    .filter((child) => child.href !== link.href)
+                    .map((child) => (
+                      <Link
+                        key={child.href}
+                        href={child.href}
+                        onClick={() => setOpen(false)}
+                        className={cn(
+                          "flex min-h-[44px] items-center justify-between rounded-lg px-4 text-sm font-medium transition",
+                          isActive(child.href)
+                            ? "bg-accent/10 text-navy"
+                            : "text-navy/60 hover:bg-navy/5 hover:text-navy"
+                        )}
+                      >
+                        {t.nav[child.key]}
+                        <FiArrowRight
+                          className={cn(
+                            "h-3.5 w-3.5",
+                            isActive(child.href) ? "text-accent" : "text-navy/20"
+                          )}
+                        />
+                      </Link>
+                    ))}
+                </div>
+              </div>
+            );
+          })}
         </nav>
 
         <div className="space-y-2 border-t border-line px-4 py-4">
@@ -214,20 +372,22 @@ export function Header({ helpline, whatsapp }: { helpline: string; whatsapp: str
           </Button>
           <LanguageSwitcher className="w-full justify-center py-2.5" />
           <div className="grid grid-cols-2 gap-2">
-            <a
+            <ContactLink
+              kind="call"
               href={telHref(helpline)}
               className="flex min-h-[46px] items-center justify-center gap-2 rounded-lg border border-line text-sm font-semibold text-navy transition hover:bg-band"
             >
               <FaPhoneAlt className="text-xs text-accent" /> {t.nav.call}
-            </a>
-            <a
+            </ContactLink>
+            <ContactLink
+              kind="whatsapp"
               href={whatsappHref(whatsapp)}
               target="_blank"
               rel="noopener noreferrer"
               className="flex min-h-[46px] items-center justify-center gap-2 rounded-lg border border-line text-sm font-semibold text-[#25D366] transition hover:bg-band"
             >
               <FaWhatsapp /> {t.nav.whatsapp}
-            </a>
+            </ContactLink>
           </div>
           <p className="tabular pt-1 text-center text-xs text-muted">{helpline}</p>
         </div>

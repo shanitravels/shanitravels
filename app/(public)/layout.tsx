@@ -3,6 +3,7 @@ import { getActiveOffices } from "@/lib/data/content";
 import { getLocaleState, getDictionary } from "@/lib/i18n/server";
 import { localize } from "@/lib/i18n/localize";
 import { LocaleProvider } from "@/components/site/LocaleProvider";
+import { Analytics } from "@/components/site/Analytics";
 import { LanguageGate } from "@/components/site/LanguageGate";
 import { Header } from "@/components/site/Header";
 import { Footer } from "@/components/site/Footer";
@@ -61,6 +62,10 @@ export default async function PublicLayout({ children }: { children: React.React
       </div>
       {/* No cookie means the visitor has never chosen — ask once. */}
       {!chosen && <LanguageGate />}
+      {/* Renders nothing unless PLAUSIBLE_DOMAIN or GA_MEASUREMENT_ID is set.
+          Conversion counts in the admin panel are first-party and do not
+          depend on this. */}
+      <Analytics />
     </LocaleProvider>
   );
 }

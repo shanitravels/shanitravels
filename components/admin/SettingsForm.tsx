@@ -547,6 +547,14 @@ export function SettingsForm({ settings }: { settings: SiteSettingsDoc }) {
             <Field label="CEO name">
               <TextInput value={about.ceoName} onChange={(e) => { setAbout({ ...about, ceoName: e.target.value }); touch(); }} />
             </Field>
+            <Field label="CEO photograph">
+              <SingleImageField
+                value={about.ceoImage ?? null}
+                onChange={(ceoImage) => { setAbout({ ...about, ceoImage }); touch(); }}
+                subfolder="about"
+                hint="Floated to the right of the message on the About page, with the text wrapping around it. A square crop works best. Leave empty and the letter runs full width."
+              />
+            </Field>
           </div>
           <Field label="CEO message">
             <TextArea value={about.ceoMessage.en} onChange={(e) => { setAbout({ ...about, ceoMessage: { ...about.ceoMessage, en: e.target.value } }); touch(); }} />

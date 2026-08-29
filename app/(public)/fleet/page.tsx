@@ -90,10 +90,15 @@ export default async function FleetPage({
   const initial: FleetFilters = {
     cls: cls ?? "all",
     seats: ["4", "7", "12", "22"].includes(params.seats ?? "") ? params.seats! : "any",
+    // Default "category": grouped by class, ascending engine size within each.
     sort:
-      params.sort === "price-asc" || params.sort === "price-desc" || params.sort === "seats-desc"
+      params.sort === "engine-asc" ||
+      params.sort === "featured" ||
+      params.sort === "price-asc" ||
+      params.sort === "price-desc" ||
+      params.sort === "seats-desc"
         ? params.sort
-        : "featured",
+        : "category",
     selfDriveOnly: settings.selfDriveEnabled && params.selfdrive === "1",
     // Capped so a hand-edited URL cannot hand the client an unbounded string to
     // match every vehicle name against on each keystroke.

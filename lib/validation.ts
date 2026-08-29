@@ -12,6 +12,8 @@ import {
   SAFETY_CATEGORIES,
   DISCOUNT_TYPES,
   DISCOUNT_SCOPES,
+  GALLERY_CATEGORIES,
+  AWARD_CATEGORIES,
 } from "@/lib/types";
 
 /**
@@ -103,12 +105,61 @@ const localizedOptional = (max: number) =>
     )
     .pipe(z.object({ en: z.string().max(max), ur: z.string().max(max * 2) }));
 
+/**
+ * Both sides required.
+ *
+ * `localizedText` lets Urdu be blank on purpose — most collections let an admin
+ * publish English now and translate later. Where a collection is meant to ship
+ * bilingual or not at all, this is the stricter version.
+ *
+ * The check hangs off the whole pair rather than the `ur` key so the issue path
+ * stays `title` instead of `title.ur`, which is the key the admin form binds to.
+ */
+const localizedRequired = (max: number, label: string) =>
+  localizedText(max, label).refine((v) => v.ur.length > 0, {
+    message: `${label} (Urdu) is required`,
+  });
+
+/**
+ * Optional, but not half-translated: fill both sides or leave both empty.
+ *
+ * For copy that may legitimately be omitted. What it rules out is the state
+ * that actually hurts — English present, Urdu missing — where an Urdu visitor
+ * silently falls back to English mid-page.
+ */
+const localizedPaired = (max: number, label: string) =>
+  localizedOptional(max).refine((v) => (v.en.length > 0) === (v.ur.length > 0), {
+    message: `${label}: fill in both English and Urdu, or leave both empty`,
+  });
+
 const slugField = z
   .string()
   .trim()
   .min(1, "Slug is required")
   .max(80)
   .regex(/^[a-z0-9]+(?:-[a-z0-9]+)*$/, "Slug: lowercase letters, numbers and hyphens only");
+
+/**
+ * True for the URLs Google's own "Share → Embed a map" dialog produces, and
+ * for the older `maps.google.com/...&output=embed` form.
+ *
+ * Parsed rather than prefix-matched: `https://www.google.com.evil.test/maps`
+ * passes a `startsWith` check on the string but fails on the parsed host.
+ */
+function isGoogleMapsUrl(value: string): boolean {
+  try {
+    const url = new URL(value);
+    return (
+      url.protocol === "https:" &&
+      (url.hostname === "www.google.com" ||
+        url.hostname === "maps.google.com" ||
+        url.hostname === "google.com") &&
+      url.pathname.startsWith("/maps")
+    );
+  } catch {
+    return false;
+  }
+}
 
 // --- vehicle --------------------------------------------------------------
 
@@ -147,6 +198,7 @@ export const vehicleSchema = z.object({
     .nullable()
     .default(null),
   featured: z.boolean().default(false),
+  recommended: z.boolean().default(false),
   active: z.boolean().default(true),
   order: z.coerce.number().int().default(0),
 });
@@ -166,6 +218,18 @@ export const officeSchema = z.object({
   phones: z.array(z.string().trim().min(5).max(30)).min(1, "At least one phone").max(6),
   email: z.string().trim().email().max(120).or(z.literal("")).default(""),
   mapUrl: z.string().trim().url().max(500).or(z.literal("")).default(""),
+  // Framed on the contact page, so this one is held to Google Maps only —
+  // a pasted URL becomes an iframe src, and an admin should not be able to
+  // turn that panel into arbitrary third-party content by mistake. The cap is
+  // generous because an embed URL carries a long `pb=` parameter.
+  mapEmbedUrl: z
+    .string()
+    .trim()
+    .url()
+    .max(1200)
+    .refine(isGoogleMapsUrl, "Must be a Google Maps embed URL (Share → Embed a map)")
+    .or(z.literal(""))
+    .default(""),
   isHeadOffice: z.boolean().default(false),
   order: z.coerce.number().int().default(0),
   active: z.boolean().default(true),
@@ -196,6 +260,43 @@ export const testimonialSchema = z.object({
   active: z.boolean().default(true),
 });
 export type TestimonialInput = z.infer<typeof testimonialSchema>;
+
+// --- gallery --------------------------------------------------------------
+
+export const galleryImageSchema = z.object({
+  // Not nullable: the photograph is the record. Zod reports "Required" against
+  // the `image` key, which the manager surfaces on the upload field.
+  image: flatImage,
+  caption: localizedOptional(200),
+  category: z.enum(GALLERY_CATEGORIES),
+  featured: z.boolean().default(false),
+  order: z.coerce.number().int().default(0),
+  active: z.boolean().default(true),
+});
+export type GalleryImageInput = z.infer<typeof galleryImageSchema>;
+
+// --- award ----------------------------------------------------------------
+
+export const awardSchema = z.object({
+  // Bilingual is not optional here: the awards wall is a credibility page, and
+  // an English-only entry sitting among translated ones reads as unfinished.
+  title: localizedRequired(160, "Title"),
+  issuer: localizedRequired(160, "Issuer"),
+  // Optional copy, but both-or-neither — see localizedPaired.
+  description: localizedPaired(1200, "Description"),
+  image: flatImage.nullable().default(null),
+  // A plain date input posts "" when cleared and "YYYY-MM-DD" otherwise.
+  awardedOn: z
+    .string()
+    .trim()
+    .regex(/^\d{4}-\d{2}-\d{2}$/, "Use a valid date")
+    .or(z.literal(""))
+    .default(""),
+  category: z.enum(AWARD_CATEGORIES),
+  order: z.coerce.number().int().default(0),
+  active: z.boolean().default(true),
+});
+export type AwardInput = z.infer<typeof awardSchema>;
 
 // --- service --------------------------------------------------------------
 
@@ -374,6 +475,7 @@ export const settingsSchema = z.object({
     story: localizedOptional(20000),
     ceoMessage: localizedOptional(20000),
     ceoName: z.string().trim().max(120).default(""),
+    ceoImage: flatImage.nullable().default(null),
     hseSummary: localizedOptional(20000),
   }),
   selfDriveEnabled: z.boolean().default(false),
@@ -494,6 +596,12 @@ export function fieldErrorsOf(error: z.ZodError): Record<string, string[]> {
   for (const issue of error.issues) {
     const key = issue.path.join(".") || "_";
     (out[key] ??= []).push(issue.message);
+    // Also file it under the top-level field. A bilingual field raises its
+    // issue at `title.en` / `title.ur`, but the admin forms bind to `title` —
+    // without this the input never turns red and the admin sees only the
+    // generic "Please fix the highlighted fields" with nothing highlighted.
+    const root = String(issue.path[0] ?? "");
+    if (root && root !== key) (out[root] ??= []).push(issue.message);
   }
   return out;
 }

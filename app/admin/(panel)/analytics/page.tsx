@@ -1,8 +1,9 @@
 import { requireAdmin } from "@/lib/auth/session";
-import { leadAnalytics } from "@/lib/data/analytics";
+import { leadAnalytics, conversionAnalytics } from "@/lib/data/analytics";
 import { GRANULARITIES, type Granularity } from "@/lib/types";
 import { PageHeader } from "@/components/admin/parts";
 import { LeadAnalyticsView } from "@/components/admin/LeadAnalytics";
+import { ConversionPanel } from "@/components/admin/ConversionPanel";
 
 /** Karachi is UTC+5 with no DST, so a fixed offset is exact here. */
 const TZ_OFFSET_MS = 5 * 3600_000;
@@ -64,13 +65,17 @@ export default async function AnalyticsPage({
     ? (q.granularity as Granularity)
     : defaultGranularity(spanDays);
 
-  const data = await leadAnalytics({ from: fromDate, to: toDate, granularity });
+  // Both read the same window, so they run together rather than in sequence.
+  const [data, conversions] = await Promise.all([
+    leadAnalytics({ from: fromDate, to: toDate, granularity }),
+    conversionAnalytics({ from: fromDate, to: toDate }),
+  ]);
 
   return (
     <div>
       <PageHeader
         title="Analytics"
-        description="Booking leads and corporate enquiries received over time. All dates are Pakistan time."
+        description="Booking leads, corporate enquiries and outbound contact taps over time. All dates are Pakistan time."
       />
       <LeadAnalyticsView
         data={data}
@@ -78,6 +83,11 @@ export default async function AnalyticsPage({
         to={to}
         granularity={granularity}
         preset={preset}
+      />
+      <ConversionPanel
+        totals={conversions.totals}
+        previous={conversions.previous}
+        topSources={conversions.topSources}
       />
     </div>
   );

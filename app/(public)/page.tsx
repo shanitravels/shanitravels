@@ -6,6 +6,7 @@ import { getFeaturedVehicles, getActiveVehicles } from "@/lib/data/vehicles";
 import { getFeaturedClients, getActiveOffices, getActiveTestimonials, getActiveServices } from "@/lib/data/content";
 import { Hero } from "@/components/site/Hero";
 import { BookARide } from "@/components/site/BookARide";
+import { ServiceHighlights } from "@/components/site/ServiceHighlights";
 import { VehicleCard } from "@/components/site/VehicleCard";
 import { getActiveDiscounts } from "@/lib/data/discounts";
 import { bestDiscountFor } from "@/lib/pricing";
@@ -67,18 +68,23 @@ export default async function HomePage() {
         socials={socialLinks(settings.socials, settings.whatsappNumber)}
       />
 
+      {/* Straight under the hero: the four figures are the first claim the page
+          makes, and they qualify everything below them. */}
+      <TrustBand settings={settings} />
+
       {/* Fleet catalog — every class, each deep-linking into the filtered fleet */}
-      <section className="mx-auto max-w-7xl px-4 py-12 sm:px-6 lg:py-14">
+      <section className="mx-auto max-w-7xl px-4 pb-12 pt-6 sm:px-6 lg:pb-14">
         <div className="flex flex-col items-start justify-between gap-4 sm:flex-row sm:items-end">
           <SectionHead
             center={false}
+            rule
             eyebrow={t.home.fleetEyebrow}
             title={t.home.fleetTitle}
             description={t.home.fleetDesc}
           />
           <Link
             href="/fleet"
-            className="inline-flex shrink-0 items-center gap-1.5 rounded-lg border border-line px-4 py-2.5 text-sm font-semibold text-navy transition hover:bg-band"
+            className="inline-flex shrink-0 items-center gap-1.5 rounded-xl border border-accent px-5 py-3 text-sm font-semibold text-accent transition hover:bg-accent hover:text-white"
           >
             {t.home.allVehicles} <FiArrowRight className="h-4 w-4" />
           </Link>
@@ -86,6 +92,38 @@ export default async function HomePage() {
         <div className="mt-8">
           <FleetCategories vehicles={allVehicles} />
         </div>
+
+        {/*
+          Trust strip, closing the catalog block as in the design.
+
+          The four claims are the same ones the "Why Shani Travels" section
+          further down makes, read from the same dictionary keys rather than
+          reworded — one set of strings, so the two can never drift into saying
+          slightly different things about the same promise.
+        */}
+        <ul className="mt-6 grid gap-x-6 gap-y-5 rounded-2xl border border-line bg-white px-6 py-5 shadow-card sm:grid-cols-2 lg:grid-cols-4 lg:divide-x lg:divide-line">
+          {[
+            { icon: <FiUserCheck />, title: t.home.whyDriversTitle, desc: t.home.whyDriversDesc },
+            { icon: <FiShield />, title: t.home.whyInsuredTitle, desc: t.home.whyInsuredDesc },
+            { icon: <FiMapPin />, title: t.home.whyCoverageTitle, desc: t.home.whyCoverageDesc },
+            { icon: <FiClock />, title: t.home.whyOpsTitle, desc: t.home.whyOpsDesc },
+          ].map((f, i) => (
+            <li
+              key={f.title}
+              className={`flex items-center gap-3 ${i > 0 ? "lg:pl-6" : ""}`}
+            >
+              <span className="flex h-10 w-10 shrink-0 items-center justify-center rounded-full bg-accent/10 text-accent">
+                {f.icon}
+              </span>
+              <span className="min-w-0">
+                <span className="block text-sm font-semibold leading-tight text-navy">
+                  {f.title}
+                </span>
+                <span className="block text-xs leading-snug text-muted">{f.desc}</span>
+              </span>
+            </li>
+          ))}
+        </ul>
       </section>
 
       {/* Offers — placed straight after the catalog: the visitor has just seen
@@ -104,8 +142,6 @@ export default async function HomePage() {
         helpline={settings.helplineNumbers[0]}
         email={settings.emails[0]}
       />
-
-      <TrustBand settings={settings} />
 
       {/* Featured fleet */}
       {featured.length > 0 && (
@@ -160,9 +196,8 @@ export default async function HomePage() {
       </section>
 
       {/* The institutional pitch, sitting between the retail "why us" grid and
-          the client wall that proves it. Second hero image where there is one,
-          so the band never repeats the picture at the top of the page. */}
-      <CorporateAccountBand image={settings.heroImages[1] ?? settings.heroImages[0] ?? null} />
+          the client wall that proves it. */}
+      <CorporateAccountBand />
 
       {/* Client wall */}
       {clients.length > 0 && (
@@ -183,25 +218,26 @@ export default async function HomePage() {
         </section>
       )}
 
-      {/* Services teaser */}
+      {/* Services module — the same services the text-card teaser used to
+          list, given the icon treatment from the design. */}
       {services.length > 0 && (
         <section className="bg-band">
           <div className="mx-auto max-w-7xl px-4 py-16 sm:px-6">
-            <SectionHead eyebrow={t.home.servicesEyebrow} title={t.home.servicesTitle} />
-            <div className="mt-10 grid gap-4 sm:grid-cols-2 lg:grid-cols-4">
-              {services.slice(0, 8).map((s) => (
-                <Link
-                  key={s.id}
-                  href={`/services/${s.slug}`}
-                  className="group rounded-2xl border border-line bg-white p-5 shadow-card transition hover:-translate-y-0.5 hover:shadow-lift"
-                >
-                  <h3 className="font-heading text-base font-semibold text-navy">{s.title}</h3>
-                  <p className="mt-1.5 text-sm text-muted">{s.summary}</p>
-                  <span className="mt-3 inline-flex items-center gap-1 text-sm font-semibold text-accent transition group-hover:gap-2">
-                    {t.common.learnMore} <FiArrowRight className="h-4 w-4" />
-                  </span>
-                </Link>
-              ))}
+            <SectionHead
+              center={false}
+              eyebrow={t.home.servicesEyebrow}
+              title={t.home.servicesTitle}
+            />
+            <div className="mt-8">
+              <ServiceHighlights services={services} />
+            </div>
+            <div className="mt-8">
+              <Link
+                href="/services"
+                className="inline-flex items-center gap-1.5 text-sm font-semibold text-accent transition hover:gap-2.5"
+              >
+                {t.serviceDetail.allServices} <FiArrowRight className="h-4 w-4" />
+              </Link>
             </div>
           </div>
         </section>

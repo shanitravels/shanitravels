@@ -28,6 +28,9 @@ export const en = {
     corporate: "Corporate",
     industries: "Industries",
     services: "Services",
+    aboutOverview: "About Us",
+    gallery: "Gallery",
+    awards: "Awards",
     about: "About",
     contact: "Contact",
     menu: "Menu",
@@ -195,8 +198,8 @@ export const en = {
     clientsTitle: "Organizations that rely on us",
     clientsDesc: "UN agencies, donors, NGOs, telecoms and government institutions across Pakistan.",
     seeAllClients: "See all clients",
-    servicesEyebrow: "What we do",
-    servicesTitle: "Services for every journey",
+    servicesEyebrow: "Services for every journey",
+    servicesTitle: "More than just a ride",
     testimonialsEyebrow: "In their words",
     testimonialsTitle: "What our clients say",
     testimonialsDesc: "Paraphrased from appreciation letters by the organizations we serve.",
@@ -226,9 +229,8 @@ export const en = {
     accountBackupTitle: "Backup vehicles held",
     accountBackupDesc:
       "Replacement units on standby in every province, so a vehicle off the road never becomes your delay.",
-    ctaTitle: "Ready when you are",
-    ctaBody:
-      "Book a vehicle in minutes, or request a tailored proposal for your organization. Our team confirms every request personally.",
+    ctaTitle: "Ready when you are.",
+    ctaTitleAccent: "Let's get you there.",
     ctaBook: "Book a vehicle",
     ctaProposal: "Corporate proposal",
   },
@@ -238,7 +240,6 @@ export const en = {
     description:
       "Reach us on whichever channel suits you — every request is confirmed by a person.",
     defaultMessage: "Hello Shani Travels, I'd like to book a ride.",
-    emailSubject: "Ride booking enquiry",
     email: "Email",
   },
 
@@ -266,11 +267,64 @@ export const en = {
     logistics: "Pickups, trucks and carriers for cargo",
   },
 
+  photoGallery: {
+    metaTitle: "Photo Gallery — Shani Travels",
+    metaDescription:
+      "Moments from the road: our clients, our team, corporate events and the fleet that carries them across Pakistan.",
+    breadcrumb: "Gallery",
+    titleLead: "Photo",
+    titleAccent: "Gallery",
+    description:
+      "Moments from the road. Experiences that matter. Take a look at our journeys, events, and the people who travel with us.",
+    all: "All Photos",
+    category: {
+      "happy-clients": "Happy Clients",
+      "our-team": "Our Team",
+      "corporate-events": "Corporate Events",
+      journeys: "Journeys",
+      fleet: "Fleet",
+      "behind-the-scenes": "Behind The Scenes",
+    },
+    more: "More Photos",
+    empty: "No photographs here yet.",
+    emptyFiltered: "No photographs in this category yet.",
+  },
+
+  awards: {
+    metaTitle: "Awards & Appreciations — Shani Travels",
+    metaDescription:
+      "Recognition, certificates and letters of appreciation from the organizations Shani Travels has moved since 1997.",
+    breadcrumb: "Awards",
+    titleLead: "Awards",
+    titleAccent: "& Appreciations",
+    description:
+      "Recognition that drives us forward. Honored to be trusted by our clients, partners, and industry leaders.",
+    all: "All Awards",
+    category: {
+      "industry-awards": "Industry Awards",
+      "client-appreciations": "Client Appreciations",
+      certificates: "Certificates",
+      milestones: "Milestones",
+      "press-media": "Press & Media",
+    },
+    statAwards: "Recognitions",
+    statAppreciations: "Client appreciations",
+    statCertificates: "Certificates",
+    statYears: "Years of excellence",
+    empty: "No awards published yet.",
+    emptyFiltered: "Nothing in this category yet.",
+  },
+
   fleet: {
     eyebrow: "Rent a vehicle",
     title: "Our fleet",
     description:
       "Economy cars to executive saloons, B-6 armored SUVs and logistics trucks — insured, tracked, and chauffeur-driven (or self-drive where marked). Filter by class, seats or price.",
+    filters: "Filters",
+    vehicleType: "Vehicle type",
+    showFilters: "Show filters",
+    hideFilters: "Hide filters",
+    selfDriveGroup: "Self-drive",
     minSeats: "Min seats",
     any: "Any",
     searchLabel: "Search the fleet",
@@ -280,6 +334,8 @@ export const en = {
     allCompanies: "All companies",
     companiesSelected: "{n} selected",
     sort: "Sort",
+    sortCategory: "Category & engine size",
+    sortEngineAsc: "Engine: small to large",
     sortFeatured: "Recommended",
     sortPriceAsc: "Price: low to high",
     sortPriceDesc: "Price: high to low",
@@ -335,6 +391,26 @@ export const en = {
     book: "Book",
     noMatch: "No vehicles match your search.",
     footnote: "All amounts in PKR and exclude GST · “—” means on request",
+    packagesTitle: "Rates & packages",
+    packagesDescription:
+      "Choose the vehicle category that suits your journey and budget. Every rate is per day, excludes GST, and includes a professional chauffeur.",
+    group: {
+      passenger: "Passenger",
+      transport: "Transport",
+    },
+    fromPerDay: "/day",
+    onRequest: "On request",
+    viewRates: "View rates",
+    featVehicles: "{count} vehicles in this class",
+    featSeats: "{range} seats",
+    featChauffeur: "Professional chauffeur included",
+    featTracked: "GPS-tracked & comprehensively insured",
+    featSelfDrive: "Self-drive available",
+    priceNote:
+      "* Rates vary by city, duration and season. Contact us for a custom package or a long-term contract.",
+    emptyGroup: "No vehicles in this category yet.",
+    categoryEyebrow: "Rate card",
+    backToRates: "All categories",
   },
 
   estimator: {
@@ -407,7 +483,6 @@ export const en = {
       "Call, WhatsApp, email or visit Shani Travels. Head office in Blue Area, Islamabad, with offices across 8 cities. We respond within one business day.",
     headOffice: "Head office",
     mapTitle: "Head office location",
-    alsoIn: "Also in",
     sendMessage: "Send us a message",
     replyPromise: "We'll get back to you within one business day.",
     whatsappSuffix: "(WhatsApp)",
@@ -485,8 +560,12 @@ export const en = {
     leadershipEyebrow: "Leadership",
     leadershipTitle: "A message from our CEO",
     ceoRole: ", Chief Executive Officer",
+    /** Same title without the leading comma, for a standalone signature line. */
+    ceoRoleBare: "Chief Executive Officer",
     credentialsEyebrow: "Registered & compliant",
     credentialsTitle: "Our credentials",
+    ctaEyebrow: "Work with us",
+    ctaOr: "or",
     ctaTitle: "Work with a team you can trust",
     ctaBody: "Operating from {count} cities, ready to move your team wherever you need to be.",
     ctaCorporate: "Corporate transport",
@@ -537,6 +616,12 @@ export const en = {
     metaDescription:
       "The Shani Travels safety and security protocol: driver verification, documented inspections, journey management, self-drive handover procedures, GPS tracking and 24/7 operations control.",
     sectionsNav: "Protocol sections",
+    policyNav: "Safety Policy",
+    /** Closing statement under the protocol; signed off by the CEO. */
+    commitmentTitle: "Our Safety Commitment",
+    commitmentBody:
+      "At Shani Travels, every journey matters and every passenger matters. We believe that safety is not simply a policy — it is a shared responsibility and a core value embedded in our culture. Our commitment is to provide transportation that is safe, reliable, professional and responsible — every journey, every vehicle, every time.",
+    commitmentQuote: "Safety First. Every Journey. Every Time.",
     empty: "The protocol is being prepared for publication.",
     categoryChauffeur: "Chauffeur-Driven Protocol",
     categorySelfDrive: "Self-Drive Protocol",
@@ -714,6 +799,7 @@ export const en = {
     howItWorks: "how it works",
     twoMinuteRead: "— 2-minute read.",
     chooseVehicle: "Choose a vehicle",
+    recommendedGroup: "Recommended",
     selfDriveEligible: " (self-drive eligible)",
     searchFleet: "Search the fleet…",
     ratesOnRequest: "Rates on request",

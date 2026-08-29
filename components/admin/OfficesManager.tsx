@@ -24,6 +24,7 @@ interface Draft {
   phones: string;
   email: string;
   mapUrl: string;
+  mapEmbedUrl: string;
   isHeadOffice: boolean;
   active: boolean;
   order: string;
@@ -35,6 +36,7 @@ const blank: Draft = {
   phones: "",
   email: "",
   mapUrl: "",
+  mapEmbedUrl: "",
   isHeadOffice: false,
   active: true,
   order: "0",
@@ -47,6 +49,7 @@ function toDraft(o: OfficeDoc): Draft {
     phones: o.phones.join(", "),
     email: o.email ?? "",
     mapUrl: o.mapUrl ?? "",
+    mapEmbedUrl: o.mapEmbedUrl ?? "",
     isHeadOffice: o.isHeadOffice,
     active: o.active,
     order: String(o.order),
@@ -91,6 +94,7 @@ export function OfficesManager({ initial }: { initial: OfficeDoc[] }) {
       phones,
       email: draft.email,
       mapUrl: draft.mapUrl,
+      mapEmbedUrl: draft.mapEmbedUrl,
       isHeadOffice: draft.isHeadOffice,
       active: draft.active,
       order: draft.order,
@@ -109,6 +113,7 @@ export function OfficesManager({ initial }: { initial: OfficeDoc[] }) {
           phones,
           email: draft.email || null,
           mapUrl: draft.mapUrl || null,
+          mapEmbedUrl: draft.mapEmbedUrl || null,
           isHeadOffice: draft.isHeadOffice,
           order: Number(draft.order) || 0,
           active: draft.active,
@@ -256,8 +261,21 @@ export function OfficesManager({ initial }: { initial: OfficeDoc[] }) {
               <TextInput type="number" value={draft.order} onChange={(e) => setDraft({ ...draft, order: e.target.value })} />
             </Field>
           </div>
-          <Field label="Google Maps URL" error={errors.mapUrl}>
+          <Field label="Google Maps URL" hint="The “Get directions” link on the network page" error={errors.mapUrl}>
             <TextInput value={draft.mapUrl} onChange={(e) => setDraft({ ...draft, mapUrl: e.target.value })} placeholder="https://maps.google.com/…" />
+          </Field>
+          <Field
+            label="Google Maps embed URL"
+            hint={
+              'Google Maps → Share → Embed a map → copy the src="…" out of the iframe. Shown as the map panel on the contact page (head office only).'
+            }
+            error={errors.mapEmbedUrl}
+          >
+            <TextInput
+              value={draft.mapEmbedUrl}
+              onChange={(e) => setDraft({ ...draft, mapEmbedUrl: e.target.value })}
+              placeholder="https://www.google.com/maps/embed?pb=…"
+            />
           </Field>
           <div className="flex gap-4">
             <label className="flex items-center gap-2 text-sm text-slate-700">

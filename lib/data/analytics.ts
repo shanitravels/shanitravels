@@ -1,7 +1,14 @@
 import "server-only";
 import { connectDB } from "@/lib/db";
-import { BookingModel, EnquiryModel } from "@/lib/models";
-import type { Granularity, LeadBucket, LeadAnalytics } from "@/lib/types";
+import { BookingModel, EnquiryModel, ConversionEventModel } from "@/lib/models";
+import type {
+  Granularity,
+  LeadBucket,
+  LeadAnalytics,
+  ConversionKind,
+  ConversionTotals,
+  ConversionSource,
+} from "@/lib/types";
 
 /**
  * Lead volume over time — booking requests and corporate enquiries.
@@ -157,5 +164,65 @@ export async function leadAnalytics(opts: {
   } catch (err) {
     console.error("[analytics] leadAnalytics failed:", err);
     return EMPTY;
+  }
+}
+
+/**
+ * Outbound contact taps over a window — WhatsApp, phone, email, directions.
+ *
+ * These never produce a Booking or an Enquiry document, so before this existed
+ * the most common way people contact Shani Travels was entirely absent from the
+ * dashboard. Recorded first-party by /api/track, which means the numbers hold
+ * up even for visitors who block third-party analytics.
+ */
+export async function conversionAnalytics(opts: {
+  from: Date;
+  to: Date;
+}): Promise<{ totals: ConversionTotals; previous: ConversionTotals; topSources: ConversionSource[] }> {
+  const { from, to } = opts;
+  const empty: ConversionTotals = { whatsapp: 0, call: 0, email: 0, directions: 0 };
+
+  try {
+    await connectDB();
+
+    const span = to.getTime() - from.getTime();
+    const prevFrom = new Date(from.getTime() - span);
+
+    const byKind = (range: Record<string, unknown>) => [
+      { $match: { createdAt: range } },
+      { $group: { _id: "$kind", n: { $sum: 1 } } },
+    ];
+
+    const [current, previous, sources] = await Promise.all([
+      ConversionEventModel.aggregate<{ _id: ConversionKind; n: number }>(
+        byKind({ $gte: from, $lte: to })
+      ),
+      ConversionEventModel.aggregate<{ _id: ConversionKind; n: number }>(
+        byKind({ $gte: prevFrom, $lt: from })
+      ),
+      // Which pages actually drive contact — the question the lead counts
+      // alone can never answer.
+      ConversionEventModel.aggregate<{ _id: { path: string; kind: ConversionKind }; n: number }>([
+        { $match: { createdAt: { $gte: from, $lte: to } } },
+        { $group: { _id: { path: "$path", kind: "$kind" }, n: { $sum: 1 } } },
+        { $sort: { n: -1 as const } },
+        { $limit: 12 },
+      ]),
+    ]);
+
+    const fold = (rows: { _id: ConversionKind; n: number }[]): ConversionTotals => {
+      const out = { ...empty };
+      for (const r of rows) if (r._id in out) out[r._id] = r.n;
+      return out;
+    };
+
+    return {
+      totals: fold(current),
+      previous: fold(previous),
+      topSources: sources.map((r) => ({ path: r._id.path, kind: r._id.kind, count: r.n })),
+    };
+  } catch (err) {
+    console.error("[analytics] conversionAnalytics failed:", err);
+    return { totals: empty, previous: empty, topSources: [] };
   }
 }

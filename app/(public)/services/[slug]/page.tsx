@@ -86,7 +86,10 @@ export default async function ServiceDetailPage({
         )}
 
         {bodyHtml && (
-          <div className="md-content mt-8 text-ink/80" dangerouslySetInnerHTML={{ __html: bodyHtml }} />
+          <div
+            className="md-content md-justify mt-8 text-ink/80"
+            dangerouslySetInnerHTML={{ __html: bodyHtml }}
+          />
         )}
 
         {relatedIndustries.length > 0 && (

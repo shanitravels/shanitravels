@@ -1,9 +1,16 @@
 import { connectDB } from "@/lib/db";
-import { OfficeModel, ClientModel, TestimonialModel, ServiceModel } from "@/lib/models";
+import {
+  OfficeModel,
+  ClientModel,
+  TestimonialModel,
+  ServiceModel,
+  GalleryImageModel,
+  AwardModel,
+} from "@/lib/models";
 import { serialize } from "@/lib/serialize";
 import { TAGS } from "@/lib/tags";
 import { cachedRead } from "@/lib/data/cache";
-import type { Client, Office, Service, Testimonial } from "@/lib/types";
+import type { Award, Client, GalleryImage, Office, Service, Testimonial } from "@/lib/types";
 
 /**
  * Cached public reads for offices, clients, testimonials and services.
@@ -75,5 +82,41 @@ export const getServiceBySlug = cachedRead({
     await connectDB();
     const doc = await ServiceModel.findOne({ slug, active: true }).lean();
     return doc ? serialize<Service>(doc) : null;
+  },
+});
+
+/**
+ * Every published photograph, newest curation order first.
+ *
+ * The whole wall is fetched in one read rather than per category: the filter
+ * chips switch buckets in the browser with no round trip, and a gallery is a
+ * few hundred rows of metadata at most.
+ */
+export const getActiveGalleryImages = cachedRead({
+  label: "content/getActiveGalleryImages",
+  keys: ["active-gallery"],
+  tags: [TAGS.gallery],
+  fallback: [] as GalleryImage[],
+  read: async (): Promise<GalleryImage[]> => {
+    await connectDB();
+    const docs = await GalleryImageModel.find({ active: true })
+      .sort({ order: 1, createdAt: -1 })
+      .lean();
+    return serialize<GalleryImage[]>(docs);
+  },
+});
+
+/** Awards newest first — `awardedOn` descending, with undated rows last. */
+export const getActiveAwards = cachedRead({
+  label: "content/getActiveAwards",
+  keys: ["active-awards"],
+  tags: [TAGS.awards],
+  fallback: [] as Award[],
+  read: async (): Promise<Award[]> => {
+    await connectDB();
+    const docs = await AwardModel.find({ active: true })
+      .sort({ order: 1, awardedOn: -1 })
+      .lean();
+    return serialize<Award[]>(docs);
   },
 });

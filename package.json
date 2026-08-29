@@ -7,15 +7,21 @@
     "build": "next build",
     "start": "next start",
     "lint": "eslint",
+    "test": "vitest run",
+    "test:watch": "vitest",
     "seed": "tsx scripts/seed.ts",
     "backfill:mailing-list": "tsx scripts/backfill-mailing-list.ts",
     "backfill:hero-slides": "tsx scripts/backfill-hero-slides.ts",
     "db:check": "tsx scripts/db-check.ts",
     "mail:test": "tsx --conditions react-server scripts/mail-test.ts",
     "self-drive:enable": "tsx scripts/enable-self-drive.ts",
+    "admin:credentials": "tsx scripts/set-admin-credentials.ts",
     "db:verify": "tsx scripts/verify-content.ts",
     "typecheck": "tsc --noEmit",
-    "i18n:check": "tsx scripts/i18n-check.ts"
+    "i18n:check": "tsx scripts/i18n-check.ts",
+    "placeholders:seed": "tsx scripts/seed-placeholders.ts",
+    "placeholders:clear": "tsx scripts/seed-placeholders.ts clear",
+    "fleet:art": "tsx scripts/prepare-fleet-art.ts"
   },
   "dependencies": {
     "bcryptjs": "^3.0.3",
@@ -42,7 +48,8 @@
     "eslint-config-next": "16.3.0",
     "tailwindcss": "^4",
     "tsx": "^4.20.6",
-    "typescript": "^5"
+    "typescript": "^5",
+    "vitest": "^4.1.11"
   },
   "allowScripts": {
     "esbuild@0.28.1": true,

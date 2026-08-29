@@ -8,6 +8,14 @@ import { PrintButton } from "@/components/site/PrintButton";
 import { SAFETY_CATEGORIES, type SafetySection } from "@/lib/types";
 import { getI18n } from "@/lib/i18n/server";
 
+/**
+ * The CEO-signed policy statement is stored as an ordinary SafetySection so it
+ * stays editable in Admin -> Safety, but it is not one of the operational
+ * protocols. This slug lifts it out of its category group and renders it as
+ * the page-leading statement the protocols below then implement.
+ */
+const POLICY_SLUG = "safety-policy";
+
 /** Category -> dictionary key. SAFETY_CATEGORY_LABELS stays for the admin side. */
 const CATEGORY_KEYS = {
   chauffeur: "categoryChauffeur",
@@ -27,9 +35,11 @@ export async function generateMetadata(): Promise<Metadata> {
 export default async function SafetyPage() {
   const { t } = await getI18n();
   const [sections, settings] = await Promise.all([getActiveSafetySections(), getSettings()]);
+  const policy = sections.find((s) => s.slug === POLICY_SLUG) ?? null;
+  const protocols = sections.filter((s) => s.slug !== POLICY_SLUG);
   const visibleCategories = SAFETY_CATEGORIES.filter(
     (c) =>
-      sections.some((s) => s.category === c) &&
+      protocols.some((s) => s.category === c) &&
       // Hide the self-drive protocol while the line is launched dark.
       (c !== "self-drive" || settings.selfDriveEnabled)
   );
@@ -59,6 +69,14 @@ export default async function SafetyPage() {
       {/* In-page nav */}
       <nav className="sticky top-[65px] z-30 border-b border-line bg-white/95 backdrop-blur print:hidden" aria-label={t.safety.sectionsNav}>
         <div className="mx-auto flex max-w-7xl gap-1 overflow-x-auto px-4 py-2 sm:px-6">
+          {policy && (
+            <a
+              href="#policy"
+              className="whitespace-nowrap rounded-lg px-3 py-1.5 text-sm font-medium text-ink/70 transition hover:bg-band hover:text-navy"
+            >
+              {t.safety.policyNav}
+            </a>
+          )}
           {visibleCategories.map((c) => (
             <a
               key={c}
@@ -72,17 +90,19 @@ export default async function SafetyPage() {
       </nav>
 
       <div className="mx-auto max-w-4xl px-4 py-12 sm:px-6">
-        {sections.length === 0 ? (
+        {policy && <PolicyStatement section={policy} />}
+
+        {protocols.length === 0 ? (
           <p className="py-16 text-center text-muted">{t.safety.empty}</p>
         ) : (
-          <div className="space-y-16">
+          <div className={`space-y-16${policy ? " mt-16" : ""}`}>
             {visibleCategories.map((category) => (
               <section key={category} id={category} className="scroll-mt-28">
                 <h2 className="font-heading text-2xl font-bold text-navy">
                   {t.safety[CATEGORY_KEYS[category]]}
                 </h2>
                 <div className="mt-6 space-y-6">
-                  {sections
+                  {protocols
                     .filter((s) => s.category === category)
                     .map((s) => (
                       <ProtocolCard key={s.id} section={s} />
@@ -92,6 +112,25 @@ export default async function SafetyPage() {
             ))}
           </div>
         )}
+
+        {/* Closing commitment — the signed-off statement the policy opens
+            with, restated after the reader has seen the detail. */}
+        <section className="mt-16 rounded-2xl border border-navy/10 bg-navy-deep px-6 py-8 text-center print:border-slate-300 print:bg-white sm:px-10 sm:py-10">
+          <h2 className="font-heading text-xl font-bold text-white print:text-navy sm:text-2xl">
+            {t.safety.commitmentTitle}
+          </h2>
+          <p className="mx-auto mt-4 max-w-2xl text-sm leading-relaxed text-white/75 print:text-ink sm:text-base">
+            {t.safety.commitmentBody}
+          </p>
+          <p className="mt-6 font-heading text-lg font-semibold text-accent-light print:text-navy sm:text-xl">
+            &ldquo;{t.safety.commitmentQuote}&rdquo;
+          </p>
+          {settings.about.ceoName && (
+            <p className="mt-5 text-sm text-white/60 print:text-muted">
+              {settings.about.ceoName} &middot; {t.about.ceoRoleBare}
+            </p>
+          )}
+        </section>
 
         <div className="mt-16 rounded-2xl border border-line bg-band p-6 text-center print:hidden sm:p-8">
           <h2 className="font-heading text-xl font-bold text-navy">{t.safety.ctaTitle}</h2>
@@ -105,6 +144,47 @@ export default async function SafetyPage() {
         </div>
       </div>
     </>
+  );
+}
+
+/**
+ * Items arrive as "Label: detail" lines. Splitting on that first colon lets the
+ * label carry the scan weight without needing markdown in the stored string —
+ * and any line without a short leading label just renders whole.
+ */
+function splitLabel(item: string): { label: string | null; text: string } {
+  const at = item.indexOf(":");
+  if (at === -1 || at > 40) return { label: null, text: item };
+  return { label: item.slice(0, at).trim(), text: item.slice(at + 1).trim() };
+}
+
+function PolicyStatement({ section }: { section: SafetySection }) {
+  return (
+    <section id="policy" className="scroll-mt-28">
+      <h2 className="font-heading text-2xl font-bold text-navy">{section.title}</h2>
+      {section.intro && (
+        <p className="mt-4 text-base leading-relaxed text-ink/80 hyphens-auto text-justify">
+          {section.intro}
+        </p>
+      )}
+      <ul className="mt-6 grid gap-3 sm:grid-cols-2">
+        {section.items.map((item, i) => {
+          const { label, text } = splitLabel(item);
+          return (
+            <li
+              key={i}
+              className="flex items-start gap-2.5 rounded-xl border border-line bg-white p-4 shadow-card print:break-inside-avoid print:border-slate-300 print:shadow-none"
+            >
+              <FiCheck className="mt-0.5 h-4 w-4 shrink-0 text-accent" />
+              <p className="text-sm leading-relaxed text-ink/80">
+                {label && <span className="font-semibold text-navy">{label}. </span>}
+                {text}
+              </p>
+            </li>
+          );
+        })}
+      </ul>
+    </section>
   );
 }
 

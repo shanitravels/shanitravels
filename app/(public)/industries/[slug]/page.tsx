@@ -100,7 +100,10 @@ export default async function IndustryPage({
 
       <div className="mx-auto max-w-3xl px-4 py-12 sm:px-6">
         {bodyHtml && (
-          <div className="md-content text-ink/80" dangerouslySetInnerHTML={{ __html: bodyHtml }} />
+          <div
+            className="md-content md-justify text-ink/80"
+            dangerouslySetInnerHTML={{ __html: bodyHtml }}
+          />
         )}
 
         {relatedServices.length > 0 && (

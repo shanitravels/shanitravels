@@ -3,6 +3,7 @@ import { FiPhone, FiMail, FiMapPin, FiExternalLink } from "react-icons/fi";
 import { getActiveOffices } from "@/lib/data/content";
 import { Breadcrumbs } from "@/components/site/Breadcrumbs";
 import { PageIntro } from "@/components/site/PageIntro";
+import { ContactLink } from "@/components/site/ContactLink";
 import { telHref } from "@/lib/format";
 import { getI18n } from "@/lib/i18n/server";
 
@@ -48,14 +49,14 @@ export default async function NetworkPage() {
                 <p className="mt-3 flex-1 text-sm text-muted">{o.address}</p>
                 <div className="mt-4 space-y-2 border-t border-line pt-4 text-sm">
                   {o.phones.map((p) => (
-                    <a key={p} href={telHref(p)} className="flex items-center gap-2 text-ink/80 transition hover:text-accent">
+                    <ContactLink key={p} kind="call" href={telHref(p)} className="flex items-center gap-2 text-ink/80 transition hover:text-accent">
                       <FiPhone className="h-3.5 w-3.5 text-navy" /> {p}
-                    </a>
+                    </ContactLink>
                   ))}
                   {o.email && (
-                    <a href={`mailto:${o.email}`} className="flex items-center gap-2 text-ink/80 transition hover:text-accent">
+                    <ContactLink kind="email" href={`mailto:${o.email}`} className="flex items-center gap-2 text-ink/80 transition hover:text-accent">
                       <FiMail className="h-3.5 w-3.5 text-navy" /> {o.email}
-                    </a>
+                    </ContactLink>
                   )}
                   {o.mapUrl && (
                     <a

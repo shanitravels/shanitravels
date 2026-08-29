@@ -5,10 +5,13 @@ import { FiPhone, FiMail } from "react-icons/fi";
 import { telHref, whatsappHref, mailtoHref } from "@/lib/format";
 import { cn } from "@/lib/utils";
 import { getI18n } from "@/lib/i18n/server";
+import { ContactLink } from "./ContactLink";
+import type { ConversionKind } from "@/lib/types";
 
 
 type ActionKey = {
-  id: string;
+  /** Doubles as the conversion kind — these keys are the contact actions. */
+  id: ConversionKind;
   label: string;
   hint: string;
   href: string;
@@ -93,7 +96,13 @@ export async function BookARide({
       id: "email",
       label: t.bookARide.email,
       hint: email,
-      href: mailtoHref(email, t.bookARide.emailSubject, resolvedMessage),
+      // Address only, no subject or body. The other two keys carry a greeting
+      // because WhatsApp and a dialler have nowhere else to put one, but an
+      // email client opens a full composer — pre-filling it means the sender
+      // has to delete our words before writing their own. A bare mailto is
+      // also the form every handler accepts: a long percent-encoded body (the
+      // Urdu greeting ran to 200+ characters) is what some of them choke on.
+      href: mailtoHref(email),
       icon: <FiMail />,
       tint: "text-accent [--press-bg-down:#fbe8eb]",
     });
@@ -133,8 +142,9 @@ export async function BookARide({
       <div className="mt-7 rounded-full border border-line bg-band p-2 shadow-[inset_0_2px_8px_rgba(11,36,71,0.10)] sm:p-2.5">
         <div className={cn("grid gap-2 sm:gap-2.5", COLS[keys.length])}>
           {keys.map((k) => (
-            <a
+            <ContactLink
               key={k.id}
+              kind={k.id}
               href={k.href}
               {...(k.external ? { target: "_blank", rel: "noopener noreferrer" } : {})}
               aria-label={`${k.label} — ${k.hint}`}
@@ -148,7 +158,7 @@ export async function BookARide({
               <span className="font-heading text-xs font-semibold leading-none tracking-tight sm:text-sm">
                 {k.label}
               </span>
-            </a>
+            </ContactLink>
           ))}
         </div>
       </div>

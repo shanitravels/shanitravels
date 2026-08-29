@@ -24,6 +24,8 @@ import {
   safetySectionSchema,
   discountSchema,
   settingsSchema,
+  galleryImageSchema,
+  awardSchema,
 } from "../lib/validation";
 
 /** Collection name -> the schema its admin form posts through. */
@@ -34,6 +36,8 @@ const SCHEMAS: Record<string, z.ZodTypeAny> = {
   services: serviceSchema,
   industries: industrySchema,
   safetysections: safetySectionSchema,
+  galleryimages: galleryImageSchema,
+  awards: awardSchema,
   discounts: discountSchema,
   sitesettings: settingsSchema,
 };
