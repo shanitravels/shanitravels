@@ -192,6 +192,11 @@ export const ur = {
     whyCoverageDesc: "8 شہروں میں دفاتر اور صوبائی متبادل فلیٹ۔",
     whyOpsTitle: "24/7 آپریشنز",
     whyOpsDesc: "ایسی ٹیم جو ہر وقت آپ کا فون اٹھاتی ہے۔",
+    industriesEyebrow: "مختلف شعبوں کا اعتماد",
+    industriesTitle: "ہم کن شعبوں کو خدمات دیتے ہیں",
+    industriesDesc:
+      "وہ شعبے جو ہر ہفتے شانی ٹریولز پر اعتماد کرتے ہیں۔ کلائنٹس کے نام خفیہ رکھے جاتے ہیں۔",
+    seeAllIndustries: "شعبے دیکھیں",
     clientsEyebrow: "ہم پر اعتماد",
     clientsTitle: "وہ ادارے جو ہم پر بھروسہ کرتے ہیں",
     clientsDesc: "پاکستان بھر میں اقوام متحدہ کے ادارے، ڈونرز، این جی اوز، ٹیلی کام اور سرکاری ادارے۔",
@@ -235,10 +240,27 @@ export const ur = {
 
   bookARide: {
     title: "سفر بک کریں",
-    description:
-      "جو ذریعہ آپ کو مناسب لگے، اسی پر رابطہ کریں — ہر درخواست کی تصدیق ایک فرد کرتا ہے۔",
+    description: "بکنگ کا اپنا پسندیدہ طریقہ منتخب کریں۔ تیز، آسان، قابلِ اعتماد۔",
     defaultMessage: "السلام علیکم شانی ٹریولز، میں سفر بک کرانا چاہتا ہوں۔",
     email: "ای میل",
+    whatsappTitle: "وٹس ایپ",
+    whatsappDesc: "جلد بکنگ کے لیے وٹس ایپ پر پیغام کریں",
+    whatsappBadge: "فوری جواب",
+    callTitle: "کال کریں",
+    callDesc: "فوری مدد کے لیے ہماری ٹیم سے بات کریں",
+    callBadge: "۲۴/۷ معاونت",
+    emailTitle: "ای میل کریں",
+    emailDesc: "اپنے سفر کی تفصیل بھیجیں، ہم جواب دیں گے",
+    emailBadge: "جلد جواب",
+    followUs: "یا ہمیں یہاں تلاش کریں",
+    trustSafeTitle: "محفوظ و مامون",
+    trustSafeDesc: "آپ کی حفاظت ہماری پہلی ترجیح",
+    trustPriceTitle: "شفاف قیمتیں",
+    trustPriceDesc: "کوئی پوشیدہ اخراجات نہیں",
+    trustTimeTitle: "وقت پر خدمت",
+    trustTimeDesc: "پابندِ وقت اور قابلِ اعتماد سفر",
+    trustAlwaysTitle: "۲۴/۷ دستیاب",
+    trustAlwaysDesc: "ہم ہر وقت موجود ہیں",
   },
 
   vehicleClass: {

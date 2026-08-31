@@ -4,6 +4,7 @@ import { getActiveVehicles } from "@/lib/data/vehicles";
 import { getSettings } from "@/lib/data/settings";
 import { Breadcrumbs } from "@/components/site/Breadcrumbs";
 import { PageIntro } from "@/components/site/PageIntro";
+import { TbReceipt } from "react-icons/tb";
 import { RateCategories, type RateCategory } from "@/components/site/RateCategories";
 import { CLASS_IMAGE } from "@/lib/vehicle-art";
 import { renderMarkdown } from "@/lib/markdown";
@@ -68,6 +69,7 @@ export default async function RatesPage() {
   return (
     <>
       <PageIntro
+        icon={TbReceipt}
         eyebrow={t.rates.eyebrow}
         title={t.rates.packagesTitle}
         description={t.rates.packagesDescription}

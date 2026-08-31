@@ -16,6 +16,7 @@ import { getSettings } from "@/lib/data/settings";
 import { getActiveVehicles } from "@/lib/data/vehicles";
 import { Breadcrumbs } from "@/components/site/Breadcrumbs";
 import { PageIntro } from "@/components/site/PageIntro";
+import { TbSteeringWheel } from "react-icons/tb";
 import { VehicleCard } from "@/components/site/VehicleCard";
 import { getActiveDiscounts } from "@/lib/data/discounts";
 import { bestDiscountFor } from "@/lib/pricing";
@@ -75,6 +76,7 @@ export default async function SelfDrivePage() {
   return (
     <>
       <PageIntro
+        icon={TbSteeringWheel}
         eyebrow={t.selfDrive.eyebrow}
         title={t.selfDrive.title}
         description={t.selfDrive.description}

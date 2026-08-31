@@ -478,6 +478,7 @@ export const settingsSchema = z.object({
     ceoImage: flatImage.nullable().default(null),
     hseSummary: localizedOptional(20000),
   }),
+  showClientIdentities: z.boolean().default(false),
   selfDriveEnabled: z.boolean().default(false),
 });
 export type SettingsInput = z.infer<typeof settingsSchema>;

@@ -5,6 +5,7 @@ import { getActiveVehicles } from "@/lib/data/vehicles";
 import { getActiveDiscounts } from "@/lib/data/discounts";
 import { Breadcrumbs } from "@/components/site/Breadcrumbs";
 import { PageIntro } from "@/components/site/PageIntro";
+import { TbCar } from "react-icons/tb";
 import { FleetCatalog, type FleetFilters } from "@/components/site/FleetCatalog";
 import { VEHICLE_CLASSES, type VehicleClass } from "@/lib/types";
 import { getI18n } from "@/lib/i18n/server";
@@ -114,6 +115,7 @@ export default async function FleetPage({
   return (
     <>
       <PageIntro
+        icon={TbCar}
         eyebrow={t.fleet.eyebrow}
         title={cls ? t.vehicleClass[cls] : t.fleet.title}
         description={

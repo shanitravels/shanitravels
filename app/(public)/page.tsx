@@ -7,6 +7,8 @@ import { getFeaturedClients, getActiveOffices, getActiveTestimonials, getActiveS
 import { Hero } from "@/components/site/Hero";
 import { BookARide } from "@/components/site/BookARide";
 import { ServiceHighlights } from "@/components/site/ServiceHighlights";
+import { IndustryCards } from "@/components/site/IndustryCards";
+import { getActiveIndustries } from "@/lib/data/industries";
 import { VehicleCard } from "@/components/site/VehicleCard";
 import { getActiveDiscounts } from "@/lib/data/discounts";
 import { bestDiscountFor } from "@/lib/pricing";
@@ -43,17 +45,27 @@ export async function generateMetadata(): Promise<Metadata> {
 
 export default async function HomePage() {
   const { t } = await getI18n();
-  const [settings, featured, allVehicles, clients, offices, testimonials, services, discounts] =
-    await Promise.all([
-      getSettings(),
-      getFeaturedVehicles(),
-      getActiveVehicles(),
-      getFeaturedClients(),
-      getActiveOffices(),
-      getActiveTestimonials(),
-      getActiveServices(),
-      getActiveDiscounts(),
-    ]);
+  const [
+    settings,
+    featured,
+    allVehicles,
+    clients,
+    offices,
+    testimonials,
+    services,
+    discounts,
+    industries,
+  ] = await Promise.all([
+    getSettings(),
+    getFeaturedVehicles(),
+    getActiveVehicles(),
+    getFeaturedClients(),
+    getActiveOffices(),
+    getActiveTestimonials(),
+    getActiveServices(),
+    getActiveDiscounts(),
+    getActiveIndustries(),
+  ]);
 
   const featuredTestimonials = testimonials.filter((t) => t.featured).slice(0, 3);
 
@@ -141,6 +153,7 @@ export default async function HomePage() {
         whatsapp={settings.whatsappNumber}
         helpline={settings.helplineNumbers[0]}
         email={settings.emails[0]}
+        socials={socialLinks(settings.socials, settings.whatsappNumber)}
       />
 
       {/* Featured fleet */}
@@ -199,23 +212,47 @@ export default async function HomePage() {
           the client wall that proves it. */}
       <CorporateAccountBand />
 
-      {/* Client wall */}
-      {clients.length > 0 && (
-        <section className="mx-auto max-w-7xl px-4 py-16 sm:px-6">
-          <SectionHead
-            eyebrow={t.home.clientsEyebrow}
-            title={t.home.clientsTitle}
-            description={t.home.clientsDesc}
-          />
-          <div className="mt-10">
-            <ClientWall clients={clients} />
-          </div>
-          <div className="mt-8 text-center">
-            <Link href="/clients" className="inline-flex items-center gap-1.5 text-sm font-semibold text-accent hover:gap-2.5">
-              {t.home.seeAllClients} <FiArrowRight className="h-4 w-4" />
-            </Link>
-          </div>
-        </section>
+      {/*
+        Who we serve. Which form it takes is the admin's call:
+        `showClientIdentities` off (the default) shows the sectors we move and
+        names nobody; on restores the logo wall this replaced.
+      */}
+      {settings.showClientIdentities ? (
+        clients.length > 0 && (
+          <section className="mx-auto max-w-7xl px-4 py-16 sm:px-6">
+            <SectionHead
+              eyebrow={t.home.clientsEyebrow}
+              title={t.home.clientsTitle}
+              description={t.home.clientsDesc}
+            />
+            <div className="mt-10">
+              <ClientWall clients={clients} />
+            </div>
+            <div className="mt-8 text-center">
+              <Link href="/clients" className="inline-flex items-center gap-1.5 text-sm font-semibold text-accent hover:gap-2.5">
+                {t.home.seeAllClients} <FiArrowRight className="h-4 w-4" />
+              </Link>
+            </div>
+          </section>
+        )
+      ) : (
+        industries.length > 0 && (
+          <section className="mx-auto max-w-7xl px-4 py-16 sm:px-6">
+            <SectionHead
+              eyebrow={t.home.industriesEyebrow}
+              title={t.home.industriesTitle}
+              description={t.home.industriesDesc}
+            />
+            <div className="mt-10">
+              <IndustryCards industries={industries} />
+            </div>
+            <div className="mt-8 text-center">
+              <Link href="/industries" className="inline-flex items-center gap-1.5 text-sm font-semibold text-accent hover:gap-2.5">
+                {t.home.seeAllIndustries} <FiArrowRight className="h-4 w-4" />
+              </Link>
+            </div>
+          </section>
+        )
       )}
 
       {/* Services module — the same services the text-card teaser used to
@@ -252,7 +289,10 @@ export default async function HomePage() {
             description={t.home.testimonialsDesc}
           />
           <div className="mt-10">
-            <TestimonialsGrid testimonials={featuredTestimonials} />
+            <TestimonialsGrid
+              testimonials={featuredTestimonials}
+              identify={settings.showClientIdentities}
+            />
           </div>
         </section>
       )}

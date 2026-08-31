@@ -699,6 +699,16 @@ export interface SiteSettingsDoc {
     hseSummary: LocalizedString;
   };
   /** Launch-dark switch for the self-drive service line (insurance pending). */
+  /**
+   * Whether client organizations may be identified publicly.
+   *
+   * Off by default: naming who we move is a disclosure the client has not
+   * necessarily agreed to. While off, every logo wall is replaced by the
+   * industries served, and a testimonial is attributed to its sector
+   * ("A UN agency") rather than the organization. Turning it on restores the
+   * logo walls and the /clients page exactly as they were.
+   */
+  showClientIdentities: boolean;
   selfDriveEnabled: boolean;
   updatedAt: string;
 }

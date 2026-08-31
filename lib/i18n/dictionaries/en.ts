@@ -194,6 +194,11 @@ export const en = {
     whyCoverageDesc: "Offices in 8 cities with provincial backup fleets.",
     whyOpsTitle: "24/7 operations",
     whyOpsDesc: "A team that answers the phone, whenever you need us.",
+    industriesEyebrow: "Trusted across sectors",
+    industriesTitle: "Who we move",
+    industriesDesc:
+      "The sectors that rely on Shani Travels every week. Client names are kept private.",
+    seeAllIndustries: "Explore industries",
     clientsEyebrow: "Trusted by",
     clientsTitle: "Organizations that rely on us",
     clientsDesc: "UN agencies, donors, NGOs, telecoms and government institutions across Pakistan.",
@@ -237,10 +242,27 @@ export const en = {
 
   bookARide: {
     title: "Book a Ride",
-    description:
-      "Reach us on whichever channel suits you — every request is confirmed by a person.",
+    description: "Choose your preferred way to book. Fast. Easy. Reliable.",
     defaultMessage: "Hello Shani Travels, I'd like to book a ride.",
     email: "Email",
+    whatsappTitle: "WhatsApp",
+    whatsappDesc: "Chat with us on WhatsApp for quick booking",
+    whatsappBadge: "Instant response",
+    callTitle: "Call us",
+    callDesc: "Speak to our team for immediate assistance",
+    callBadge: "24/7 support",
+    emailTitle: "Email us",
+    emailDesc: "Send your trip details and we'll get back to you",
+    emailBadge: "Quick reply",
+    followUs: "Or find us on",
+    trustSafeTitle: "Safe & secure",
+    trustSafeDesc: "Your safety is our priority",
+    trustPriceTitle: "Transparent pricing",
+    trustPriceDesc: "No hidden charges",
+    trustTimeTitle: "On-time service",
+    trustTimeDesc: "Punctual and reliable rides",
+    trustAlwaysTitle: "24/7 availability",
+    trustAlwaysDesc: "We're here anytime",
   },
 
   // Mirrors VEHICLE_CLASSES in lib/types.ts. These were VEHICLE_CLASS_LABELS —

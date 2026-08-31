@@ -73,6 +73,7 @@ export function SettingsForm({ settings }: { settings: SiteSettingsDoc }) {
   const [credentials, setCredentials] = useState<CredentialDoc[]>(settings.credentials);
   const [commercialTerms, setCommercialTerms] = useState(settings.commercialTerms);
   const [about, setAbout] = useState(settings.about);
+  const [showClientIdentities, setShowClientIdentities] = useState(settings.showClientIdentities);
   const [selfDriveEnabled, setSelfDriveEnabled] = useState(settings.selfDriveEnabled);
 
   const touch = () => setDirty(true);
@@ -112,6 +113,7 @@ export function SettingsForm({ settings }: { settings: SiteSettingsDoc }) {
       credentials,
       commercialTerms,
       about,
+      showClientIdentities,
       selfDriveEnabled,
     };
     start(async () => {
@@ -327,6 +329,23 @@ export function SettingsForm({ settings }: { settings: SiteSettingsDoc }) {
             />
           </Field>
         </div>
+      </Section>
+
+      <Section
+        title="Client privacy"
+        subtitle="Off by default. While off, every client logo wall is replaced by the industries served, the /clients page is withdrawn, and testimonials are credited to a sector (“A UN agency”) instead of the organization. Turn it on to publish logos and names again — nothing is deleted either way."
+      >
+        <label className="flex items-center justify-between rounded-lg border border-slate-200 px-3 py-2.5">
+          <span className="text-sm text-slate-700">
+            Client logos &amp; names are{" "}
+            <strong>{showClientIdentities ? "PUBLIC" : "hidden (industries shown instead)"}</strong>
+          </span>
+          <Toggle
+            checked={showClientIdentities}
+            onChange={(v) => { setShowClientIdentities(v); touch(); }}
+            label="Show client logos and names"
+          />
+        </label>
       </Section>
 
       <Section

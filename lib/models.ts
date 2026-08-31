@@ -512,6 +512,10 @@ const settingsSchema = new Schema(
       hseSummary: localized(),
     },
     // Launch-dark switch for the self-drive line (insurance confirmation pending).
+    // Default false — see the note on SiteSettings.showClientIdentities. A
+    // privacy default has to be the safe one: a fresh deployment must not
+    // publish client names before anyone has decided it should.
+    showClientIdentities: { type: Boolean, default: false },
     selfDriveEnabled: { type: Boolean, default: false },
   },
   { timestamps: true }

@@ -3,6 +3,7 @@ import { FiPhone, FiMail, FiMapPin, FiExternalLink } from "react-icons/fi";
 import { getActiveOffices } from "@/lib/data/content";
 import { Breadcrumbs } from "@/components/site/Breadcrumbs";
 import { PageIntro } from "@/components/site/PageIntro";
+import { TbMapPin } from "react-icons/tb";
 import { ContactLink } from "@/components/site/ContactLink";
 import { telHref } from "@/lib/format";
 import { getI18n } from "@/lib/i18n/server";
@@ -23,6 +24,7 @@ export default async function NetworkPage() {
   return (
     <>
       <PageIntro
+        icon={TbMapPin}
         eyebrow={t.network.eyebrow}
         title={t.network.title}
         description={t.network.description}

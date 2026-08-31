@@ -5,6 +5,7 @@ import { isPromoLive } from "@/lib/types";
 import { getActiveOffices } from "@/lib/data/content";
 import { Breadcrumbs } from "@/components/site/Breadcrumbs";
 import { PageIntro } from "@/components/site/PageIntro";
+import { TbCalendarCheck } from "react-icons/tb";
 import { BookingWizard } from "@/components/site/BookingWizard";
 import { getI18n } from "@/lib/i18n/server";
 
@@ -39,6 +40,7 @@ export default async function BookPage({
   return (
     <>
       <PageIntro
+        icon={TbCalendarCheck}
         eyebrow={t.book.eyebrow}
         title={t.book.title}
         description={t.book.description}

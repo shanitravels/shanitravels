@@ -43,6 +43,7 @@ export const DEFAULT_SETTINGS: SiteSettings = {
   credentials: [],
   commercialTerms: "",
   about: { mission: "", story: "", ceoMessage: "", ceoName: "", hseSummary: "" },
+  showClientIdentities: false,
   selfDriveEnabled: false,
   updatedAt: new Date(0).toISOString(),
 };

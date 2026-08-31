@@ -233,7 +233,18 @@ function ClientLogo({ client }: { client: Client }) {
 }
 
 /** Testimonials grid of quote cards. */
-export async function TestimonialsGrid({ testimonials }: { testimonials: Testimonial[] }) {
+export async function TestimonialsGrid({
+  testimonials,
+  identify = true,
+}: {
+  testimonials: Testimonial[];
+  /**
+   * Whether the organization may be named. When false the quote keeps its
+   * sector line and loses the name — the evidence survives, the client's
+   * identity does not. Callers pass `settings.showClientIdentities`.
+   */
+  identify?: boolean;
+}) {
   if (testimonials.length === 0) return null;
   const { t } = await getI18n();
   return (
@@ -244,11 +255,22 @@ export async function TestimonialsGrid({ testimonials }: { testimonials: Testimo
             <span className="font-heading text-4xl leading-none text-accent/30">“</span>
             <blockquote className="mt-2 flex-1 text-sm leading-relaxed text-ink/80">{item.quote}</blockquote>
             <figcaption className="mt-4 border-t border-line pt-3">
-              <p className="text-sm font-semibold text-navy">{item.organization}</p>
-              <p className="text-xs text-muted">
-                {t.clientSector[item.sector]}
-                {item.year ? ` · ${item.year}` : ""}
-              </p>
+              {identify ? (
+                <>
+                  <p className="text-sm font-semibold text-navy">{item.organization}</p>
+                  <p className="text-xs text-muted">
+                    {t.clientSector[item.sector]}
+                    {item.year ? ` · ${item.year}` : ""}
+                  </p>
+                </>
+              ) : (
+                /* The sector is promoted into the name slot rather than left
+                   below an empty one, so the caption keeps its shape. */
+                <>
+                  <p className="text-sm font-semibold text-navy">{t.clientSector[item.sector]}</p>
+                  {item.year && <p className="text-xs text-muted">{item.year}</p>}
+                </>
+              )}
             </figcaption>
           </figure>
         </Reveal>

@@ -6,6 +6,7 @@ import { getSettings } from "@/lib/data/settings";
 import { getActiveClients, getActiveTestimonials } from "@/lib/data/content";
 import { Breadcrumbs } from "@/components/site/Breadcrumbs";
 import { PageIntro } from "@/components/site/PageIntro";
+import { TbBriefcase } from "react-icons/tb";
 import { EnquiryForm } from "@/components/site/EnquiryForm";
 import { SectionHead, ClientWall, TestimonialsGrid } from "@/components/site/sections";
 import { getActiveOffices } from "@/lib/data/content";
@@ -47,6 +48,7 @@ export default async function CorporatePage() {
   return (
     <>
       <PageIntro
+        icon={TbBriefcase}
         eyebrow={t.corporate.eyebrow}
         title={t.corporate.title}
         description={t.corporate.description}
@@ -144,8 +146,8 @@ export default async function CorporatePage() {
         </section>
       )}
 
-      {/* Client wall grouped */}
-      {clients.length > 0 && (
+      {/* Client wall grouped — only while identities may be published. */}
+      {settings.showClientIdentities && clients.length > 0 && (
         <section className="mx-auto max-w-7xl px-4 py-16 sm:px-6">
           <SectionHead
             eyebrow={t.corporate.clientsEyebrow}
@@ -167,7 +169,10 @@ export default async function CorporatePage() {
               title={t.corporate.referencesTitle}
             />
             <div className="mt-10">
-              <TestimonialsGrid testimonials={featuredTestimonials} />
+              <TestimonialsGrid
+                testimonials={featuredTestimonials}
+                identify={settings.showClientIdentities}
+              />
             </div>
           </div>
         </section>

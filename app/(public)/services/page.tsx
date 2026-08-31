@@ -5,6 +5,7 @@ import { FiArrowRight, FiShield } from "react-icons/fi";
 import { getActiveServices } from "@/lib/data/content";
 import { Breadcrumbs } from "@/components/site/Breadcrumbs";
 import { PageIntro } from "@/components/site/PageIntro";
+import { TbListCheck } from "react-icons/tb";
 import { SERVICE_GROUPS, type Service } from "@/lib/types";
 import { getI18n } from "@/lib/i18n/server";
 
@@ -31,6 +32,7 @@ export default async function ServicesPage() {
   return (
     <>
       <PageIntro
+        icon={TbListCheck}
         eyebrow={t.services.eyebrow}
         title={t.services.title}
         description={t.services.description}

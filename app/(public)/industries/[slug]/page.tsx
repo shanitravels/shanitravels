@@ -5,6 +5,7 @@ import { notFound } from "next/navigation";
 import { FiArrowRight, FiArrowLeft } from "react-icons/fi";
 import { getActiveIndustries, getIndustryBySlug } from "@/lib/data/industries";
 import { getActiveServices, getActiveClients, getActiveTestimonials } from "@/lib/data/content";
+import { getSettings } from "@/lib/data/settings";
 import { getActiveVehicles } from "@/lib/data/vehicles";
 import { Breadcrumbs } from "@/components/site/Breadcrumbs";
 import { VehicleCard } from "@/components/site/VehicleCard";
@@ -45,14 +46,16 @@ export default async function IndustryPage({
 }) {
   const { slug } = await params;
   const { t } = await getI18n();
-  const [industry, services, vehicles, clients, testimonials, discounts] = await Promise.all([
-    getIndustryBySlug(slug),
-    getActiveServices(),
-    getActiveVehicles(),
-    getActiveClients(),
-    getActiveTestimonials(),
+  const [industry, services, vehicles, clients, testimonials, discounts, settings] =
+    await Promise.all([
+      getIndustryBySlug(slug),
+      getActiveServices(),
+      getActiveVehicles(),
+      getActiveClients(),
+      getActiveTestimonials(),
       getActiveDiscounts(),
-  ]);
+      getSettings(),
+    ]);
   if (!industry) notFound();
 
   const bodyHtml = industry.body ? renderMarkdown(industry.body) : "";
@@ -143,10 +146,13 @@ export default async function IndustryPage({
         </div>
       )}
 
-      {(sectorClients.length > 0 || sectorTestimonials.length > 0) && (
+      {/* `showClientIdentities` gates the logos outright; the quotes stay but
+          lose their attribution. See TestimonialsGrid's `identify` prop. */}
+      {((settings.showClientIdentities && sectorClients.length > 0) ||
+        sectorTestimonials.length > 0) && (
         <section className="bg-band">
           <div className="mx-auto max-w-7xl px-4 py-14 sm:px-6">
-            {sectorClients.length > 0 && (
+            {settings.showClientIdentities && sectorClients.length > 0 && (
               <>
                 <h2 className="text-center font-heading text-xl font-bold text-navy">
                   {t.industryDetail.trustedInSector}
@@ -158,7 +164,10 @@ export default async function IndustryPage({
             )}
             {sectorTestimonials.length > 0 && (
               <div className="mt-10">
-                <TestimonialsGrid testimonials={sectorTestimonials} />
+                <TestimonialsGrid
+                  testimonials={sectorTestimonials}
+                  identify={settings.showClientIdentities}
+                />
               </div>
             )}
           </div>

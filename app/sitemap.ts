@@ -14,6 +14,12 @@ export default async function sitemap(): Promise<MetadataRoute.Sitemap> {
   ]);
   const now = new Date();
 
+  // /clients exists only while client identities may be published; listing a
+  // route that 404s is what makes Search Console report coverage errors.
+  const optionalRoutes = settings.showClientIdentities
+    ? ([{ path: "/clients", changeFrequency: "monthly", priority: 0.6 }] as const)
+    : ([] as const);
+
   const staticRoutes: MetadataRoute.Sitemap = (
     [
       { path: "/", changeFrequency: "weekly", priority: 1 },
@@ -23,11 +29,11 @@ export default async function sitemap(): Promise<MetadataRoute.Sitemap> {
       { path: "/industries", changeFrequency: "monthly", priority: 0.9 },
       { path: "/services", changeFrequency: "monthly", priority: 0.8 },
       { path: "/safety", changeFrequency: "monthly", priority: 0.7 },
-      { path: "/clients", changeFrequency: "monthly", priority: 0.6 },
       { path: "/network", changeFrequency: "monthly", priority: 0.6 },
       { path: "/about", changeFrequency: "yearly", priority: 0.6 },
       { path: "/contact", changeFrequency: "yearly", priority: 0.7 },
       { path: "/book", changeFrequency: "monthly", priority: 0.8 },
+      ...optionalRoutes,
     ] as const
   ).map((r) => ({
     url: `${SITE_URL}${r.path}`,

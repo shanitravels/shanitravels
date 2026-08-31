@@ -17,7 +17,6 @@ const SITEMAP = [
       { href: "/rates", key: "rates" },
       { href: "/services", key: "services" },
       { href: "/industries", key: "industries" },
-      { href: "/clients", key: "clients" },
       { href: "/gallery", key: "gallery" },
     ],
   },

@@ -7,6 +7,7 @@ import { getSettings } from "@/lib/data/settings";
 import { getActiveOffices } from "@/lib/data/content";
 import { Breadcrumbs } from "@/components/site/Breadcrumbs";
 import { PageIntro } from "@/components/site/PageIntro";
+import { TbInfoCircle } from "react-icons/tb";
 import { SectionHead, TrustBand } from "@/components/site/sections";
 import { renderMarkdown } from "@/lib/markdown";
 import { getI18n } from "@/lib/i18n/server";
@@ -39,6 +40,7 @@ export default async function AboutPage() {
   return (
     <>
       <PageIntro
+        icon={TbInfoCircle}
         eyebrow={t.about.eyebrow}
         title={t.about.title}
         description={t.about.description}
