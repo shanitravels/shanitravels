@@ -40,6 +40,9 @@ export const metadata: Metadata = {
   },
   description:
     "Chauffeur-driven car rental in Islamabad and nationwide project transport for organizations. Insured, GPS-tracked fleet, serving Pakistan since 1997.",
+  verification: {
+    google: "2FZH19QW8N4O5X6C0ir_IOjKskp6YgNbkaAfGWi6GjQ",
+  },
 };
 
 export default async function RootLayout({
